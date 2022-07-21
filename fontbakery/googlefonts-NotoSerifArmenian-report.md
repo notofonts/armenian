@@ -22,16 +22,16 @@ Fontbakery version: 0.8.9
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uniFB17
-	* uni0541
-	* uni0568
-	* uni0554
+	* uni0540
 	* uni058F
-	* uni0586
-	* uni0569
+	* uniFB15
+	* uni0537
+	* uni0556
 	* uniFB16
-	* uniFB13
-	* uni057B and 14 more.
+	* uni0571
+	* uni053E
+	* uni0588
+	* uni0573 and 14 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Are there caret positions declared for every ligature? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/ligature_carets">com.google.fonts/check/ligature_carets</a>)</summary><div>
@@ -162,15 +162,15 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uniFB17
-	* uni0541
-	* uni0568
-	* uni0554
+	* uni0540
 	* uni058F
-	* uni0586
-	* uni0569
+	* uniFB15
+	* uni0537
+	* uni0556
 	* uniFB16
-	* uniFB13
+	* uni0571
+	* uni0588
+	* uni0573
 	* uni057B and 12 more.
 
 Use -F or --full-lists to disable shortening of long lists.
@@ -1373,16 +1373,16 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-semi-ve
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uniFB17
-	* uni0541
-	* uni0568
-	* uni0554
+	* uni0540
 	* uni058F
-	* uni0586
-	* uni0569
+	* uniFB15
+	* uni0537
+	* uni0556
 	* uniFB16
-	* uniFB13
-	* uni057B and 14 more.
+	* uni0571
+	* uni053E
+	* uni0588
+	* uni0573 and 14 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Are there caret positions declared for every ligature? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/ligature_carets">com.google.fonts/check/ligature_carets</a>)</summary><div>
@@ -2830,9 +2830,9 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
 	* uni058F
-	* uni0586
+	* uni0556
 	* uniFB16
-	* uni0556 and uni0536
+	* uni0536 and uni0586
 </div></details><details><summary>⚠ <b>WARN:</b> Are there caret positions declared for every ligature? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/ligature_carets">com.google.fonts/check/ligature_carets</a>)</summary><div>
 
 
@@ -2942,8 +2942,8 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
 	* uni058F
-	* uni0586
-	* uni0556 and uni0536
+	* uni0556
+	* uni0536 and uni0586
 </div></details><details><summary>⚠ <b>WARN:</b> Are there caret positions declared for every ligature? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/ligature_carets">com.google.fonts/check/ligature_carets</a>)</summary><div>
 
 
@@ -3039,16 +3039,16 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 
 
 * ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* uni0554
 	* uni058F
-	* uni0586
-	* uniFB16
-	* uniFB13
+	* uni0537
 	* uni0556
-	* uni0536
-	* uni0584
+	* uniFB16
 	* uni0571
-	* uni0588 and 3 more.
+	* uni0588
+	* uni0573
+	* uniFB14
+	* uni0536
+	* uni0554 and 3 more.
 
 Use -F or --full-lists to disable shortening of long lists.
 </div></details><details><summary>⚠ <b>WARN:</b> Are there caret positions declared for every ligature? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/ligature_carets">com.google.fonts/check/ligature_carets</a>)</summary><div>
@@ -4364,7 +4364,7 @@ Use -F or --full-lists to disable shortening of long lists. [code: found-misalig
 </div></details><details><summary>🔥 <b>FAIL:</b> Validates that when an instance record is included for the default instance, its subfamilyNameID value is set to either 2 or 17, and its postScriptNameID value is set to 6. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/fvar.html#com.adobe.fonts/check/varfont/valid_default_instance_nameids">com.adobe.fonts/check/varfont/valid_default_instance_nameids</a>)</summary><div>
 
 
-* 🔥 **FAIL** 'Regular' instance has the same coordinates as the default instance; its subfamilyNameID should be either 2 or 17, instead of 347. [code: invalid-default-instance-subfamily-nameid:347]
+* 🔥 **FAIL** 'Regular' instance has the same coordinates as the default instance; its subfamilyNameID should be either 2 or 17, instead of 334. [code: invalid-default-instance-subfamily-nameid:334]
 </div></details><details><summary>⚠ <b>WARN:</b> Are there caret positions declared for every ligature? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/ligature_carets">com.google.fonts/check/ligature_carets</a>)</summary><div>
 
 
