@@ -6,5 +6,9 @@ googleFonts: true
 includeSubsets:
 - from: Noto Serif
   name: GF_Latin_Core
+- from: Noto Serif
+  ranges:
+    - start: 0x2024 # ONE DOT LEADER "used as an Armenian semicolon"
+      end: 0x2024
 sources:
 - NotoSerifArmenian.designspace
