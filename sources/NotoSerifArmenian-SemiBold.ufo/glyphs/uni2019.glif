@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<glyph name="uni2019" format="2">
-  <advance width="255"/>
-  <unicode hex="2019"/>
-  <outline>
-    <component base="uni055A"/>
-  </outline>
-</glyph>

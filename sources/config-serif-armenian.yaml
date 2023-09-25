@@ -11,4 +11,4 @@ includeSubsets:
     - start: 0x2024 # ONE DOT LEADER "used as an Armenian semicolon"
       end: 0x2024
 sources:
-- NotoSerifArmenian.designspace
+- NotoSerifArmenian.glyphs
