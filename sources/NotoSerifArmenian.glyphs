@@ -1,6 +1,9 @@
 {
 .appVersion = "3205";
 .formatVersion = 3;
+DisplayStrings = (
+"/uni0578_uni0582"
+);
 axes = (
 {
 default = 400;
@@ -13084,12 +13087,12 @@ unicode = 1352;
 glyphname = uni0548_uni0552;
 kernLeft = uni0548;
 kernRight = uni0552;
-lastChange = "2023-09-25 08:42:12 +0000";
+lastChange = "2023-09-25 08:46:40 +0000";
 layers = (
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (312,714);
 }
 );
@@ -13115,7 +13118,7 @@ width = 1155;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (345,714);
 }
 );
@@ -13139,7 +13142,7 @@ width = 1259;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (359,714);
 }
 );
@@ -13163,7 +13166,7 @@ width = 1332;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (381,714);
 }
 );
@@ -13187,7 +13190,7 @@ width = 1444;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (394,714);
 }
 );
@@ -13211,7 +13214,7 @@ width = 1514;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (261,714);
 }
 );
@@ -13235,7 +13238,7 @@ width = 928;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (279,714);
 }
 );
@@ -13259,7 +13262,7 @@ width = 1011;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (310,714);
 }
 );
@@ -13283,7 +13286,7 @@ width = 1149;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (332,714);
 }
 );
@@ -34193,11 +34196,12 @@ unicode = 1400;
 glyphname = uni0578_uni0582;
 kernLeft = uni0578;
 kernRight = uni0582;
+lastChange = "2023-09-25 08:47:02 +0000";
 layers = (
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (263,492);
 }
 );
@@ -34221,7 +34225,7 @@ width = 754;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (276,492);
 }
 );
@@ -34245,7 +34249,7 @@ width = 825;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (288,492);
 }
 );
@@ -34269,7 +34273,7 @@ width = 899;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (303,492);
 }
 );
@@ -34293,7 +34297,7 @@ width = 1001;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (313,492);
 }
 );
@@ -34317,7 +34321,7 @@ width = 1065;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (224,492);
 }
 );
@@ -34341,7 +34345,7 @@ width = 649;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (240,492);
 }
 );
@@ -34365,7 +34369,7 @@ width = 732;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (266,492);
 }
 );
@@ -34389,7 +34393,7 @@ width = 870;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (285,492);
 }
 );
