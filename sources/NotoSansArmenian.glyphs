@@ -2,7 +2,8 @@
 .appVersion = "3205";
 .formatVersion = 3;
 DisplayStrings = (
-"ՠ"
+"ՠ",
+"/uni0578_uni0582"
 );
 axes = (
 {
@@ -11452,12 +11453,12 @@ unicode = 1352;
 {
 glyphname = uni0548_uni0552;
 kernRight = uni0552;
-lastChange = "2023-09-25 08:24:42 +0000";
+lastChange = "2023-09-25 08:40:27 +0000";
 layers = (
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (355,714);
 }
 );
@@ -11484,7 +11485,7 @@ width = 1269;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (362,714);
 }
 );
@@ -11510,7 +11511,7 @@ width = 1316;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (367,714);
 }
 );
@@ -11536,7 +11537,7 @@ width = 1349;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (355,714);
 }
 );
@@ -11563,7 +11564,7 @@ width = 1353;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (243,714);
 }
 );
@@ -11587,7 +11588,7 @@ width = 865;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (263,714);
 }
 );
@@ -11611,7 +11612,7 @@ width = 971;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (282,714);
 }
 );
@@ -11635,7 +11636,7 @@ width = 1069;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (294,714);
 }
 );
@@ -27819,12 +27820,12 @@ unicode = 1400;
 glyphname = uni0578_uni0582;
 kernLeft = uni0562;
 kernRight = uni0582;
-lastChange = "2023-09-25 08:24:42 +0000";
+lastChange = "2023-09-25 08:40:49 +0000";
 layers = (
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (269,492);
 }
 );
@@ -27848,7 +27849,7 @@ width = 767;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (298,492);
 }
 );
@@ -27874,7 +27875,7 @@ width = 905;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (320,492);
 }
 );
@@ -27900,7 +27901,7 @@ width = 1012;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (324,492);
 }
 );
@@ -27924,7 +27925,7 @@ width = 1098;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (185,492);
 }
 );
@@ -27948,7 +27949,7 @@ width = 537;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (216,492);
 }
 );
@@ -27972,7 +27973,7 @@ width = 665;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (246,492);
 }
 );
@@ -27996,7 +27997,7 @@ width = 785;
 {
 anchors = (
 {
-name = top;
+name = top_1;
 pos = (264,492);
 }
 );
