@@ -191,6 +191,10 @@ value = GOOG;
 {
 name = trademarks;
 value = "Noto is a trademark of Google Inc.";
+},
+{
+name = "Use Typo Metrics";
+value = 1;
 }
 );
 date = "2019-11-20 21:12:38 +0000";
@@ -55213,6 +55217,7 @@ instanceInterpolations = {
 m001 = 1;
 };
 name = Thin;
+weightClass = 100;
 },
 {
 axesValues = (
@@ -55224,6 +55229,7 @@ m001 = 0.61111;
 m002 = 0.38889;
 };
 name = ExtraLight;
+weightClass = 200;
 },
 {
 axesValues = (
@@ -55234,6 +55240,7 @@ instanceInterpolations = {
 m002 = 1;
 };
 name = Light;
+weightClass = 300;
 },
 {
 axesValues = (
@@ -55255,6 +55262,7 @@ m003 = 0.72414;
 m004 = 0.27586;
 };
 name = Medium;
+weightClass = 500;
 },
 {
 axesValues = (
@@ -55266,6 +55274,7 @@ m003 = 0.37931;
 m004 = 0.62069;
 };
 name = SemiBold;
+weightClass = 600;
 },
 {
 axesValues = (
@@ -55275,7 +55284,10 @@ axesValues = (
 instanceInterpolations = {
 m004 = 1;
 };
+isBold = 1;
+linkStyle = Regular;
 name = Bold;
+weightClass = 700;
 },
 {
 axesValues = (
@@ -55287,6 +55299,7 @@ m004 = 0.45238;
 m005 = 0.54762;
 };
 name = ExtraBold;
+weightClass = 800;
 },
 {
 axesValues = (
@@ -55297,6 +55310,7 @@ instanceInterpolations = {
 m005 = 1;
 };
 name = Black;
+weightClass = 900;
 },
 {
 axesValues = (
@@ -55308,6 +55322,8 @@ m001 = 0.3;
 m006 = 0.7;
 };
 name = "Condensed Thin";
+weightClass = 100;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -55321,6 +55337,8 @@ m006 = 0.57605;
 m007 = 0.12395;
 };
 name = "Condensed ExtraLight";
+weightClass = 200;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -55333,6 +55351,8 @@ m006 = 0.31818;
 m007 = 0.38182;
 };
 name = "Condensed Light";
+weightClass = 300;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -55344,6 +55364,7 @@ m003 = 0.3;
 m007 = 0.7;
 };
 name = Condensed;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -55357,6 +55378,8 @@ m007 = 0.5069;
 m008 = 0.1931;
 };
 name = "Condensed Medium";
+weightClass = 500;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -55370,6 +55393,8 @@ m007 = 0.26552;
 m008 = 0.43448;
 };
 name = "Condensed SemiBold";
+weightClass = 600;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -55380,7 +55405,11 @@ instanceInterpolations = {
 m004 = 0.3;
 m008 = 0.7;
 };
+isBold = 1;
+linkStyle = Condensed;
 name = "Condensed Bold";
+weightClass = 700;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -55394,6 +55423,8 @@ m008 = 0.31667;
 m009 = 0.38333;
 };
 name = "Condensed ExtraBold";
+weightClass = 800;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -55405,6 +55436,8 @@ m005 = 0.3;
 m009 = 0.7;
 };
 name = "Condensed Black";
+weightClass = 900;
+widthClass = 3;
 },
 {
 axesValues = (
@@ -55416,6 +55449,8 @@ m001 = 0.63333;
 m006 = 0.36667;
 };
 name = "SemiCondensed Thin";
+weightClass = 100;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -55429,6 +55464,8 @@ m006 = 0.25955;
 m007 = 0.10711;
 };
 name = "SemiCondensed ExtraLight";
+weightClass = 200;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -55441,6 +55478,8 @@ m006 = 0.16667;
 m007 = 0.2;
 };
 name = "SemiCondensed Light";
+weightClass = 300;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -55452,6 +55491,7 @@ m003 = 0.63333;
 m007 = 0.36667;
 };
 name = SemiCondensed;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -55465,6 +55505,8 @@ m007 = 0.26552;
 m008 = 0.10115;
 };
 name = "SemiCondensed Medium";
+weightClass = 500;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -55478,6 +55520,8 @@ m007 = 0.13908;
 m008 = 0.22759;
 };
 name = "SemiCondensed SemiBold";
+weightClass = 600;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -55488,7 +55532,11 @@ instanceInterpolations = {
 m004 = 0.63333;
 m008 = 0.36667;
 };
+isBold = 1;
+linkStyle = SemiCondensed;
 name = "SemiCondensed Bold";
+weightClass = 700;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -55502,6 +55550,8 @@ m008 = 0.16587;
 m009 = 0.20079;
 };
 name = "SemiCondensed ExtraBold";
+weightClass = 800;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -55513,6 +55563,8 @@ m005 = 0.63333;
 m009 = 0.36667;
 };
 name = "SemiCondensed Black";
+weightClass = 900;
+widthClass = 4;
 },
 {
 axesValues = (
@@ -55523,6 +55575,8 @@ instanceInterpolations = {
 m006 = 1;
 };
 name = "ExtraCondensed Thin";
+weightClass = 100;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -55534,6 +55588,8 @@ m006 = 0.78788;
 m007 = 0.21212;
 };
 name = "ExtraCondensed ExtraLight";
+weightClass = 200;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -55545,6 +55601,8 @@ m006 = 0.45455;
 m007 = 0.54545;
 };
 name = "ExtraCondensed Light";
+weightClass = 300;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -55555,6 +55613,7 @@ instanceInterpolations = {
 m007 = 1;
 };
 name = ExtraCondensed;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -55566,6 +55625,8 @@ m007 = 0.72414;
 m008 = 0.27586;
 };
 name = "ExtraCondensed Medium";
+weightClass = 500;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -55577,6 +55638,8 @@ m007 = 0.37931;
 m008 = 0.62069;
 };
 name = "ExtraCondensed SemiBold";
+weightClass = 600;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -55586,7 +55649,10 @@ axesValues = (
 instanceInterpolations = {
 m008 = 1;
 };
+isBold = 1;
 name = "ExtraCondensed Bold";
+weightClass = 700;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -55598,6 +55664,8 @@ m008 = 0.45238;
 m009 = 0.54762;
 };
 name = "ExtraCondensed ExtraBold";
+weightClass = 800;
+widthClass = 2;
 },
 {
 axesValues = (
@@ -55608,6 +55676,8 @@ instanceInterpolations = {
 m009 = 1;
 };
 name = "ExtraCondensed Black";
+weightClass = 900;
+widthClass = 2;
 }
 );
 kerningLTR = {
