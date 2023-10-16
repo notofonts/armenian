@@ -234,6 +234,7 @@ code = "# Automatic Code Start
 
 pos [uni0585] dieresiscomb uni055C' <200 0 200 0>;
 pos [uni0578 uni0585] dieresiscomb [uni055B uni055C uni055D]' <170 0 170 0>;
+pos [uni0560 uni0561] dieresiscomb [uni055E]' <100 0 100 0>;
 pos [uni0578 uni0585] dieresiscomb [uni055E]' <300 0 300 0>;
 ";
 tag = kern;
