@@ -142,6 +142,14 @@
 
 	  
 	    @font-face{
+    src: url(old-NotoSansArmenian[wght].ttf);
+    font-family: "old Noto Sans Armenian";
+    font-weight: 400 700;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
     src: url(old-NotoSansArmenian[wdth,wght].ttf);
     font-family: "old Noto Sans Armenian";
     font-weight: 100 900;
@@ -149,28 +157,12 @@
     font-style: normal;
 }
 	  
-	    @font-face{
-    src: url(old-NotoSansArmenian-ExtraCondensedThin.ttf);
-    font-family: "old Noto Sans Armenian";
-    font-weight: 100;
-    
-    font-style: normal;
-}
-	  
 
 	  
 	    @font-face{
-    src: url(new-NotoSansArmenian-Medium.ttf);
+    src: url(new-NotoSansArmenian-Light.ttf);
     font-family: "new Noto Sans Armenian";
-    font-weight: 500;
-    
-    font-style: normal;
-}
-	  
-	    @font-face{
-    src: url(new-NotoSansArmenian-ExtraCondensedThin.ttf);
-    font-family: "new Noto Sans Armenian";
-    font-weight: 100;
+    font-weight: 300;
     
     font-style: normal;
 }
@@ -184,9 +176,17 @@
 }
 	  
 	    @font-face{
-    src: url(new-NotoSansArmenian-Light.ttf);
+    src: url(new-NotoSansArmenian-ExtraCondensedThin.ttf);
     font-family: "new Noto Sans Armenian";
-    font-weight: 300;
+    font-weight: 100;
+    
+    font-style: normal;
+}
+	  
+	    @font-face{
+    src: url(new-NotoSansArmenian-Medium.ttf);
+    font-family: "new Noto Sans Armenian";
+    font-weight: 500;
     
     font-style: normal;
 }
@@ -197,10 +197,10 @@
 	  
 	    .old-ExtraCondensed-Thin{
     font-family: "old Noto Sans Armenian", "Adobe NotDef";
-    font-weight: 100;
-    
+    font-weight: 100.0;
+    font-stretch: 62.5%;
     font-style: normal;
-    font-variation-settings: "wght" 100;
+    font-variation-settings: "wght" 100.0, "wdth" 62.5;
 }
 	  
 	    .old-ExtraLight{
@@ -222,9 +222,9 @@
 	    .old-Medium{
     font-family: "old Noto Sans Armenian", "Adobe NotDef";
     font-weight: 500.0;
-    font-stretch: 100.0%;
+    
     font-style: normal;
-    font-variation-settings: "wght" 500.0, "wdth" 100.0;
+    font-variation-settings: "wght" 500.0;
 }
 	  
 
