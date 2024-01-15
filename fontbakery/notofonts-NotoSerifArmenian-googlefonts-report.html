@@ -120,6 +120,7 @@ ul {
             <table>
             <tr>
                 <th>💥 ERROR</th>
+                <th>☠ FATAL</th>
                 <th>🔥 FAIL</th>
                 <th>⚠️ WARN</th>
                 <th>⏩ SKIP</th>
@@ -128,19 +129,21 @@ ul {
             </tr>
             <tr>
                 <td>0</td>
-                <td>2</td>
-                <td>7</td>
-                <td>98</td>
+                <td>0</td>
+                <td>3</td>
                 <td>8</td>
-                <td>137</td>
+                <td>99</td>
+                <td>8</td>
+                <td>138</td>
             </tr>
             <tr>
                 <td>0%</td>
-                <td>1%</td>
+                <td>0%</td>
+                <td>2%</td>
                 <td>4%</td>
-                <td>53%</td>
+                <td>52%</td>
                 <td>4%</td>
-                <td>74%</td>
+                <td>73%</td>
             </tr>
             </table>
             
@@ -150,6 +153,8 @@ ul {
 
     <ul>
     <li>💥 An <em>ERROR</em> is something wrong with FontBakery itself, possibly a bug.
+    <li>☠ A <em>FATAL</em> is an extremely severe issue that must be addressed
+    immediately.
     <li>🔥 A <em>FAIL</em> is a problem with the font that must be fixed.
     <li>⚠️ A <em>WARN</em> is something that you should consider addressing.
     <li>ℹ️ An <em>INFO</em> result simply prints something useful. Typically stats.
@@ -163,10 +168,10 @@ ul {
     <p>(but other kinds of bug reports and/or feature requests
        are also always welcome, of course!)</p>
 
-    <p>FontBakery version: 0.10.1</p>
+    <p>FontBakery version: 0.10.9</p>
     
 <h2>Section: Google Fonts</h2>
-<span class='section__emoji'>🔥⚠️⚠️⚠️⚠️⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️</span>
+<span class='section__emoji'>🔥🔥⚠️⚠️⚠️⚠️⚠️⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩ℹ️ℹ️ℹ️ℹ️ℹ️ℹ️</span>
 <h3>Check for codepoints not covered by METADATA subsets.</h3>
 <div class='check__idlabel'>Check ID: com.google.fonts/check/metadata/unreachable_subsetting</div>
 
@@ -176,26 +181,37 @@ be served. You can solve this by either manually adding additional
 subset declarations to METADATA.pb, or by editing the glyphset
 definitions.</p>
 <ul>
-<li>U+02C7 CARON: try adding one of: yi, tifinagh, canadian-aboriginal</li>
+<li>U+02C7 CARON: try adding one of: canadian-aboriginal, yi, tifinagh</li>
 <li>U+02C9 MODIFIER LETTER MACRON: not included in any glyphset definition</li>
-<li>U+02D8 BREVE: try adding one of: yi, canadian-aboriginal</li>
-<li>U+02D9 DOT ABOVE: try adding one of: yi, canadian-aboriginal</li>
-<li>U+02DB OGONEK: try adding one of: yi, canadian-aboriginal</li>
+<li>U+02D8 BREVE: try adding one of: canadian-aboriginal, yi</li>
+<li>U+02D9 DOT ABOVE: try adding one of: canadian-aboriginal, yi</li>
+<li>U+02DB OGONEK: try adding one of: canadian-aboriginal, yi</li>
 <li>U+02DD DOUBLE ACUTE ACCENT: not included in any glyphset definition</li>
-<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: coptic, tifinagh, math, cherokee</li>
+<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: cherokee, coptic, tifinagh, math</li>
 <li>U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic</li>
-<li>U+0307 COMBINING DOT ABOVE: try adding one of: coptic, malayalam, syriac, tifinagh, canadian-aboriginal, old-permic, tai-le, math</li>
+<li>U+0307 COMBINING DOT ABOVE: try adding one of: math, old-permic, coptic, canadian-aboriginal, tifinagh, tai-le, syriac, malayalam</li>
 <li>U+030A COMBINING RING ABOVE: try adding syriac</li>
-<li>U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: osage, cherokee</li>
-<li>U+030C COMBINING CARON: try adding one of: tai-le, cherokee</li>
+<li>U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: cherokee, osage</li>
+<li>U+030C COMBINING CARON: try adding one of: cherokee, tai-le</li>
 <li>U+0312 COMBINING TURNED COMMA ABOVE: not included in any glyphset definition</li>
 <li>U+0326 COMBINING COMMA BELOW: not included in any glyphset definition</li>
 <li>U+0327 COMBINING CEDILLA: not included in any glyphset definition</li>
 <li>U+0328 COMBINING OGONEK: not included in any glyphset definition</li>
-<li>U+2010 HYPHEN: try adding one of: coptic, lisu, kaithi, kayah-li, yi, syloti-nagri, kharoshthi, sundanese, cham, sora-sompeng</li>
-<li>U+25CC DOTTED CIRCLE: try adding one of: devanagari, chakma, brahmi, duployan, ahom, gujarati, hebrew, wancho, malayalam, nko, tagalog, thaana, bhaiksuki, balinese, syriac, tagbanwa, bengali, hanunoo, mende-kikakui, grantha, syloti-nagri, caucasian-albanian, newa, thai, psalter-pahlavi, modi, zanabazar-square, lepcha, manichaean, khudawadi, soyombo, mandaic, tirhuta, phags-pa, sharada, telugu, tamil, lao, meetei-mayek, sundanese, sogdian, limbu, rejang, tai-viet, miao, buginese, yi, dogra, tibetan, music, khmer, pahawh-hmong, myanmar, khojki, math, marchen, mongolian, batak, kharoshthi, buhid, coptic, mahajani, takri, hanifi-rohingya, kaithi, adlam, bassa-vah, oriya, symbols, gunjala-gondi, cham, siddham, new-tai-lue, sinhala, kannada, tifinagh, gurmukhi, kayah-li, javanese, elbasan, masaram-gondi, tai-le, old-permic, osage</li>
+<li>U+2010 HYPHEN: try adding one of: syloti-nagri, kharoshthi, yi, cham, sundanese, coptic, lisu, kaithi, kayah-li, sora-sompeng</li>
+<li>U+25CC DOTTED CIRCLE: try adding one of: phags-pa, bengali, rejang, buhid, wancho, osage, marchen, lao, pahawh-hmong, brahmi, khudawadi, kaithi, batak, manichaean, thai, meetei-mayek, chakma, tibetan, tagalog, tai-viet, tirhuta, tifinagh, oriya, modi, telugu, miao, mongolian, dogra, hebrew, masaram-gondi, thaana, myanmar, new-tai-lue, grantha, sogdian, nko, gunjala-gondi, cham, tamil, takri, limbu, ahom, psalter-pahlavi, adlam, caucasian-albanian, sharada, tagbanwa, javanese, syriac, bassa-vah, old-permic, devanagari, coptic, khojki, malayalam, syloti-nagri, hanunoo, gurmukhi, kharoshthi, yi, math, mahajani, sundanese, symbols, sinhala, duployan, kannada, mandaic, buginese, tai-le, zanabazar-square, music, soyombo, newa, hanifi-rohingya, lepcha, mende-kikakui, gujarati, elbasan, siddham, balinese, khmer, kayah-li, bhaiksuki</li>
 </ul>
 <p>Or you can add the above codepoints to one of the subsets supported by the font: <code>armenian</code>, <code>latin</code>, <code>latin-ext</code> [code: unreachable-subsetting]</p>
+</span></li></ul></div></details>
+<h3>License URL matches License text on name table?</h3>
+<div class='check__idlabel'>Check ID: com.google.fonts/check/name/license_url</div>
+
+<details><summary>⚠️ NotoSerifArmenian[wdth,wght].ttf</summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>OFL url is no longer &quot;<a href="https://scripts.sil.org/OFL">https://scripts.sil.org/OFL</a>&quot;. Use '<a href="https://openfontlicense.org">https://openfontlicense.org</a>' instead. [code: deprecated-ofl-url]</p>
+</span></li></ul></div></details>
+<h3>Version number has increased since previous release on Google Fonts?</h3>
+<div class='check__idlabel'>Check ID: com.google.fonts/check/version_bump</div>
+
+<details><summary>🔥 NotoSerifArmenian[wdth,wght].ttf</summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>Version number 2.008 is equal to version on <strong>Google Fonts</strong>.</p>
+</span></li><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>Version number 2.008 is equal to version on google/fonts <strong>GitHub repo</strong>.</p>
 </span></li></ul></div></details>
 <h3>Are there caret positions declared for every ligature?</h3>
 <div class='check__idlabel'>Check ID: com.google.fonts/check/ligature_carets</div>
@@ -232,7 +248,7 @@ definitions.</p>
 <details><summary>🔥 NotoSerifArmenian[wdth,wght].ttf</summary><div><ul><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]</p>
 </span></li></ul></div></details>
 <h2>Section: Universal</h2>
-<span class='section__emoji'>🔥⚠️⏩⏩⏩⏩⏩ℹ️ℹ️</span>
+<span class='section__emoji'>🔥⚠️⏩⏩⏩⏩⏩⏩ℹ️ℹ️</span>
 <h3>Check that legacy accents aren't used in composite glyphs. (derived from com.google.fonts/check/legacy_accents)</h3>
 <div class='check__idlabel'>Check ID: com.google.fonts/check/legacy_accents</div>
 
@@ -361,7 +377,6 @@ definitions.</p>
 </span></li><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>Glyph &quot;zacute&quot; has a legacy accent component (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]</p>
 </span></li><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>Glyph &quot;zcaron&quot; has a legacy accent component (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]</p>
 </span></li><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>Glyph &quot;zdotaccent&quot; has a legacy accent component (dotaccent). It needs to be replaced by a combining mark. [code: legacy-accents-component]</p>
-</span></li><li class='details_item'><span class='details_indicator'>🔥 FAIL</span><span class='details_text'><p>Legacy accent &quot;overscore&quot; are too narrow. [code: legacy-accents-width]</p>
 </span></li></ul></div></details>
 <h3>Check math signs have the same width.</h3>
 <div class='check__idlabel'>Check ID: com.google.fonts/check/math_signs_width</div>
@@ -540,8 +555,8 @@ minus
 
 <details><summary>⚠️ NotoSerifArmenian[wdth,wght].ttf</summary><div><ul><li class='details_item'><span class='details_indicator'>⚠️ WARN</span><span class='details_text'><p>The dot of soft dotted characters used in orthographies <em>must</em> disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌</p>
 <p>The dot of soft dotted characters <em>should</em> disappear in other cases, for example: į̆ į̇ į̈ į̊ į̋ į̒ į̦̀ į̦́ į̦̂ į̦̃ į̦̄ į̦̆ į̦̇ į̦̈ į̦̊ į̦̋ į̦̌ į̦̒ į̧̀ į̧́</p>
-<p>Your font fully covers the following languages that require the soft-dotted feature: Lithuanian (Latn, 2,357,094 speakers).</p>
-<p>Your font does <em>not</em> cover the following languages that require the soft-dotted feature: Basaa (Latn, 332,940 speakers), Dutch (Latn, 31,709,104 speakers), Koonzime (Latn, 40,000 speakers), Belarusian (Cyrl, 10,064,517 speakers), Dan (Latn, 1,099,244 speakers), Lugbara (Latn, 2,200,000 speakers), Ma’di (Latn, 584,000 speakers), Avokaya (Latn, 100,000 speakers), Igbo (Latn, 27,823,640 speakers), Ejagham (Latn, 120,000 speakers), Nateni (Latn, 100,000 speakers), Navajo (Latn, 166,319 speakers), Ebira (Latn, 2,200,000 speakers), Kom (Latn, 360,685 speakers), Aghem (Latn, 38,843 speakers), Ukrainian (Cyrl, 29,273,587 speakers). [code: soft-dotted]</p>
+<p>Your font fully covers the following languages that require the soft-dotted feature: Dutch (Latn, 31,709,104 speakers), Lithuanian (Latn, 2,357,094 speakers).</p>
+<p>Your font does <em>not</em> cover the following languages that require the soft-dotted feature: Belarusian (Cyrl, 10,064,517 speakers), Gulay (Latn, 250,478 speakers), Ngbaka (Latn, 1,020,000 speakers), Lugbara (Latn, 2,200,000 speakers), Nateni (Latn, 100,000 speakers), Nzakara (Latn, 50,000 speakers), Kom (Latn, 360,685 speakers), Igbo (Latn, 27,823,640 speakers), Mango (Latn, 77,000 speakers), Ejagham (Latn, 120,000 speakers), Aghem (Latn, 38,843 speakers), Mundani (Latn, 34,000 speakers), Fur (Latn, 1,230,163 speakers), Zapotec (Latn, 490,000 speakers), Mfumte (Latn, 79,000 speakers), Southern Kisi (Latn, 360,000 speakers), Kpelle, Guinea (Latn, 622,000 speakers), Navajo (Latn, 166,319 speakers), Ebira (Latn, 2,200,000 speakers), Sar (Latn, 500,000 speakers), Ukrainian (Cyrl, 29,273,587 speakers), Cicipu (Latn, 44,000 speakers), Koonzime (Latn, 40,000 speakers), Ma’di (Latn, 584,000 speakers), Basaa (Latn, 332,940 speakers), Makaa (Latn, 221,000 speakers), Ekpeye (Latn, 226,000 speakers), Ijo, Southeast (Latn, 2,471,000 speakers), Yala (Latn, 200,000 speakers), Bafut (Latn, 158,146 speakers), Dan (Latn, 1,099,244 speakers), Bete-Bendi (Latn, 100,000 speakers), Dii (Latn, 71,000 speakers), South Central Banda (Latn, 244,000 speakers), Avokaya (Latn, 100,000 speakers). [code: soft-dotted]</p>
 </span></li></ul></div></details>
                         </main>
                     </body>
