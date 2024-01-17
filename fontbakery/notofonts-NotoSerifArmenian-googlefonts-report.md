@@ -2,7 +2,7 @@
 
 fontbakery version: 0.10.9
 
-<details><summary><b>[11] NotoSerifArmenian[wdth,wght].ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Version number has increased since previous release on Google Fonts? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/version_bump">com.google.fonts/check/version_bump</a>)</summary><div>
+<details><summary><b>[12] NotoSerifArmenian[wdth,wght].ttf</b></summary><div><details><summary>🔥 <b>FAIL:</b> Version number has increased since previous release on Google Fonts? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/version_bump">com.google.fonts/check/version_bump</a>)</summary><div>
 
 
 * 🔥 **FAIL** Version number 2.008 is equal to version on **Google Fonts**.
@@ -148,30 +148,335 @@ fontbakery version: 0.10.9
     subset declarations to METADATA.pb, or by editing the glyphset
     definitions.
 
- * U+02C7 CARON: try adding one of: canadian-aboriginal, yi, tifinagh
+ * U+02C7 CARON: try adding one of: tifinagh, yi, canadian-aboriginal
  * U+02C9 MODIFIER LETTER MACRON: not included in any glyphset definition
- * U+02D8 BREVE: try adding one of: canadian-aboriginal, yi
- * U+02D9 DOT ABOVE: try adding one of: canadian-aboriginal, yi
- * U+02DB OGONEK: try adding one of: canadian-aboriginal, yi
+ * U+02D8 BREVE: try adding one of: yi, canadian-aboriginal
+ * U+02D9 DOT ABOVE: try adding one of: yi, canadian-aboriginal
+ * U+02DB OGONEK: try adding one of: yi, canadian-aboriginal
  * U+02DD DOUBLE ACUTE ACCENT: not included in any glyphset definition
- * U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: cherokee, coptic, tifinagh, math
+ * U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: math, tifinagh, coptic, cherokee
  * U+0306 COMBINING BREVE: try adding one of: tifinagh, old-permic
- * U+0307 COMBINING DOT ABOVE: try adding one of: math, old-permic, coptic, canadian-aboriginal, tifinagh, tai-le, syriac, malayalam
+ * U+0307 COMBINING DOT ABOVE: try adding one of: math, tai-le, tifinagh, coptic, canadian-aboriginal, old-permic, syriac, malayalam
  * U+030A COMBINING RING ABOVE: try adding syriac
- * U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: cherokee, osage
- * U+030C COMBINING CARON: try adding one of: cherokee, tai-le
+ * U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: osage, cherokee
+ * U+030C COMBINING CARON: try adding one of: tai-le, cherokee
  * U+0312 COMBINING TURNED COMMA ABOVE: not included in any glyphset definition
  * U+0326 COMBINING COMMA BELOW: not included in any glyphset definition
  * U+0327 COMBINING CEDILLA: not included in any glyphset definition
  * U+0328 COMBINING OGONEK: not included in any glyphset definition
- * U+2010 HYPHEN: try adding one of: syloti-nagri, kharoshthi, yi, cham, sundanese, coptic, lisu, kaithi, kayah-li, sora-sompeng
- * U+25CC DOTTED CIRCLE: try adding one of: phags-pa, bengali, rejang, buhid, wancho, osage, marchen, lao, pahawh-hmong, brahmi, khudawadi, kaithi, batak, manichaean, thai, meetei-mayek, chakma, tibetan, tagalog, tai-viet, tirhuta, tifinagh, oriya, modi, telugu, miao, mongolian, dogra, hebrew, masaram-gondi, thaana, myanmar, new-tai-lue, grantha, sogdian, nko, gunjala-gondi, cham, tamil, takri, limbu, ahom, psalter-pahlavi, adlam, caucasian-albanian, sharada, tagbanwa, javanese, syriac, bassa-vah, old-permic, devanagari, coptic, khojki, malayalam, syloti-nagri, hanunoo, gurmukhi, kharoshthi, yi, math, mahajani, sundanese, symbols, sinhala, duployan, kannada, mandaic, buginese, tai-le, zanabazar-square, music, soyombo, newa, hanifi-rohingya, lepcha, mende-kikakui, gujarati, elbasan, siddham, balinese, khmer, kayah-li, bhaiksuki
+ * U+2010 HYPHEN: try adding one of: kayah-li, kaithi, coptic, cham, syloti-nagri, yi, sora-sompeng, sundanese, lisu, kharoshthi
+ * U+25CC DOTTED CIRCLE: try adding one of: lepcha, tirhuta, telugu, syriac, zanabazar-square, adlam, psalter-pahlavi, myanmar, mandaic, brahmi, grantha, limbu, symbols, soyombo, tagalog, dogra, syloti-nagri, buginese, lao, masaram-gondi, kaithi, hanunoo, mende-kikakui, thai, kayah-li, rejang, tamil, manichaean, osage, tibetan, thaana, newa, old-permic, javanese, pahawh-hmong, ahom, tai-le, gujarati, siddham, marchen, sundanese, chakma, caucasian-albanian, balinese, math, bhaiksuki, duployan, new-tai-lue, sinhala, mongolian, oriya, sogdian, phags-pa, elbasan, takri, cham, coptic, yi, gurmukhi, bengali, music, miao, nko, batak, buhid, gunjala-gondi, mahajani, tifinagh, tagbanwa, khudawadi, wancho, hebrew, kharoshthi, modi, meetei-mayek, hanifi-rohingya, tai-viet, khmer, devanagari, bassa-vah, malayalam, khojki, kannada, sharada
 
 Or you can add the above codepoints to one of the subsets supported by the font: `armenian`, `latin`, `latin-ext` [code: unreachable-subsetting]
 </div></details><details><summary>⚠ <b>WARN:</b> License URL matches License text on name table? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/license_url">com.google.fonts/check/name/license_url</a>)</summary><div>
 
 
 * ⚠ **WARN** OFL url is no longer "https://scripts.sil.org/OFL". Use 'https://openfontlicense.org' instead. [code: deprecated-ofl-url]
+</div></details><details><summary>⚠ <b>WARN:</b> Glyphs are similiar to Google Fonts version? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity">com.google.fonts/check/production_glyphs_similarity</a>)</summary><div>
+
+
+* ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
+	* A
+	* AE
+	* Aacute
+	* Abreve
+	* Acircumflex
+	* Adieresis
+	* Agrave
+	* Amacron
+	* Aogonek
+	* Aring
+	* Atilde
+	* B
+	* C
+	* Cacute
+	* Ccaron
+	* Ccedilla
+	* Cdotaccent
+	* D
+	* Dcaron
+	* Dcroat
+	* E
+	* Eacute
+	* Ecaron
+	* Ecircumflex
+	* Edieresis
+	* Edotaccent
+	* Egrave
+	* Emacron
+	* Eng
+	* Eogonek
+	* Eth
+	* Euro
+	* F
+	* G
+	* Gbreve
+	* Gdotaccent
+	* H
+	* Hbar
+	* I
+	* Iacute
+	* Icircumflex
+	* Idieresis
+	* Idotaccent
+	* Igrave
+	* Imacron
+	* Iogonek
+	* J
+	* K
+	* L
+	* Lacute
+	* Lcaron
+	* Lslash
+	* M
+	* N
+	* Nacute
+	* Ncaron
+	* Ntilde
+	* O
+	* OE
+	* Oacute
+	* Ocircumflex
+	* Odieresis
+	* Ograve
+	* Ohungarumlaut
+	* Omacron
+	* Oslash
+	* Otilde
+	* P
+	* Q
+	* R
+	* Racute
+	* Rcaron
+	* S
+	* Sacute
+	* Scaron
+	* Scedilla
+	* T
+	* Tcaron
+	* Thorn
+	* U
+	* Uacute
+	* Ubreve
+	* Ucircumflex
+	* Udieresis
+	* Ugrave
+	* Uhungarumlaut
+	* Umacron
+	* Uogonek
+	* Uring
+	* V
+	* W
+	* Wacute
+	* Wcircumflex
+	* Wdieresis
+	* Wgrave
+	* X
+	* Y
+	* Yacute
+	* Ycircumflex
+	* Ydieresis
+	* Ygrave
+	* Z
+	* Zacute
+	* Zcaron
+	* Zdotaccent
+	* a
+	* aacute
+	* abreve
+	* acircumflex
+	* adieresis
+	* ae
+	* agrave
+	* amacron
+	* ampersand
+	* aogonek
+	* aring
+	* asciicircum
+	* asciitilde
+	* asterisk
+	* at
+	* atilde
+	* b
+	* backslash
+	* bar
+	* braceleft
+	* braceright
+	* bracketleft
+	* bracketright
+	* breve
+	* bullet
+	* c
+	* cacute
+	* caron
+	* ccaron
+	* ccedilla
+	* cdotaccent
+	* cent
+	* circumflex
+	* colon
+	* comma
+	* copyright
+	* d
+	* dcaron
+	* dcroat
+	* divide
+	* dollar
+	* dotaccent
+	* dotlessi
+	* e
+	* eacute
+	* ecaron
+	* ecircumflex
+	* edieresis
+	* edotaccent
+	* egrave
+	* eight
+	* ellipsis
+	* emacron
+	* emdash
+	* eng
+	* eogonek
+	* equal
+	* eth
+	* exclam
+	* exclamdown
+	* f
+	* five
+	* four
+	* g
+	* gbreve
+	* gdotaccent
+	* germandbls
+	* greater
+	* guillemotleft
+	* guillemotright
+	* guilsinglleft
+	* guilsinglright
+	* h
+	* hbar
+	* i
+	* iacute
+	* icircumflex
+	* idieresis
+	* igrave
+	* imacron
+	* iogonek
+	* j
+	* k
+	* l
+	* lacute
+	* lcaron
+	* less
+	* lslash
+	* m
+	* n
+	* nacute
+	* ncaron
+	* nine
+	* ntilde
+	* numbersign
+	* o
+	* oacute
+	* ocircumflex
+	* odieresis
+	* oe
+	* ograve
+	* ohungarumlaut
+	* omacron
+	* one
+	* onedotenleader
+	* ordfeminine
+	* ordmasculine
+	* oslash
+	* otilde
+	* p
+	* paragraph
+	* parenleft
+	* parenright
+	* percent
+	* period
+	* periodcentered
+	* plus
+	* q
+	* question
+	* questiondown
+	* quotedbl
+	* quotedblbase
+	* quotedblleft
+	* quotedblright
+	* quoteleft
+	* quotesinglbase
+	* quotesingle
+	* r
+	* racute
+	* rcaron
+	* registered
+	* s
+	* sacute
+	* scaron
+	* scedilla
+	* section
+	* semicolon
+	* seven
+	* six
+	* slash
+	* sterling
+	* t
+	* tcaron
+	* thorn
+	* three
+	* tilde
+	* tildecomb
+	* two
+	* u
+	* uacute
+	* ubreve
+	* ucircumflex
+	* udieresis
+	* ugrave
+	* uhungarumlaut
+	* umacron
+	* uni0122
+	* uni0123
+	* uni0136
+	* uni0137
+	* uni013B
+	* uni013C
+	* uni0145
+	* uni0146
+	* uni0156
+	* uni0157
+	* uni0218
+	* uni0219
+	* uni021A
+	* uni021B
+	* uni0237
+	* uni0302
+	* uni0306
+	* uni0307
+	* uni030C
+	* uni0312
+	* uni1E9E
+	* uogonek
+	* uring
+	* v
+	* w
+	* wacute
+	* wcircumflex
+	* wdieresis
+	* wgrave
+	* x
+	* y
+	* yacute
+	* ycircumflex
+	* ydieresis
+	* yen
+	* ygrave
+	* z
+	* zacute
+	* zcaron
+	* zdotaccent and zero
 </div></details><details><summary>⚠ <b>WARN:</b> Are there caret positions declared for every ligature? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/ligature_carets">com.google.fonts/check/ligature_carets</a>)</summary><div>
 
 
@@ -212,119 +517,61 @@ minus
 
 * ⚠ **WARN** The following glyphs have on-curve points which have potentially incorrect y coordinates:
 
-	* parenleft (U+0028): X=314.0,Y=715.0 (should be at cap-height 714?)
+	* ampersand (U+0026): X=391.5,Y=0.5 (should be at baseline 0?)
 
-	* parenright (U+0029): X=32.0,Y=715.0 (should be at cap-height 714?)
+	* parenleft (U+0028): X=292.5,Y=-1.5 (should be at baseline 0?)
 
-	* comma (U+002C): X=114.0,Y=1.0 (should be at baseline 0?)
+	* parenright (U+0029): X=108.0,Y=-1.5 (should be at baseline 0?)
 
-	* three (U+0033): X=334.5,Y=1.0 (should be at baseline 0?)
+	* three (U+0033): X=343.0,Y=1.0 (should be at baseline 0?)
 
-	* five (U+0035): X=328.0,Y=0.5 (should be at baseline 0?)
+	* question (U+003F): X=154.5,Y=715.0 (should be at cap-height 714?)
 
-	* nine (U+0039): X=139.0,Y=2.0 (should be at baseline 0?)
+	* J (U+004A): X=281.0,Y=-2.0 (should be at baseline 0?)
 
-	* semicolon (U+003B): X=132.0,Y=1.0 (should be at baseline 0?)
+	* a (U+0061): X=265.0,Y=-1.5 (should be at baseline 0?)
 
-	* question (U+003F): X=137.0,Y=715.5 (should be at cap-height 714?)
+	* c (U+0063): X=401.0,Y=535.0 (should be at x-height 536?)
 
-	* C (U+0043): X=457.5,Y=0.5 (should be at baseline 0?)
+	* f (U+0066): X=310.0,Y=712.0 (should be at cap-height 714?)
 
-	* G (U+0047): X=519.0,Y=1.5 (should be at baseline 0?)
+	* g (U+0067): X=63.5,Y=-2.0 (should be at baseline 0?)
 
-	* bracketleft (U+005B): X=239.0,Y=713.0 (should be at cap-height 714?)
+	* r (U+0072): X=325.5,Y=538.0 (should be at x-height 536?)
 
-	* bracketright (U+005D): X=121.5,Y=713.0 (should be at cap-height 714?)
+	* s (U+0073): X=356.5,Y=534.5 (should be at x-height 536?)
 
-	* a (U+0061): X=182.0,Y=536.5 (should be at x-height 536?)
+	* t (U+0074): X=332.5,Y=-1.0 (should be at baseline 0?)
 
-	* b (U+0062): X=66.5,Y=713.5 (should be at cap-height 714?)
+	* ordfeminine (U+00AA): X=130.0,Y=713.0 (should be at cap-height 714?)
 
-	* c (U+0063): X=360.0,Y=535.0 (should be at x-height 536?)
+	* agrave (U+00E0): X=265.0,Y=-1.5 (should be at baseline 0?)
 
-	* d (U+0064): X=370.5,Y=713.5 (should be at cap-height 714?)
+	* aacute (U+00E1): X=265.0,Y=-1.5 (should be at baseline 0?)
 
-	* f (U+0066): X=331.0,Y=712.5 (should be at cap-height 714?)
+	* acircumflex (U+00E2): X=265.0,Y=-1.5 (should be at baseline 0?)
 
-	* g (U+0067): X=394.0,Y=536.5 (should be at x-height 536?)
+	* atilde (U+00E3): X=265.0,Y=-1.5 (should be at baseline 0?)
 
-	* g (U+0067): X=161.0,Y=-0.5 (should be at baseline 0?)
+	* adieresis (U+00E4): X=265.0,Y=-1.5 (should be at baseline 0?)
 
-	* h (U+0068): X=66.5,Y=713.5 (should be at cap-height 714?)
+	* aring (U+00E5): X=265.0,Y=-1.5 (should be at baseline 0?)
 
-	* k (U+006B): X=66.5,Y=713.5 (should be at cap-height 714?)
+	* amacron (U+0101): X=265.0,Y=-1.5 (should be at baseline 0?)
 
-	* l (U+006C): X=66.5,Y=713.5 (should be at cap-height 714?)
+	* abreve (U+0103): X=265.0,Y=-1.5 (should be at baseline 0?)
 
-	* m (U+006D): X=424.5,Y=537.0 (should be at x-height 536?)
+	* aogonek (U+0105): X=265.0,Y=-1.5 (should be at baseline 0?)
 
-	* q (U+0071): X=412.5,Y=0.5 (should be at baseline 0?)
+	* gbreve (U+011F): X=63.5,Y=-2.0 (should be at baseline 0?)
 
-	* s (U+0073): X=123.0,Y=2.0 (should be at baseline 0?)
+	* gdotaccent (U+0121): X=63.5,Y=-2.0 (should be at baseline 0?)
 
-	* sterling (U+00A3): X=77.0,Y=1.0 (should be at baseline 0?)
+	* uni0123 (U+0123): X=63.5,Y=-2.0 (should be at baseline 0?)
 
-	* sterling (U+00A3): X=457.5,Y=1.5 (should be at baseline 0?)
+	* tcaron (U+0165): X=332.5,Y=-1.0 (should be at baseline 0?)
 
-	* section (U+00A7): X=101.0,Y=2.0 (should be at baseline 0?)
-
-	* ordfeminine (U+00AA): X=126.5,Y=713.0 (should be at cap-height 714?)
-
-	* paragraph (U+00B6): X=522.0,Y=713.0 (should be at cap-height 714?)
-
-	* Ccedilla (U+00C7): X=457.5,Y=0.5 (should be at baseline 0?)
-
-	* Oslash (U+00D8): X=454.5,Y=715.5 (should be at cap-height 714?)
-
-	* Oslash (U+00D8): X=287.0,Y=-1.0 (should be at baseline 0?)
-
-	* germandbls (U+00DF): X=352.5,Y=2.0 (should be at baseline 0?)
-
-	* thorn (U+00FE): X=66.5,Y=713.5 (should be at cap-height 714?)
-
-	* Cacute (U+0106): X=457.5,Y=0.5 (should be at baseline 0?)
-
-	* Cdotaccent (U+010A): X=457.5,Y=0.5 (should be at baseline 0?)
-
-	* Ccaron (U+010C): X=457.5,Y=0.5 (should be at baseline 0?)
-
-	* dcaron (U+010F): X=370.5,Y=713.5 (should be at cap-height 714?)
-
-	* dcroat (U+0111): X=370.5,Y=713.0 (should be at cap-height 714?)
-
-	* Gbreve (U+011E): X=519.0,Y=1.5 (should be at baseline 0?)
-
-	* gbreve (U+011F): X=161.0,Y=-0.5 (should be at baseline 0?)
-
-	* Gdotaccent (U+0120): X=519.0,Y=1.5 (should be at baseline 0?)
-
-	* gdotaccent (U+0121): X=161.0,Y=-0.5 (should be at baseline 0?)
-
-	* uni0122 (U+0122): X=519.0,Y=1.5 (should be at baseline 0?)
-
-	* uni0123 (U+0123): X=161.0,Y=-0.5 (should be at baseline 0?)
-
-	* hbar (U+0127): X=66.5,Y=713.5 (should be at cap-height 714?)
-
-	* uni0137 (U+0137): X=66.5,Y=713.5 (should be at cap-height 714?)
-
-	* lacute (U+013A): X=66.5,Y=713.5 (should be at cap-height 714?)
-
-	* uni013C (U+013C): X=66.5,Y=713.5 (should be at cap-height 714?)
-
-	* lcaron (U+013E): X=66.5,Y=713.5 (should be at cap-height 714?)
-
-	* lslash (U+0142): X=81.5,Y=713.5 (should be at cap-height 714?)
-
-	* sacute (U+015B): X=123.0,Y=2.0 (should be at baseline 0?)
-
-	* scedilla (U+015F): X=123.0,Y=2.0 (should be at baseline 0?)
-
-	* scaron (U+0161): X=123.0,Y=2.0 (should be at baseline 0?)
-
-	* uni0219 (U+0219): X=123.0,Y=2.0 (should be at baseline 0?)
-
-	* uni0312 (U+0312): X=82.0,Y=715.0 (should be at cap-height 714?)
+	* uni021B (U+021B): X=332.5,Y=-1.0 (should be at baseline 0?)
 
 	* uni0545 (U+0545): X=205.0,Y=1.5 (should be at baseline 0?)
 
@@ -348,18 +595,6 @@ minus
 
 	* uni057B (U+057B): X=207.5,Y=1.5 (should be at baseline 0?)
 
-	* quoteleft (U+2018): X=220.0,Y=715.0 (should be at cap-height 714?)
-
-	* quotesinglbase (U+201A): X=114.0,Y=1.0 (should be at baseline 0?)
-
-	* quotedblleft (U+201C): X=420.0,Y=715.0 (should be at cap-height 714?)
-
-	* quotedblleft (U+201C): X=220.0,Y=715.0 (should be at cap-height 714?)
-
-	* quotedblbase (U+201E): X=314.0,Y=1.0 (should be at baseline 0?)
-
-	* quotedblbase (U+201E): X=114.0,Y=1.0 (should be at baseline 0?)
-
 	* uniFB14 (U+FB14): X=536.5,Y=715.5 (should be at cap-height 714?)
 
 	* uniFB15 (U+FB15): X=537.0,Y=715.5 (should be at cap-height 714?)
@@ -374,15 +609,15 @@ The dot of soft dotted characters _should_ disappear in other cases, for example
 
 Your font fully covers the following languages that require the soft-dotted feature: Dutch (Latn, 31,709,104 speakers), Lithuanian (Latn, 2,357,094 speakers). 
 
-Your font does *not* cover the following languages that require the soft-dotted feature: Belarusian (Cyrl, 10,064,517 speakers), Gulay (Latn, 250,478 speakers), Ngbaka (Latn, 1,020,000 speakers), Lugbara (Latn, 2,200,000 speakers), Nateni (Latn, 100,000 speakers), Nzakara (Latn, 50,000 speakers), Kom (Latn, 360,685 speakers), Igbo (Latn, 27,823,640 speakers), Mango (Latn, 77,000 speakers), Ejagham (Latn, 120,000 speakers), Aghem (Latn, 38,843 speakers), Mundani (Latn, 34,000 speakers), Fur (Latn, 1,230,163 speakers), Zapotec (Latn, 490,000 speakers), Mfumte (Latn, 79,000 speakers), Southern Kisi (Latn, 360,000 speakers), Kpelle, Guinea (Latn, 622,000 speakers), Navajo (Latn, 166,319 speakers), Ebira (Latn, 2,200,000 speakers), Sar (Latn, 500,000 speakers), Ukrainian (Cyrl, 29,273,587 speakers), Cicipu (Latn, 44,000 speakers), Koonzime (Latn, 40,000 speakers), Ma’di (Latn, 584,000 speakers), Basaa (Latn, 332,940 speakers), Makaa (Latn, 221,000 speakers), Ekpeye (Latn, 226,000 speakers), Ijo, Southeast (Latn, 2,471,000 speakers), Yala (Latn, 200,000 speakers), Bafut (Latn, 158,146 speakers), Dan (Latn, 1,099,244 speakers), Bete-Bendi (Latn, 100,000 speakers), Dii (Latn, 71,000 speakers), South Central Banda (Latn, 244,000 speakers), Avokaya (Latn, 100,000 speakers). [code: soft-dotted]
+Your font does *not* cover the following languages that require the soft-dotted feature: Dan (Latn, 1,099,244 speakers), Nateni (Latn, 100,000 speakers), Mundani (Latn, 34,000 speakers), Mfumte (Latn, 79,000 speakers), Gulay (Latn, 250,478 speakers), Cicipu (Latn, 44,000 speakers), Aghem (Latn, 38,843 speakers), South Central Banda (Latn, 244,000 speakers), Ijo, Southeast (Latn, 2,471,000 speakers), Fur (Latn, 1,230,163 speakers), Ukrainian (Cyrl, 29,273,587 speakers), Avokaya (Latn, 100,000 speakers), Ejagham (Latn, 120,000 speakers), Navajo (Latn, 166,319 speakers), Bete-Bendi (Latn, 100,000 speakers), Ebira (Latn, 2,200,000 speakers), Kom (Latn, 360,685 speakers), Makaa (Latn, 221,000 speakers), Igbo (Latn, 27,823,640 speakers), Lugbara (Latn, 2,200,000 speakers), Dii (Latn, 71,000 speakers), Mango (Latn, 77,000 speakers), Ekpeye (Latn, 226,000 speakers), Ma’di (Latn, 584,000 speakers), Nzakara (Latn, 50,000 speakers), Kpelle, Guinea (Latn, 622,000 speakers), Basaa (Latn, 332,940 speakers), Sar (Latn, 500,000 speakers), Zapotec (Latn, 490,000 speakers), Belarusian (Cyrl, 10,064,517 speakers), Bafut (Latn, 158,146 speakers), Yala (Latn, 200,000 speakers), Southern Kisi (Latn, 360,000 speakers), Koonzime (Latn, 40,000 speakers), Ngbaka (Latn, 1,020,000 speakers). [code: soft-dotted]
 </div></details><br></div></details>
 
 ### Summary
 
 | 💔 ERROR | ☠ FATAL | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
 |:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-| 0 | 0 | 3 | 8 | 99 | 8 | 138 | 0 |
-| 0% | 0% | 1% | 3% | 39% | 3% | 54% | 0% |
+| 0 | 0 | 3 | 9 | 99 | 8 | 137 | 0 |
+| 0% | 0% | 1% | 4% | 39% | 3% | 54% | 0% |
 
 **Note:** The following loglevels were omitted in this report:
 * **SKIP**
