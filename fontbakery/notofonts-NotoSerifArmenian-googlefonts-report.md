@@ -1,656 +1,470 @@
 ## FontBakery report
 
-fontbakery version: 0.11.1
-
-<h2>Check results</h2><details><summary><b>[14] NotoSerifArmenian[wdth,wght].ttf</b></summary><div><details><summary>💔 <b>ERROR:</b> Shapes languages in all GF glyphsets. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/glyphsets/shape_languages">com.google.fonts/check/glyphsets/shape_languages</a>)</summary><div>
+fontbakery version: 0.12.5
 
 
-* 💔 **ERROR** Failed with AttributeError: 'Vharfbuzz' object has no attribute 'ttfont'
-```
-  File "/home/runner/work/armenian/armenian/venv/lib/python3.11/site-packages/fontbakery/checkrunner.py", line 170, in _exec_check
-    results.extend(list(result))
-                   ^^^^^^^^^^^^
-  File "/home/runner/work/armenian/armenian/venv/lib/python3.11/site-packages/fontbakery/profiles/googlefonts.py", line 3537, in com_google_fonts_check_glyphsets_shape_languages
-    shaperglot_checker = Checker(ttFont.reader.file.name)
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/armenian/armenian/venv/lib/python3.11/site-packages/shaperglot/checker.py", line 23, in __init__
-    self.ttfont = self.vharfbuzz.ttfont
-                  ^^^^^^^^^^^^^^^^^^^^^
 
-``` [code: failed-check]
-</div></details><details><summary>💔 <b>ERROR:</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/Shaping Checks.html#com.google.fonts/check/soft_dotted">com.google.fonts/check/soft_dotted</a>)</summary><div>
+## Experimental checks
+
+These won't break the CI job for now, but will become effective after some time if nobody raises any concern.
 
 
-* 💔 **ERROR** Failed with AttributeError: 'Vharfbuzz' object has no attribute 'ttfont'
-```
-  File "/home/runner/work/armenian/armenian/venv/lib/python3.11/site-packages/fontbakery/checkrunner.py", line 170, in _exec_check
-    results.extend(list(result))
-                   ^^^^^^^^^^^^
-  File "/home/runner/work/armenian/armenian/venv/lib/python3.11/site-packages/fontbakery/profiles/shaping.py", line 726, in com_google_fonts_check_soft_dotted
-    checker = Checker(ttFont.reader.file.name)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/armenian/armenian/venv/lib/python3.11/site-packages/shaperglot/checker.py", line 23, in __init__
-    self.ttfont = self.vharfbuzz.ttfont
-                  ^^^^^^^^^^^^^^^^^^^^^
-
-``` [code: failed-check]
-</div></details><details><summary>🔥 <b>FAIL:</b> Version number has increased since previous release on Google Fonts? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/version_bump">com.google.fonts/check/version_bump</a>)</summary><div>
+<details><summary>[1] NotoSerifArmenian[wdth,wght].ttf</summary>
+<div>
+<details>
+    <summary>⚠️ <b>WARN</b> Validate location, size and resolution of article images. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.article.html#"></a></summary>
+    <div>
 
 
-* 🔥 **FAIL** Version number 2.008 is equal to version on **Google Fonts**.
-* 🔥 **FAIL** Version number 2.008 is equal to version on google/fonts **GitHub repo**.
-</div></details><details><summary>🔥 <b>FAIL:</b> Noto fonts must have an ARTICLE.en_us.html file (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/description/noto_has_article">com.google.fonts/check/description/noto_has_article</a>)</summary><div>
 
 
-* 🔥 **FAIL** This is a Noto font but it lacks an ARTICLE.en_us.html file [code: missing-article]
-</div></details><details><summary>🔥 <b>FAIL:</b> Ensure dotted circle glyph is present and can attach marks. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/Shaping Checks.html#com.google.fonts/check/dotted_circle">com.google.fonts/check/dotted_circle</a>)</summary><div>
 
 
-* 🔥 **FAIL** The following glyphs could not be attached to the dotted circle glyph:
 
-	- uni0326
-
-	- uni0327
-
-	- uni0328 [code: unattached-dotted-circle-marks]
-</div></details><details><summary>⚠ <b>WARN:</b> Check for codepoints not covered by METADATA subsets. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/metadata/unreachable_subsetting">com.google.fonts/check/metadata/unreachable_subsetting</a>)</summary><div>
+* ⚠️ **WARN** <p>Family metadata at fonts/NotoSerifArmenian/googlefonts/variable does not have an article.</p>
+ [code: lacks-article]
 
 
-* ⚠ **WARN** The following codepoints supported by the font are not covered by
-    any subsets defined in the font's metadata file, and will never
-    be served. You can solve this by either manually adding additional
-    subset declarations to METADATA.pb, or by editing the glyphset
-    definitions.
 
- * U+02C7 CARON: try adding one of: yi, tifinagh, canadian-aboriginal
- * U+02C9 MODIFIER LETTER MACRON: not included in any glyphset definition
- * U+02D8 BREVE: try adding one of: yi, canadian-aboriginal
- * U+02D9 DOT ABOVE: try adding one of: yi, canadian-aboriginal
- * U+02DB OGONEK: try adding one of: yi, canadian-aboriginal
- * U+02DD DOUBLE ACUTE ACCENT: not included in any glyphset definition
- * U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: coptic, cherokee, tifinagh, math
- * U+0306 COMBINING BREVE: try adding one of: old-permic, tifinagh
- * U+0307 COMBINING DOT ABOVE: try adding one of: old-permic, canadian-aboriginal, syriac, tai-le, malayalam, coptic, math, tifinagh
- * U+030A COMBINING RING ABOVE: try adding syriac
- * U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: cherokee, osage
- * U+030C COMBINING CARON: try adding one of: cherokee, tai-le
- * U+0312 COMBINING TURNED COMMA ABOVE: not included in any glyphset definition
- * U+0326 COMBINING COMMA BELOW: not included in any glyphset definition
- * U+0327 COMBINING CEDILLA: not included in any glyphset definition
- * U+0328 COMBINING OGONEK: not included in any glyphset definition
-
-Or you can add the above codepoints to one of the subsets supported by the font: `armenian`, `cyrillic-ext`, `greek-ext`, `latin`, `latin-ext` [code: unreachable-subsetting]
-</div></details><details><summary>⚠ <b>WARN:</b> Check copyright namerecords match license file. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/name/license">com.google.fonts/check/name/license</a>)</summary><div>
+</div>
+</details>
+</div>
+</details>
 
 
-* ⚠ **WARN** Please consider updating the url from 'https://scripts.sil.org/OFL' to 'https://openfontlicense.org'. [code: old-url]
-</div></details><details><summary>⚠ <b>WARN:</b> Glyphs are similiar to Google Fonts version? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/production_glyphs_similarity">com.google.fonts/check/production_glyphs_similarity</a>)</summary><div>
 
 
-* ⚠ **WARN** Following glyphs differ greatly from Google Fonts version:
-	* A
-	* AE
-	* Aacute
-	* Abreve
-	* Acircumflex
-	* Adieresis
-	* Agrave
-	* Amacron
-	* Aogonek
-	* Aring
-	* Atilde
-	* B
-	* C
-	* Cacute
-	* Ccaron
-	* Ccedilla
-	* Cdotaccent
-	* D
-	* Dcaron
-	* Dcroat
-	* E
-	* Eacute
-	* Ecaron
-	* Ecircumflex
-	* Edieresis
-	* Edotaccent
-	* Egrave
-	* Emacron
-	* Eng
-	* Eogonek
-	* Eth
-	* Euro
-	* F
-	* G
-	* Gbreve
-	* Gdotaccent
-	* H
-	* Hbar
-	* I
-	* Iacute
-	* Icircumflex
-	* Idieresis
-	* Idotaccent
-	* Igrave
-	* Imacron
-	* Iogonek
-	* J
-	* K
-	* L
-	* Lacute
-	* Lcaron
-	* Lslash
-	* M
-	* N
-	* Nacute
-	* Ncaron
-	* Ntilde
-	* O
-	* OE
-	* Oacute
-	* Ocircumflex
-	* Odieresis
-	* Ograve
-	* Ohungarumlaut
-	* Omacron
-	* Oslash
-	* Otilde
-	* P
-	* Q
-	* R
-	* Racute
-	* Rcaron
-	* S
-	* Sacute
-	* Scaron
-	* Scedilla
-	* T
-	* Tcaron
-	* Thorn
-	* U
-	* Uacute
-	* Ubreve
-	* Ucircumflex
-	* Udieresis
-	* Ugrave
-	* Uhungarumlaut
-	* Umacron
-	* Uogonek
-	* Uring
-	* V
-	* W
-	* Wacute
-	* Wcircumflex
-	* Wdieresis
-	* Wgrave
-	* X
-	* Y
-	* Yacute
-	* Ycircumflex
-	* Ydieresis
-	* Ygrave
-	* Z
-	* Zacute
-	* Zcaron
-	* Zdotaccent
-	* a
-	* aacute
-	* abreve
-	* acircumflex
-	* adieresis
-	* ae
-	* agrave
-	* amacron
-	* ampersand
-	* aogonek
-	* aring
-	* asciicircum
-	* asciitilde
-	* asterisk
-	* at
-	* atilde
-	* b
-	* backslash
-	* bar
-	* braceleft
-	* braceright
-	* bracketleft
-	* bracketright
-	* breve
-	* bullet
-	* c
-	* cacute
-	* caron
-	* ccaron
-	* ccedilla
-	* cdotaccent
-	* cent
-	* circumflex
-	* colon
-	* comma
-	* copyright
-	* d
-	* dcaron
-	* dcroat
-	* divide
-	* dollar
-	* dotaccent
-	* dotlessi
-	* e
-	* eacute
-	* ecaron
-	* ecircumflex
-	* edieresis
-	* edotaccent
-	* egrave
-	* eight
-	* ellipsis
-	* emacron
-	* emdash
-	* eng
-	* eogonek
-	* equal
-	* eth
-	* exclam
-	* exclamdown
-	* f
-	* five
-	* four
-	* g
-	* gbreve
-	* gdotaccent
-	* germandbls
-	* greater
-	* guillemotleft
-	* guillemotright
-	* guilsinglleft
-	* guilsinglright
-	* h
-	* hbar
-	* i
-	* iacute
-	* icircumflex
-	* idieresis
-	* igrave
-	* imacron
-	* iogonek
-	* j
-	* k
-	* l
-	* lacute
-	* lcaron
-	* less
-	* lslash
-	* m
-	* n
-	* nacute
-	* ncaron
-	* nine
-	* ntilde
-	* numbersign
-	* o
-	* oacute
-	* ocircumflex
-	* odieresis
-	* oe
-	* ograve
-	* ohungarumlaut
-	* omacron
-	* one
-	* onedotenleader
-	* ordfeminine
-	* ordmasculine
-	* oslash
-	* otilde
-	* p
-	* paragraph
-	* parenleft
-	* parenright
-	* percent
-	* period
-	* periodcentered
-	* plus
-	* q
-	* question
-	* questiondown
-	* quotedbl
-	* quotedblbase
-	* quotedblleft
-	* quotedblright
-	* quoteleft
-	* quotesinglbase
-	* quotesingle
-	* r
-	* racute
-	* rcaron
-	* registered
-	* s
-	* sacute
-	* scaron
-	* scedilla
-	* section
-	* semicolon
-	* seven
-	* six
-	* slash
-	* sterling
-	* t
-	* tcaron
-	* thorn
-	* three
-	* tilde
-	* tildecomb
-	* two
-	* u
-	* uacute
-	* ubreve
-	* ucircumflex
-	* udieresis
-	* ugrave
-	* uhungarumlaut
-	* umacron
-	* uni0122
-	* uni0123
-	* uni0136
-	* uni0137
-	* uni013B
-	* uni013C
-	* uni0145
-	* uni0146
-	* uni0156
-	* uni0157
-	* uni0218
-	* uni0219
-	* uni021A
-	* uni021B
-	* uni0237
-	* uni0302
-	* uni0306
-	* uni0307
-	* uni030C
-	* uni0312
-	* uni1E9E
-	* uogonek
-	* uring
-	* v
-	* w
-	* wacute
-	* wcircumflex
-	* wdieresis
-	* wgrave
-	* x
-	* y
-	* yacute
-	* ycircumflex
-	* ydieresis
-	* yen
-	* ygrave
-	* z
-	* zacute
-	* zcaron
-	* zdotaccent and zero
-</div></details><details><summary>⚠ <b>WARN:</b> Are there caret positions declared for every ligature? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/ligature_carets">com.google.fonts/check/ligature_carets</a>)</summary><div>
+## All other checks
 
 
-* ⚠ **WARN** This font lacks caret position values for ligature glyphs on its GDEF table. [code: lacks-caret-pos]
-</div></details><details><summary>⚠ <b>WARN:</b> Is there kerning info for non-ligated sequences? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/kerning_for_non_ligated_sequences">com.google.fonts/check/kerning_for_non_ligated_sequences</a>)</summary><div>
+
+<details><summary>[11] NotoSerifArmenian[wdth,wght].ttf</summary>
+<div>
+<details>
+    <summary>🔥 <b>FAIL</b> Ensure dotted circle glyph is present and can attach marks. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/shaping.html#"></a></summary>
+    <div>
 
 
-* ⚠ **WARN** GPOS table lacks kerning info for the following non-ligated sequences:
-
-	- uni0548 + uni0552
-
-	- uni0574 + uni0565
-
-	- uni0565 + uni056B
-
-	- uni056B + uni056D
-
-	- uni056D + uni0576
-
-	- uni0578 + uni0582
-
-	- uni057E + uni0576 [code: lacks-kern-info]
-</div></details><details><summary>⚠ <b>WARN:</b> Ensure fonts have ScriptLangTags declared on the 'meta' table. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/googlefonts.html#com.google.fonts/check/meta/script_lang_tags">com.google.fonts/check/meta/script_lang_tags</a>)</summary><div>
 
 
-* ⚠ **WARN** This font file does not have a 'meta' table. [code: lacks-meta-table]
-</div></details><details><summary>⚠ <b>WARN:</b> Check that legacy accents aren't used in composite glyphs. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/legacy_accents">com.google.fonts/check/legacy_accents</a>)</summary><div>
 
 
-* ⚠ **WARN** Glyph "Aacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Abreve" has a legacy accent component  (breve). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Acircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Adieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Agrave" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Aogonek" has a legacy accent component  (ogonek). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Atilde" has a legacy accent component  (tilde). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Cacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ccaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Cdotaccent" has a legacy accent component  (dotaccent). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Dcaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Eacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ecaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ecircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Edieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Edotaccent" has a legacy accent component  (dotaccent). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Egrave" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Gbreve" has a legacy accent component  (breve). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Gdotaccent" has a legacy accent component  (dotaccent). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Iacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Icircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Idieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Idotaccent" has a legacy accent component  (dotaccent). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Igrave" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Lacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Nacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ncaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ntilde" has a legacy accent component  (tilde). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Oacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ocircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Odieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ograve" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ohungarumlaut" has a legacy accent component  (hungarumlaut). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Otilde" has a legacy accent component  (tilde). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Racute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Rcaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Sacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Scaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Scedilla" has a legacy accent component  (cedilla). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Tcaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Uacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ubreve" has a legacy accent component  (breve). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ucircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Udieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ugrave" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Uhungarumlaut" has a legacy accent component  (hungarumlaut). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Uring" has a legacy accent component  (ring). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Wacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Wcircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Wdieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Wgrave" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Yacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ycircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ydieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Ygrave" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Zacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Zcaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "Zdotaccent" has a legacy accent component  (dotaccent). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "aacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "abreve" has a legacy accent component  (breve). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "acircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "acutecomb" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "adieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "agrave" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "aogonek" has a legacy accent component  (ogonek). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "aring" has a legacy accent component  (ring). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "atilde" has a legacy accent component  (tilde). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "uni0306" has a legacy accent component  (breve). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "cacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "uni030C" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ccaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ccedilla" has a legacy accent component  (cedilla). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "cdotaccent" has a legacy accent component  (dotaccent). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "uni0302" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "uni0307" has a legacy accent component  (dotaccent). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "eacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ecaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ecircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "edieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "edotaccent" has a legacy accent component  (dotaccent). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "egrave" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "gbreve" has a legacy accent component  (breve). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "gdotaccent" has a legacy accent component  (dotaccent). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "gravecomb" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "uni030B" has a legacy accent component  (hungarumlaut). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "iacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "icircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "idieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "igrave" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "lacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "nacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ncaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ntilde" has a legacy accent component  (tilde). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "oacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ocircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "odieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ograve" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ohungarumlaut" has a legacy accent component  (hungarumlaut). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "otilde" has a legacy accent component  (tilde). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "racute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "rcaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "uni030A" has a legacy accent component  (ring). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "sacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "scaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "scedilla" has a legacy accent component  (cedilla). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "tildecomb" has a legacy accent component  (tilde). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "uacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ubreve" has a legacy accent component  (breve). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ucircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "udieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ugrave" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "uhungarumlaut" has a legacy accent component  (hungarumlaut). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "uogonek" has a legacy accent component  (ogonek). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "uring" has a legacy accent component  (ring). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "wacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "wcircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "wdieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "wgrave" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "yacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ycircumflex" has a legacy accent component  (circumflex). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ydieresis" has a legacy accent component  (dieresis). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "ygrave" has a legacy accent component  (grave). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "zacute" has a legacy accent component  (acute). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "zcaron" has a legacy accent component  (caron). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-* ⚠ **WARN** Glyph "zdotaccent" has a legacy accent component  (dotaccent). It needs to be replaced by a combining mark. [code: legacy-accents-component]
-</div></details><details><summary>⚠ <b>WARN:</b> Check math signs have the same width. (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/universal.html#com.google.fonts/check/math_signs_width">com.google.fonts/check/math_signs_width</a>)</summary><div>
+
+* 🔥 **FAIL** <p>The following glyphs could not be attached to the dotted circle glyph:</p>
+<pre><code>- uni0326
+
+- uni0327
+
+- uni0328
+</code></pre>
+ [code: unattached-dotted-circle-marks]
 
 
-* ⚠ **WARN** The most common width is 559 among a set of 6 math glyphs.
-The following math glyphs have a different width, though:
 
-Width = 310:
-minus
+</div>
+</details>
+
+<details>
+    <summary>🔥 <b>FAIL</b> Check for presence of an ARTICLE.en_us.html file <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.description.html#"></a></summary>
+    <div>
+
+
+
+
+
+
+
+* 🔥 **FAIL** <p>This is a Noto font but it lacks an ARTICLE.en_us.html file</p>
+ [code: missing-article]
+
+
+
+* 🔥 **FAIL** <p>This is a Noto font but it lacks a DESCRIPTION.en_us.html file</p>
+ [code: empty-description]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Detect any interpolation issues in the font. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#"></a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>Interpolation issues were found in the font:</p>
+<pre><code>- Contour 0 point 48 in glyph 'two' has a kink between location wght=900,wdth=100 and location wght=100,wdth=62
+</code></pre>
+ [code: interpolation-issues]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Check math signs have the same width. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/universal.html#"></a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>The most common width is 559 among a set of 6 math glyphs.
+The following math glyphs have a different width, though:</p>
+<p>Width = 310:
+minus</p>
  [code: width-outliers]
-</div></details><details><summary>⚠ <b>WARN:</b> Are there any misaligned on-curve points? (<a href="https://font-bakery.readthedocs.io/en/stable/fontbakery/profiles/Outline Correctness Checks.html#com.google.fonts/check/outline_alignment_miss">com.google.fonts/check/outline_alignment_miss</a>)</summary><div>
 
 
-* ⚠ **WARN** The following glyphs have on-curve points which have potentially incorrect y coordinates:
 
-	* ampersand (U+0026): X=391.5,Y=0.5 (should be at baseline 0?)
+</div>
+</details>
 
-	* parenleft (U+0028): X=292.5,Y=-1.5 (should be at baseline 0?)
+<details>
+    <summary>⚠️ <b>WARN</b> Are there any misaligned on-curve points? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/outline.html#"></a></summary>
+    <div>
 
-	* parenright (U+0029): X=108.0,Y=-1.5 (should be at baseline 0?)
 
-	* three (U+0033): X=343.0,Y=1.0 (should be at baseline 0?)
 
-	* question (U+003F): X=154.5,Y=715.0 (should be at cap-height 714?)
 
-	* J (U+004A): X=281.0,Y=-2.0 (should be at baseline 0?)
 
-	* a (U+0061): X=265.0,Y=-1.5 (should be at baseline 0?)
 
-	* c (U+0063): X=401.0,Y=535.0 (should be at x-height 536?)
 
-	* f (U+0066): X=310.0,Y=712.0 (should be at cap-height 714?)
+* ⚠️ **WARN** <p>The following glyphs have on-curve points which have potentially incorrect y coordinates:</p>
+<pre><code>* uni0545 (U+0545): X=205.0,Y=1.5 (should be at baseline 0?)
 
-	* g (U+0067): X=63.5,Y=-2.0 (should be at baseline 0?)
+* uni0545 (U+0545): X=231.0,Y=712.5 (should be at cap-height 714?)
 
-	* r (U+0072): X=325.5,Y=538.0 (should be at x-height 536?)
+* uni0547 (U+0547): X=239.0,Y=713.0 (should be at cap-height 714?)
 
-	* s (U+0073): X=356.5,Y=534.5 (should be at x-height 536?)
+* uni054F (U+054F): X=172.0,Y=2.0 (should be at baseline 0?)
 
-	* t (U+0074): X=332.5,Y=-1.0 (should be at baseline 0?)
+* uni0556 (U+0556): X=193.5,Y=2.0 (should be at baseline 0?)
 
-	* ordfeminine (U+00AA): X=130.0,Y=713.0 (should be at cap-height 714?)
+* uni0561 (U+0561): X=470.5,Y=1.0 (should be at baseline 0?)
 
-	* agrave (U+00E0): X=265.0,Y=-1.5 (should be at baseline 0?)
+* uni0561 (U+0561): X=296.5,Y=-0.5 (should be at baseline 0?)
 
-	* aacute (U+00E1): X=265.0,Y=-1.5 (should be at baseline 0?)
+* uni057A (U+057A): X=455.0,Y=1.0 (should be at baseline 0?)
 
-	* acircumflex (U+00E2): X=265.0,Y=-1.5 (should be at baseline 0?)
+* uni057A (U+057A): X=287.5,Y=-0.5 (should be at baseline 0?)
 
-	* atilde (U+00E3): X=265.0,Y=-1.5 (should be at baseline 0?)
+* uni057B (U+057B): X=261.0,Y=0.5 (should be at baseline 0?)
 
-	* adieresis (U+00E4): X=265.0,Y=-1.5 (should be at baseline 0?)
+* uni057B (U+057B): X=207.5,Y=1.5 (should be at baseline 0?)
 
-	* aring (U+00E5): X=265.0,Y=-1.5 (should be at baseline 0?)
+* uniFB14 (U+FB14): X=536.5,Y=715.5 (should be at cap-height 714?)
 
-	* amacron (U+0101): X=265.0,Y=-1.5 (should be at baseline 0?)
+* uniFB15 (U+FB15): X=537.0,Y=715.5 (should be at cap-height 714?)
 
-	* abreve (U+0103): X=265.0,Y=-1.5 (should be at baseline 0?)
+* uniFB17 (U+FB17): X=540.5,Y=715.0 (should be at cap-height 714?)
 
-	* aogonek (U+0105): X=265.0,Y=-1.5 (should be at baseline 0?)
+* C (U+0043): X=457.5,Y=0.5 (should be at baseline 0?)
 
-	* gbreve (U+011F): X=63.5,Y=-2.0 (should be at baseline 0?)
+* Cacute (U+0106): X=457.5,Y=0.5 (should be at baseline 0?)
 
-	* gdotaccent (U+0121): X=63.5,Y=-2.0 (should be at baseline 0?)
+* Ccaron (U+010C): X=457.5,Y=0.5 (should be at baseline 0?)
 
-	* uni0123 (U+0123): X=63.5,Y=-2.0 (should be at baseline 0?)
+* Ccedilla (U+00C7): X=457.5,Y=0.5 (should be at baseline 0?)
 
-	* tcaron (U+0165): X=332.5,Y=-1.0 (should be at baseline 0?)
+* Cdotaccent (U+010A): X=457.5,Y=0.5 (should be at baseline 0?)
 
-	* uni021B (U+021B): X=332.5,Y=-1.0 (should be at baseline 0?)
+* G (U+0047): X=519.0,Y=1.5 (should be at baseline 0?)
 
-	* uni0545 (U+0545): X=205.0,Y=1.5 (should be at baseline 0?)
+* Gbreve (U+011E): X=519.0,Y=1.5 (should be at baseline 0?)
 
-	* uni0545 (U+0545): X=231.0,Y=712.5 (should be at cap-height 714?)
+* uni0122 (U+0122): X=519.0,Y=1.5 (should be at baseline 0?)
 
-	* uni0547 (U+0547): X=239.0,Y=713.0 (should be at cap-height 714?)
+* Gdotaccent (U+0120): X=519.0,Y=1.5 (should be at baseline 0?)
 
-	* uni054F (U+054F): X=172.0,Y=2.0 (should be at baseline 0?)
+* Oslash (U+00D8): X=454.5,Y=715.5 (should be at cap-height 714?)
 
-	* uni0556 (U+0556): X=193.5,Y=2.0 (should be at baseline 0?)
+* Oslash (U+00D8): X=287.0,Y=-1.0 (should be at baseline 0?)
 
-	* uni0561 (U+0561): X=470.5,Y=1.0 (should be at baseline 0?)
+* a (U+0061): X=182.0,Y=536.5 (should be at x-height 536?)
 
-	* uni0561 (U+0561): X=296.5,Y=-0.5 (should be at baseline 0?)
+* b (U+0062): X=66.5,Y=713.5 (should be at cap-height 714?)
 
-	* uni057A (U+057A): X=455.0,Y=1.0 (should be at baseline 0?)
+* bracketleft (U+005B): X=239.0,Y=713.0 (should be at cap-height 714?)
 
-	* uni057A (U+057A): X=287.5,Y=-0.5 (should be at baseline 0?)
+* bracketright (U+005D): X=121.5,Y=713.0 (should be at cap-height 714?)
 
-	* uni057B (U+057B): X=261.0,Y=0.5 (should be at baseline 0?)
+* c (U+0063): X=360.0,Y=535.0 (should be at x-height 536?)
 
-	* uni057B (U+057B): X=207.5,Y=1.5 (should be at baseline 0?)
+* comma (U+002C): X=114.0,Y=1.0 (should be at baseline 0?)
 
-	* uniFB14 (U+FB14): X=536.5,Y=715.5 (should be at cap-height 714?)
+* d (U+0064): X=370.5,Y=713.5 (should be at cap-height 714?)
 
-	* uniFB15 (U+FB15): X=537.0,Y=715.5 (should be at cap-height 714?)
+* dcaron (U+010F): X=370.5,Y=713.5 (should be at cap-height 714?)
 
-	* uniFB17 (U+FB17): X=540.5,Y=715.0 (should be at cap-height 714?) [code: found-misalignments]
-</div></details><br></div></details>
+* dcroat (U+0111): X=370.5,Y=713.0 (should be at cap-height 714?)
+
+* f (U+0066): X=331.0,Y=712.5 (should be at cap-height 714?)
+
+* five (U+0035): X=328.0,Y=0.5 (should be at baseline 0?)
+
+* g (U+0067): X=394.0,Y=536.5 (should be at x-height 536?)
+
+* g (U+0067): X=161.0,Y=-0.5 (should be at baseline 0?)
+
+* gbreve (U+011F): X=161.0,Y=-0.5 (should be at baseline 0?)
+
+* uni0123 (U+0123): X=161.0,Y=-0.5 (should be at baseline 0?)
+
+* gdotaccent (U+0121): X=161.0,Y=-0.5 (should be at baseline 0?)
+
+* germandbls (U+00DF): X=352.5,Y=2.0 (should be at baseline 0?)
+
+* h (U+0068): X=66.5,Y=713.5 (should be at cap-height 714?)
+
+* hbar (U+0127): X=66.5,Y=713.5 (should be at cap-height 714?)
+
+* k (U+006B): X=66.5,Y=713.5 (should be at cap-height 714?)
+
+* uni0137 (U+0137): X=66.5,Y=713.5 (should be at cap-height 714?)
+
+* l (U+006C): X=66.5,Y=713.5 (should be at cap-height 714?)
+
+* lacute (U+013A): X=66.5,Y=713.5 (should be at cap-height 714?)
+
+* lcaron (U+013E): X=66.5,Y=713.5 (should be at cap-height 714?)
+
+* uni013C (U+013C): X=66.5,Y=713.5 (should be at cap-height 714?)
+
+* lslash (U+0142): X=81.5,Y=713.5 (should be at cap-height 714?)
+
+* m (U+006D): X=424.5,Y=537.0 (should be at x-height 536?)
+
+* nine (U+0039): X=139.0,Y=2.0 (should be at baseline 0?)
+
+* ordfeminine (U+00AA): X=126.5,Y=713.0 (should be at cap-height 714?)
+
+* paragraph (U+00B6): X=522.0,Y=713.0 (should be at cap-height 714?)
+
+* parenleft (U+0028): X=314.0,Y=715.0 (should be at cap-height 714?)
+
+* parenright (U+0029): X=32.0,Y=715.0 (should be at cap-height 714?)
+
+* q (U+0071): X=412.5,Y=0.5 (should be at baseline 0?)
+
+* question (U+003F): X=137.0,Y=715.5 (should be at cap-height 714?)
+
+* quotedblbase (U+201E): X=314.0,Y=1.0 (should be at baseline 0?)
+
+* quotedblbase (U+201E): X=114.0,Y=1.0 (should be at baseline 0?)
+
+* quotedblleft (U+201C): X=420.0,Y=715.0 (should be at cap-height 714?)
+
+* quotedblleft (U+201C): X=220.0,Y=715.0 (should be at cap-height 714?)
+
+* quoteleft (U+2018): X=220.0,Y=715.0 (should be at cap-height 714?)
+
+* quotesinglbase (U+201A): X=114.0,Y=1.0 (should be at baseline 0?)
+
+* s (U+0073): X=123.0,Y=2.0 (should be at baseline 0?)
+
+* sacute (U+015B): X=123.0,Y=2.0 (should be at baseline 0?)
+
+* scaron (U+0161): X=123.0,Y=2.0 (should be at baseline 0?)
+
+* scedilla (U+015F): X=123.0,Y=2.0 (should be at baseline 0?)
+
+* uni0219 (U+0219): X=123.0,Y=2.0 (should be at baseline 0?)
+
+* section (U+00A7): X=101.0,Y=2.0 (should be at baseline 0?)
+
+* semicolon (U+003B): X=132.0,Y=1.0 (should be at baseline 0?)
+
+* sterling (U+00A3): X=77.0,Y=1.0 (should be at baseline 0?)
+
+* sterling (U+00A3): X=457.5,Y=1.5 (should be at baseline 0?)
+
+* thorn (U+00FE): X=66.5,Y=713.5 (should be at cap-height 714?)
+
+* three (U+0033): X=334.5,Y=1.0 (should be at baseline 0?)
+</code></pre>
+ [code: found-misalignments]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Check the direction of the outermost contour in each glyph <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/outline.html#"></a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>The following glyphs have a counter-clockwise outer contour:</p>
+<pre><code>* uni0541 (U+0541) has a counter-clockwise outer contour
+</code></pre>
+ [code: ccw-outer-contour]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Ensure soft_dotted characters lose their dot when combined with marks that replace the dot. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/shaping.html#"></a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>The dot of soft dotted characters used in orthographies <em>must</em> disappear in the following strings: į̀ į́ į̂ į̃ į̄ į̌</p>
+<p>The dot of soft dotted characters <em>should</em> disappear in other cases, for example: į̆ į̇ į̈ į̊ į̋ į̦̀ į̦́ į̦̂ į̦̃ į̦̄ į̦̆ į̦̇ į̦̈ į̦̊ į̦̋ į̦̌ į̧̀ į̧́ į̧̂ į̧̃</p>
+<p>Your font fully covers the following languages that require the soft-dotted feature: Dutch (Latn, 31,709,104 speakers), Lithuanian (Latn, 2,357,094 speakers).</p>
+<p>Your font does <em>not</em> cover the following languages that require the soft-dotted feature: Mundani (Latn, 34,000 speakers), Ma’di (Latn, 584,000 speakers), Yala (Latn, 200,000 speakers), Ukrainian (Cyrl, 29,273,587 speakers), Basaa (Latn, 332,940 speakers), Belarusian (Cyrl, 10,064,517 speakers), Dii (Latn, 71,000 speakers), Sar (Latn, 500,000 speakers), Nateni (Latn, 100,000 speakers), Southern Kisi (Latn, 360,000 speakers), Dan (Latn, 1,099,244 speakers), Lugbara (Latn, 2,200,000 speakers), Gulay (Latn, 250,478 speakers), Bete-Bendi (Latn, 100,000 speakers), Koonzime (Latn, 40,000 speakers), Kom (Latn, 360,685 speakers), Nzakara (Latn, 50,000 speakers), South Central Banda (Latn, 244,000 speakers), Kpelle, Guinea (Latn, 622,000 speakers), Aghem (Latn, 38,843 speakers), Avokaya (Latn, 100,000 speakers), Ekpeye (Latn, 226,000 speakers), Cicipu (Latn, 44,000 speakers), Ebira (Latn, 2,200,000 speakers), Zapotec (Latn, 490,000 speakers), Ngbaka (Latn, 1,020,000 speakers), Fur (Latn, 1,230,163 speakers), Navajo (Latn, 166,319 speakers), Vute (Latn, 21,000 speakers), Igbo (Latn, 27,823,640 speakers), Ijo, Southeast (Latn, 2,471,000 speakers), Ejagham (Latn, 120,000 speakers), Mfumte (Latn, 79,000 speakers), Mango (Latn, 77,000 speakers), Makaa (Latn, 221,000 speakers), Bafut (Latn, 158,146 speakers).</p>
+ [code: soft-dotted]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Check for codepoints not covered by METADATA subsets. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.subsets.html#"></a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>The following codepoints supported by the font are not covered by
+any subsets defined in the font's metadata file, and will never
+be served. You can solve this by either manually adding additional
+subset declarations to METADATA.pb, or by editing the glyphset
+definitions.</p>
+<ul>
+<li>U+02C7 CARON: try adding one of: canadian-aboriginal, yi, tifinagh</li>
+<li>U+02C9 MODIFIER LETTER MACRON: not included in any glyphset definition</li>
+<li>U+02D8 BREVE: try adding one of: canadian-aboriginal, yi</li>
+<li>U+02D9 DOT ABOVE: try adding one of: canadian-aboriginal, yi</li>
+<li>U+02DB OGONEK: try adding one of: canadian-aboriginal, yi</li>
+<li>U+02DD DOUBLE ACUTE ACCENT: not included in any glyphset definition</li>
+<li>U+0302 COMBINING CIRCUMFLEX ACCENT: try adding one of: math, cherokee, coptic, tifinagh</li>
+<li>U+0306 COMBINING BREVE: try adding one of: old-permic, tifinagh</li>
+<li>U+0307 COMBINING DOT ABOVE: try adding one of: syriac, old-permic, coptic, tai-le, malayalam, tifinagh, math, canadian-aboriginal</li>
+<li>U+030A COMBINING RING ABOVE: try adding syriac</li>
+<li>U+030B COMBINING DOUBLE ACUTE ACCENT: try adding one of: osage, cherokee</li>
+<li>U+030C COMBINING CARON: try adding one of: tai-le, cherokee</li>
+<li>U+0326 COMBINING COMMA BELOW: not included in any glyphset definition</li>
+<li>U+0327 COMBINING CEDILLA: not included in any glyphset definition</li>
+<li>U+0328 COMBINING OGONEK: not included in any glyphset definition</li>
+</ul>
+<p>Or you can add the above codepoints to one of the subsets supported by the font: <code>armenian</code>, <code>latin</code>, <code>latin-ext</code></p>
+ [code: unreachable-subsetting]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Is there kerning info for non-ligated sequences? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.gpos.html#"></a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>GPOS table lacks kerning info for the following non-ligated sequences:</p>
+<pre><code>- uni0548 + uni0552
+
+- uni0574 + uni0565
+
+- uni0574 + uni056B
+
+- uni0574 + uni056D
+
+- uni0574 + uni0576
+
+- uni0578 + uni0582
+
+- uni057E + uni0576
+</code></pre>
+ [code: lacks-kern-info]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Are there caret positions declared for every ligature? <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.gdef.html#"></a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>This font lacks caret position values for ligature glyphs on its GDEF table.</p>
+ [code: lacks-caret-pos]
+
+
+
+</div>
+</details>
+
+<details>
+    <summary>⚠️ <b>WARN</b> Ensure fonts have ScriptLangTags declared on the 'meta' table. <a href="https://fontbakery.readthedocs.io/en/stable/fontbakery/checks/googlefonts.meta.html#"></a></summary>
+    <div>
+
+
+
+
+
+
+
+* ⚠️ **WARN** <p>This font file does not have a 'meta' table.</p>
+ [code: lacks-meta-table]
+
+
+
+</div>
+</details>
+</div>
+</details>
+
+
+
 
 ### Summary
 
-| 💔 ERROR | ☠ FATAL | 🔥 FAIL | ⚠ WARN | 💤 SKIP | ℹ INFO | 🍞 PASS | 🔎 DEBUG |
-|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
-| 2 | 0 | 3 | 9 | 101 | 8 | 137 | 0 |
-| 1% | 0% | 1% | 3% | 39% | 3% | 53% | 0% |
+| 💥 ERROR | ☠ FATAL | 🔥 FAIL | ⚠️ WARN | ⏩ SKIP | ℹ️ INFO | ✅ PASS | 🔎 DEBUG | 
+| ---|---|---|---|---|---|---|---|
+| 0 | 0 | 2 | 10 | 93 | 7 | 138 | 0 | 
+| 0% | 0% | 1% | 4% | 37% | 3% | 55% | 0% | 
+
+
 
 **Note:** The following loglevels were omitted in this report:
-* **SKIP**
-* **INFO**
-* **PASS**
-* **DEBUG**
+
+
+* SKIP
+* INFO
+* PASS
+* DEBUG
