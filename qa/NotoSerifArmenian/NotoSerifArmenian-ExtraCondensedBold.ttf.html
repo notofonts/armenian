@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Diffenator3</title>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+		crossorigin="anonymous"></script>
+	<style type="text/css">
+		@font-face {
+      font-family: "Font Before";
+      src: url();
+    }
+
+    @font-face {
+      font-family: "Font After";
+      src: url();
+    }
+
+    .font-before, .font-after {
+      font-variation-settings: "wght" 400, "wdth" 100;
+    }
+
+    .font-before {
+      font-family: "Font Before", "Adobe Notdef";
+    }
+
+    .font-after {
+      font-family: "Font After", "Adobe Notdef";
+    }
+
+	:root {
+	--node-pt-size: 40px;
+	}
+
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #b3d4f5 !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active {
+    background-color: #ced9e4 !important;
+}
+.nav-item {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+.nav-pills .nav-link{
+    background-color: #9fcaf5 !important;
+}
+h4 {
+    color: #6f7882 !important;
+}
+
+@font-face {
+    font-family: "Adobe NotDef";
+    src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+}
+
+.box-title {
+    width: 100%;
+    font-size: 8pt;
+    font-weight: 700;
+    border-top: 1px solid black;
+    padding-top: 5px;
+    margin-bottom: 10pt;
+    display: block;
+}
+
+.box {
+    margin-bottom: 20pt;
+    width: 100%;
+    float: left;
+}
+
+.box-text {}
+
+#ui-nav {
+    position: fixed;
+    right: 20px;
+    z-index: 100;
+}
+
+#font-toggle {}
+
+.ui-nav-item {
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+    text-align: center;
+    color: white;
+    background-color: black;
+    display: block;
+    font-size: 14pt;
+    padding: 5px;
+    margin: 2px;
+}
+
+/* Stuff needed for the table differ */
+body {
+    font-family: Helvetica;
+}
+
+.node {
+    font-family: courier;
+    cursor: pointer;
+    position: relative;
+    left: 30px;
+    padding: 5px;
+    display: block;
+    border: 1px dashed grey;
+    background-color: #e9e9ee;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.attr-before {
+    color: green;
+    cursor: text;
+}
+
+.attr-after {
+    color: red;
+    cursor: text;
+}
+
+.leaf {
+    font-weight: bold;
+}
+
+.old .cell .new {
+    display: none;
+}
+
+.new .cell .old {
+    display: none;
+}
+
+.both .cell .old {
+    opacity: 0.75;
+    color: red;
+}
+
+.both .cell .new {
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    color: green;
+}
+
+.spacer {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+#ot-panel {
+    max-height: 400px;
+    overflow-y: scroll;
+    background: white;
+    padding: 10px;
+    display: none;
+   }
+
+   .cell{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    width: 50pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+  }
+  .cell-word{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  .cell-glyph{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    border-radius: 5pt;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 5pt;
+    margin: 5pt;
+    width: calc(var(--node-pt-size) * 2);
+    min-height: calc(var(--node-pt-size) * 2);
+    font-size: var(--node-pt-size);
+  }
+  .cell-glyph.font-before, .cell-word.font-before {
+    background: #eff6f2;
+  }
+  .cell-glyph.font-after, .cell-word.font-after {
+    background: #f7f4f4;
+  }
+
+  .cell-glyph:hover {
+    box-shadow: none;
+    background: #f0f0f5;
+  }
+  .cat-strings .cell {
+    clear: both;
+    position: static;
+    float: none;
+    text-align: left;
+  }
+  .codepoint {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 10pt;
+    line-height: 10pt;
+  }
+  .box-title {
+    clear: both;
+  }
+  .node.closed::before {
+    content: "+";
+    margin-right: 5pt;
+  }
+  .node.open::before {
+    content: "-";
+    margin-right: 5pt;
+  }
+
+  .tooltip pre {
+    background-color: #6f7882;
+    padding: 5px;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .tooltip {
+    line-height: 1em;
+  }
+  .tooltip-inner {
+    max-width: 300px;
+  }
+
+  h1,h2,h3,h4,h5 {
+    clear: both;
+  }
+
+  #locationnav li {
+    white-space: wrap;
+  }
+
+  #userdefined div { width: 100%; }
+  
+/* The following rules are used in the WASM version, not in the CLI version.
+   But we keep them here so we can share them between the two versions. */
+
+   .modal-dialog {
+    max-width: 100% !important;
+    margin: 0 !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+  }
+
+  .fontdrop {
+    padding: 30px;
+    border-radius: 20px;
+    outline: 3px dashed #ffffffff;
+    outline-offset: -20px;
+  }
+
+  #fontbefore {
+    background-color: #ddffdddd;
+  }
+
+  #fontafter {
+    background-color: #ffdddddd;
+  }
+
+  .dragging {
+    background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
+    outline: 5px dashed #ffffffff;
+  }
+
+  #diffkerns {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+		</style>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+		<div id="ui-nav">
+		  <div class="ui-nav-item" id="fonttoggle">Old</div>
+		  <div class="ui-nav-item" id="fontanimate">Animate</div>
+		  <div id="axes">
+		  </div>
+		</div>
+	
+	<div class="row">
+		<div class="col-2">
+			<ul class="nav nav-pills" id="locationnav">
+			</ul>
+		</div>
+		<div class="col-9 mt-3">
+			<div id="title"></div>
+			<div id="cmapdiff"> </div>
+			<div id="main"></div>
+			<div id="userdefined">
+				<h4>User defined sample text</h4>
+				<div contenteditable="true" class="font-before cell-word">
+					You can type your own text here to see it previewed in the fonts.
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div id="diffkerns"> </div>
+			<div id="difftable"> </div>
+		</div>
+	</div>
+	<script type="module">
+		function renderTableDiff(node, toplevel) {
+  var wrapper = $("<div> </div>");
+  if (!node) {
+    return wrapper;
+  }
+  if (Array.isArray(node) && node.length == 2) {
+    var before = $("<span/>");
+    before.addClass("attr-before");
+    before.html(" " + node[0] + " ");
+    var after = $("<span/>");
+    after.addClass("attr-after");
+    after.append(renderTableDiff(node[1], true).children());
+    wrapper.append(before);
+    wrapper.append(after);
+    return wrapper;
+  }
+  if (node.constructor != Object) {
+    var thing = $("<span/>");
+    thing.html(node);
+    wrapper.append(thing);
+    return wrapper;
+  }
+  for (const [key, value] of Object.entries(node)) {
+    var display = $("<div/>");
+    display.addClass("node");
+    if (!toplevel) {
+      display.hide();
+    }
+    display.append(key);
+    display.append(renderTableDiff(value, false).children());
+    if (display.children(".node").length > 0) {
+      display.addClass("closed");
+    }
+    wrapper.append(display);
+  }
+  return wrapper;
+}
+
+function addAGlyph(glyph, where) {
+  let title = "";
+  if (glyph.name) {
+    title = "name: " + glyph.name;
+  }
+  let cp =
+    "<br>U+" +
+    glyph.string.codePointAt(0).toString(16).padStart(4, "0").toUpperCase();
+  where.append(`
+        <div class="cell-glyph font-before">
+        <div data-toggle="tooltip" data-html="true" data-title="${glyph.differing_pixels} pixels"> ${glyph.string}
+        <div class="codepoint" data-toggle="tooltip" data-html="true" data-title="${title}">
+		${cp}
+        </div>
+        </div>
+    `);
+}
+
+function addAWord(diff, where) {
+  if (!diff.buffer_b) {
+    diff.buffer_b = diff.buffer_a;
+  }
+  where.append(`
+		<div class="cell-word font-before">
+		<span data-toggle="tooltip" data-html="true" data-title="Before: <pre>${diff.buffer_a}</pre>After: <pre>${diff.buffer_b}</pre><br>difference: ${diff.differing_pixels} pixels">
+		${diff.word}
+		</span>
+		</div>
+	`);
+}
+
+function diffTables(report) {
+  $("#difftable").empty();
+  $("#difftable").append(`<h4 class="mt-2 box-title">Table-level details</h4>`);
+  $("#difftable").append(
+    renderTableDiff({ tables: report["tables"] }, true).children()
+  );
+  $("#difftable .node").on("click", function (e) {
+    $(this).toggleClass("closed open");
+    $(this).children(".node").toggle();
+    e.stopPropagation();
+  });
+}
+function diffKerns(report) {
+  $("#diffkerns").empty();
+  $("#diffkerns").append(`<h4 class="mt-2">Modified Kerns</h4>`);
+  $("#diffkerns").append(
+    `<table class="table table-striped" id="diffkerns"><tr><th>Pair</th><th>Old</old><th>New</th></table>`
+  );
+  for (let [pair, value] of Object.entries(report["kerns"])) {
+    if (pair == "error") {
+      $("#diffkerns").append(`<p class="text-danger">Error: ${value}</p>`);
+      continue;
+    } else {
+      let row = $("<tr>");
+      row.append(`<td>${pair}</td>`);
+      row.append(`<td>${serializeKernBefore(value)}</td>`);
+      row.append(`<td>${serializeKernAfter(value)}</td>`);
+      $("#diffkerns table").append(row);
+    }
+  }
+}
+
+function serializeKernBefore(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[0], -1);
+  }
+  return serializeKern(kern, 0);
+}
+
+function serializeKernAfter(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[1], -1);
+  }
+  return serializeKern(kern, 1);
+}
+
+function serializeKern(kern, index) {
+  let string = "";
+  if (kern === null || kern === undefined) {
+    return "(null)";
+  }
+  if (kern.x) {
+    string += serializeKernValue(kern.x, index);
+  } else if (kern.y) {
+    string = "0";
+  }
+
+  if (kern.y) {
+    string += "," + serializeKernValue(kern.y, index);
+  }
+  if (!kern.x_placement && !kern.y_placement) {
+    return string;
+  }
+  string += "@";
+  if (kern.x_placement) {
+    string += serializeKernValue(kern.x_placement, index);
+  } else if (kern.y_placement) {
+    string += "0";
+  }
+  if (kern.y_placement) {
+    string += "," + serializeKernValue(kern.y_placement, index);
+  }
+  return string;
+}
+
+function serializeKernValue(kern, index) {
+  if (typeof kern == "number") {
+    return kern;
+  }
+  let string = "(";
+  let verybig = Object.entries(kern).length > 5;
+  for (let [key, value] of Object.entries(kern)) {
+    if (key == "default") {
+      string += value[index] + " ";
+    } else {
+      string += value[index] + "@" + key + " ";
+    }
+    if (verybig) {
+      string += "<br>";
+    }
+  }
+  return string.trim() + ")";
+}
+
+function cmapDiff(report) {
+  if (report.cmap_diff && (report.cmap_diff.new || report.cmap_diff.missing)) {
+    $("#cmapdiff").append(
+      `<h4 class="mt-2">Added and Removed Encoded Glyphs</h4>`
+    );
+    if (report["cmap_diff"]["new"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Added Glyphs</h4>`);
+      let added = $("<div>");
+      for (let glyph of report["cmap_diff"]["new"]) {
+        addAGlyph(glyph, added);
+      }
+      $("#cmapdiff").append(added);
+    }
+
+    if (report["cmap_diff"]["missing"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Removed Glyphs</h4>`);
+      let missing = $("<div>");
+      for (let glyph of report["cmap_diff"]["missing"]) {
+        addAGlyph(glyph, missing);
+      }
+      $("#cmapdiff").append(missing);
+    }
+  } else {
+    $("#cmapdiff").append(`<p>No changes to encoded glyphs</p>`);
+  }
+}
+
+function setupAnimation() {
+  $("#fonttoggle").click(function () {
+    if ($(this).text() == "Old") {
+      $(this).text("New");
+      $(".font-before").removeClass("font-before").addClass("font-after");
+    } else {
+      $(this).text("Old");
+      $(".font-after").removeClass("font-after").addClass("font-before");
+    }
+  });
+
+  let animationHandle;
+  function animate() {
+    $("#fonttoggle").click();
+    animationHandle = setTimeout(animate, 1000);
+  }
+  $("#fontanimate").click(function () {
+    if ($(this).text() == "Animate") {
+      $(this).text("Stop");
+      animate();
+    } else {
+      $(this).text("Animate");
+      clearTimeout(animationHandle);
+    }
+  });
+}
+
+export {
+  renderTableDiff,
+  addAGlyph,
+  addAWord,
+  cmapDiff,
+  diffTables,
+  diffKerns,
+  setupAnimation,
+};
+
+	var report = {"tables":{"GPOS":{"script_list":{"DFLT/dflt":{"lookups":{"1":[2,1]}},"armn/dflt":{"lookups":{"0":[1,0],"1":[2,1]}}},"lookup_list":{"0":{"0":{"bases":{"uni0560":{"anchor_0":{"x":[395,394]}}}}},"2":{"0":{"uni0535":{"uni055C":{"x":[-196,-188]}},"uni054C":{"uni0576":{"x":[15,14]}},"uni054D":{"uni055E":{"x":[-100,-108]}},"uni056C":{"uni0562":{"x":[15,14]},"uni0568":{"x":[15,14]},"uni0569":{"x":[15,14]},"uni056C":{"x":[15,14]},"uni0580":{"x":[15,14]},"uni0584":{"x":[15,14]}}},"1":{"classes":{"@CLASS_L_0":{"0":["uni057D","uniFB17"],"1":["uni0561","uni056D"],"2":["uniFB16","uni0576"],"3":["uniFB13","uniFB16"],"5":["uniFB17","uni0561"],"6":["uni056D","uniFB13"],"7":["uni0576","uni057D"]},"@CLASS_L_4":{"0":["uni05780582","uni05480552"],"1":["uni0582","uni0552"]},"@CLASS_L_5":{"0":["uni0565","uni0553"],"1":["uniFB14","uni0555"]},"@CLASS_L_6":{"0":["uni0553","uni0565"],"1":["uni0555","uniFB14"]},"@CLASS_L_7":{"0":["uni05480552","uni05780582"],"1":["uni0552","uni0582"]},"@CLASS_L_8":{"0":["uni0585","uni0544"]},"@CLASS_L_9":{"0":["uni0579","uni0567"]},"@CLASS_L_10":{"0":["uni0567","uni0579"]},"@CLASS_L_11":{"0":["uni0544","uni0585"]},"@CLASS_R_3":{"0":["uni0563","uni0562"],"1":["uni0566","uni0568"],"2":["uni056A","uni0569"],"3":["uni056E","uni056C"],"4":["uni0581","uni0580"],"5":["uni0585","uni0584"]},"@CLASS_R_4":{"0":["uni0562","uni0563"],"1":["uni0568","uni0566"],"2":["uni0569","uni056A"],"3":["uni056C","uni056E"],"4":["uni0580","uni0581"],"5":["uni0584","uni0585"]},"@CLASS_R_5":{"0":["uni0567","uni0565"],"1":["uni056B","uni056F"],"2":["uni056D","uni0587"]},"@CLASS_R_6":{"0":["uni0565","uni0567"],"1":["uni056F","uni056B"],"2":["uni0587","uni056D"]},"@CLASS_R_7":{"0":["uni057B","uni055B"]},"@CLASS_R_8":{"0":["uni0579","uni055C"]},"@CLASS_R_9":{"0":["uni0577","uni055E"]},"@CLASS_R_11":{"0":["uni055E","uni0577"]},"@CLASS_R_12":{"0":["uni055C","uni0579"]},"@CLASS_R_13":{"0":["uni055B","uni057B"]}},"kerns":{"@CLASS_L_0":{"@CLASS_R_7":{"x":[0,-211]},"@CLASS_R_8":{"x":[0,-256]},"@CLASS_R_9":{"x":[0,-406]},"@CLASS_R_11":{"x":[-406,0]},"@CLASS_R_12":{"x":[-256,0]},"@CLASS_R_13":{"x":[-211,0]}},"@CLASS_L_1":{"@CLASS_R_7":{"x":[0,-211]},"@CLASS_R_8":{"x":[20,-256]},"@CLASS_R_9":{"x":[0,-349]},"@CLASS_R_11":{"x":[-349,0]},"@CLASS_R_12":{"x":[-256,20]},"@CLASS_R_13":{"x":[-211,0]}},"@CLASS_L_2":{"@CLASS_R_7":{"x":[-12,0]},"@CLASS_R_8":{"x":[59,0]},"@CLASS_R_9":{"x":[28,0]},"@CLASS_R_11":{"x":[0,28]},"@CLASS_R_12":{"x":[0,59]},"@CLASS_R_13":{"x":[0,-12]}},"@CLASS_L_3":{"@CLASS_R_8":{"x":[53,0]},"@CLASS_R_12":{"x":[0,53]}},"@CLASS_L_4":{"@CLASS_R_7":{"x":[0,-177]},"@CLASS_R_8":{"x":[0,-195]},"@CLASS_R_9":{"x":[0,-266]},"@CLASS_R_11":{"x":[-341,0]},"@CLASS_R_12":{"x":[-256,0]},"@CLASS_R_13":{"x":[-211,0]}},"@CLASS_L_5":{"@CLASS_R_7":{"x":[0,-60]},"@CLASS_R_8":{"x":[0,-60]},"@CLASS_R_9":{"x":[0,-60]},"@CLASS_R_11":{"x":[-343,0]},"@CLASS_R_12":{"x":[-256,0]},"@CLASS_R_13":{"x":[-211,0]}},"@CLASS_L_6":{"@CLASS_R_7":{"x":[0,-211]},"@CLASS_R_8":{"x":[0,-256]},"@CLASS_R_9":{"x":[0,-343]},"@CLASS_R_11":{"x":[-60,0]},"@CLASS_R_12":{"x":[-60,0]},"@CLASS_R_13":{"x":[-60,0]}},"@CLASS_L_7":{"@CLASS_R_7":{"x":[0,-211]},"@CLASS_R_8":{"x":[0,-256]},"@CLASS_R_9":{"x":[0,-342]},"@CLASS_R_11":{"x":[-266,0]},"@CLASS_R_12":{"x":[-195,0]},"@CLASS_R_13":{"x":[-177,0]}},"@CLASS_L_8":{"@CLASS_R_1":{"x":[0,-43]},"@CLASS_R_2":{"x":[0,-54]},"@CLASS_R_3":{"x":[0,-50]},"@CLASS_R_4":{"x":[0,-78]},"@CLASS_R_10":{"x":[0,-51]},"@CLASS_R_11":{"x":[-406,-62]},"@CLASS_R_12":{"x":[-256,-67]},"@CLASS_R_13":{"x":[-211,-64]}},"@CLASS_L_9":{"@CLASS_R_1":{"x":[-30,0]},"@CLASS_R_3":{"x":[-26,0]},"@CLASS_R_4":{"x":[0,-28]},"@CLASS_R_5":{"x":[-23,0]},"@CLASS_R_6":{"x":[-30,0]},"@CLASS_R_10":{"x":[-15,-20]},"@CLASS_R_12":{"x":[0,23]}},"@CLASS_L_10":{"@CLASS_R_1":{"x":[0,-30]},"@CLASS_R_3":{"x":[-28,0]},"@CLASS_R_4":{"x":[0,-25]},"@CLASS_R_5":{"x":[0,-30]},"@CLASS_R_6":{"x":[0,-23]},"@CLASS_R_8":{"x":[23,0]},"@CLASS_R_10":{"x":[-20,-14]}},"@CLASS_L_11":{"@CLASS_R_1":{"x":[-43,0]},"@CLASS_R_2":{"x":[-54,0]},"@CLASS_R_3":{"x":[-77,0]},"@CLASS_R_4":{"x":[-50,0]},"@CLASS_R_7":{"x":[-65,-211]},"@CLASS_R_8":{"x":[-67,-256]},"@CLASS_R_9":{"x":[-63,-406]},"@CLASS_R_10":{"x":[-51,0]}}}}},"3":{"2":{"rules":{"0":["uni0308 [uni0578 uni0585] uni055E' lookup lookup_4","uni0308 [uni0560 uni0561] uni055E' lookup lookup_4"]}},"3":[null,{"type":"chained_sequence_context","rules":["uni0308 [uni0578 uni0585] uni055E' lookup lookup_5"]}]},"4":{"0":{"uni055E":{"x":[300,100],"x_placement":[300,100]}}},"5":{"1":[null,{"type":"single","uni055E":{"x":300,"x_placement":300}}]}}},"OS/2":{"x_avg_char_width":[561,563]},"head":{"checksum_adjustment":[3475629700,2364715384],"modified":[3778484608,3813907989],"x_max":[1239,1263]},"hhea":{"advance_width_max":[1266,1289],"x_max_extent":[1239,1263],"caret_slope_rise":[1,1000]},"hmtx":{"hyphen":{"width":[253,254]},"uni2010":{"width":[259,256]},"uni053B":{"width":[559,570]},"uni053D":{"width":[760,773]},"uni053E":{"width":[610,613]},"uni05480552":{"width":[1149,1150]},"uni054C":{"width":[751,765]},"uni056C":{"width":[304,317],"lsb":[25,34]},"uni05780582":{"width":[870,869]},"uni0579":{"width":[379,382]},"uni0581":{"width":[503,514]},"uni0586":{"width":[593,577]},"uni0588":{"width":[296,288],"lsb":[8,5]},"uniFB13":{"width":[1021,1040]},"uniFB14":{"width":[1008,1029]},"uniFB15":{"width":[1003,1023]},"uniFB16":{"width":[1021,1041]},"uniFB17":{"width":[1266,1289],"lsb":[23,24]}},"loca":{"offsets":{"19":[1186,1188],"20":[1236,1238],"21":[1332,1340],"22":[1472,1480],"23":[1572,1580],"24":[1664,1672],"25":[1864,1870],"26":[1932,1938],"27":[2060,2066],"28":[2166,2172],"29":[2298,2308],"30":[2386,2396],"31":[2510,2520],"32":[2590,2600],"33":[2614,2624],"34":[2708,2718],"35":[2790,2800],"36":[2936,2946],"37":[3050,3060],"38":[3132,3142],"39":[3230,3240],"40":[3366,3376],"41":[3438,3448],"42":[3588,3598],"43":[3684,3694],"44":[3816,3828],"45":[3904,3918],"46":[3988,4002],"47":[4122,4136],"48":[4170,4184],"49":[4218,4232],"50":[4264,4278],"51":[4326,4340],"52":[4372,4386],"53":[4444,4458],"54":[4504,4518],"55":[4646,4658],"56":[4792,4800],"57":[4890,4898],"58":[5016,5024],"59":[5122,5130],"60":[5224,5232],"61":[5336,5344],"62":[5436,5446],"63":[5524,5534],"64":[5672,5682],"65":[5770,5780],"66":[5872,5886],"67":[5922,5936],"68":[6076,6090],"69":[6222,6240],"70":[6330,6348],"71":[6432,6450],"72":[6598,6616],"73":[6688,6706],"74":[6838,6856],"75":[6996,7014],"76":[7074,7092],"77":[7210,7228],"78":[7328,7346],"79":[7424,7442],"80":[7448,7466],"81":[7546,7572],"82":[7698,7722],"83":[7846,7870],"84":[7938,7960],"85":[8036,8058],"86":[8132,8156],"87":[8284,8308],"88":[8382,8406],"89":[8524,8542],"90":[8574,8592],"91":[8740,8758],"92":[8874,8892],"93":[8946,8964],"94":[9090,9106],"95":[9182,9198],"96":[9268,9284],"97":[9344,9360],"98":[9394,9410],"99":[9834,9846],"100":[10274,10280],"101":[10372,10378],"102":[10890,10896],"103":[11144,11162],"104":[11360,11382],"105":[11590,11616],"106":[11814,11846],"107":[12090,12128],"108":[12106,12144]}}},"kerns":{"uni0535/uni055C":{"x":[-196,-188]},"uni054C/uni0576":{"x":[15,14]},"uni054D/uni055E":{"x":[-100,-108]},"uni056C/uni0562":{"x":[15,14]},"uni056C/uni0568":{"x":[15,14]},"uni056C/uni0569":{"x":[15,14]},"uni056C/uni056C":{"x":[15,14]},"uni056C/uni0580":{"x":[15,14]},"uni056C/uni0584":{"x":[15,14]},"uni05780582/uni055E":{"x":[-341,-342]},"uni0582/uni055E":{"x":[-341,-342]},"uni0579/uni0563":{"x":[-26,-25]},"uni0579/uni0566":{"x":[-26,-25]},"uni0579/uni056A":{"x":[-26,-25]},"uni0579/uni056E":{"x":[-26,-25]},"uni0579/uni0581":{"x":[-26,-25]},"uni0579/uni0585":{"x":[-26,-25]},"uni0579/uni0571":{"x":[-15,-14]},"uni0544/uni0563":{"x":[-77,-78]},"uni0544/uni0566":{"x":[-77,-78]},"uni0544/uni056A":{"x":[-77,-78]},"uni0544/uni056E":{"x":[-77,-78]},"uni0544/uni0581":{"x":[-77,-78]},"uni0544/uni0585":{"x":[-77,-78]},"uni0544/uni057B":{"x":[-65,-64]},"uni0544/uni0577":{"x":[-63,-62]}},"cmap_diff":{},"locations":[{"location":"Default","glyphs":[{"string":"ﬗ","name":"ARMENIAN SMALL LIGATURE MEN XEH","unicode":"U+FB17","differing_pixels":288},{"string":"ﬕ","name":"ARMENIAN SMALL LIGATURE MEN INI","unicode":"U+FB15","differing_pixels":252},{"string":"ﬔ","name":"ARMENIAN SMALL LIGATURE MEN ECH","unicode":"U+FB14","differing_pixels":198},{"string":"ﬖ","name":"ARMENIAN SMALL LIGATURE VEW NOW","unicode":"U+FB16","differing_pixels":177},{"string":"ﬓ","name":"ARMENIAN SMALL LIGATURE MEN NOW","unicode":"U+FB13","differing_pixels":173},{"string":"ֆ","name":"ARMENIAN SMALL LETTER FEH","unicode":"U+0586","differing_pixels":129},{"string":"Խ","name":"ARMENIAN CAPITAL LETTER XEH","unicode":"U+053D","differing_pixels":99},{"string":"Ծ","name":"ARMENIAN CAPITAL LETTER CA","unicode":"U+053E","differing_pixels":82},{"string":"Ռ","name":"ARMENIAN CAPITAL LETTER RA","unicode":"U+054C","differing_pixels":60},{"string":"ֈ","name":"ARMENIAN SMALL LETTER YI WITH STROKE","unicode":"U+0588","differing_pixels":59},{"string":"լ","name":"ARMENIAN SMALL LETTER LIWN","unicode":"U+056C","differing_pixels":54},{"string":"ց","name":"ARMENIAN SMALL LETTER CO","unicode":"U+0581","differing_pixels":50},{"string":"չ","name":"ARMENIAN SMALL LETTER CHA","unicode":"U+0579","differing_pixels":50},{"string":"Ի","name":"ARMENIAN CAPITAL LETTER INI","unicode":"U+053B","differing_pixels":39}],"words":{"Armenian":[{"word":"միչիգանցի","buffer_a":"104|80|65|57|55|76|88|65|","differing_pixels":127},{"word":"մխրճվեցին","buffer_a":"106|87|73|85|59|88|65|76|","differing_pixels":106},{"word":"միեւնո՛յն","buffer_a":"104|59|89|76|78|49|75|76|","differing_pixels":93},{"word":"միջոսկրյա","buffer_a":"104|82|78|84|69|87|75|55|","differing_pixels":77},{"word":"միջամտեց՝","buffer_a":"104|82|55|74|86|59|88|51|","differing_pixels":74},{"word":"մինևնույն","buffer_a":"104|76|94|76|79|75|76|","differing_pixels":73},{"word":"նավատորմիղների","buffer_a":"76|55|85|55|86|78|87|104|72|76|59|87|65|","differing_pixels":66},{"word":"Մագնիսահիդրոդինամիկական","buffer_a":"27|55|57|76|65|84|55|70|65|58|87|78|58|65|76|55|104|69|55|69|55|76|","differing_pixels":60},{"word":"մեկ֊երկու","buffer_a":"103|69|97|59|87|69|79|","differing_pixels":51},{"word":"Վսևոլոդովնան","buffer_a":"38|84|94|78|66|78|58|78|105|55|76|","differing_pixels":48},{"word":"Փրայմերիզում","buffer_a":"43|87|55|75|103|87|65|60|79|74|","differing_pixels":42},{"word":"հեռուստառադիոհաղորդումների","buffer_a":"70|59|83|79|84|86|55|83|55|58|65|78|70|55|72|78|87|58|79|102|59|87|65|","differing_pixels":33},{"word":"Ուսումնասիրություններում","buffer_a":"31|89|84|79|102|55|84|65|87|79|63|75|79|76|76|59|87|79|74|","differing_pixels":27},{"word":"Քալիֆոռնիայի","buffer_a":"44|55|66|65|93|78|83|76|65|55|75|65|","differing_pixels":12},{"word":"ճանաչո՞ւմ","buffer_a":"73|55|76|55|80|78|52|89|74|","differing_pixels":10},{"word":"Օֆֆենբախի","buffer_a":"45|93|93|59|76|56|55|67|65|","differing_pixels":10},{"word":"Ռուտենբերգը։","buffer_a":"36|79|86|59|76|56|59|87|57|62|96|","differing_pixels":9}]}}]};
+		function buildLocation_statichtml(loc) {
+  // Set font styles to appropriate axis locations
+  let rule = document.styleSheets[0].cssRules[2].style;
+  let cssSetting = "";
+  let textLocation = "Default";
+  if (loc.coords) {
+    cssSetting = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `"${axis}" ${value}`;
+      })
+      .join(", ");
+    textLocation = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `${axis}=${value}`;
+      })
+      .join(" ");
+    rule.setProperty("font-variation-settings", cssSetting);
+  }
+
+  $("#main").empty();
+
+  $("#title").html(`<h4 class="mt-2">${textLocation}</h2>`);
+
+  if (loc.glyphs) {
+    $("#main").append("<h4>Modified Glyphs</h4>");
+    let glyphs = $("<div>");
+    for (let glyph of loc.glyphs) {
+      addAGlyph(glyph, glyphs);
+    }
+    $("#main").append(glyphs);
+  }
+
+  if (loc.words) {
+    $("#main").append("<h4>Modified Words</h4>");
+    for (let [script, words] of Object.entries(loc.words)) {
+      let scriptTitle = $(`<h6>${script}</h6>`);
+      $("#main").append(scriptTitle);
+      let worddiv = $("<div>");
+      for (let word of words) {
+        addAWord(word, worddiv);
+      }
+      $("#main").append(worddiv);
+    }
+  }
+  $('[data-toggle="tooltip"]').tooltip();
+}
+
+$(function () {
+  if (report["tables"]) {
+    diffTables(report);
+  }
+  if (report["kerns"]) {
+    diffKerns(report);
+  }
+  cmapDiff(report);
+  $('[data-toggle="tooltip"]').tooltip();
+  if (!report["locations"]) {
+    $("#title").html("<h4 class='mt-2'>No differences found</h4>");
+    $("#ui-nav").hide();
+    return;
+  }
+
+  for (var [index, loc] of report["locations"].entries()) {
+    var loc_nav = $(`<li class="nav-item">
+		<a class="nav-link text-secondary" href="#" data-index="${index}">${loc.location.replaceAll(
+      ",",
+      ",\u200b"
+    )}</a>
+	</li>`);
+    $("#locationnav").append(loc_nav);
+  }
+  $("#locationnav li a").on("click", function (e) {
+    $("#locationnav li a").removeClass("active");
+    $(this).addClass("active");
+    buildLocation_statichtml(report.locations[$(this).data("index")]);
+  });
+  $("#locationnav li a").eq(0).click();
+
+  document.styleSheets[0].cssRules[0].style.setProperty(
+    "src",
+    "url(old-NotoSerifArmenian-ExtraCondensedBold.ttf)"
+  );
+  document.styleSheets[0].cssRules[1].style.setProperty(
+    "src",
+    "url(new-NotoSerifArmenian-ExtraCondensedBold.ttf)"
+  );
+  setupAnimation();
+});
+
+	</script>
+</body>
+
+</html>

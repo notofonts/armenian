@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Diffenator3</title>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+		crossorigin="anonymous"></script>
+	<style type="text/css">
+		@font-face {
+      font-family: "Font Before";
+      src: url();
+    }
+
+    @font-face {
+      font-family: "Font After";
+      src: url();
+    }
+
+    .font-before, .font-after {
+      font-variation-settings: "wght" 400, "wdth" 100;
+    }
+
+    .font-before {
+      font-family: "Font Before", "Adobe Notdef";
+    }
+
+    .font-after {
+      font-family: "Font After", "Adobe Notdef";
+    }
+
+	:root {
+	--node-pt-size: 40px;
+	}
+
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #b3d4f5 !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active {
+    background-color: #ced9e4 !important;
+}
+.nav-item {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+.nav-pills .nav-link{
+    background-color: #9fcaf5 !important;
+}
+h4 {
+    color: #6f7882 !important;
+}
+
+@font-face {
+    font-family: "Adobe NotDef";
+    src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+}
+
+.box-title {
+    width: 100%;
+    font-size: 8pt;
+    font-weight: 700;
+    border-top: 1px solid black;
+    padding-top: 5px;
+    margin-bottom: 10pt;
+    display: block;
+}
+
+.box {
+    margin-bottom: 20pt;
+    width: 100%;
+    float: left;
+}
+
+.box-text {}
+
+#ui-nav {
+    position: fixed;
+    right: 20px;
+    z-index: 100;
+}
+
+#font-toggle {}
+
+.ui-nav-item {
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+    text-align: center;
+    color: white;
+    background-color: black;
+    display: block;
+    font-size: 14pt;
+    padding: 5px;
+    margin: 2px;
+}
+
+/* Stuff needed for the table differ */
+body {
+    font-family: Helvetica;
+}
+
+.node {
+    font-family: courier;
+    cursor: pointer;
+    position: relative;
+    left: 30px;
+    padding: 5px;
+    display: block;
+    border: 1px dashed grey;
+    background-color: #e9e9ee;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.attr-before {
+    color: green;
+    cursor: text;
+}
+
+.attr-after {
+    color: red;
+    cursor: text;
+}
+
+.leaf {
+    font-weight: bold;
+}
+
+.old .cell .new {
+    display: none;
+}
+
+.new .cell .old {
+    display: none;
+}
+
+.both .cell .old {
+    opacity: 0.75;
+    color: red;
+}
+
+.both .cell .new {
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    color: green;
+}
+
+.spacer {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+#ot-panel {
+    max-height: 400px;
+    overflow-y: scroll;
+    background: white;
+    padding: 10px;
+    display: none;
+   }
+
+   .cell{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    width: 50pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+  }
+  .cell-word{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  .cell-glyph{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    border-radius: 5pt;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 5pt;
+    margin: 5pt;
+    width: calc(var(--node-pt-size) * 2);
+    min-height: calc(var(--node-pt-size) * 2);
+    font-size: var(--node-pt-size);
+  }
+  .cell-glyph.font-before, .cell-word.font-before {
+    background: #eff6f2;
+  }
+  .cell-glyph.font-after, .cell-word.font-after {
+    background: #f7f4f4;
+  }
+
+  .cell-glyph:hover {
+    box-shadow: none;
+    background: #f0f0f5;
+  }
+  .cat-strings .cell {
+    clear: both;
+    position: static;
+    float: none;
+    text-align: left;
+  }
+  .codepoint {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 10pt;
+    line-height: 10pt;
+  }
+  .box-title {
+    clear: both;
+  }
+  .node.closed::before {
+    content: "+";
+    margin-right: 5pt;
+  }
+  .node.open::before {
+    content: "-";
+    margin-right: 5pt;
+  }
+
+  .tooltip pre {
+    background-color: #6f7882;
+    padding: 5px;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .tooltip {
+    line-height: 1em;
+  }
+  .tooltip-inner {
+    max-width: 300px;
+  }
+
+  h1,h2,h3,h4,h5 {
+    clear: both;
+  }
+
+  #locationnav li {
+    white-space: wrap;
+  }
+
+  #userdefined div { width: 100%; }
+  
+/* The following rules are used in the WASM version, not in the CLI version.
+   But we keep them here so we can share them between the two versions. */
+
+   .modal-dialog {
+    max-width: 100% !important;
+    margin: 0 !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+  }
+
+  .fontdrop {
+    padding: 30px;
+    border-radius: 20px;
+    outline: 3px dashed #ffffffff;
+    outline-offset: -20px;
+  }
+
+  #fontbefore {
+    background-color: #ddffdddd;
+  }
+
+  #fontafter {
+    background-color: #ffdddddd;
+  }
+
+  .dragging {
+    background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
+    outline: 5px dashed #ffffffff;
+  }
+
+  #diffkerns {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+		</style>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+		<div id="ui-nav">
+		  <div class="ui-nav-item" id="fonttoggle">Old</div>
+		  <div class="ui-nav-item" id="fontanimate">Animate</div>
+		  <div id="axes">
+		  </div>
+		</div>
+	
+	<div class="row">
+		<div class="col-2">
+			<ul class="nav nav-pills" id="locationnav">
+			</ul>
+		</div>
+		<div class="col-9 mt-3">
+			<div id="title"></div>
+			<div id="cmapdiff"> </div>
+			<div id="main"></div>
+			<div id="userdefined">
+				<h4>User defined sample text</h4>
+				<div contenteditable="true" class="font-before cell-word">
+					You can type your own text here to see it previewed in the fonts.
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div id="diffkerns"> </div>
+			<div id="difftable"> </div>
+		</div>
+	</div>
+	<script type="module">
+		function renderTableDiff(node, toplevel) {
+  var wrapper = $("<div> </div>");
+  if (!node) {
+    return wrapper;
+  }
+  if (Array.isArray(node) && node.length == 2) {
+    var before = $("<span/>");
+    before.addClass("attr-before");
+    before.html(" " + node[0] + " ");
+    var after = $("<span/>");
+    after.addClass("attr-after");
+    after.append(renderTableDiff(node[1], true).children());
+    wrapper.append(before);
+    wrapper.append(after);
+    return wrapper;
+  }
+  if (node.constructor != Object) {
+    var thing = $("<span/>");
+    thing.html(node);
+    wrapper.append(thing);
+    return wrapper;
+  }
+  for (const [key, value] of Object.entries(node)) {
+    var display = $("<div/>");
+    display.addClass("node");
+    if (!toplevel) {
+      display.hide();
+    }
+    display.append(key);
+    display.append(renderTableDiff(value, false).children());
+    if (display.children(".node").length > 0) {
+      display.addClass("closed");
+    }
+    wrapper.append(display);
+  }
+  return wrapper;
+}
+
+function addAGlyph(glyph, where) {
+  let title = "";
+  if (glyph.name) {
+    title = "name: " + glyph.name;
+  }
+  let cp =
+    "<br>U+" +
+    glyph.string.codePointAt(0).toString(16).padStart(4, "0").toUpperCase();
+  where.append(`
+        <div class="cell-glyph font-before">
+        <div data-toggle="tooltip" data-html="true" data-title="${glyph.differing_pixels} pixels"> ${glyph.string}
+        <div class="codepoint" data-toggle="tooltip" data-html="true" data-title="${title}">
+		${cp}
+        </div>
+        </div>
+    `);
+}
+
+function addAWord(diff, where) {
+  if (!diff.buffer_b) {
+    diff.buffer_b = diff.buffer_a;
+  }
+  where.append(`
+		<div class="cell-word font-before">
+		<span data-toggle="tooltip" data-html="true" data-title="Before: <pre>${diff.buffer_a}</pre>After: <pre>${diff.buffer_b}</pre><br>difference: ${diff.differing_pixels} pixels">
+		${diff.word}
+		</span>
+		</div>
+	`);
+}
+
+function diffTables(report) {
+  $("#difftable").empty();
+  $("#difftable").append(`<h4 class="mt-2 box-title">Table-level details</h4>`);
+  $("#difftable").append(
+    renderTableDiff({ tables: report["tables"] }, true).children()
+  );
+  $("#difftable .node").on("click", function (e) {
+    $(this).toggleClass("closed open");
+    $(this).children(".node").toggle();
+    e.stopPropagation();
+  });
+}
+function diffKerns(report) {
+  $("#diffkerns").empty();
+  $("#diffkerns").append(`<h4 class="mt-2">Modified Kerns</h4>`);
+  $("#diffkerns").append(
+    `<table class="table table-striped" id="diffkerns"><tr><th>Pair</th><th>Old</old><th>New</th></table>`
+  );
+  for (let [pair, value] of Object.entries(report["kerns"])) {
+    if (pair == "error") {
+      $("#diffkerns").append(`<p class="text-danger">Error: ${value}</p>`);
+      continue;
+    } else {
+      let row = $("<tr>");
+      row.append(`<td>${pair}</td>`);
+      row.append(`<td>${serializeKernBefore(value)}</td>`);
+      row.append(`<td>${serializeKernAfter(value)}</td>`);
+      $("#diffkerns table").append(row);
+    }
+  }
+}
+
+function serializeKernBefore(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[0], -1);
+  }
+  return serializeKern(kern, 0);
+}
+
+function serializeKernAfter(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[1], -1);
+  }
+  return serializeKern(kern, 1);
+}
+
+function serializeKern(kern, index) {
+  let string = "";
+  if (kern === null || kern === undefined) {
+    return "(null)";
+  }
+  if (kern.x) {
+    string += serializeKernValue(kern.x, index);
+  } else if (kern.y) {
+    string = "0";
+  }
+
+  if (kern.y) {
+    string += "," + serializeKernValue(kern.y, index);
+  }
+  if (!kern.x_placement && !kern.y_placement) {
+    return string;
+  }
+  string += "@";
+  if (kern.x_placement) {
+    string += serializeKernValue(kern.x_placement, index);
+  } else if (kern.y_placement) {
+    string += "0";
+  }
+  if (kern.y_placement) {
+    string += "," + serializeKernValue(kern.y_placement, index);
+  }
+  return string;
+}
+
+function serializeKernValue(kern, index) {
+  if (typeof kern == "number") {
+    return kern;
+  }
+  let string = "(";
+  let verybig = Object.entries(kern).length > 5;
+  for (let [key, value] of Object.entries(kern)) {
+    if (key == "default") {
+      string += value[index] + " ";
+    } else {
+      string += value[index] + "@" + key + " ";
+    }
+    if (verybig) {
+      string += "<br>";
+    }
+  }
+  return string.trim() + ")";
+}
+
+function cmapDiff(report) {
+  if (report.cmap_diff && (report.cmap_diff.new || report.cmap_diff.missing)) {
+    $("#cmapdiff").append(
+      `<h4 class="mt-2">Added and Removed Encoded Glyphs</h4>`
+    );
+    if (report["cmap_diff"]["new"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Added Glyphs</h4>`);
+      let added = $("<div>");
+      for (let glyph of report["cmap_diff"]["new"]) {
+        addAGlyph(glyph, added);
+      }
+      $("#cmapdiff").append(added);
+    }
+
+    if (report["cmap_diff"]["missing"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Removed Glyphs</h4>`);
+      let missing = $("<div>");
+      for (let glyph of report["cmap_diff"]["missing"]) {
+        addAGlyph(glyph, missing);
+      }
+      $("#cmapdiff").append(missing);
+    }
+  } else {
+    $("#cmapdiff").append(`<p>No changes to encoded glyphs</p>`);
+  }
+}
+
+function setupAnimation() {
+  $("#fonttoggle").click(function () {
+    if ($(this).text() == "Old") {
+      $(this).text("New");
+      $(".font-before").removeClass("font-before").addClass("font-after");
+    } else {
+      $(this).text("Old");
+      $(".font-after").removeClass("font-after").addClass("font-before");
+    }
+  });
+
+  let animationHandle;
+  function animate() {
+    $("#fonttoggle").click();
+    animationHandle = setTimeout(animate, 1000);
+  }
+  $("#fontanimate").click(function () {
+    if ($(this).text() == "Animate") {
+      $(this).text("Stop");
+      animate();
+    } else {
+      $(this).text("Animate");
+      clearTimeout(animationHandle);
+    }
+  });
+}
+
+export {
+  renderTableDiff,
+  addAGlyph,
+  addAWord,
+  cmapDiff,
+  diffTables,
+  diffKerns,
+  setupAnimation,
+};
+
+	var report = {"tables":{"GPOS":{"script_list":{"DFLT/dflt":{"lookups":{"1":[2,1]}},"armn/dflt":{"lookups":{"0":[1,0],"1":[2,1]}}},"lookup_list":{"0":{"0":{"bases":{"uni0548":{"anchor_0":{"x":[364,363]}},"uni0560":{"anchor_0":{"x":[440,439]}}}}},"1":{"0":{"ligatures":{"uni05480552":{"anchor_0_1":{"x":[364,363]}}}}},"2":{"0":{"uni0531":{"uni0531":{"x":[1,0]},"uni0533":{"x":[4,-3]},"uni0534":{"x":[5,0]},"uni0535":{"x":[1,0]},"uni053E":{"x":[1,0]},"uni053F":{"x":[5,0]},"uni0542":{"x":[5,0]},"uni0544":{"x":[1,0]},"uni0546":{"x":[3,1]},"uni0547":{"x":[2,1]},"uni0549":{"x":[3,1]},"uni054A":{"x":[4,0]},"uni054D":{"x":[1,0]},"uni054E":{"x":[2,-1]},"uni0553":{"x":[2,1]},"uni0555":{"x":[2,1]},"uni055B":{"x":[-172,-178]},"uni055C":{"x":[-172,-178]},"uni055E":{"x":[-222,-223]},"uni058F":{"x":[5,0]}},"uni0535":{"uni055B":{"x":[-241,-242]},"uni055C":{"x":[-257,-252]},"uni055E":{"x":[-440,-429]}},"uni0538":{"uni055B":{"x":[-59,-57]},"uni055C":{"x":[-59,-57]},"uni055E":{"x":[-72,-68]}},"uni053B":{"uni055B":{"x":[-73,-71]},"uni055C":{"x":[-73,-71]},"uni055E":{"x":[-110,-105]}},"uni053C":{"uni0533":{"x":[-35,-60]},"uni0534":{"x":[-45,-24]},"uni053F":{"x":[5,0]},"uni0542":{"x":[-81,-79]},"uni054A":{"x":[1,-2]},"uni054E":{"x":[5,0]},"uni0553":{"x":[0,-2]},"uni0555":{"x":[1,0]},"uni058F":{"x":[5,0]}},"uni0542":{"uni0533":{"x":[5,0]},"uni0534":{"x":[5,0]},"uni053F":{"x":[4,1]},"uni0542":{"x":[5,0]},"uni0549":{"x":[-36,-35]},"uni054E":{"x":[2,0]},"uni0577":{"x":[-26,-27]},"uni057B":{"x":[-31,-33]},"uni058F":{"x":[5,0]}},"uni0544":{"uni056B":{"x":[2,4]},"uni0570":{"x":[-18,-17]},"uni0573":{"x":[-10,-13]},"uni0576":{"x":[26,23]}},"uni0546":{"uni0534":{"x":[-27,-28]},"uni0542":{"x":[-27,-28]}},"uni0547":{"uni0534":{"x":[-22,-23]},"uni0542":{"x":[-22,-23]},"uni0562":{"x":[-7,-3]},"uni0563":{"x":[-7,-4]},"uni0566":{"x":[-7,-4]},"uni0568":{"x":[-7,-3]},"uni0569":{"x":[-7,-3]},"uni056A":{"x":[-7,-4]},"uni056C":{"x":[-7,-3]},"uni056E":{"x":[-7,-4]},"uni0580":{"x":[-7,-3]},"uni0581":{"x":[-7,-4]},"uni0584":{"x":[-7,-3]},"uni0585":{"x":[-7,-4]},"uni0560":[null,{"x":-2}],"uni0561":[null,{"x":-2}],"uni0564":[null,{"x":-3}],"uni0572":[null,{"x":-3}],"uni0574":[null,{"x":-2}],"uni0575":[null,{"x":-3}],"uni0577":[null,{"x":-3}],"uni0578":[null,{"x":-3}],"uni05780582":[null,{"x":-3}],"uni0579":[null,{"x":-3}],"uni057A":[null,{"x":-2}],"uni057B":[null,{"x":-2}],"uni057C":[null,{"x":-3}],"uni057D":[null,{"x":-2}],"uni057E":[null,{"x":-2}],"uni057F":[null,{"x":-2}],"uni0582":[null,{"x":-3}],"uni0583":[null,{"x":-2}],"uni0588":[null,{"x":-3}],"uniFB13":[null,{"x":-2}],"uniFB14":[null,{"x":-2}],"uniFB15":[null,{"x":-2}],"uniFB16":[null,{"x":-2}],"uniFB17":[null,{"x":-2}]},"uni0548":{"uni055B":{"x":[-59,-57]},"uni055C":{"x":[-59,-57]},"uni055E":{"x":[-79,-77]}},"uni054C":{"uni053A":{"x":[2,3]},"uni0570":{"x":[18,17]}},"uni054D":{"uni055E":{"x":[-109,-111]}},"uni054E":{"uni0533":{"x":[5,0]},"uni0534":{"x":[5,0]},"uni053F":{"x":[4,1]},"uni0542":{"x":[5,0]},"uni054E":{"x":[2,0]},"uni058F":{"x":[5,0]}},"uni0563":{"uni0533":{"x":[9,8]}},"uni0564":{"uni0533":{"x":[9,8]}},"uni0566":{"uni057B":{"x":[-24,-21]}},"uni0567":{"uni0581":{"x":[-23,-14]}},"uni0568":{"uni055E":{"x":[-489,-487]}},"uni056B":{"uni055E":{"x":[-394,-387]}},"uni056C":{"uni0531":{"x":[-59,-62]},"uni0535":{"x":[-59,-62]},"uni0544":{"x":[-59,-62]},"uni054D":{"x":[-59,-62]},"uni0560":{"x":[-43,-45]},"uni0561":{"x":[-43,-45]},"uni0562":{"x":[6,10]},"uni0563":{"x":[-51,-55]},"uni0564":{"x":[-39,-37]},"uni0565":{"x":[-34,-32]},"uni0566":{"x":[-51,-55]},"uni0567":{"x":[-9,-8]},"uni0568":{"x":[6,10]},"uni0569":{"x":[6,10]},"uni056A":{"x":[-51,-55]},"uni056B":{"x":[-9,-8]},"uni056C":{"x":[6,10]},"uni056D":{"x":[-9,-8]},"uni056E":{"x":[-51,-55]},"uni056F":{"x":[-34,-32]},"uni0570":{"x":[-34,-35]},"uni0571":{"x":[-41,-36]},"uni0572":{"x":[-39,-37]},"uni0574":{"x":[-43,-45]},"uni0575":{"x":[-4,23]},"uni0576":{"x":[-35,-38]},"uni0577":{"x":[34,35]},"uni0578":{"x":[-39,-37]},"uni05780582":{"x":[-39,-37]},"uni0579":{"x":[84,96]},"uni057A":{"x":[-43,-45]},"uni057B":{"x":[-9,-4]},"uni057C":{"x":[-39,-37]},"uni057D":{"x":[-43,-45]},"uni057E":{"x":[-43,-45]},"uni057F":{"x":[-43,-45]},"uni0580":{"x":[6,10]},"uni0581":{"x":[-29,-15]},"uni0582":{"x":[-39,-37]},"uni0583":{"x":[-43,-45]},"uni0584":{"x":[6,10]},"uni0585":{"x":[-51,-55]},"uni0587":{"x":[-34,-32]},"uni0588":{"x":[-39,-37]},"uniFB13":{"x":[-43,-45]},"uniFB14":{"x":[-43,-45]},"uniFB15":{"x":[-43,-45]},"uniFB16":{"x":[-43,-45]},"uniFB17":{"x":[-43,-45]}},"uni056F":{"uni057B":{"x":[-24,-21]}},"uni0572":{"uni0577":{"x":[30,27]},"uni0579":{"x":[96,91]},"uni057B":{"x":[-24,-21]}},"uni0575":{"uni0579":{"x":[12,22]}},"uni0578":{"uni055E":{"x":[-394,-387]}},"uni057C":{"uni0533":{"x":[9,8]}},"uni057E":{"uni057B":{"x":[-24,-21]}},"uni057F":{"uni055E":{"x":[-394,-387]}},"uni0580":{"uni055E":{"x":[-394,-387]}},"uni0583":{"uni055E":{"x":[-394,-387]}},"uni0587":{"uni0533":{"x":[3,1]},"uni0579":{"x":[9,13]}},"uniFB15":{"uni055E":{"x":[-394,-387]}}},"1":{"classes":{"@CLASS_L_4":{"0":["uni05780582","uni05480552"],"1":["uni0582","uni0552"]},"@CLASS_L_5":{"0":["uni0577","uni0553"],"1":["uni057B","uni0555"]},"@CLASS_L_7":{"0":["uni0553","uni0577"],"1":["uni0555","uni057B"]},"@CLASS_L_8":{"0":["uni05480552","uni05780582"],"1":["uni0552","uni0582"]},"@CLASS_L_9":{"0":["uni0585","uni0537"]},"@CLASS_L_10":{"0":["uni057A","uni0539"]},"@CLASS_L_11":{"0":["uni0579","uni053A"]},"@CLASS_L_12":{"0":["uni0574","uni0540"]},"@CLASS_L_13":{"0":["uni0573","uni0544"]},"@CLASS_L_15":{"0":["uni0544","uni0573"]},"@CLASS_L_16":{"0":["uni0540","uni0574"]},"@CLASS_L_17":{"0":["uni053A","uni0579"]},"@CLASS_L_18":{"0":["uni0539","uni057A"]},"@CLASS_L_19":{"0":["uni0537","uni0585"]},"@CLASS_R_3":{"0":["uni0563","uni0562"],"1":["uni0566","uni0568"],"2":["uni056A","uni0569"],"3":["uni056E","uni056C"],"4":["uni0581","uni0580"],"5":["uni0585","uni0584"]},"@CLASS_R_4":{"0":["uni0562","uni0563"],"1":["uni0568","uni0566"],"2":["uni0569","uni056A"],"3":["uni056C","uni056E"],"4":["uni0580","uni0581"],"5":["uni0584","uni0585"]},"@CLASS_R_6":{"0":["uni0567","uni0565"],"1":["uni056B","uni056F"],"2":["uni056D","uni0587"]},"@CLASS_R_7":{"0":["uni0565","uni0567"],"1":["uni056F","uni056B"],"2":["uni0587","uni056D"]},"@CLASS_R_9":{"0":["uni057B","uni053A"]},"@CLASS_R_10":{"0":["uni0579","uni053E"]},"@CLASS_R_11":{"0":["uni0577","uni053F"]},"@CLASS_R_12":{"0":["uni0571","uni0540"]},"@CLASS_R_13":{"0":["uni055E","uni0545"]},"@CLASS_R_14":{"0":["uni055C","uni0546"]},"@CLASS_R_15":{"0":["uni055B","uni0547"]},"@CLASS_R_16":{"0":["uni0554","uni0549"]},"@CLASS_R_18":{"0":["uni0549","uni0554"]},"@CLASS_R_19":{"0":["uni0547","uni055B"]},"@CLASS_R_20":{"0":["uni0546","uni055C"]},"@CLASS_R_21":{"0":["uni0545","uni055E"]},"@CLASS_R_22":{"0":["uni0540","uni0571"]},"@CLASS_R_23":{"0":["uni053F","uni0577"]},"@CLASS_R_24":{"0":["uni053E","uni0579"]},"@CLASS_R_25":{"0":["uni053A","uni057B"]}},"kerns":{"@CLASS_L_0":{"@CLASS_R_13":{"x":[-489,0]},"@CLASS_R_14":{"x":[-299,0]},"@CLASS_R_15":{"x":[-241,0]},"@CLASS_R_19":{"x":[0,-242]},"@CLASS_R_20":{"x":[0,-299]},"@CLASS_R_21":{"x":[0,-487]}},"@CLASS_L_1":{"@CLASS_R_9":{"x":[-17,0]},"@CLASS_R_10":{"x":[53,0]},"@CLASS_R_13":{"x":[-442,0]},"@CLASS_R_14":{"x":[-299,0]},"@CLASS_R_15":{"x":[-241,0]},"@CLASS_R_19":{"x":[0,-245]},"@CLASS_R_20":{"x":[0,-299]},"@CLASS_R_21":{"x":[0,-457]},"@CLASS_R_23":{"x":[0,-2]},"@CLASS_R_24":{"x":[0,52]},"@CLASS_R_25":{"x":[0,-13]}},"@CLASS_L_2":{"@CLASS_R_2":{"x":[16,15]},"@CLASS_R_3":{"x":[0,2]},"@CLASS_R_4":{"x":[-1,0]},"@CLASS_R_9":{"x":[-24,0]},"@CLASS_R_10":{"x":[80,0]},"@CLASS_R_11":{"x":[27,0]},"@CLASS_R_23":{"x":[0,25]},"@CLASS_R_24":{"x":[0,77]},"@CLASS_R_25":{"x":[0,-20]}},"@CLASS_L_3":{"@CLASS_R_10":{"x":[50,0]},"@CLASS_R_24":{"x":[0,51]}},"@CLASS_L_4":{"@CLASS_R_9":{"x":[0,-1]},"@CLASS_R_13":{"x":[-420,0]},"@CLASS_R_14":{"x":[-299,0]},"@CLASS_R_15":{"x":[-241,0]},"@CLASS_R_19":{"x":[0,-226]},"@CLASS_R_20":{"x":[0,-271]},"@CLASS_R_21":{"x":[0,-354]}},"@CLASS_L_5":{"@CLASS_R_10":{"x":[-2,0]},"@CLASS_R_19":{"x":[0,-59]},"@CLASS_R_20":{"x":[0,-59]},"@CLASS_R_21":{"x":[0,-62]}},"@CLASS_L_6":{"@CLASS_R_13":{"x":[-403,0]},"@CLASS_R_14":{"x":[-299,0]},"@CLASS_R_15":{"x":[-241,0]},"@CLASS_R_19":{"x":[0,-245]},"@CLASS_R_20":{"x":[0,-299]},"@CLASS_R_21":{"x":[0,-400]}},"@CLASS_L_7":{"@CLASS_R_13":{"x":[-66,0]},"@CLASS_R_14":{"x":[-57,0]},"@CLASS_R_15":{"x":[-57,0]}},"@CLASS_L_8":{"@CLASS_R_13":{"x":[-357,0]},"@CLASS_R_14":{"x":[-271,0]},"@CLASS_R_15":{"x":[-226,0]},"@CLASS_R_19":{"x":[0,-244]},"@CLASS_R_20":{"x":[0,-299]},"@CLASS_R_21":{"x":[0,-399]},"@CLASS_R_24":{"x":[-1,0]},"@CLASS_R_25":{"x":[-2,0]}},"@CLASS_L_9":{"@CLASS_R_4":{"x":[0,-7]},"@CLASS_R_13":{"x":[-489,0]},"@CLASS_R_14":{"x":[-299,0]},"@CLASS_R_15":{"x":[-241,0]},"@CLASS_R_16":{"x":[0,-1]},"@CLASS_R_18":{"x":[0,-1]},"@CLASS_R_22":{"x":[0,-6]}},"@CLASS_L_10":{"@CLASS_R_4":{"x":[0,-4]},"@CLASS_R_10":{"x":[30,0]}},"@CLASS_L_11":{"@CLASS_R_1":{"x":[-11,0]},"@CLASS_R_3":{"x":[-9,0]},"@CLASS_R_4":{"x":[0,-5]},"@CLASS_R_6":{"x":[-9,0]},"@CLASS_R_7":{"x":[-11,0]},"@CLASS_R_10":{"x":[25,0]},"@CLASS_R_12":{"x":[-8,0]}},"@CLASS_L_12":{"@CLASS_R_4":{"x":[0,-5]},"@CLASS_R_9":{"x":[0,-1]},"@CLASS_R_13":{"x":[0,1]},"@CLASS_R_16":{"x":[0,1]},"@CLASS_R_17":{"x":[0,1]},"@CLASS_R_22":{"x":[0,-3]},"@CLASS_R_23":{"x":[-10,-3]},"@CLASS_R_25":{"x":[0,-6]}},"@CLASS_L_13":{"@CLASS_R_1":{"x":[0,-22]},"@CLASS_R_2":{"x":[0,-24]},"@CLASS_R_3":{"x":[0,-33]},"@CLASS_R_4":{"x":[0,-67]},"@CLASS_R_6":{"x":[0,13]},"@CLASS_R_7":{"x":[0,13]},"@CLASS_R_9":{"x":[0,-5]},"@CLASS_R_13":{"x":[0,-1]},"@CLASS_R_22":{"x":[0,-28]},"@CLASS_R_23":{"x":[-10,-49]},"@CLASS_R_24":{"x":[0,-43]},"@CLASS_R_25":{"x":[0,-49]}},"@CLASS_L_14":{"@CLASS_R_3":{"x":[-41,0]},"@CLASS_R_4":{"x":[0,-41]},"@CLASS_R_10":{"x":[17,0]},"@CLASS_R_12":{"x":[-36,0]},"@CLASS_R_22":{"x":[0,-36]},"@CLASS_R_24":{"x":[0,19]}},"@CLASS_L_15":{"@CLASS_R_1":{"x":[-25,0]},"@CLASS_R_2":{"x":[-28,0]},"@CLASS_R_3":{"x":[-70,0]},"@CLASS_R_4":{"x":[-34,0]},"@CLASS_R_6":{"x":[9,0]},"@CLASS_R_7":{"x":[14,0]},"@CLASS_R_9":{"x":[-51,0]},"@CLASS_R_10":{"x":[-50,0]},"@CLASS_R_11":{"x":[-48,-9]},"@CLASS_R_12":{"x":[-35,0]},"@CLASS_R_21":{"x":[1,0]},"@CLASS_R_22":{"x":[3,0]},"@CLASS_R_25":{"x":[1,0]}},"@CLASS_L_16":{"@CLASS_R_3":{"x":[-3,0]},"@CLASS_R_5":{"x":[1,0]},"@CLASS_R_8":{"x":[1,0]},"@CLASS_R_9":{"x":[-4,0]},"@CLASS_R_11":{"x":[-2,-9]},"@CLASS_R_12":{"x":[-2,0]},"@CLASS_R_16":{"x":[1,0]},"@CLASS_R_17":{"x":[3,0]},"@CLASS_R_18":{"x":[2,0]},"@CLASS_R_21":{"x":[2,0]},"@CLASS_R_25":{"x":[1,0]}},"@CLASS_L_17":{"@CLASS_R_1":{"x":[0,-11]},"@CLASS_R_3":{"x":[-3,0]},"@CLASS_R_4":{"x":[0,-9]},"@CLASS_R_6":{"x":[0,-11]},"@CLASS_R_7":{"x":[0,-9]},"@CLASS_R_19":{"x":[1,0]},"@CLASS_R_20":{"x":[1,0]},"@CLASS_R_22":{"x":[0,-7]},"@CLASS_R_24":{"x":[0,27]}},"@CLASS_L_18":{"@CLASS_R_3":{"x":[-2,0]},"@CLASS_R_24":{"x":[0,28]}},"@CLASS_L_19":{"@CLASS_R_3":{"x":[-5,0]},"@CLASS_R_12":{"x":[-4,0]},"@CLASS_R_19":{"x":[0,-245]},"@CLASS_R_20":{"x":[0,-299]},"@CLASS_R_21":{"x":[0,-488]}}}}},"3":{"2":{"rules":{"0":["uni0308 [uni0578 uni0585] uni055E' lookup lookup_4","uni0308 [uni0560 uni0561] uni055E' lookup lookup_4"]}},"3":[null,{"type":"chained_sequence_context","rules":["uni0308 [uni0578 uni0585] uni055E' lookup lookup_5"]}]},"4":{"0":{"uni055E":{"x":[300,100],"x_placement":[300,100]}}},"5":{"1":[null,{"type":"single","uni055E":{"x":300,"x_placement":300}}]}}},"OS/2":{"x_avg_char_width":[650,649]},"head":{"checksum_adjustment":[2568677322,1595805004],"modified":[3778484481,3813907954],"x_min":[-164,-166],"x_max":[1435,1439],"y_max":[861,860]},"hhea":{"advance_width_max":[1463,1466],"min_left_side_bearing":[-164,-166],"min_right_side_bearing":[-161,-163],"x_max_extent":[1435,1439],"caret_slope_rise":[1,1000]},"hmtx":{".notdef":{"width":[573,572]},"uni0308":{"lsb":[-164,-166]},"hyphen":{"lsb":[24,23]},"uni2010":{"lsb":[24,23]},"uni0531":{"width":[883,882]},"uni0532":{"width":[694,693]},"uni0533":{"width":[790,789]},"uni0534":{"width":[790,789],"lsb":[58,59]},"uni0537":{"width":[596,595]},"uni0539":{"width":[822,821]},"uni053A":{"width":[719,718]},"uni053B":{"width":[681,683]},"uni053C":{"width":[563,562]},"uni053D":{"width":[925,927]},"uni053E":{"width":[725,726]},"uni053F":{"width":[709,708]},"uni0540":{"width":[639,638]},"uni0541":{"width":[632,631]},"uni0542":{"lsb":[58,59]},"uni0543":{"width":[691,690]},"uni0544":{"width":[820,819]},"uni0545":{"width":[647,646]},"uni0548":{"width":[728,727]},"uni05480552":{"width":[1380,1379]},"uni0549":{"width":[644,643],"lsb":[28,29]},"uni054A":{"width":[869,867],"lsb":[53,54]},"uni054C":{"width":[883,886]},"uni054D":{"width":[728,727]},"uni054E":{"width":[785,784]},"uni054F":{"width":[563,562]},"uni0550":{"width":[693,692]},"uni0551":{"width":[612,611]},"uni0552":{"width":[652,651]},"uni0553":{"width":[829,828]},"uni0554":{"width":[619,618]},"uni0555":{"width":[751,750]},"uni0556":{"width":[719,718]},"uni0559":{"width":[249,248]},"uni055A":{"width":[249,248]},"uni055B":{"width":[241,242]},"uni055D":{"width":[241,242],"lsb":[41,42]},"uni055E":{"width":[489,488]},"uni0560":{"width":[876,875]},"uni0561":{"width":[876,875]},"uni0562":{"width":[588,587]},"uni0563":{"width":[640,639]},"uni0565":{"width":[589,588]},"uni0566":{"width":[621,620]},"uni0567":{"width":[536,535]},"uni0568":{"width":[588,587]},"uni0569":{"width":[743,741],"lsb":[42,41]},"uni056A":{"width":[645,644]},"uni056B":{"width":[589,588]},"uni056C":{"width":[374,377],"lsb":[22,24]},"uni056D":{"width":[882,881]},"uni056F":{"width":[589,588]},"uni0571":{"width":[585,586]},"uni0574":{"width":[589,588]},"uni0577":{"width":[513,512],"lsb":[24,25]},"uni0578":{"width":[589,588]},"uni05780582":{"width":[995,993]},"uni057A":{"width":[881,880]},"uni057D":{"width":[589,588]},"uni057E":{"width":[617,616]},"uni057F":{"width":[873,872]},"uni0581":{"width":[590,592]},"uni0582":{"width":[406,405]},"uni0583":{"width":[873,872]},"uni0586":{"width":[693,690]},"uni0587":{"width":[645,644]},"uni0588":{"width":[346,342],"lsb":[6,5]},"uni0589":{"width":[294,293]},"uni058D":{"lsb":[35,36]},"uni058E":{"lsb":[35,36]},"uni058F":{"width":[724,722]},"uniFB13":{"width":[1173,1176]},"uniFB14":{"width":[1168,1171]},"uniFB15":{"width":[1171,1175]},"uniFB16":{"width":[1168,1172]},"uniFB17":{"width":[1463,1466]},"uni2019":{"width":[249,248]}},"loca":{"offsets":{"15":[816,812],"16":[882,878],"17":[1006,1002],"18":[1094,1090],"19":[1186,1182],"20":[1236,1232],"21":[1340,1336],"22":[1480,1476],"23":[1582,1578],"24":[1674,1670],"25":[1876,1866],"26":[1940,1930],"27":[2068,2058],"28":[2170,2160],"29":[2314,2304],"30":[2408,2398],"31":[2544,2530],"32":[2622,2608],"33":[2646,2632],"34":[2746,2732],"35":[2820,2806],"36":[2958,2946],"37":[3072,3060],"38":[3152,3140],"39":[3246,3234],"40":[3384,3372],"41":[3452,3440],"42":[3616,3604],"43":[3716,3704],"44":[3864,3852],"45":[3958,3946],"46":[4046,4034],"47":[4182,4170],"48":[4232,4220],"49":[4282,4270],"50":[4328,4316],"51":[4388,4376],"52":[4434,4422],"53":[4516,4504],"54":[4578,4564],"55":[4718,4704],"56":[4860,4846],"57":[4964,4950],"58":[5090,5076],"59":[5194,5180],"60":[5292,5278],"61":[5406,5392],"62":[5504,5490],"63":[5598,5584],"64":[5748,5736],"65":[5854,5838],"66":[5960,5944],"67":[6012,5996],"68":[6168,6152],"69":[6312,6292],"70":[6418,6398],"71":[6518,6498],"72":[6686,6666],"73":[6780,6760],"74":[6932,6908],"75":[7080,7056],"76":[7158,7134],"77":[7300,7276],"78":[7416,7394],"79":[7512,7490],"80":[7536,7514],"81":[7630,7612],"82":[7780,7762],"83":[7922,7906],"84":[8012,8000],"85":[8108,8096],"86":[8208,8196],"87":[8356,8344],"88":[8454,8442],"89":[8596,8584],"90":[8648,8636],"91":[8814,8802],"92":[8950,8938],"93":[9026,9014],"94":[9170,9158],"95":[9262,9250],"96":[9348,9336],"97":[9424,9412],"98":[9472,9460],"99":[9902,9894],"100":[10336,10328],"101":[10434,10426],"102":[10952,10944],"103":[11204,11198],"104":[11418,11412],"105":[11642,11636],"106":[11862,11860],"107":[12140,12138],"108":[12156,12154]}}},"kerns":{"error":"There are 384 changes, check manually!"},"cmap_diff":{},"locations":[{"location":"Default","glyphs":[{"string":"ﬗ","name":"ARMENIAN SMALL LIGATURE MEN XEH","unicode":"U+FB17","differing_pixels":131},{"string":"ﬕ","name":"ARMENIAN SMALL LIGATURE MEN INI","unicode":"U+FB15","differing_pixels":94},{"string":"ﬓ","name":"ARMENIAN SMALL LIGATURE MEN NOW","unicode":"U+FB13","differing_pixels":81},{"string":"ﬖ","name":"ARMENIAN SMALL LIGATURE VEW NOW","unicode":"U+FB16","differing_pixels":74},{"string":"ﬔ","name":"ARMENIAN SMALL LIGATURE MEN ECH","unicode":"U+FB14","differing_pixels":64},{"string":"ֆ","name":"ARMENIAN SMALL LETTER FEH","unicode":"U+0586","differing_pixels":52},{"string":"լ","name":"ARMENIAN SMALL LETTER LIWN","unicode":"U+056C","differing_pixels":50},{"string":"Խ","name":"ARMENIAN CAPITAL LETTER XEH","unicode":"U+053D","differing_pixels":42},{"string":"ֈ","name":"ARMENIAN SMALL LETTER YI WITH STROKE","unicode":"U+0588","differing_pixels":29},{"string":"Պ","name":"ARMENIAN CAPITAL LETTER PEH","unicode":"U+054A","differing_pixels":24},{"string":"Ձ","name":"ARMENIAN CAPITAL LETTER JA","unicode":"U+0541","differing_pixels":23},{"string":"ր","name":"ARMENIAN SMALL LETTER REH","unicode":"U+0580","differing_pixels":22},{"string":"Շ","name":"ARMENIAN CAPITAL LETTER SHA","unicode":"U+0547","differing_pixels":18},{"string":"չ","name":"ARMENIAN SMALL LETTER CHA","unicode":"U+0579","differing_pixels":17},{"string":"Ռ","name":"ARMENIAN CAPITAL LETTER RA","unicode":"U+054C","differing_pixels":17}],"words":{"Armenian":[{"word":"մխրճվեցին","buffer_a":"106|87|73|85|59|88|65|76|","differing_pixels":55},{"word":"միցելների","buffer_a":"104|88|59|66|76|59|87|65|","differing_pixels":44},{"word":"միեւնո՛յն","buffer_a":"104|59|89|76|78|49|75|76|","differing_pixels":43},{"word":"միջոսկրյա","buffer_a":"104|82|78|84|69|87|75|55|","differing_pixels":34},{"word":"միջամտեց՝","buffer_a":"104|82|55|74|86|59|88|51|","differing_pixels":32},{"word":"հեռուստառադիոհաղորդումների","buffer_a":"70|59|83|79|84|86|55|83|55|58|65|78|70|55|72|78|87|58|79|102|59|87|65|","differing_pixels":28},{"word":"Քիմմելը","buffer_a":"44|65|74|103|66|62|","differing_pixels":27},{"word":"Սեղմե՜ք","buffer_a":"37|59|72|103|50|91|","differing_pixels":27},{"word":"Վսևոլոդովնան","buffer_a":"38|84|94|78|66|78|58|78|105|55|76|","differing_pixels":20},{"word":"փաստաթղթաշրջանառությունում","buffer_a":"90|55|84|86|55|63|72|63|55|77|87|82|55|76|55|83|79|63|75|79|76|79|74|","differing_pixels":14},{"word":"մեկ֊երկու","buffer_a":"103|69|97|59|87|69|79|","differing_pixels":14},{"word":"Պայմանավորվածությունների","buffer_a":"34|55|75|74|55|76|55|85|78|87|85|55|68|79|63|75|79|76|76|59|87|65|","differing_pixels":13},{"word":"Հեռուստառադիոլրագրության","buffer_a":"23|59|83|79|84|86|55|83|55|58|65|78|66|87|55|57|87|79|63|75|55|76|","differing_pixels":11},{"word":"Ջերմահաղորդականությունը","buffer_a":"35|59|87|74|55|70|55|72|78|87|58|55|69|55|76|79|63|75|79|76|62|","differing_pixels":11},{"word":"Փրկությունից","buffer_a":"43|87|69|79|63|75|79|76|65|88|","differing_pixels":11},{"word":"էլեկտրաբացասականությունների","buffer_a":"61|66|59|69|86|87|55|56|55|88|55|84|55|69|55|76|79|63|75|79|76|76|59|87|65|","differing_pixels":10},{"word":"պայմանավորվածություններից։","buffer_a":"81|55|75|74|55|76|55|85|78|87|85|55|68|79|63|75|79|76|76|59|87|65|88|96|","differing_pixels":10},{"word":"Ծանոթագրություններում","buffer_a":"21|55|76|78|63|55|57|87|79|63|75|79|76|76|59|87|79|74|","differing_pixels":10},{"word":"Ենթաստամոքսատասներկումատնյաաղիքային","buffer_a":"12|76|63|55|84|86|55|74|78|91|84|55|86|55|84|76|59|87|69|79|74|55|86|76|75|55|55|72|65|91|55|75|65|76|","differing_pixels":9},{"word":"ճանաչո՞ւմ","buffer_a":"73|55|76|55|80|78|52|89|74|","differing_pixels":9}]}}]};
+		function buildLocation_statichtml(loc) {
+  // Set font styles to appropriate axis locations
+  let rule = document.styleSheets[0].cssRules[2].style;
+  let cssSetting = "";
+  let textLocation = "Default";
+  if (loc.coords) {
+    cssSetting = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `"${axis}" ${value}`;
+      })
+      .join(", ");
+    textLocation = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `${axis}=${value}`;
+      })
+      .join(" ");
+    rule.setProperty("font-variation-settings", cssSetting);
+  }
+
+  $("#main").empty();
+
+  $("#title").html(`<h4 class="mt-2">${textLocation}</h2>`);
+
+  if (loc.glyphs) {
+    $("#main").append("<h4>Modified Glyphs</h4>");
+    let glyphs = $("<div>");
+    for (let glyph of loc.glyphs) {
+      addAGlyph(glyph, glyphs);
+    }
+    $("#main").append(glyphs);
+  }
+
+  if (loc.words) {
+    $("#main").append("<h4>Modified Words</h4>");
+    for (let [script, words] of Object.entries(loc.words)) {
+      let scriptTitle = $(`<h6>${script}</h6>`);
+      $("#main").append(scriptTitle);
+      let worddiv = $("<div>");
+      for (let word of words) {
+        addAWord(word, worddiv);
+      }
+      $("#main").append(worddiv);
+    }
+  }
+  $('[data-toggle="tooltip"]').tooltip();
+}
+
+$(function () {
+  if (report["tables"]) {
+    diffTables(report);
+  }
+  if (report["kerns"]) {
+    diffKerns(report);
+  }
+  cmapDiff(report);
+  $('[data-toggle="tooltip"]').tooltip();
+  if (!report["locations"]) {
+    $("#title").html("<h4 class='mt-2'>No differences found</h4>");
+    $("#ui-nav").hide();
+    return;
+  }
+
+  for (var [index, loc] of report["locations"].entries()) {
+    var loc_nav = $(`<li class="nav-item">
+		<a class="nav-link text-secondary" href="#" data-index="${index}">${loc.location.replaceAll(
+      ",",
+      ",\u200b"
+    )}</a>
+	</li>`);
+    $("#locationnav").append(loc_nav);
+  }
+  $("#locationnav li a").on("click", function (e) {
+    $("#locationnav li a").removeClass("active");
+    $(this).addClass("active");
+    buildLocation_statichtml(report.locations[$(this).data("index")]);
+  });
+  $("#locationnav li a").eq(0).click();
+
+  document.styleSheets[0].cssRules[0].style.setProperty(
+    "src",
+    "url(old-NotoSerifArmenian-SemiCondensedExtraBold.ttf)"
+  );
+  document.styleSheets[0].cssRules[1].style.setProperty(
+    "src",
+    "url(new-NotoSerifArmenian-SemiCondensedExtraBold.ttf)"
+  );
+  setupAnimation();
+});
+
+	</script>
+</body>
+
+</html>

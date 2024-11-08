@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Diffenator3</title>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+		crossorigin="anonymous"></script>
+	<style type="text/css">
+		@font-face {
+      font-family: "Font Before";
+      src: url();
+    }
+
+    @font-face {
+      font-family: "Font After";
+      src: url();
+    }
+
+    .font-before, .font-after {
+      font-variation-settings: "wght" 400, "wdth" 100;
+    }
+
+    .font-before {
+      font-family: "Font Before", "Adobe Notdef";
+    }
+
+    .font-after {
+      font-family: "Font After", "Adobe Notdef";
+    }
+
+	:root {
+	--node-pt-size: 40px;
+	}
+
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #b3d4f5 !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active {
+    background-color: #ced9e4 !important;
+}
+.nav-item {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+.nav-pills .nav-link{
+    background-color: #9fcaf5 !important;
+}
+h4 {
+    color: #6f7882 !important;
+}
+
+@font-face {
+    font-family: "Adobe NotDef";
+    src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+}
+
+.box-title {
+    width: 100%;
+    font-size: 8pt;
+    font-weight: 700;
+    border-top: 1px solid black;
+    padding-top: 5px;
+    margin-bottom: 10pt;
+    display: block;
+}
+
+.box {
+    margin-bottom: 20pt;
+    width: 100%;
+    float: left;
+}
+
+.box-text {}
+
+#ui-nav {
+    position: fixed;
+    right: 20px;
+    z-index: 100;
+}
+
+#font-toggle {}
+
+.ui-nav-item {
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+    text-align: center;
+    color: white;
+    background-color: black;
+    display: block;
+    font-size: 14pt;
+    padding: 5px;
+    margin: 2px;
+}
+
+/* Stuff needed for the table differ */
+body {
+    font-family: Helvetica;
+}
+
+.node {
+    font-family: courier;
+    cursor: pointer;
+    position: relative;
+    left: 30px;
+    padding: 5px;
+    display: block;
+    border: 1px dashed grey;
+    background-color: #e9e9ee;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.attr-before {
+    color: green;
+    cursor: text;
+}
+
+.attr-after {
+    color: red;
+    cursor: text;
+}
+
+.leaf {
+    font-weight: bold;
+}
+
+.old .cell .new {
+    display: none;
+}
+
+.new .cell .old {
+    display: none;
+}
+
+.both .cell .old {
+    opacity: 0.75;
+    color: red;
+}
+
+.both .cell .new {
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    color: green;
+}
+
+.spacer {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+#ot-panel {
+    max-height: 400px;
+    overflow-y: scroll;
+    background: white;
+    padding: 10px;
+    display: none;
+   }
+
+   .cell{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    width: 50pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+  }
+  .cell-word{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  .cell-glyph{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    border-radius: 5pt;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 5pt;
+    margin: 5pt;
+    width: calc(var(--node-pt-size) * 2);
+    min-height: calc(var(--node-pt-size) * 2);
+    font-size: var(--node-pt-size);
+  }
+  .cell-glyph.font-before, .cell-word.font-before {
+    background: #eff6f2;
+  }
+  .cell-glyph.font-after, .cell-word.font-after {
+    background: #f7f4f4;
+  }
+
+  .cell-glyph:hover {
+    box-shadow: none;
+    background: #f0f0f5;
+  }
+  .cat-strings .cell {
+    clear: both;
+    position: static;
+    float: none;
+    text-align: left;
+  }
+  .codepoint {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 10pt;
+    line-height: 10pt;
+  }
+  .box-title {
+    clear: both;
+  }
+  .node.closed::before {
+    content: "+";
+    margin-right: 5pt;
+  }
+  .node.open::before {
+    content: "-";
+    margin-right: 5pt;
+  }
+
+  .tooltip pre {
+    background-color: #6f7882;
+    padding: 5px;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .tooltip {
+    line-height: 1em;
+  }
+  .tooltip-inner {
+    max-width: 300px;
+  }
+
+  h1,h2,h3,h4,h5 {
+    clear: both;
+  }
+
+  #locationnav li {
+    white-space: wrap;
+  }
+
+  #userdefined div { width: 100%; }
+  
+/* The following rules are used in the WASM version, not in the CLI version.
+   But we keep them here so we can share them between the two versions. */
+
+   .modal-dialog {
+    max-width: 100% !important;
+    margin: 0 !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+  }
+
+  .fontdrop {
+    padding: 30px;
+    border-radius: 20px;
+    outline: 3px dashed #ffffffff;
+    outline-offset: -20px;
+  }
+
+  #fontbefore {
+    background-color: #ddffdddd;
+  }
+
+  #fontafter {
+    background-color: #ffdddddd;
+  }
+
+  .dragging {
+    background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
+    outline: 5px dashed #ffffffff;
+  }
+
+  #diffkerns {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+		</style>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+		<div id="ui-nav">
+		  <div class="ui-nav-item" id="fonttoggle">Old</div>
+		  <div class="ui-nav-item" id="fontanimate">Animate</div>
+		  <div id="axes">
+		  </div>
+		</div>
+	
+	<div class="row">
+		<div class="col-2">
+			<ul class="nav nav-pills" id="locationnav">
+			</ul>
+		</div>
+		<div class="col-9 mt-3">
+			<div id="title"></div>
+			<div id="cmapdiff"> </div>
+			<div id="main"></div>
+			<div id="userdefined">
+				<h4>User defined sample text</h4>
+				<div contenteditable="true" class="font-before cell-word">
+					You can type your own text here to see it previewed in the fonts.
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div id="diffkerns"> </div>
+			<div id="difftable"> </div>
+		</div>
+	</div>
+	<script type="module">
+		function renderTableDiff(node, toplevel) {
+  var wrapper = $("<div> </div>");
+  if (!node) {
+    return wrapper;
+  }
+  if (Array.isArray(node) && node.length == 2) {
+    var before = $("<span/>");
+    before.addClass("attr-before");
+    before.html(" " + node[0] + " ");
+    var after = $("<span/>");
+    after.addClass("attr-after");
+    after.append(renderTableDiff(node[1], true).children());
+    wrapper.append(before);
+    wrapper.append(after);
+    return wrapper;
+  }
+  if (node.constructor != Object) {
+    var thing = $("<span/>");
+    thing.html(node);
+    wrapper.append(thing);
+    return wrapper;
+  }
+  for (const [key, value] of Object.entries(node)) {
+    var display = $("<div/>");
+    display.addClass("node");
+    if (!toplevel) {
+      display.hide();
+    }
+    display.append(key);
+    display.append(renderTableDiff(value, false).children());
+    if (display.children(".node").length > 0) {
+      display.addClass("closed");
+    }
+    wrapper.append(display);
+  }
+  return wrapper;
+}
+
+function addAGlyph(glyph, where) {
+  let title = "";
+  if (glyph.name) {
+    title = "name: " + glyph.name;
+  }
+  let cp =
+    "<br>U+" +
+    glyph.string.codePointAt(0).toString(16).padStart(4, "0").toUpperCase();
+  where.append(`
+        <div class="cell-glyph font-before">
+        <div data-toggle="tooltip" data-html="true" data-title="${glyph.differing_pixels} pixels"> ${glyph.string}
+        <div class="codepoint" data-toggle="tooltip" data-html="true" data-title="${title}">
+		${cp}
+        </div>
+        </div>
+    `);
+}
+
+function addAWord(diff, where) {
+  if (!diff.buffer_b) {
+    diff.buffer_b = diff.buffer_a;
+  }
+  where.append(`
+		<div class="cell-word font-before">
+		<span data-toggle="tooltip" data-html="true" data-title="Before: <pre>${diff.buffer_a}</pre>After: <pre>${diff.buffer_b}</pre><br>difference: ${diff.differing_pixels} pixels">
+		${diff.word}
+		</span>
+		</div>
+	`);
+}
+
+function diffTables(report) {
+  $("#difftable").empty();
+  $("#difftable").append(`<h4 class="mt-2 box-title">Table-level details</h4>`);
+  $("#difftable").append(
+    renderTableDiff({ tables: report["tables"] }, true).children()
+  );
+  $("#difftable .node").on("click", function (e) {
+    $(this).toggleClass("closed open");
+    $(this).children(".node").toggle();
+    e.stopPropagation();
+  });
+}
+function diffKerns(report) {
+  $("#diffkerns").empty();
+  $("#diffkerns").append(`<h4 class="mt-2">Modified Kerns</h4>`);
+  $("#diffkerns").append(
+    `<table class="table table-striped" id="diffkerns"><tr><th>Pair</th><th>Old</old><th>New</th></table>`
+  );
+  for (let [pair, value] of Object.entries(report["kerns"])) {
+    if (pair == "error") {
+      $("#diffkerns").append(`<p class="text-danger">Error: ${value}</p>`);
+      continue;
+    } else {
+      let row = $("<tr>");
+      row.append(`<td>${pair}</td>`);
+      row.append(`<td>${serializeKernBefore(value)}</td>`);
+      row.append(`<td>${serializeKernAfter(value)}</td>`);
+      $("#diffkerns table").append(row);
+    }
+  }
+}
+
+function serializeKernBefore(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[0], -1);
+  }
+  return serializeKern(kern, 0);
+}
+
+function serializeKernAfter(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[1], -1);
+  }
+  return serializeKern(kern, 1);
+}
+
+function serializeKern(kern, index) {
+  let string = "";
+  if (kern === null || kern === undefined) {
+    return "(null)";
+  }
+  if (kern.x) {
+    string += serializeKernValue(kern.x, index);
+  } else if (kern.y) {
+    string = "0";
+  }
+
+  if (kern.y) {
+    string += "," + serializeKernValue(kern.y, index);
+  }
+  if (!kern.x_placement && !kern.y_placement) {
+    return string;
+  }
+  string += "@";
+  if (kern.x_placement) {
+    string += serializeKernValue(kern.x_placement, index);
+  } else if (kern.y_placement) {
+    string += "0";
+  }
+  if (kern.y_placement) {
+    string += "," + serializeKernValue(kern.y_placement, index);
+  }
+  return string;
+}
+
+function serializeKernValue(kern, index) {
+  if (typeof kern == "number") {
+    return kern;
+  }
+  let string = "(";
+  let verybig = Object.entries(kern).length > 5;
+  for (let [key, value] of Object.entries(kern)) {
+    if (key == "default") {
+      string += value[index] + " ";
+    } else {
+      string += value[index] + "@" + key + " ";
+    }
+    if (verybig) {
+      string += "<br>";
+    }
+  }
+  return string.trim() + ")";
+}
+
+function cmapDiff(report) {
+  if (report.cmap_diff && (report.cmap_diff.new || report.cmap_diff.missing)) {
+    $("#cmapdiff").append(
+      `<h4 class="mt-2">Added and Removed Encoded Glyphs</h4>`
+    );
+    if (report["cmap_diff"]["new"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Added Glyphs</h4>`);
+      let added = $("<div>");
+      for (let glyph of report["cmap_diff"]["new"]) {
+        addAGlyph(glyph, added);
+      }
+      $("#cmapdiff").append(added);
+    }
+
+    if (report["cmap_diff"]["missing"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Removed Glyphs</h4>`);
+      let missing = $("<div>");
+      for (let glyph of report["cmap_diff"]["missing"]) {
+        addAGlyph(glyph, missing);
+      }
+      $("#cmapdiff").append(missing);
+    }
+  } else {
+    $("#cmapdiff").append(`<p>No changes to encoded glyphs</p>`);
+  }
+}
+
+function setupAnimation() {
+  $("#fonttoggle").click(function () {
+    if ($(this).text() == "Old") {
+      $(this).text("New");
+      $(".font-before").removeClass("font-before").addClass("font-after");
+    } else {
+      $(this).text("Old");
+      $(".font-after").removeClass("font-after").addClass("font-before");
+    }
+  });
+
+  let animationHandle;
+  function animate() {
+    $("#fonttoggle").click();
+    animationHandle = setTimeout(animate, 1000);
+  }
+  $("#fontanimate").click(function () {
+    if ($(this).text() == "Animate") {
+      $(this).text("Stop");
+      animate();
+    } else {
+      $(this).text("Animate");
+      clearTimeout(animationHandle);
+    }
+  });
+}
+
+export {
+  renderTableDiff,
+  addAGlyph,
+  addAWord,
+  cmapDiff,
+  diffTables,
+  diffKerns,
+  setupAnimation,
+};
+
+	var report = {"tables":{"GPOS":{"script_list":{"DFLT/dflt":{"lookups":{"1":[2,1]}},"armn/dflt":{"lookups":{"0":[1,0],"1":[2,1]}}},"lookup_list":{"2":{"0":{"uni0535":{"uni055F":{"x":[-19,-20]}},"uni0536":[{"uni054A":{"x":0}},null],"uni053C":{"uni054A":{"x":[-10,-11]}},"uni053F":{"uni055F":{"x":[-19,-20]}},"uni0544":{"uni053B":[{"x":-21},null],"uni053D":[{"x":-21},null],"uni0552":[{"x":-21},null]},"uni0548":{"uni055F":{"x":[-19,-20]}},"uni054A":{"uni055F":{"x":[-19,-20]}},"uni054D":{"uni055F":{"x":[-19,-20]}},"uni0553":{"uni055F":{"x":[-19,-20]}},"uni0554":{"uni055F":{"x":[-19,-20]}},"uni0555":{"uni055F":{"x":[-19,-20]}},"uni0559":{"uni055F":{"x":[-19,-20]}},"uni055A":{"uni055F":{"x":[-19,-20]}},"uni055B":{"uni055F":{"x":[-19,-20]}},"uni055D":{"uni055F":{"x":[-19,-20]}},"uni055E":{"uni055F":{"x":[-19,-20]}},"uni055F":{"uni055F":{"x":[-19,-20]}},"uni0560":{"uni055F":{"x":[-19,-20]}},"uni0561":{"uni055F":{"x":[-19,-20]}},"uni0562":{"uni055F":{"x":[-19,-20]}},"uni0568":{"uni055F":{"x":[-19,-20]}},"uni056A":{"uni055F":{"x":[-19,-20]}},"uni056D":{"uni055F":{"x":[-19,-20]}},"uni056E":{"uni055F":{"x":[-19,-20]}},"uni056F":{"uni055F":{"x":[-19,-20]}},"uni0570":{"uni055F":{"x":[-19,-20]}},"uni0571":{"uni055F":{"x":[-19,-20]}},"uni0572":{"uni0584":[{"x":24},null]},"uni0573":{"uni055F":{"x":[-19,-20]}},"uni0574":{"uni055F":{"x":[-19,-20]}},"uni0575":{"uni055F":{"x":[-19,-20]}},"uni0576":{"uni055F":{"x":[-19,-20]}},"uni0577":{"uni055F":{"x":[-19,-20]}},"uni057A":{"uni055F":{"x":[-19,-20]}},"uni057B":{"uni055F":{"x":[-19,-20]}},"uni057D":{"uni055F":{"x":[-19,-20]}},"uni057F":{"uni055F":{"x":[-19,-20]}},"uni0581":{"uni055F":{"x":[-19,-20]}},"uni0584":{"uni055F":{"x":[-19,-20]}},"uni0585":{"uni055F":{"x":[-19,-20]}},"uni0588":{"uni055F":{"x":[-19,-20]}},"uni0589":{"uni055F":{"x":[-19,-20]}},"uni058A":{"uni055F":{"x":[-19,-20]}},"uniFB13":{"uni055F":{"x":[-19,-20]}},"uniFB16":{"uni055F":{"x":[-19,-20]}},"uniFB17":{"uni055F":{"x":[-19,-20]}}},"1":{"classes":{"@CLASS_L_5":{"0":["uni0565","uni0532"],"1":["uniFB14","uni0538"]},"@CLASS_L_6":{"0":["uni0563","uni05480552"],"1":["uni0564","uni0552"]},"@CLASS_L_7":{"0":["uni05480552","uni0563"],"1":["uni0552","uni0564"]},"@CLASS_L_8":{"0":["uni0532","uni0565"],"1":["uni0538","uniFB14"]},"@CLASS_L_9":{"0":["uni0586","uni0536"]},"@CLASS_L_10":{"0":["uni057C","uni0537"]},"@CLASS_L_11":{"0":["uni0579","uni0539"]},"@CLASS_L_12":{"0":["uni0569","uni053A"]},"@CLASS_L_13":{"0":["uni0567","uni053B"]},"@CLASS_L_14":{"0":["uni0556","uni053D"]},"@CLASS_L_15":{"0":["uni0551","uni053E"]},"@CLASS_L_16":{"0":["uni054F","uni0540"]},"@CLASS_L_17":{"0":["uni0549","uni0541"]},"@CLASS_L_18":{"0":["uni0547","uni0543"]},"@CLASS_L_19":{"0":["uni0546","uni0544"]},"@CLASS_L_21":{"0":["uni0544","uni0546"]},"@CLASS_L_22":{"0":["uni0543","uni0547"]},"@CLASS_L_23":{"0":["uni0541","uni0549"]},"@CLASS_L_24":{"0":["uni0540","uni054F"]},"@CLASS_L_25":{"0":["uni053E","uni0551"]},"@CLASS_L_26":{"0":["uni053D","uni0556"]},"@CLASS_L_27":{"0":["uni053B","uni0567"]},"@CLASS_L_28":{"0":["uni053A","uni0569"]},"@CLASS_L_29":{"0":["uni0539","uni0579"]},"@CLASS_L_30":{"0":["uni0537","uni057C"]},"@CLASS_L_31":{"0":["uni0536","uni0586"]},"@CLASS_R_2":{"0":["uni0563","uni0562"],"1":["uni0566","uni0568"],"2":["uni056A","uni0569"],"3":["uni056E","uni056C"],"4":["uni0581","uni05780582"],"5":["uni0585","uni0580"]},"@CLASS_R_3":{"0":["uni0562","uni0563"],"1":["uni0568","uni0566"],"2":["uni0569","uni056A"],"3":["uni056C","uni056E"],"4":["uni05780582","uni0581"],"5":["uni0580","uni0585"]},"@CLASS_R_4":{"0":["uni0564","uni0532"],"1":["uni0572","uni0538"],"2":["uni0578","uni0539"],"3":["uni057C","uni0548"],"4":["uni0582","uni054C"]},"@CLASS_R_5":{"0":["uni0532","uni0564"],"1":["uni0538","uni0572"],"2":["uni0539","uni0578"],"3":["uni0548","uni057C"],"4":["uni054C","uni0582"]},"@CLASS_R_7":{"0":["uni0565","uni0534"],"1":["uni0567","uni0542"],"2":["uni0587","uni058F"]},"@CLASS_R_9":{"0":["uni0534","uni0565"],"1":["uni0542","uni0567"],"2":["uni058F","uni0587"]},"@CLASS_R_10":{"0":["uni0575","uni054A"],"1":["uni0588","uni0550"]},"@CLASS_R_12":{"0":["uni054A","uni0575"],"1":["uni0550","uni0588"]},"@CLASS_R_13":{"0":["uni0586","uni0533"]},"@CLASS_R_14":{"0":["uni0584","uni0536"]},"@CLASS_R_15":{"0":["uni057B","uni053A"]},"@CLASS_R_16":{"0":["uni0579","uni053E"]},"@CLASS_R_17":{"0":["uni0577","uni053F"]},"@CLASS_R_18":{"0":["uni0576","uni0541"]},"@CLASS_R_19":{"0":["uni0573","uni0543"]},"@CLASS_R_20":{"0":["uni0571","uni0545"]},"@CLASS_R_21":{"0":["uni0570","uni0546"]},"@CLASS_R_22":{"0":["uni055E","uni0547"]},"@CLASS_R_23":{"0":["uni055C","uni0549"]},"@CLASS_R_24":{"0":["uni055B","uni054B"]},"@CLASS_R_25":{"0":["uni0559","uni054E"]},"@CLASS_R_26":{"0":["uni0556","uni054F"]},"@CLASS_R_27":{"0":["uni0555","uni0551"]},"@CLASS_R_28":{"0":["uni0554","uni0553"]},"@CLASS_R_29":{"0":["uni0553","uni0554"]},"@CLASS_R_30":{"0":["uni0551","uni0555"]},"@CLASS_R_31":{"0":["uni054F","uni0556"]},"@CLASS_R_32":{"0":["uni054E","uni0559"]},"@CLASS_R_33":{"0":["uni054B","uni055B"]},"@CLASS_R_34":{"0":["uni0549","uni055C"]},"@CLASS_R_35":{"0":["uni0547","uni055E"]},"@CLASS_R_36":{"0":["uni0546","uni0570"]},"@CLASS_R_37":{"0":["uni0545","uni0571"]},"@CLASS_R_38":{"0":["uni0543","uni0573"]},"@CLASS_R_39":{"0":["uni0541","uni0576"]},"@CLASS_R_40":{"0":["uni053F","uni0577"]},"@CLASS_R_41":{"0":["uni053E","uni0579"]},"@CLASS_R_42":{"0":["uni053A","uni057B"]},"@CLASS_R_43":{"0":["uni0536","uni0584"]},"@CLASS_R_44":{"0":["uni0533","uni0586"]}},"kerns":{"@CLASS_L_0":{"@CLASS_R_15":{"x":[11,0]},"@CLASS_R_16":{"x":[22,0]},"@CLASS_R_17":{"x":[11,0]},"@CLASS_R_22":{"x":[-109,0]},"@CLASS_R_23":{"x":[-67,0]},"@CLASS_R_24":{"x":[-57,0]},"@CLASS_R_33":{"x":[0,-57]},"@CLASS_R_34":{"x":[0,-67]},"@CLASS_R_35":{"x":[0,-109]},"@CLASS_R_40":{"x":[0,11]},"@CLASS_R_41":{"x":[0,22]},"@CLASS_R_42":{"x":[0,11]}},"@CLASS_L_1":{"@CLASS_R_7":{"x":[0,-53]},"@CLASS_R_9":{"x":[-53,0]}},"@CLASS_L_2":{"@CLASS_R_22":{"x":[-270,0]},"@CLASS_R_23":{"x":[-168,0]},"@CLASS_R_24":{"x":[-114,0]},"@CLASS_R_33":{"x":[0,-114]},"@CLASS_R_34":{"x":[0,-168]},"@CLASS_R_35":{"x":[0,-270]}},"@CLASS_L_3":{"@CLASS_R_2":{"x":[-6,-8]},"@CLASS_R_3":{"x":[-7,-6]},"@CLASS_R_4":{"x":[-7,0]},"@CLASS_R_5":{"x":[0,-8]},"@CLASS_R_10":{"x":[21,0]},"@CLASS_R_12":{"x":[0,21]},"@CLASS_R_14":{"x":[24,0]},"@CLASS_R_15":{"x":[6,0]},"@CLASS_R_16":{"x":[54,0]},"@CLASS_R_17":{"x":[31,0]},"@CLASS_R_40":{"x":[0,31]},"@CLASS_R_41":{"x":[0,54]},"@CLASS_R_42":{"x":[0,6]},"@CLASS_R_43":{"x":[0,24]}},"@CLASS_L_4":{"@CLASS_R_17":{"x":[-6,-12]},"@CLASS_R_22":{"x":[-223,0]},"@CLASS_R_23":{"x":[-126,0]},"@CLASS_R_24":{"x":[-111,0]},"@CLASS_R_33":{"x":[0,-111]},"@CLASS_R_34":{"x":[0,-126]},"@CLASS_R_35":{"x":[0,-223]},"@CLASS_R_40":{"x":[-12,-6]}},"@CLASS_L_5":{"@CLASS_R_7":{"x":[0,-20]},"@CLASS_R_15":{"x":[0,-29]},"@CLASS_R_20":{"x":[0,-10]},"@CLASS_R_22":{"x":[-311,-20]},"@CLASS_R_23":{"x":[-168,0]},"@CLASS_R_24":{"x":[-130,0]},"@CLASS_R_27":{"x":[0,-10]},"@CLASS_R_37":{"x":[0,-10]}},"@CLASS_L_6":{"@CLASS_R_7":{"x":[0,-54]},"@CLASS_R_13":{"x":[0,-35]},"@CLASS_R_14":{"x":[0,-10]},"@CLASS_R_17":{"x":[0,-19]},"@CLASS_R_18":{"x":[0,-5]},"@CLASS_R_26":{"x":[0,-20]},"@CLASS_R_33":{"x":[0,-79]},"@CLASS_R_34":{"x":[0,-79]},"@CLASS_R_35":{"x":[0,-79]},"@CLASS_R_40":{"x":[-9,0]}},"@CLASS_L_7":{"@CLASS_R_9":{"x":[-54,0]},"@CLASS_R_17":{"x":[0,-9]},"@CLASS_R_22":{"x":[-79,0]},"@CLASS_R_23":{"x":[-79,0]},"@CLASS_R_24":{"x":[-79,0]},"@CLASS_R_31":{"x":[-20,0]},"@CLASS_R_39":{"x":[-4,0]},"@CLASS_R_40":{"x":[-19,0]},"@CLASS_R_43":{"x":[-10,0]},"@CLASS_R_44":{"x":[-35,0]}},"@CLASS_L_8":{"@CLASS_R_9":{"x":[-20,0]},"@CLASS_R_20":{"x":[-10,0]},"@CLASS_R_30":{"x":[-10,0]},"@CLASS_R_33":{"x":[0,-130]},"@CLASS_R_34":{"x":[0,-168]},"@CLASS_R_35":{"x":[-20,-311]},"@CLASS_R_37":{"x":[-10,0]},"@CLASS_R_42":{"x":[-29,0]}},"@CLASS_L_9":{"@CLASS_R_7":{"x":[0,-20]},"@CLASS_R_13":{"x":[0,-6]},"@CLASS_R_17":{"x":[0,-7]},"@CLASS_R_21":{"x":[0,-2]},"@CLASS_R_25":{"x":[-42,-3]},"@CLASS_R_27":{"x":[0,-5]},"@CLASS_R_40":{"x":[-7,0]}},"@CLASS_L_10":{"@CLASS_R_3":{"x":[0,-27]},"@CLASS_R_7":{"x":[0,-15]},"@CLASS_R_13":{"x":[0,-24]},"@CLASS_R_14":{"x":[0,-15]},"@CLASS_R_15":{"x":[0,-30]},"@CLASS_R_23":{"x":[0,-2]},"@CLASS_R_37":{"x":[0,-18]},"@CLASS_R_40":{"x":[-7,0]}},"@CLASS_L_11":{"@CLASS_R_16":{"x":[28,0]},"@CLASS_R_17":{"x":[21,0]},"@CLASS_R_37":{"x":[0,-25]},"@CLASS_R_42":{"x":[0,-10]}},"@CLASS_L_12":{"@CLASS_R_2":{"x":[14,0]},"@CLASS_R_13":{"x":[-6,0]},"@CLASS_R_16":{"x":[-7,0]},"@CLASS_R_17":{"x":[-9,0]},"@CLASS_R_21":{"x":[0,-2]},"@CLASS_R_37":{"x":[0,-26]},"@CLASS_R_40":{"x":[-9,0]},"@CLASS_R_42":{"x":[0,-10]}},"@CLASS_L_13":{"@CLASS_R_2":{"x":[-15,0]},"@CLASS_R_7":{"x":[0,-34]},"@CLASS_R_13":{"x":[0,-12]},"@CLASS_R_17":{"x":[0,-7]},"@CLASS_R_18":{"x":[0,-4]},"@CLASS_R_19":{"x":[0,-10]},"@CLASS_R_20":{"x":[-15,0]},"@CLASS_R_21":{"x":[0,-15]},"@CLASS_R_22":{"x":[-235,0]},"@CLASS_R_23":{"x":[-168,0]},"@CLASS_R_24":{"x":[-130,-5]},"@CLASS_R_26":{"x":[0,-20]},"@CLASS_R_31":{"x":[0,-20]}},"@CLASS_L_14":{"@CLASS_R_9":{"x":[-47,0]},"@CLASS_R_14":{"x":[0,-4]},"@CLASS_R_15":{"x":[0,-3]},"@CLASS_R_18":{"x":[0,-5]},"@CLASS_R_37":{"x":[0,-20]},"@CLASS_R_40":{"x":[-16,0]},"@CLASS_R_44":{"x":[-35,0]}},"@CLASS_L_15":{"@CLASS_R_7":{"x":[0,-15]},"@CLASS_R_9":{"x":[-16,0]},"@CLASS_R_17":{"x":[0,-7]},"@CLASS_R_21":{"x":[0,-10]}},"@CLASS_L_16":{"@CLASS_R_1":{"x":[0,-43]},"@CLASS_R_2":{"x":[0,-33]},"@CLASS_R_3":{"x":[0,-33]},"@CLASS_R_5":{"x":[0,-33]},"@CLASS_R_6":{"x":[0,-3]},"@CLASS_R_7":{"x":[0,-30]},"@CLASS_R_9":{"x":[-24,-26]},"@CLASS_R_11":{"x":[0,-11]},"@CLASS_R_12":{"x":[0,-31]},"@CLASS_R_13":{"x":[0,-34]},"@CLASS_R_15":{"x":[0,-21]},"@CLASS_R_16":{"x":[0,-15]},"@CLASS_R_17":{"x":[0,-17]},"@CLASS_R_19":{"x":[0,-20]},"@CLASS_R_23":{"x":[0,-27]},"@CLASS_R_25":{"x":[0,-39]},"@CLASS_R_28":{"x":[0,-54]},"@CLASS_R_29":{"x":[0,-15]},"@CLASS_R_30":{"x":[0,-31]},"@CLASS_R_36":{"x":[0,-36]},"@CLASS_R_37":{"x":[0,-32]},"@CLASS_R_39":{"x":[0,-18]},"@CLASS_R_40":{"x":[0,-21]},"@CLASS_R_42":{"x":[0,-35]},"@CLASS_R_44":{"x":[-34,0]}},"@CLASS_L_17":{"@CLASS_R_15":{"x":[-4,0]},"@CLASS_R_17":{"x":[0,-5]}},"@CLASS_L_18":{"@CLASS_R_7":{"x":[0,-20]},"@CLASS_R_9":{"x":[-31,0]},"@CLASS_R_13":{"x":[0,-20]},"@CLASS_R_16":{"x":[-22,0]}},"@CLASS_L_19":{"@CLASS_R_1":{"x":[0,-33]},"@CLASS_R_2":{"x":[0,-44]},"@CLASS_R_3":{"x":[0,-58]},"@CLASS_R_4":{"x":[0,-32]},"@CLASS_R_6":{"x":[0,-16]},"@CLASS_R_7":{"x":[0,-29]},"@CLASS_R_8":{"x":[0,-21]},"@CLASS_R_9":{"x":[-47,0]},"@CLASS_R_10":{"x":[0,-43]},"@CLASS_R_12":{"x":[0,-58]},"@CLASS_R_13":{"x":[0,-22]},"@CLASS_R_14":{"x":[0,-23]},"@CLASS_R_15":{"x":[0,-60]},"@CLASS_R_17":{"x":[0,-6]},"@CLASS_R_18":{"x":[0,-22]},"@CLASS_R_19":{"x":[0,-20]},"@CLASS_R_20":{"x":[0,-22]},"@CLASS_R_23":{"x":[0,-25]},"@CLASS_R_24":{"x":[0,-24]},"@CLASS_R_25":{"x":[0,-43]},"@CLASS_R_27":{"x":[0,-15]},"@CLASS_R_28":{"x":[0,-47]},"@CLASS_R_29":{"x":[0,-37]},"@CLASS_R_32":{"x":[0,27]},"@CLASS_R_38":{"x":[0,-20]},"@CLASS_R_39":{"x":[0,-6]},"@CLASS_R_40":{"x":[0,-39]},"@CLASS_R_41":{"x":[0,-65]},"@CLASS_R_42":{"x":[0,-65]},"@CLASS_R_43":{"x":[0,-58]}},"@CLASS_L_20":{"@CLASS_R_16":{"x":[-20,0]},"@CLASS_R_17":{"x":[0,-10]},"@CLASS_R_25":{"x":[0,-11]},"@CLASS_R_32":{"x":[-11,0]},"@CLASS_R_40":{"x":[-10,0]},"@CLASS_R_41":{"x":[0,-20]}},"@CLASS_L_21":{"@CLASS_R_1":{"x":[-33,0]},"@CLASS_R_2":{"x":[-58,0]},"@CLASS_R_3":{"x":[-44,0]},"@CLASS_R_5":{"x":[-32,0]},"@CLASS_R_6":{"x":[-16,0]},"@CLASS_R_7":{"x":[0,-47]},"@CLASS_R_8":{"x":[-21,0]},"@CLASS_R_9":{"x":[-29,0]},"@CLASS_R_10":{"x":[-58,0]},"@CLASS_R_12":{"x":[-43,0]},"@CLASS_R_14":{"x":[-58,0]},"@CLASS_R_15":{"x":[-65,0]},"@CLASS_R_16":{"x":[-65,0]},"@CLASS_R_17":{"x":[-39,0]},"@CLASS_R_18":{"x":[-6,0]},"@CLASS_R_19":{"x":[-20,0]},"@CLASS_R_25":{"x":[27,0]},"@CLASS_R_28":{"x":[-37,0]},"@CLASS_R_29":{"x":[-47,0]},"@CLASS_R_30":{"x":[-15,0]},"@CLASS_R_32":{"x":[-43,0]},"@CLASS_R_33":{"x":[-24,0]},"@CLASS_R_34":{"x":[-25,0]},"@CLASS_R_37":{"x":[-22,0]},"@CLASS_R_38":{"x":[-20,0]},"@CLASS_R_39":{"x":[-22,0]},"@CLASS_R_40":{"x":[-6,0]},"@CLASS_R_42":{"x":[-60,0]},"@CLASS_R_43":{"x":[-23,0]},"@CLASS_R_44":{"x":[-22,0]}},"@CLASS_L_22":{"@CLASS_R_7":{"x":[0,-31]},"@CLASS_R_9":{"x":[-20,0]},"@CLASS_R_41":{"x":[0,-22]},"@CLASS_R_44":{"x":[-20,0]}},"@CLASS_L_23":{"@CLASS_R_40":{"x":[-4,0]},"@CLASS_R_42":{"x":[0,-4]}},"@CLASS_L_24":{"@CLASS_R_1":{"x":[-43,0]},"@CLASS_R_2":{"x":[-33,0]},"@CLASS_R_3":{"x":[-33,0]},"@CLASS_R_4":{"x":[-33,0]},"@CLASS_R_6":{"x":[-3,0]},"@CLASS_R_7":{"x":[-26,-24]},"@CLASS_R_9":{"x":[-30,0]},"@CLASS_R_10":{"x":[-31,0]},"@CLASS_R_11":{"x":[-10,0]},"@CLASS_R_13":{"x":[0,-34]},"@CLASS_R_15":{"x":[-35,0]},"@CLASS_R_17":{"x":[-21,0]},"@CLASS_R_18":{"x":[-18,0]},"@CLASS_R_20":{"x":[-32,0]},"@CLASS_R_21":{"x":[-36,0]},"@CLASS_R_27":{"x":[-31,0]},"@CLASS_R_28":{"x":[-15,0]},"@CLASS_R_29":{"x":[-54,0]},"@CLASS_R_32":{"x":[-39,0]},"@CLASS_R_34":{"x":[-27,0]},"@CLASS_R_38":{"x":[-20,0]},"@CLASS_R_40":{"x":[-17,0]},"@CLASS_R_41":{"x":[-15,0]},"@CLASS_R_42":{"x":[-21,0]},"@CLASS_R_44":{"x":[-34,0]}},"@CLASS_L_25":{"@CLASS_R_7":{"x":[0,-16]},"@CLASS_R_9":{"x":[-15,0]},"@CLASS_R_36":{"x":[-10,0]},"@CLASS_R_40":{"x":[-7,0]}},"@CLASS_L_26":{"@CLASS_R_7":{"x":[0,-47]},"@CLASS_R_13":{"x":[0,-35]},"@CLASS_R_17":{"x":[0,-16]},"@CLASS_R_20":{"x":[-20,0]},"@CLASS_R_39":{"x":[-4,0]},"@CLASS_R_42":{"x":[-3,0]},"@CLASS_R_43":{"x":[-4,0]}},"@CLASS_L_27":{"@CLASS_R_3":{"x":[0,-15]},"@CLASS_R_9":{"x":[-34,0]},"@CLASS_R_26":{"x":[-20,0]},"@CLASS_R_31":{"x":[-20,0]},"@CLASS_R_33":{"x":[-4,-130]},"@CLASS_R_34":{"x":[0,-168]},"@CLASS_R_35":{"x":[0,-235]},"@CLASS_R_36":{"x":[-15,0]},"@CLASS_R_37":{"x":[0,-15]},"@CLASS_R_38":{"x":[-10,0]},"@CLASS_R_39":{"x":[-4,0]},"@CLASS_R_40":{"x":[-7,0]},"@CLASS_R_44":{"x":[-12,0]}},"@CLASS_L_28":{"@CLASS_R_3":{"x":[0,14]},"@CLASS_R_15":{"x":[-10,0]},"@CLASS_R_17":{"x":[0,-9]},"@CLASS_R_20":{"x":[-26,0]},"@CLASS_R_36":{"x":[-2,0]},"@CLASS_R_40":{"x":[0,-9]},"@CLASS_R_41":{"x":[0,-7]},"@CLASS_R_44":{"x":[0,-6]}},"@CLASS_L_29":{"@CLASS_R_15":{"x":[-10,0]},"@CLASS_R_20":{"x":[-25,0]},"@CLASS_R_40":{"x":[0,21]},"@CLASS_R_41":{"x":[0,28]}},"@CLASS_L_30":{"@CLASS_R_2":{"x":[-27,0]},"@CLASS_R_9":{"x":[-15,0]},"@CLASS_R_17":{"x":[0,-7]},"@CLASS_R_20":{"x":[-18,0]},"@CLASS_R_34":{"x":[-1,0]},"@CLASS_R_42":{"x":[-30,0]},"@CLASS_R_43":{"x":[-15,0]},"@CLASS_R_44":{"x":[-24,0]}},"@CLASS_L_31":{"@CLASS_R_9":{"x":[-20,0]},"@CLASS_R_17":{"x":[0,-7]},"@CLASS_R_30":{"x":[-5,0]},"@CLASS_R_32":{"x":[-3,-42]},"@CLASS_R_36":{"x":[-2,0]},"@CLASS_R_40":{"x":[-7,0]},"@CLASS_R_44":{"x":[-6,0]}}}}}}},"head":{"checksum_adjustment":[2922977864,623080378],"modified":[3778484343,3813907609]},"hhea":{"caret_slope_rise":[1,1000]}},"kerns":{"uni0535/uni055F":{"x":[-19,-20]},"uni053C/uni054A":{"x":[-10,-11]},"uni053F/uni055F":{"x":[-19,-20]},"uni0548/uni055F":{"x":[-19,-20]},"uni054A/uni055F":{"x":[-19,-20]},"uni054D/uni055F":{"x":[-19,-20]},"uni0553/uni055F":{"x":[-19,-20]},"uni0554/uni055F":{"x":[-19,-20]},"uni0555/uni055F":{"x":[-19,-20]},"uni0559/uni055F":{"x":[-19,-20]},"uni055A/uni055F":{"x":[-19,-20]},"uni055B/uni055F":{"x":[-19,-20]},"uni055D/uni055F":{"x":[-19,-20]},"uni055E/uni055F":{"x":[-19,-20]},"uni055F/uni055F":{"x":[-19,-20]},"uni0560/uni055F":{"x":[-19,-20]},"uni0561/uni055F":{"x":[-19,-20]},"uni0562/uni055F":{"x":[-19,-20]},"uni0568/uni055F":{"x":[-19,-20]},"uni056A/uni055F":{"x":[-19,-20]},"uni056D/uni055F":{"x":[-19,-20]},"uni056E/uni055F":{"x":[-19,-20]},"uni056F/uni055F":{"x":[-19,-20]},"uni0570/uni055F":{"x":[-19,-20]},"uni0571/uni055F":{"x":[-19,-20]},"uni0573/uni055F":{"x":[-19,-20]},"uni0574/uni055F":{"x":[-19,-20]},"uni0575/uni055F":{"x":[-19,-20]},"uni0576/uni055F":{"x":[-19,-20]},"uni0577/uni055F":{"x":[-19,-20]},"uni057A/uni055F":{"x":[-19,-20]},"uni057B/uni055F":{"x":[-19,-20]},"uni057D/uni055F":{"x":[-19,-20]},"uni057F/uni055F":{"x":[-19,-20]},"uni0581/uni055F":{"x":[-19,-20]},"uni0584/uni055F":{"x":[-19,-20]},"uni0585/uni055F":{"x":[-19,-20]},"uni0588/uni055F":{"x":[-19,-20]},"uni0589/uni055F":{"x":[-19,-20]},"uni058A/uni055F":{"x":[-19,-20]},"uniFB13/uni055F":{"x":[-19,-20]},"uniFB16/uni055F":{"x":[-19,-20]},"uniFB17/uni055F":{"x":[-19,-20]},"uni0566/uni0562":{"x":[-7,-8]},"uni0566/uni0568":{"x":[-7,-8]},"uni0566/uni0569":{"x":[-7,-8]},"uni0566/uni056C":{"x":[-7,-8]},"uni0566/uni05780582":{"x":[-7,-8]},"uni0566/uni0580":{"x":[-7,-8]},"uni056C/uni0562":{"x":[-7,-8]},"uni056C/uni0568":{"x":[-7,-8]},"uni056C/uni0569":{"x":[-7,-8]},"uni056C/uni056C":{"x":[-7,-8]},"uni056C/uni05780582":{"x":[-7,-8]},"uni056C/uni0580":{"x":[-7,-8]},"uni0572/uni0562":{"x":[-7,-8]},"uni0572/uni0568":{"x":[-7,-8]},"uni0572/uni0569":{"x":[-7,-8]},"uni0572/uni056C":{"x":[-7,-8]},"uni0572/uni05780582":{"x":[-7,-8]},"uni0572/uni0580":{"x":[-7,-8]},"uni057E/uni0562":{"x":[-7,-8]},"uni057E/uni0568":{"x":[-7,-8]},"uni057E/uni0569":{"x":[-7,-8]},"uni057E/uni056C":{"x":[-7,-8]},"uni057E/uni05780582":{"x":[-7,-8]},"uni057E/uni0580":{"x":[-7,-8]},"uni0566/uni0564":{"x":[-7,-8]},"uni0566/uni0572":{"x":[-7,-8]},"uni0566/uni0578":{"x":[-7,-8]},"uni0566/uni057C":{"x":[-7,-8]},"uni0566/uni0582":{"x":[-7,-8]},"uni056C/uni0564":{"x":[-7,-8]},"uni056C/uni0572":{"x":[-7,-8]},"uni056C/uni0578":{"x":[-7,-8]},"uni056C/uni057C":{"x":[-7,-8]},"uni056C/uni0582":{"x":[-7,-8]},"uni0572/uni0564":{"x":[-7,-8]},"uni0572/uni0572":{"x":[-7,-8]},"uni0572/uni0578":{"x":[-7,-8]},"uni0572/uni057C":{"x":[-7,-8]},"uni0572/uni0582":{"x":[-7,-8]},"uni057E/uni0564":{"x":[-7,-8]},"uni057E/uni0572":{"x":[-7,-8]},"uni057E/uni0578":{"x":[-7,-8]},"uni057E/uni057C":{"x":[-7,-8]},"uni057E/uni0582":{"x":[-7,-8]},"uni05480552/uni0541":{"x":[-4,-5]},"uni0552/uni0541":{"x":[-4,-5]},"uni0541/uni053F":{"x":[-4,-5]},"uni0540/uni056B":{"x":[-10,-11]},"uni0540/uni056D":{"x":[-10,-11]},"uni053D/uni0541":{"x":[-4,-5]},"uni053B/uni054B":{"x":[-4,-5]},"uni0537/uni0549":{"x":[-1,-2]}},"cmap_diff":{},"locations":[{"location":"Default","words":{}}]};
+		function buildLocation_statichtml(loc) {
+  // Set font styles to appropriate axis locations
+  let rule = document.styleSheets[0].cssRules[2].style;
+  let cssSetting = "";
+  let textLocation = "Default";
+  if (loc.coords) {
+    cssSetting = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `"${axis}" ${value}`;
+      })
+      .join(", ");
+    textLocation = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `${axis}=${value}`;
+      })
+      .join(" ");
+    rule.setProperty("font-variation-settings", cssSetting);
+  }
+
+  $("#main").empty();
+
+  $("#title").html(`<h4 class="mt-2">${textLocation}</h2>`);
+
+  if (loc.glyphs) {
+    $("#main").append("<h4>Modified Glyphs</h4>");
+    let glyphs = $("<div>");
+    for (let glyph of loc.glyphs) {
+      addAGlyph(glyph, glyphs);
+    }
+    $("#main").append(glyphs);
+  }
+
+  if (loc.words) {
+    $("#main").append("<h4>Modified Words</h4>");
+    for (let [script, words] of Object.entries(loc.words)) {
+      let scriptTitle = $(`<h6>${script}</h6>`);
+      $("#main").append(scriptTitle);
+      let worddiv = $("<div>");
+      for (let word of words) {
+        addAWord(word, worddiv);
+      }
+      $("#main").append(worddiv);
+    }
+  }
+  $('[data-toggle="tooltip"]').tooltip();
+}
+
+$(function () {
+  if (report["tables"]) {
+    diffTables(report);
+  }
+  if (report["kerns"]) {
+    diffKerns(report);
+  }
+  cmapDiff(report);
+  $('[data-toggle="tooltip"]').tooltip();
+  if (!report["locations"]) {
+    $("#title").html("<h4 class='mt-2'>No differences found</h4>");
+    $("#ui-nav").hide();
+    return;
+  }
+
+  for (var [index, loc] of report["locations"].entries()) {
+    var loc_nav = $(`<li class="nav-item">
+		<a class="nav-link text-secondary" href="#" data-index="${index}">${loc.location.replaceAll(
+      ",",
+      ",\u200b"
+    )}</a>
+	</li>`);
+    $("#locationnav").append(loc_nav);
+  }
+  $("#locationnav li a").on("click", function (e) {
+    $("#locationnav li a").removeClass("active");
+    $(this).addClass("active");
+    buildLocation_statichtml(report.locations[$(this).data("index")]);
+  });
+  $("#locationnav li a").eq(0).click();
+
+  document.styleSheets[0].cssRules[0].style.setProperty(
+    "src",
+    "url(old-NotoSansArmenian-CondensedThin.ttf)"
+  );
+  document.styleSheets[0].cssRules[1].style.setProperty(
+    "src",
+    "url(new-NotoSansArmenian-CondensedThin.ttf)"
+  );
+  setupAnimation();
+});
+
+	</script>
+</body>
+
+</html>

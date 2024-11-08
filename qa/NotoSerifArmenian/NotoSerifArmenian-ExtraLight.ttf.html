@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Diffenator3</title>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+		crossorigin="anonymous"></script>
+	<style type="text/css">
+		@font-face {
+      font-family: "Font Before";
+      src: url();
+    }
+
+    @font-face {
+      font-family: "Font After";
+      src: url();
+    }
+
+    .font-before, .font-after {
+      font-variation-settings: "wght" 400, "wdth" 100;
+    }
+
+    .font-before {
+      font-family: "Font Before", "Adobe Notdef";
+    }
+
+    .font-after {
+      font-family: "Font After", "Adobe Notdef";
+    }
+
+	:root {
+	--node-pt-size: 40px;
+	}
+
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #b3d4f5 !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active {
+    background-color: #ced9e4 !important;
+}
+.nav-item {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+.nav-pills .nav-link{
+    background-color: #9fcaf5 !important;
+}
+h4 {
+    color: #6f7882 !important;
+}
+
+@font-face {
+    font-family: "Adobe NotDef";
+    src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+}
+
+.box-title {
+    width: 100%;
+    font-size: 8pt;
+    font-weight: 700;
+    border-top: 1px solid black;
+    padding-top: 5px;
+    margin-bottom: 10pt;
+    display: block;
+}
+
+.box {
+    margin-bottom: 20pt;
+    width: 100%;
+    float: left;
+}
+
+.box-text {}
+
+#ui-nav {
+    position: fixed;
+    right: 20px;
+    z-index: 100;
+}
+
+#font-toggle {}
+
+.ui-nav-item {
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+    text-align: center;
+    color: white;
+    background-color: black;
+    display: block;
+    font-size: 14pt;
+    padding: 5px;
+    margin: 2px;
+}
+
+/* Stuff needed for the table differ */
+body {
+    font-family: Helvetica;
+}
+
+.node {
+    font-family: courier;
+    cursor: pointer;
+    position: relative;
+    left: 30px;
+    padding: 5px;
+    display: block;
+    border: 1px dashed grey;
+    background-color: #e9e9ee;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.attr-before {
+    color: green;
+    cursor: text;
+}
+
+.attr-after {
+    color: red;
+    cursor: text;
+}
+
+.leaf {
+    font-weight: bold;
+}
+
+.old .cell .new {
+    display: none;
+}
+
+.new .cell .old {
+    display: none;
+}
+
+.both .cell .old {
+    opacity: 0.75;
+    color: red;
+}
+
+.both .cell .new {
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    color: green;
+}
+
+.spacer {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+#ot-panel {
+    max-height: 400px;
+    overflow-y: scroll;
+    background: white;
+    padding: 10px;
+    display: none;
+   }
+
+   .cell{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    width: 50pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+  }
+  .cell-word{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  .cell-glyph{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    border-radius: 5pt;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 5pt;
+    margin: 5pt;
+    width: calc(var(--node-pt-size) * 2);
+    min-height: calc(var(--node-pt-size) * 2);
+    font-size: var(--node-pt-size);
+  }
+  .cell-glyph.font-before, .cell-word.font-before {
+    background: #eff6f2;
+  }
+  .cell-glyph.font-after, .cell-word.font-after {
+    background: #f7f4f4;
+  }
+
+  .cell-glyph:hover {
+    box-shadow: none;
+    background: #f0f0f5;
+  }
+  .cat-strings .cell {
+    clear: both;
+    position: static;
+    float: none;
+    text-align: left;
+  }
+  .codepoint {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 10pt;
+    line-height: 10pt;
+  }
+  .box-title {
+    clear: both;
+  }
+  .node.closed::before {
+    content: "+";
+    margin-right: 5pt;
+  }
+  .node.open::before {
+    content: "-";
+    margin-right: 5pt;
+  }
+
+  .tooltip pre {
+    background-color: #6f7882;
+    padding: 5px;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .tooltip {
+    line-height: 1em;
+  }
+  .tooltip-inner {
+    max-width: 300px;
+  }
+
+  h1,h2,h3,h4,h5 {
+    clear: both;
+  }
+
+  #locationnav li {
+    white-space: wrap;
+  }
+
+  #userdefined div { width: 100%; }
+  
+/* The following rules are used in the WASM version, not in the CLI version.
+   But we keep them here so we can share them between the two versions. */
+
+   .modal-dialog {
+    max-width: 100% !important;
+    margin: 0 !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+  }
+
+  .fontdrop {
+    padding: 30px;
+    border-radius: 20px;
+    outline: 3px dashed #ffffffff;
+    outline-offset: -20px;
+  }
+
+  #fontbefore {
+    background-color: #ddffdddd;
+  }
+
+  #fontafter {
+    background-color: #ffdddddd;
+  }
+
+  .dragging {
+    background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
+    outline: 5px dashed #ffffffff;
+  }
+
+  #diffkerns {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+		</style>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+		<div id="ui-nav">
+		  <div class="ui-nav-item" id="fonttoggle">Old</div>
+		  <div class="ui-nav-item" id="fontanimate">Animate</div>
+		  <div id="axes">
+		  </div>
+		</div>
+	
+	<div class="row">
+		<div class="col-2">
+			<ul class="nav nav-pills" id="locationnav">
+			</ul>
+		</div>
+		<div class="col-9 mt-3">
+			<div id="title"></div>
+			<div id="cmapdiff"> </div>
+			<div id="main"></div>
+			<div id="userdefined">
+				<h4>User defined sample text</h4>
+				<div contenteditable="true" class="font-before cell-word">
+					You can type your own text here to see it previewed in the fonts.
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div id="diffkerns"> </div>
+			<div id="difftable"> </div>
+		</div>
+	</div>
+	<script type="module">
+		function renderTableDiff(node, toplevel) {
+  var wrapper = $("<div> </div>");
+  if (!node) {
+    return wrapper;
+  }
+  if (Array.isArray(node) && node.length == 2) {
+    var before = $("<span/>");
+    before.addClass("attr-before");
+    before.html(" " + node[0] + " ");
+    var after = $("<span/>");
+    after.addClass("attr-after");
+    after.append(renderTableDiff(node[1], true).children());
+    wrapper.append(before);
+    wrapper.append(after);
+    return wrapper;
+  }
+  if (node.constructor != Object) {
+    var thing = $("<span/>");
+    thing.html(node);
+    wrapper.append(thing);
+    return wrapper;
+  }
+  for (const [key, value] of Object.entries(node)) {
+    var display = $("<div/>");
+    display.addClass("node");
+    if (!toplevel) {
+      display.hide();
+    }
+    display.append(key);
+    display.append(renderTableDiff(value, false).children());
+    if (display.children(".node").length > 0) {
+      display.addClass("closed");
+    }
+    wrapper.append(display);
+  }
+  return wrapper;
+}
+
+function addAGlyph(glyph, where) {
+  let title = "";
+  if (glyph.name) {
+    title = "name: " + glyph.name;
+  }
+  let cp =
+    "<br>U+" +
+    glyph.string.codePointAt(0).toString(16).padStart(4, "0").toUpperCase();
+  where.append(`
+        <div class="cell-glyph font-before">
+        <div data-toggle="tooltip" data-html="true" data-title="${glyph.differing_pixels} pixels"> ${glyph.string}
+        <div class="codepoint" data-toggle="tooltip" data-html="true" data-title="${title}">
+		${cp}
+        </div>
+        </div>
+    `);
+}
+
+function addAWord(diff, where) {
+  if (!diff.buffer_b) {
+    diff.buffer_b = diff.buffer_a;
+  }
+  where.append(`
+		<div class="cell-word font-before">
+		<span data-toggle="tooltip" data-html="true" data-title="Before: <pre>${diff.buffer_a}</pre>After: <pre>${diff.buffer_b}</pre><br>difference: ${diff.differing_pixels} pixels">
+		${diff.word}
+		</span>
+		</div>
+	`);
+}
+
+function diffTables(report) {
+  $("#difftable").empty();
+  $("#difftable").append(`<h4 class="mt-2 box-title">Table-level details</h4>`);
+  $("#difftable").append(
+    renderTableDiff({ tables: report["tables"] }, true).children()
+  );
+  $("#difftable .node").on("click", function (e) {
+    $(this).toggleClass("closed open");
+    $(this).children(".node").toggle();
+    e.stopPropagation();
+  });
+}
+function diffKerns(report) {
+  $("#diffkerns").empty();
+  $("#diffkerns").append(`<h4 class="mt-2">Modified Kerns</h4>`);
+  $("#diffkerns").append(
+    `<table class="table table-striped" id="diffkerns"><tr><th>Pair</th><th>Old</old><th>New</th></table>`
+  );
+  for (let [pair, value] of Object.entries(report["kerns"])) {
+    if (pair == "error") {
+      $("#diffkerns").append(`<p class="text-danger">Error: ${value}</p>`);
+      continue;
+    } else {
+      let row = $("<tr>");
+      row.append(`<td>${pair}</td>`);
+      row.append(`<td>${serializeKernBefore(value)}</td>`);
+      row.append(`<td>${serializeKernAfter(value)}</td>`);
+      $("#diffkerns table").append(row);
+    }
+  }
+}
+
+function serializeKernBefore(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[0], -1);
+  }
+  return serializeKern(kern, 0);
+}
+
+function serializeKernAfter(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[1], -1);
+  }
+  return serializeKern(kern, 1);
+}
+
+function serializeKern(kern, index) {
+  let string = "";
+  if (kern === null || kern === undefined) {
+    return "(null)";
+  }
+  if (kern.x) {
+    string += serializeKernValue(kern.x, index);
+  } else if (kern.y) {
+    string = "0";
+  }
+
+  if (kern.y) {
+    string += "," + serializeKernValue(kern.y, index);
+  }
+  if (!kern.x_placement && !kern.y_placement) {
+    return string;
+  }
+  string += "@";
+  if (kern.x_placement) {
+    string += serializeKernValue(kern.x_placement, index);
+  } else if (kern.y_placement) {
+    string += "0";
+  }
+  if (kern.y_placement) {
+    string += "," + serializeKernValue(kern.y_placement, index);
+  }
+  return string;
+}
+
+function serializeKernValue(kern, index) {
+  if (typeof kern == "number") {
+    return kern;
+  }
+  let string = "(";
+  let verybig = Object.entries(kern).length > 5;
+  for (let [key, value] of Object.entries(kern)) {
+    if (key == "default") {
+      string += value[index] + " ";
+    } else {
+      string += value[index] + "@" + key + " ";
+    }
+    if (verybig) {
+      string += "<br>";
+    }
+  }
+  return string.trim() + ")";
+}
+
+function cmapDiff(report) {
+  if (report.cmap_diff && (report.cmap_diff.new || report.cmap_diff.missing)) {
+    $("#cmapdiff").append(
+      `<h4 class="mt-2">Added and Removed Encoded Glyphs</h4>`
+    );
+    if (report["cmap_diff"]["new"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Added Glyphs</h4>`);
+      let added = $("<div>");
+      for (let glyph of report["cmap_diff"]["new"]) {
+        addAGlyph(glyph, added);
+      }
+      $("#cmapdiff").append(added);
+    }
+
+    if (report["cmap_diff"]["missing"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Removed Glyphs</h4>`);
+      let missing = $("<div>");
+      for (let glyph of report["cmap_diff"]["missing"]) {
+        addAGlyph(glyph, missing);
+      }
+      $("#cmapdiff").append(missing);
+    }
+  } else {
+    $("#cmapdiff").append(`<p>No changes to encoded glyphs</p>`);
+  }
+}
+
+function setupAnimation() {
+  $("#fonttoggle").click(function () {
+    if ($(this).text() == "Old") {
+      $(this).text("New");
+      $(".font-before").removeClass("font-before").addClass("font-after");
+    } else {
+      $(this).text("Old");
+      $(".font-after").removeClass("font-after").addClass("font-before");
+    }
+  });
+
+  let animationHandle;
+  function animate() {
+    $("#fonttoggle").click();
+    animationHandle = setTimeout(animate, 1000);
+  }
+  $("#fontanimate").click(function () {
+    if ($(this).text() == "Animate") {
+      $(this).text("Stop");
+      animate();
+    } else {
+      $(this).text("Animate");
+      clearTimeout(animationHandle);
+    }
+  });
+}
+
+export {
+  renderTableDiff,
+  addAGlyph,
+  addAWord,
+  cmapDiff,
+  diffTables,
+  diffKerns,
+  setupAnimation,
+};
+
+	var report = {"tables":{"GPOS":{"script_list":{"DFLT/dflt":{"lookups":{"1":[2,1]}},"armn/dflt":{"lookups":{"0":[1,0],"1":[2,1]}}},"lookup_list":{"0":{"0":{"bases":{"uni0531":{"anchor_0":{"x":[330,327]}},"uni0548":{"anchor_0":{"x":[325,322]}},"uni0555":{"anchor_0":{"x":[339,338]}},"uni0585":{"anchor_0":{"x":[235,234]}}}}},"1":{"0":{"ligatures":{"uni05480552":{"anchor_0_1":{"x":[325,322]}}}}},"2":{"0":{"uni0531":{"uni0533":{"x":[-38,-44]},"uni0534":{"x":[-55,-56]},"uni053E":{"x":[-13,-15]},"uni053F":{"x":[-52,-54]},"uni0542":{"x":[-55,-56]},"uni0546":{"x":[-27,-26]},"uni054A":{"x":[-47,-49]},"uni054E":{"x":[-26,-28]},"uni055B":{"x":[-151,-137]},"uni055C":{"x":[-151,-137]},"uni055E":{"x":[-151,-137]},"uni058F":{"x":[-55,-56]}},"uni0535":{"uni055B":{"x":[-210,-204]},"uni055C":{"x":[-196,-183]},"uni055E":{"x":[-337,-334]}},"uni0538":{"uni055B":{"x":[-64,-62]},"uni055C":{"x":[-64,-62]},"uni055E":{"x":[-72,-66]}},"uni053C":{"uni0533":{"x":[-59,-58]},"uni0534":{"x":[-55,-56]},"uni053F":{"x":[-57,-59]},"uni0542":{"x":[-55,-58]},"uni054A":{"x":[-11,-15]},"uni054E":{"x":[-57,-59]},"uni0553":{"x":[3,0]},"uni058F":{"x":[-55,-56]}},"uni0542":{"uni0533":{"x":[-52,-54]},"uni0534":{"x":[-55,-56]},"uni0536":{"x":[20,16]},"uni0541":{"x":[20,16]},"uni0542":{"x":[-55,-56]},"uni0549":{"x":[-30,-31]},"uni054B":{"x":[20,16]},"uni057B":{"x":[-36,-33]},"uni058F":{"x":[-55,-56]}},"uni0544":{"uni0570":{"x":[0,-7]},"uni0573":{"x":[0,-5]}},"uni0546":{"uni0534":{"x":[-50,-49]},"uni0542":{"x":[-50,-49]}},"uni0547":{"uni0560":{"x":[-12,-4]},"uni0561":{"x":[-12,-4]},"uni0562":{"x":[-24,-21]},"uni0563":{"x":[-10,-6]},"uni0564":{"x":[-26,-21]},"uni0566":{"x":[-10,-6]},"uni0568":{"x":[-24,-21]},"uni0569":{"x":[-24,-21]},"uni056A":{"x":[-10,-6]},"uni056C":{"x":[-24,-21]},"uni056E":{"x":[-10,-6]},"uni0572":{"x":[-26,-21]},"uni0574":{"x":[-12,-4]},"uni0575":{"x":[-26,-21]},"uni0577":{"x":[-10,-5]},"uni0578":{"x":[-26,-21]},"uni05780582":{"x":[-26,-21]},"uni0579":{"x":[0,-5]},"uni057A":{"x":[-12,-4]},"uni057B":{"x":[-10,-4]},"uni057C":{"x":[-26,-21]},"uni057D":{"x":[-12,-4]},"uni057E":{"x":[-12,-4]},"uni057F":{"x":[-12,-4]},"uni0580":{"x":[-24,-21]},"uni0581":{"x":[-10,-6]},"uni0582":{"x":[-26,-21]},"uni0583":{"x":[-12,-4]},"uni0584":{"x":[-24,-21]},"uni0585":{"x":[-10,-6]},"uni0588":{"x":[-26,-21]},"uniFB13":{"x":[-12,-4]},"uniFB14":{"x":[-12,-4]},"uniFB15":{"x":[-12,-4]},"uniFB16":{"x":[-12,-4]},"uniFB17":{"x":[-12,-4]}},"uni0548":{"uni055B":{"x":[-64,-62]},"uni055C":{"x":[-64,-62]},"uni055E":{"x":[-72,-66]}},"uni054C":{"uni053A":{"x":[-19,-15]},"uni0570":[{"x":8},null],"uni0573":[{"x":8},null]},"uni054D":{"uni055E":{"x":[-138,-132]}},"uni054E":{"uni0533":{"x":[-52,-54]},"uni0534":{"x":[-52,-54]},"uni0542":{"x":[-52,-54]},"uni058F":{"x":[-52,-54]}},"uni0560":{"uni0570":{"x":[25,20]},"uni0573":{"x":[25,20]}},"uni0561":{"uni0570":{"x":[25,20]},"uni0573":{"x":[25,20]}},"uni0563":{"uni0533":{"x":[-89,-78]}},"uni0564":{"uni0533":{"x":[-89,-78]}},"uni0566":{"uni0577":[{"x":30},null],"uni0579":{"x":[60,66]},"uni057B":{"x":[12,16]}},"uni0567":{"uni0581":{"x":[-8,-14]}},"uni0568":[{"uni055B":{"x":-210},"uni055C":{"x":-241},"uni055E":{"x":-337}},null],"uni056C":{"uni0531":{"x":[-8,-10]},"uni0535":{"x":[-8,-10]},"uni0544":{"x":[-8,-10]},"uni054D":{"x":[-8,-10]},"uni0560":{"x":[-8,-6]},"uni0561":{"x":[-8,-6]},"uni0562":{"x":[14,19]},"uni0563":{"x":[14,24]},"uni0564":{"x":[-8,-6]},"uni0565":{"x":[-8,-6]},"uni0566":{"x":[14,24]},"uni0567":[{"x":-8},null],"uni0568":{"x":[14,19]},"uni0569":{"x":[14,19]},"uni056A":{"x":[14,24]},"uni056B":[{"x":-8},null],"uni056C":{"x":[14,19]},"uni056D":[{"x":-8},null],"uni056E":{"x":[14,24]},"uni056F":{"x":[-8,-6]},"uni0570":{"x":[0,-7]},"uni0572":{"x":[-8,-6]},"uni0573":{"x":[0,-7]},"uni0574":{"x":[-8,-6]},"uni0575":{"x":[-8,8]},"uni0576":{"x":[0,-7]},"uni0577":{"x":[30,32]},"uni0578":{"x":[-8,-6]},"uni05780582":{"x":[-8,-6]},"uni0579":{"x":[80,87]},"uni057A":{"x":[-8,-6]},"uni057B":{"x":[30,32]},"uni057C":{"x":[-8,-6]},"uni057D":{"x":[-8,-6]},"uni057E":{"x":[-8,-6]},"uni057F":{"x":[-8,-6]},"uni0580":{"x":[14,19]},"uni0581":{"x":[41,37]},"uni0582":{"x":[-8,-6]},"uni0583":{"x":[-8,-6]},"uni0584":{"x":[14,19]},"uni0585":{"x":[14,24]},"uni0587":{"x":[-8,-6]},"uni0588":{"x":[-8,-6]},"uniFB13":{"x":[-8,-6]},"uniFB14":{"x":[-8,-6]},"uniFB15":{"x":[-8,-6]},"uniFB16":{"x":[-8,-6]},"uniFB17":{"x":[-8,-6]}},"uni056D":{"uni0570":{"x":[25,20]},"uni0573":{"x":[25,20]}},"uni056F":{"uni0577":[{"x":30},null],"uni0579":{"x":[60,66]},"uni057B":{"x":[12,16]}},"uni0572":{"uni0577":[{"x":30},null],"uni0579":{"x":[60,66]},"uni057B":{"x":[30,27]}},"uni0575":{"uni0579":{"x":[0,6]}},"uni0576":{"uni0570":{"x":[25,20]},"uni0573":{"x":[25,20]}},"uni05780582":{"uni0573":{"x":[25,20]}},"uni057C":{"uni0533":{"x":[-89,-78]}},"uni057D":{"uni0570":{"x":[25,20]},"uni0573":{"x":[25,20]}},"uni057E":{"uni0577":[{"x":30},null],"uni0579":{"x":[60,66]},"uni057B":{"x":[12,16]}},"uni0582":{"uni0573":{"x":[25,20]}},"uni0585":[{"uni055B":{"x":-189},"uni055C":{"x":-223},"uni055E":{"x":-310}},null],"uniFB13":{"uni0570":{"x":[25,20]},"uni0573":{"x":[25,20]}},"uniFB16":{"uni0570":{"x":[25,20]},"uni0573":{"x":[25,20]}},"uniFB17":{"uni0570":{"x":[25,20]},"uni0573":{"x":[25,20]}}},"1":{"classes":{"@CLASS_L_0":{"0":["uniFB16","uniFB17"],"1":["uniFB17","uniFB16"]},"@CLASS_L_4":{"0":["uni05780582","uni05480552"],"1":["uni0582","uni0552"]},"@CLASS_L_5":{"0":["uni0577","uni0553"],"1":["uni057B","uni0555"]},"@CLASS_L_7":{"0":["uni0553","uni0577"],"1":["uni0555","uni057B"]},"@CLASS_L_8":{"0":["uni05480552","uni05780582"],"1":["uni0552","uni0582"]},"@CLASS_L_9":{"0":["uni0585","uni0537"]},"@CLASS_L_10":{"0":["uni057A","uni0539"]},"@CLASS_L_11":{"0":["uni0579","uni053A"]},"@CLASS_L_12":{"0":["uni0574","uni0540"]},"@CLASS_L_13":{"0":["uni0573","uni0544"]},"@CLASS_L_15":{"0":["uni0544","uni0573"]},"@CLASS_L_16":{"0":["uni0540","uni0574"]},"@CLASS_L_17":{"0":["uni053A","uni0579"]},"@CLASS_L_18":{"0":["uni0539","uni057A"]},"@CLASS_L_19":{"0":["uni0537","uni0585"]},"@CLASS_R_3":{"0":["uni0563","uni0562"],"1":["uni0566","uni0568"],"2":["uni056A","uni0569"],"3":["uni056E","uni056C"],"4":["uni0581","uni0580"],"5":["uni0585","uni0584"]},"@CLASS_R_4":{"0":["uni0562","uni0563"],"1":["uni0568","uni0566"],"2":["uni0569","uni056A"],"3":["uni056C","uni056E"],"4":["uni0580","uni0581"],"5":["uni0584","uni0585"]},"@CLASS_R_7":{"0":["uni0565","uni0553"],"1":["uni056F","uni0555"],"2":["uni0587",null]},"@CLASS_R_8":{"0":["uni0553","uni053A"],"1":["uni0555",null]},"@CLASS_R_9":{"0":["uni057B","uni053E"]},"@CLASS_R_10":{"0":["uni0579","uni053F"]},"@CLASS_R_11":{"0":["uni0577","uni0540"]},"@CLASS_R_12":{"0":["uni0571","uni0545"]},"@CLASS_R_13":{"0":["uni055E","uni0546"]},"@CLASS_R_14":{"0":["uni055C","uni0547"]},"@CLASS_R_15":{"0":["uni055B","uni0549"]},"@CLASS_R_16":{"0":["uni0554","uni054E"]},"@CLASS_R_17":{"0":["uni054E","uni0554"]},"@CLASS_R_18":{"0":["uni0549","uni055B"]},"@CLASS_R_19":{"0":["uni0547","uni055C"]},"@CLASS_R_20":{"0":["uni0546","uni055E"]},"@CLASS_R_21":{"0":["uni0545","uni0571"]},"@CLASS_R_22":{"0":["uni0540","uni0577"]},"@CLASS_R_23":{"0":["uni053F","uni0579"]},"@CLASS_R_24":{"0":["uni053E","uni057B"]},"@CLASS_R_25":[["uni053A"],null]},"kerns":{"@CLASS_L_0":{"@CLASS_R_13":{"x":[-310,0]},"@CLASS_R_14":{"x":[-223,0]},"@CLASS_R_15":{"x":[-189,0]},"@CLASS_R_18":{"x":[0,-204]},"@CLASS_R_19":{"x":[0,-237]},"@CLASS_R_20":{"x":[0,-332]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_1":{"@CLASS_R_9":{"x":[-10,0]},"@CLASS_R_10":{"x":[31,0]},"@CLASS_R_11":{"x":[-10,0]},"@CLASS_R_13":{"x":[-310,0]},"@CLASS_R_14":{"x":[-223,0]},"@CLASS_R_15":{"x":[-189,0]},"@CLASS_R_18":{"x":[0,-211]},"@CLASS_R_19":{"x":[0,-237]},"@CLASS_R_20":{"x":[0,-332]},"@CLASS_R_22":{"x":[0,-4]},"@CLASS_R_23":{"x":[0,29]},"@CLASS_R_24":{"x":[0,-4]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_2":{"@CLASS_R_1":{"x":[0,-4]},"@CLASS_R_2":{"x":[30,27]},"@CLASS_R_3":{"x":[0,10]},"@CLASS_R_4":{"x":[6,0]},"@CLASS_R_9":{"x":[12,0]},"@CLASS_R_10":{"x":[67,0]},"@CLASS_R_11":{"x":[26,0]},"@CLASS_R_22":{"x":[0,27]},"@CLASS_R_23":{"x":[0,61]},"@CLASS_R_24":{"x":[0,19]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_3":{"@CLASS_R_10":{"x":[34,0]},"@CLASS_R_23":{"x":[0,34]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_4":{"@CLASS_R_8":{"x":[0,17]},"@CLASS_R_9":{"x":[0,9]},"@CLASS_R_13":{"x":[-232,0]},"@CLASS_R_14":{"x":[-223,0]},"@CLASS_R_15":{"x":[-189,0]},"@CLASS_R_18":{"x":[0,-204]},"@CLASS_R_19":{"x":[0,-237]},"@CLASS_R_20":{"x":[0,-334]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_5":{"@CLASS_R_10":{"x":[18,0]},"@CLASS_R_18":{"x":[0,-50]},"@CLASS_R_19":{"x":[0,-50]},"@CLASS_R_20":{"x":[0,-80]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_6":{"@CLASS_R_13":{"x":[-310,0]},"@CLASS_R_14":{"x":[-223,0]},"@CLASS_R_15":{"x":[-189,0]},"@CLASS_R_18":{"x":[0,-211]},"@CLASS_R_19":{"x":[0,-237]},"@CLASS_R_20":{"x":[0,-332]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_7":{"@CLASS_R_13":{"x":[-80,0]},"@CLASS_R_14":{"x":[-50,0]},"@CLASS_R_15":{"x":[-50,0]},"@CLASS_R_23":{"x":[0,19]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_8":{"@CLASS_R_13":{"x":[-337,0]},"@CLASS_R_14":{"x":[-241,0]},"@CLASS_R_15":{"x":[-210,0]},"@CLASS_R_18":{"x":[0,-209]},"@CLASS_R_19":{"x":[0,-237]},"@CLASS_R_20":{"x":[0,-217]},"@CLASS_R_24":{"x":[9,0]},"@CLASS_R_25":[{"x":17},null]},"@CLASS_L_9":{"@CLASS_R_13":{"x":[-337,0]},"@CLASS_R_14":{"x":[-241,0]},"@CLASS_R_15":{"x":[-210,3]},"@CLASS_R_17":{"x":[0,-2]},"@CLASS_R_21":{"x":[0,30]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_10":{"@CLASS_R_4":{"x":[0,20]},"@CLASS_R_10":{"x":[20,0]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_11":{"@CLASS_R_4":{"x":[0,26]},"@CLASS_R_6":{"x":[-10,0]},"@CLASS_R_7":{"x":[-10,0]},"@CLASS_R_10":{"x":[50,0]},"@CLASS_R_13":{"x":[0,-8]},"@CLASS_R_14":{"x":[0,-8]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_12":{"@CLASS_R_4":{"x":[0,24]},"@CLASS_R_5":{"x":[0,-10]},"@CLASS_R_7":{"x":[0,-9]},"@CLASS_R_8":{"x":[0,-14]},"@CLASS_R_12":{"x":[0,-20]},"@CLASS_R_15":{"x":[0,-20]},"@CLASS_R_16":{"x":[0,-29]},"@CLASS_R_17":{"x":[0,-14]},"@CLASS_R_21":{"x":[0,17]},"@CLASS_R_22":{"x":[0,15]},"@CLASS_R_23":{"x":[100,0]},"@CLASS_R_24":{"x":[0,30]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_13":{"@CLASS_R_1":{"x":[0,-30]},"@CLASS_R_2":{"x":[0,-33]},"@CLASS_R_3":{"x":[0,-32]},"@CLASS_R_4":{"x":[0,-44]},"@CLASS_R_6":{"x":[0,-20]},"@CLASS_R_8":{"x":[0,-25]},"@CLASS_R_11":{"x":[0,-34]},"@CLASS_R_12":{"x":[0,-13]},"@CLASS_R_21":{"x":[0,-16]},"@CLASS_R_22":{"x":[0,-42]},"@CLASS_R_23":{"x":[100,-16]},"@CLASS_R_24":{"x":[0,-41]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_14":{"@CLASS_R_3":{"x":[-27,0]},"@CLASS_R_4":{"x":[0,-27]},"@CLASS_R_10":{"x":[-9,0]},"@CLASS_R_21":{"x":[0,-5]},"@CLASS_R_23":{"x":[0,-12]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_15":{"@CLASS_R_1":{"x":[-23,0]},"@CLASS_R_2":{"x":[-26,0]},"@CLASS_R_3":{"x":[-38,0]},"@CLASS_R_4":{"x":[-26,0]},"@CLASS_R_6":{"x":[-15,0]},"@CLASS_R_9":{"x":[-38,0]},"@CLASS_R_10":{"x":[-22,88]},"@CLASS_R_11":{"x":[-38,0]},"@CLASS_R_12":{"x":[-12,0]},"@CLASS_R_21":{"x":[-11,0]},"@CLASS_R_22":{"x":[-33,0]},"@CLASS_R_25":[{"x":-15},null]},"@CLASS_L_16":{"@CLASS_R_3":{"x":[31,0]},"@CLASS_R_5":{"x":[-10,0]},"@CLASS_R_8":{"x":[-9,0]},"@CLASS_R_9":{"x":[38,0]},"@CLASS_R_10":{"x":[0,88]},"@CLASS_R_11":{"x":[19,0]},"@CLASS_R_12":{"x":[22,0]},"@CLASS_R_16":{"x":[-14,0]},"@CLASS_R_17":{"x":[-29,0]},"@CLASS_R_18":{"x":[-20,0]},"@CLASS_R_21":{"x":[-20,0]},"@CLASS_R_25":[{"x":-12},null]},"@CLASS_L_17":{"@CLASS_R_3":{"x":[33,0]},"@CLASS_R_19":{"x":[-8,0]},"@CLASS_R_20":{"x":[-8,0]},"@CLASS_R_23":{"x":[0,52]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_18":{"@CLASS_R_3":{"x":[25,0]},"@CLASS_R_23":{"x":[0,19]},"@CLASS_R_25":[{"x":0},null]},"@CLASS_L_19":{"@CLASS_R_12":{"x":[38,0]},"@CLASS_R_18":{"x":[5,-211]},"@CLASS_R_19":{"x":[0,-237]},"@CLASS_R_20":{"x":[0,-334]},"@CLASS_R_25":[{"x":0},null]}}}},"3":{"2":{"rules":{"0":["uni0308 [uni0578 uni0585] uni055E' lookup lookup_4","uni0308 [uni0560 uni0561] uni055E' lookup lookup_4"]}},"3":[null,{"type":"chained_sequence_context","rules":["uni0308 [uni0578 uni0585] uni055E' lookup lookup_5"]}]},"4":{"0":{"uni055E":{"x":[300,100],"x_placement":[300,100]}}},"5":{"1":[null,{"type":"single","uni055E":{"x":300,"x_placement":300}}]}}},"OS/2":{"x_avg_char_width":[560,559]},"head":{"checksum_adjustment":[169789630,3144004272],"modified":[3778484434,3813907809],"x_min":[-118,-111],"y_min":[-265,-266],"x_max":[1313,1315],"y_max":[824,825]},"hhea":{"advance_width_max":[1345,1346],"min_left_side_bearing":[-118,-111],"min_right_side_bearing":[-122,-114],"x_max_extent":[1313,1315],"caret_slope_rise":[1,1000]},"hmtx":{"uni0308":{"lsb":[-118,-111]},"uni0531":{"width":[737,734],"lsb":[40,37]},"uni0532":{"width":[629,628],"lsb":[89,86]},"uni0533":{"width":[597,598],"lsb":[50,48]},"uni0534":{"width":[656,659],"lsb":[70,71]},"uni0535":{"width":[598,594],"lsb":[40,37]},"uni0536":{"width":[553,551],"lsb":[39,37]},"uni0537":{"width":[484,481],"lsb":[40,37]},"uni0538":{"lsb":[89,86]},"uni0539":{"width":[726,724],"lsb":[89,86]},"uni053A":{"width":[596,597],"lsb":[48,47]},"uni053B":{"width":[560,555],"lsb":[43,38]},"uni053C":{"width":[447,444],"lsb":[43,38]},"uni053D":{"width":[650,646],"lsb":[43,38]},"uni053E":{"width":[585,583],"lsb":[30,28]},"uni053F":{"width":[585,580],"lsb":[37,33]},"uni0540":{"width":[484,483],"lsb":[46,44]},"uni0541":{"width":[556,553],"lsb":[40,38]},"uni0542":{"width":[668,670],"lsb":[70,71]},"uni0544":{"width":[682,686],"lsb":[40,37]},"uni0545":{"width":[580,578],"lsb":[45,42]},"uni0546":{"width":[551,552],"lsb":[37,35]},"uni0547":{"width":[603,599],"lsb":[33,31]},"uni0548":{"width":[655,649],"lsb":[89,86]},"uni05480552":{"width":[1195,1193],"lsb":[89,86]},"uni0549":{"width":[557,554],"lsb":[30,28]},"uni054A":{"width":[660,656],"lsb":[59,55]},"uni054B":{"width":[539,533],"lsb":[36,30]},"uni054C":{"lsb":[89,86]},"uni054D":{"width":[655,649],"lsb":[40,37]},"uni054E":{"lsb":[33,31]},"uni054F":{"width":[538,537]},"uni0550":{"width":[590,586],"lsb":[89,86]},"uni0551":{"width":[515,516]},"uni0552":{"width":[519,516],"lsb":[43,38]},"uni0553":{"lsb":[38,37]},"uni0554":{"width":[521,519],"lsb":[14,12]},"uni0555":{"width":[679,676],"lsb":[49,47]},"uni0556":{"width":[580,577],"lsb":[30,29]},"uni0559":{"width":[183,180],"lsb":[41,39]},"uni055A":{"width":[183,180],"lsb":[41,39]},"uni055B":{"width":[210,204],"lsb":[59,55]},"uni055C":{"width":[241,237],"lsb":[81,77]},"uni055D":{"width":[210,204],"lsb":[52,49]},"uni055E":{"width":[337,334],"lsb":[73,70]},"uni055F":{"width":[374,370],"lsb":[52,49]},"uni0562":{"width":[507,508],"lsb":[31,30]},"uni0563":{"width":[549,547],"lsb":[51,48]},"uni0564":{"width":[562,564],"lsb":[31,30]},"uni0565":{"lsb":[26,25]},"uni0566":{"width":[525,521],"lsb":[51,48]},"uni0567":{"width":[411,410],"lsb":[27,26]},"uni0568":{"lsb":[31,30]},"uni0569":{"width":[541,540],"lsb":[35,32]},"uni056A":{"lsb":[49,47]},"uni056B":{"lsb":[31,30]},"uni056C":{"width":[237,240],"lsb":[29,30]},"uni056D":{"lsb":[31,30]},"uni056E":{"width":[512,511],"lsb":[48,46]},"uni056F":{"lsb":[26,25]},"uni0570":{"width":[490,491]},"uni0571":{"width":[519,518],"lsb":[39,37]},"uni0572":{"width":[539,537],"lsb":[31,30]},"uni0573":{"width":[535,538]},"uni0574":{"width":[551,558]},"uni0575":{"lsb":[26,25]},"uni0576":{"width":[522,520],"lsb":[48,45]},"uni0577":{"width":[423,422],"lsb":[29,27]},"uni0578":{"lsb":[31,30]},"uni05780582":{"width":[782,785],"lsb":[31,30]},"uni0579":{"width":[297,302],"lsb":[-12,-6]},"uni057C":{"width":[542,544],"lsb":[31,30]},"uni057D":{"lsb":[26,25]},"uni057E":{"width":[527,526],"lsb":[26,25]},"uni057F":{"width":[812,813],"lsb":[26,25]},"uni0581":{"width":[496,493],"lsb":[48,46]},"uni0582":{"width":[256,259],"lsb":[30,31]},"uni0583":{"width":[812,813],"lsb":[26,25]},"uni0584":{"width":[535,534]},"uni0585":{"width":[472,469],"lsb":[49,47]},"uni0586":{"width":[574,571],"lsb":[27,25]},"uni0587":{"width":[537,540],"lsb":[26,25]},"uni0588":{"lsb":[19,16]},"uni0589":{"width":[202,198],"lsb":[66,64]},"uni058A":{"width":[413,409],"lsb":[52,50]},"uni058D":{"width":[815,816]},"uni058E":{"width":[815,816]},"uni058F":{"width":[622,624]},"uniFB13":{"width":[1054,1056]},"uniFB14":{"width":[1050,1052]},"uniFB15":{"width":[1041,1042]},"uniFB16":{"width":[1027,1028],"lsb":[26,25]},"uniFB17":{"width":[1345,1346]},"uni2019":{"width":[183,180],"lsb":[41,39]}},"loca":{"offsets":{"14":[792,794],"15":[878,880],"16":[950,952],"17":[1084,1088],"18":[1184,1188],"19":[1280,1288],"20":[1336,1344],"21":[1440,1448],"22":[1592,1600],"23":[1698,1706],"24":[1790,1798],"25":[1982,1986],"26":[2054,2058],"27":[2190,2194],"28":[2302,2306],"29":[2436,2438],"30":[2530,2532],"37":[3244,3242],"38":[3338,3336],"39":[3440,3438],"40":[3574,3570],"41":[3654,3650],"42":[3818,3812],"43":[3928,3922],"44":[4066,4062],"45":[4160,4156],"46":[4248,4244],"47":[4378,4374],"48":[4426,4424],"49":[4478,4472],"50":[4524,4516],"51":[4588,4580],"52":[4634,4624],"53":[4704,4694],"54":[4770,4760],"55":[4928,4918],"56":[5088,5078],"57":[5202,5192],"58":[5326,5316],"59":[5440,5430],"60":[5548,5538],"61":[5656,5646],"62":[5756,5742],"63":[5856,5842],"64":[6022,6008],"65":[6130,6116],"66":[6244,6230],"67":[6296,6284],"68":[6468,6456],"69":[6614,6600],"70":[6730,6716],"71":[6846,6832],"72":[7024,7006],"73":[7124,7106],"74":[7284,7264],"75":[7442,7422],"76":[7520,7502],"77":[7664,7646],"78":[7784,7766],"79":[7890,7872],"80":[7914,7896],"81":[8020,8002],"82":[8188,8170],"83":[8364,8346],"84":[8462,8444],"85":[8570,8552],"86":[8678,8660],"87":[8842,8824],"88":[8948,8930],"89":[9084,9066],"90":[9136,9118],"91":[9314,9300],"92":[9460,9446],"93":[9532,9518],"94":[9682,9668],"95":[9782,9768],"96":[9876,9862],"97":[9952,9938],"98":[10002,9988],"99":[10482,10460],"100":[10960,10932],"101":[11066,11038],"102":[11584,11556],"103":[11858,11828],"104":[12094,12064],"105":[12338,12308],"106":[12580,12548],"107":[12878,12846],"108":[12894,12862]}}},"kerns":{"error":"There are 429 changes, check manually!"},"cmap_diff":{},"locations":[{"location":"Default","glyphs":[{"string":"Ջ","name":"ARMENIAN CAPITAL LETTER JHEH","unicode":"U+054B","differing_pixels":112},{"string":"Ա","name":"ARMENIAN CAPITAL LETTER AYB","unicode":"U+0531","differing_pixels":105},{"string":"ﬗ","name":"ARMENIAN SMALL LIGATURE MEN XEH","unicode":"U+FB17","differing_pixels":104},{"string":"Մ","name":"ARMENIAN CAPITAL LETTER MEN","unicode":"U+0544","differing_pixels":99},{"string":"Ռ","name":"ARMENIAN CAPITAL LETTER RA","unicode":"U+054C","differing_pixels":97},{"string":"Ս","name":"ARMENIAN CAPITAL LETTER SEH","unicode":"U+054D","differing_pixels":95},{"string":"Խ","name":"ARMENIAN CAPITAL LETTER XEH","unicode":"U+053D","differing_pixels":91},{"string":"ն","name":"ARMENIAN SMALL LETTER NOW","unicode":"U+0576","differing_pixels":91},{"string":"Ձ","name":"ARMENIAN CAPITAL LETTER JA","unicode":"U+0541","differing_pixels":78},{"string":"Կ","name":"ARMENIAN CAPITAL LETTER KEN","unicode":"U+053F","differing_pixels":77},{"string":"Ի","name":"ARMENIAN CAPITAL LETTER INI","unicode":"U+053B","differing_pixels":77},{"string":"ﬕ","name":"ARMENIAN SMALL LIGATURE MEN INI","unicode":"U+FB15","differing_pixels":76},{"string":"Թ","name":"ARMENIAN CAPITAL LETTER TO","unicode":"U+0539","differing_pixels":75},{"string":"Ո","name":"ARMENIAN CAPITAL LETTER VO","unicode":"U+0548","differing_pixels":75},{"string":"Ւ","name":"ARMENIAN CAPITAL LETTER YIWN","unicode":"U+0552","differing_pixels":74},{"string":"ﬓ","name":"ARMENIAN SMALL LIGATURE MEN NOW","unicode":"U+FB13","differing_pixels":69},{"string":"չ","name":"ARMENIAN SMALL LETTER CHA","unicode":"U+0579","differing_pixels":67},{"string":"թ","name":"ARMENIAN SMALL LETTER TO","unicode":"U+0569","differing_pixels":67},{"string":"գ","name":"ARMENIAN SMALL LETTER GIM","unicode":"U+0563","differing_pixels":65},{"string":"զ","name":"ARMENIAN SMALL LETTER ZA","unicode":"U+0566","differing_pixels":64},{"string":"Բ","name":"ARMENIAN CAPITAL LETTER BEN","unicode":"U+0532","differing_pixels":63},{"string":"Յ","name":"ARMENIAN CAPITAL LETTER YI","unicode":"U+0545","differing_pixels":63},{"string":"Պ","name":"ARMENIAN CAPITAL LETTER PEH","unicode":"U+054A","differing_pixels":62},{"string":"ֆ","name":"ARMENIAN SMALL LETTER FEH","unicode":"U+0586","differing_pixels":59},{"string":"Ե","name":"ARMENIAN CAPITAL LETTER ECH","unicode":"U+0535","differing_pixels":59},{"string":"Է","name":"ARMENIAN CAPITAL LETTER EH","unicode":"U+0537","differing_pixels":56},{"string":"Ը","name":"ARMENIAN CAPITAL LETTER ET","unicode":"U+0538","differing_pixels":56},{"string":"Ղ","name":"ARMENIAN CAPITAL LETTER GHAD","unicode":"U+0542","differing_pixels":54},{"string":"ﬔ","name":"ARMENIAN SMALL LIGATURE MEN ECH","unicode":"U+FB14","differing_pixels":53},{"string":"Ծ","name":"ARMENIAN CAPITAL LETTER CA","unicode":"U+053E","differing_pixels":50},{"string":"Լ","name":"ARMENIAN CAPITAL LETTER LIWN","unicode":"U+053C","differing_pixels":50},{"string":"ց","name":"ARMENIAN SMALL LETTER CO","unicode":"U+0581","differing_pixels":48},{"string":"ծ","name":"ARMENIAN SMALL LETTER CA","unicode":"U+056E","differing_pixels":47},{"string":"Չ","name":"ARMENIAN CAPITAL LETTER CHA","unicode":"U+0549","differing_pixels":47},{"string":"Օ","name":"ARMENIAN CAPITAL LETTER OH","unicode":"U+0555","differing_pixels":47},{"string":"Ր","name":"ARMENIAN CAPITAL LETTER REH","unicode":"U+0550","differing_pixels":47},{"string":"ձ","name":"ARMENIAN SMALL LETTER JA","unicode":"U+0571","differing_pixels":42},{"string":"ճ","name":"ARMENIAN SMALL LETTER CHEH","unicode":"U+0573","differing_pixels":41},{"string":"Զ","name":"ARMENIAN CAPITAL LETTER ZA","unicode":"U+0536","differing_pixels":41},{"string":"Հ","name":"ARMENIAN CAPITAL LETTER HO","unicode":"U+0540","differing_pixels":40},{"string":"ժ","name":"ARMENIAN SMALL LETTER ZHE","unicode":"U+056A","differing_pixels":38},{"string":"Դ","name":"ARMENIAN CAPITAL LETTER DA","unicode":"U+0534","differing_pixels":38},{"string":"ﬖ","name":"ARMENIAN SMALL LIGATURE VEW NOW","unicode":"U+FB16","differing_pixels":38},{"string":"Շ","name":"ARMENIAN CAPITAL LETTER SHA","unicode":"U+0547","differing_pixels":37},{"string":"Վ","name":"ARMENIAN CAPITAL LETTER VEW","unicode":"U+054E","differing_pixels":36},{"string":"ա","name":"ARMENIAN SMALL LETTER AYB","unicode":"U+0561","differing_pixels":34},{"string":"շ","name":"ARMENIAN SMALL LETTER SHA","unicode":"U+0577","differing_pixels":32},{"string":"լ","name":"ARMENIAN SMALL LETTER LIWN","unicode":"U+056C","differing_pixels":29},{"string":"օ","name":"ARMENIAN SMALL LETTER OH","unicode":"U+0585","differing_pixels":29},{"string":"Ճ","name":"ARMENIAN CAPITAL LETTER CHEH","unicode":"U+0543","differing_pixels":28},{"string":"Ց","name":"ARMENIAN CAPITAL LETTER CO","unicode":"U+0551","differing_pixels":28},{"string":"մ","name":"ARMENIAN SMALL LETTER MEN","unicode":"U+0574","differing_pixels":25},{"string":"Ք","name":"ARMENIAN CAPITAL LETTER KEH","unicode":"U+0554","differing_pixels":22},{"string":"հ","name":"ARMENIAN SMALL LETTER HO","unicode":"U+0570","differing_pixels":22},{"string":"֏","name":"ARMENIAN DRAM SIGN","unicode":"U+058F","differing_pixels":22},{"string":"Փ","name":"ARMENIAN CAPITAL LETTER PIWR","unicode":"U+0553","differing_pixels":20},{"string":"պ","name":"ARMENIAN SMALL LETTER PEH","unicode":"U+057A","differing_pixels":20},{"string":"ր","name":"ARMENIAN SMALL LETTER REH","unicode":"U+0580","differing_pixels":19},{"string":"՞","name":"ARMENIAN QUESTION MARK","unicode":"U+055E","differing_pixels":18},{"string":"՜","name":"ARMENIAN EXCLAMATION MARK","unicode":"U+055C","differing_pixels":17}],"words":{"Armenian":[{"word":"ճանաչո՞ւմ","buffer_a":"73|55|76|55|80|78|52|89|74|","differing_pixels":54},{"word":"ՈՒՇԱԴՐՈՒԹՅԱՆ","buffer_a":"32|30|8|11|40|32|16|28|8|29|","differing_pixels":44},{"word":"Մագնիսահիդրոդինամիկական","buffer_a":"27|55|57|76|65|84|55|70|65|58|87|78|58|65|76|55|104|69|55|69|55|76|","differing_pixels":41},{"word":"միչիգանցի","buffer_a":"104|80|65|57|55|76|88|65|","differing_pixels":41},{"word":"ՍԱՄՈՒԵԼՅԱՆԻՆ","buffer_a":"37|8|27|32|12|19|28|8|29|18|29|","differing_pixels":40},{"word":"ՓՐԿՈՒԹԻՒՆ","buffer_a":"43|40|22|32|16|18|42|29|","differing_pixels":40},{"word":"ՔՎԵԱՐԿՈՒԹՅԱՆ","buffer_a":"44|38|12|8|40|22|32|16|28|8|29|","differing_pixels":36},{"word":"ՀԱՆՁՆԱԺՈՂՈՎԻ","buffer_a":"23|8|29|24|29|8|17|31|25|31|38|18|","differing_pixels":28},{"word":"ՓԱՍՏԱԲԱՆՆԵՐԻ","buffer_a":"43|8|37|39|8|9|8|29|29|12|40|18|","differing_pixels":26},{"word":"Խաղողապտղագինեգործության","buffer_a":"20|55|72|78|72|55|81|86|72|55|57|65|76|59|57|78|87|68|79|63|75|55|76|","differing_pixels":25},{"word":"ՆԱԽՆԱԴԱՐՅԱՆ֊ՀԱՄԱՅՆԱԿԱՆ","buffer_a":"29|8|20|29|8|11|8|40|28|8|29|97|23|8|27|8|28|29|8|22|8|29|","differing_pixels":24},{"word":"Ջերմահաղորդականությունը","buffer_a":"35|59|87|74|55|70|55|72|78|87|58|55|69|55|76|79|63|75|79|76|62|","differing_pixels":22},{"word":"ՎԻՃԱԿԱԳՐԱԿԱՆ","buffer_a":"38|18|26|8|22|8|10|40|8|22|8|29|","differing_pixels":21},{"word":"Չօգտագործված","buffer_a":"33|92|57|86|55|57|78|87|68|85|55|68|","differing_pixels":21},{"word":"ԻՐԱՎՈՒՆՔՆԵՐԸ","buffer_a":"18|40|8|38|32|29|44|29|12|40|15|","differing_pixels":21},{"word":"Պայմանավորվածությունների","buffer_a":"34|55|75|74|55|76|55|85|78|87|85|55|68|79|63|75|79|76|76|59|87|65|","differing_pixels":20},{"word":"նավատորմիղների","buffer_a":"76|55|85|55|86|78|87|104|72|76|59|87|65|","differing_pixels":20},{"word":"հեռուստառադիոհաղորդումների","buffer_a":"70|59|83|79|84|86|55|83|55|58|65|78|70|55|72|78|87|58|79|102|59|87|65|","differing_pixels":19},{"word":"Ուսումնասիրություններում","buffer_a":"31|89|84|79|102|55|84|65|87|79|63|75|79|76|76|59|87|79|74|","differing_pixels":19},{"word":"Փրայմերիզում","buffer_a":"43|87|55|75|103|87|65|60|79|74|","differing_pixels":19},{"word":"մխրճվեցին","buffer_a":"106|87|73|85|59|88|65|76|","differing_pixels":19},{"word":"մինևնույն","buffer_a":"104|76|94|76|79|75|76|","differing_pixels":19},{"word":"միեւնո՛յն","buffer_a":"104|59|89|76|78|49|75|76|","differing_pixels":19},{"word":"Ռուտենբերգը։","buffer_a":"36|79|86|59|76|56|59|87|57|62|96|","differing_pixels":18},{"word":"բժշկահոգեբանամանկավարժական","buffer_a":"56|64|77|69|55|70|78|57|59|56|55|76|55|74|55|76|69|55|85|55|87|64|55|69|55|76|","differing_pixels":17},{"word":"Էլեկտրամագնիսականության","buffer_a":"14|66|59|69|86|87|55|74|55|57|76|65|84|55|69|55|76|79|63|75|55|76|","differing_pixels":17},{"word":"ՌԱԶՄԱՎԱՐԱԿԱՆ","buffer_a":"36|8|13|27|8|38|8|40|8|22|8|29|","differing_pixels":17},{"word":"միջամտեց՝","buffer_a":"104|82|55|74|86|59|88|51|","differing_pixels":17},{"word":"ՔԱՂԱՔԱՑԻԱԿԱՆ","buffer_a":"44|8|25|8|44|8|41|18|8|22|8|29|","differing_pixels":16},{"word":"Վսևոլոդովնան","buffer_a":"38|84|94|78|66|78|58|78|105|55|76|","differing_pixels":16},{"word":"Ձևափոխության","buffer_a":"24|94|55|90|78|67|79|63|75|55|76|","differing_pixels":16},{"word":"ենթաստամոքսատասներկումատնյաաղիքային","buffer_a":"59|76|63|55|84|86|55|74|78|91|84|55|86|55|84|76|59|87|69|79|74|55|86|76|75|55|55|72|65|91|55|75|65|76|","differing_pixels":15},{"word":"Ենթաստամոքսատասներկումատնյաաղիքային","buffer_a":"12|76|63|55|84|86|55|74|78|91|84|55|86|55|84|76|59|87|69|79|74|55|86|76|75|55|55|72|65|91|55|75|65|76|","differing_pixels":15},{"word":"էլեկտրաբացասականությունների","buffer_a":"61|66|59|69|86|87|55|56|55|88|55|84|55|69|55|76|79|63|75|79|76|76|59|87|65|","differing_pixels":15},{"word":"Ֆյոլքերշթրաֆգեզեթցբուխի","buffer_a":"46|75|78|66|91|59|87|77|63|87|55|93|57|59|60|59|63|88|56|79|67|65|","differing_pixels":15},{"word":"նանոօբյեկտների","buffer_a":"76|55|76|78|92|56|75|59|69|86|76|59|87|65|","differing_pixels":15},{"word":"նախասինապսային","buffer_a":"76|55|67|55|84|65|76|55|81|84|55|75|65|76|","differing_pixels":15},{"word":"մոզաիկայի","buffer_a":"74|78|60|55|65|69|55|75|65|","differing_pixels":15},{"word":"միջոսկրյա","buffer_a":"104|82|78|84|69|87|75|55|","differing_pixels":15},{"word":"ՙռազմական","buffer_a":"47|83|55|60|74|55|69|55|76|","differing_pixels":15},{"word":"Քաղկեդոնական","buffer_a":"44|55|72|69|59|58|78|76|55|69|55|76|","differing_pixels":14},{"word":"մյուռոնով","buffer_a":"74|75|79|83|78|76|78|85|","differing_pixels":14},{"word":"մեկ֊երկու","buffer_a":"103|69|97|59|87|69|79|","differing_pixels":14},{"word":"կ՚ընդգրկէ","buffer_a":"69|48|62|76|58|57|87|69|61|","differing_pixels":14},{"word":"Գեղարվեստաարդյունաբերական","buffer_a":"10|59|72|55|87|85|59|84|86|55|55|87|58|75|79|76|55|56|59|87|55|69|55|76|","differing_pixels":13},{"word":"Ծանոթագրություններում","buffer_a":"21|55|76|78|63|55|57|87|79|63|75|79|76|76|59|87|79|74|","differing_pixels":13},{"word":"նավակողանցքերը","buffer_a":"76|55|85|55|69|78|72|55|76|88|91|59|87|62|","differing_pixels":13},{"word":"Փրկությունից","buffer_a":"43|87|69|79|63|75|79|76|65|88|","differing_pixels":13},{"word":"մշտարթուն","buffer_a":"74|77|86|55|87|63|79|76|","differing_pixels":13},{"word":"Օֆֆենբախի","buffer_a":"45|93|93|59|76|56|55|67|65|","differing_pixels":13},{"word":"Հեռուստառադիոլրագրության","buffer_a":"23|59|83|79|84|86|55|83|55|58|65|78|66|87|55|57|87|79|63|75|55|76|","differing_pixels":12},{"word":"Քաղերգիծանքի","buffer_a":"44|55|72|59|87|57|65|68|55|76|91|65|","differing_pixels":12},{"word":"Քալիֆոռնիայի","buffer_a":"44|55|66|65|93|78|83|76|65|55|75|65|","differing_pixels":12},{"word":"նախուտեստներից","buffer_a":"76|55|67|79|86|59|84|86|76|59|87|65|88|","differing_pixels":11},{"word":"յեղափոխութիւնը","buffer_a":"75|59|72|55|90|78|67|79|63|65|89|76|62|","differing_pixels":11},{"word":"Բորբոքահեղձուկալորձենաբորբային","buffer_a":"9|78|87|56|78|91|55|70|59|72|71|79|69|55|66|78|87|71|59|76|55|56|78|87|56|55|75|65|76|","differing_pixels":10},{"word":"երջանկությու՜ն","buffer_a":"59|87|82|55|76|69|79|63|75|79|50|76|","differing_pixels":10}]}}]};
+		function buildLocation_statichtml(loc) {
+  // Set font styles to appropriate axis locations
+  let rule = document.styleSheets[0].cssRules[2].style;
+  let cssSetting = "";
+  let textLocation = "Default";
+  if (loc.coords) {
+    cssSetting = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `"${axis}" ${value}`;
+      })
+      .join(", ");
+    textLocation = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `${axis}=${value}`;
+      })
+      .join(" ");
+    rule.setProperty("font-variation-settings", cssSetting);
+  }
+
+  $("#main").empty();
+
+  $("#title").html(`<h4 class="mt-2">${textLocation}</h2>`);
+
+  if (loc.glyphs) {
+    $("#main").append("<h4>Modified Glyphs</h4>");
+    let glyphs = $("<div>");
+    for (let glyph of loc.glyphs) {
+      addAGlyph(glyph, glyphs);
+    }
+    $("#main").append(glyphs);
+  }
+
+  if (loc.words) {
+    $("#main").append("<h4>Modified Words</h4>");
+    for (let [script, words] of Object.entries(loc.words)) {
+      let scriptTitle = $(`<h6>${script}</h6>`);
+      $("#main").append(scriptTitle);
+      let worddiv = $("<div>");
+      for (let word of words) {
+        addAWord(word, worddiv);
+      }
+      $("#main").append(worddiv);
+    }
+  }
+  $('[data-toggle="tooltip"]').tooltip();
+}
+
+$(function () {
+  if (report["tables"]) {
+    diffTables(report);
+  }
+  if (report["kerns"]) {
+    diffKerns(report);
+  }
+  cmapDiff(report);
+  $('[data-toggle="tooltip"]').tooltip();
+  if (!report["locations"]) {
+    $("#title").html("<h4 class='mt-2'>No differences found</h4>");
+    $("#ui-nav").hide();
+    return;
+  }
+
+  for (var [index, loc] of report["locations"].entries()) {
+    var loc_nav = $(`<li class="nav-item">
+		<a class="nav-link text-secondary" href="#" data-index="${index}">${loc.location.replaceAll(
+      ",",
+      ",\u200b"
+    )}</a>
+	</li>`);
+    $("#locationnav").append(loc_nav);
+  }
+  $("#locationnav li a").on("click", function (e) {
+    $("#locationnav li a").removeClass("active");
+    $(this).addClass("active");
+    buildLocation_statichtml(report.locations[$(this).data("index")]);
+  });
+  $("#locationnav li a").eq(0).click();
+
+  document.styleSheets[0].cssRules[0].style.setProperty(
+    "src",
+    "url(old-NotoSerifArmenian-ExtraLight.ttf)"
+  );
+  document.styleSheets[0].cssRules[1].style.setProperty(
+    "src",
+    "url(new-NotoSerifArmenian-ExtraLight.ttf)"
+  );
+  setupAnimation();
+});
+
+	</script>
+</body>
+
+</html>

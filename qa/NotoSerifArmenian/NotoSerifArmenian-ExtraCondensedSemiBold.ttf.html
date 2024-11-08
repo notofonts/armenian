@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Diffenator3</title>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+		crossorigin="anonymous"></script>
+	<style type="text/css">
+		@font-face {
+      font-family: "Font Before";
+      src: url();
+    }
+
+    @font-face {
+      font-family: "Font After";
+      src: url();
+    }
+
+    .font-before, .font-after {
+      font-variation-settings: "wght" 400, "wdth" 100;
+    }
+
+    .font-before {
+      font-family: "Font Before", "Adobe Notdef";
+    }
+
+    .font-after {
+      font-family: "Font After", "Adobe Notdef";
+    }
+
+	:root {
+	--node-pt-size: 40px;
+	}
+
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #b3d4f5 !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active {
+    background-color: #ced9e4 !important;
+}
+.nav-item {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+
+.nav-pills .nav-link{
+    background-color: #9fcaf5 !important;
+}
+h4 {
+    color: #6f7882 !important;
+}
+
+@font-face {
+    font-family: "Adobe NotDef";
+    src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+}
+
+.box-title {
+    width: 100%;
+    font-size: 8pt;
+    font-weight: 700;
+    border-top: 1px solid black;
+    padding-top: 5px;
+    margin-bottom: 10pt;
+    display: block;
+}
+
+.box {
+    margin-bottom: 20pt;
+    width: 100%;
+    float: left;
+}
+
+.box-text {}
+
+#ui-nav {
+    position: fixed;
+    right: 20px;
+    z-index: 100;
+}
+
+#font-toggle {}
+
+.ui-nav-item {
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+    text-align: center;
+    color: white;
+    background-color: black;
+    display: block;
+    font-size: 14pt;
+    padding: 5px;
+    margin: 2px;
+}
+
+/* Stuff needed for the table differ */
+body {
+    font-family: Helvetica;
+}
+
+.node {
+    font-family: courier;
+    cursor: pointer;
+    position: relative;
+    left: 30px;
+    padding: 5px;
+    display: block;
+    border: 1px dashed grey;
+    background-color: #e9e9ee;
+}
+
+.header {
+    font-weight: bold;
+}
+
+.attr-before {
+    color: green;
+    cursor: text;
+}
+
+.attr-after {
+    color: red;
+    cursor: text;
+}
+
+.leaf {
+    font-weight: bold;
+}
+
+.old .cell .new {
+    display: none;
+}
+
+.new .cell .old {
+    display: none;
+}
+
+.both .cell .old {
+    opacity: 0.75;
+    color: red;
+}
+
+.both .cell .new {
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    color: green;
+}
+
+.spacer {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+#ot-panel {
+    max-height: 400px;
+    overflow-y: scroll;
+    background: white;
+    padding: 10px;
+    display: none;
+   }
+
+   .cell{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    width: 50pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+  }
+  .cell-word{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 5pt;
+    margin: 5pt;
+    font-size: var(--node-pt-size);
+    line-height: calc(var(--node-pt-size) * 1.5);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+  .cell-glyph{
+    z-index: -100;
+    float: left;
+    display: block;
+    text-align: center;
+    border-radius: 5pt;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 5pt;
+    margin: 5pt;
+    width: calc(var(--node-pt-size) * 2);
+    min-height: calc(var(--node-pt-size) * 2);
+    font-size: var(--node-pt-size);
+  }
+  .cell-glyph.font-before, .cell-word.font-before {
+    background: #eff6f2;
+  }
+  .cell-glyph.font-after, .cell-word.font-after {
+    background: #f7f4f4;
+  }
+
+  .cell-glyph:hover {
+    box-shadow: none;
+    background: #f0f0f5;
+  }
+  .cat-strings .cell {
+    clear: both;
+    position: static;
+    float: none;
+    text-align: left;
+  }
+  .codepoint {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 10pt;
+    line-height: 10pt;
+  }
+  .box-title {
+    clear: both;
+  }
+  .node.closed::before {
+    content: "+";
+    margin-right: 5pt;
+  }
+  .node.open::before {
+    content: "-";
+    margin-right: 5pt;
+  }
+
+  .tooltip pre {
+    background-color: #6f7882;
+    padding: 5px;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  .tooltip {
+    line-height: 1em;
+  }
+  .tooltip-inner {
+    max-width: 300px;
+  }
+
+  h1,h2,h3,h4,h5 {
+    clear: both;
+  }
+
+  #locationnav li {
+    white-space: wrap;
+  }
+
+  #userdefined div { width: 100%; }
+  
+/* The following rules are used in the WASM version, not in the CLI version.
+   But we keep them here so we can share them between the two versions. */
+
+   .modal-dialog {
+    max-width: 100% !important;
+    margin: 0 !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+  }
+
+  .fontdrop {
+    padding: 30px;
+    border-radius: 20px;
+    outline: 3px dashed #ffffffff;
+    outline-offset: -20px;
+  }
+
+  #fontbefore {
+    background-color: #ddffdddd;
+  }
+
+  #fontafter {
+    background-color: #ffdddddd;
+  }
+
+  .dragging {
+    background-image: linear-gradient(rgb(0 0 0/5%) 0 0);
+    outline: 5px dashed #ffffffff;
+  }
+
+  #diffkerns {
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+		</style>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+	integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+		<div id="ui-nav">
+		  <div class="ui-nav-item" id="fonttoggle">Old</div>
+		  <div class="ui-nav-item" id="fontanimate">Animate</div>
+		  <div id="axes">
+		  </div>
+		</div>
+	
+	<div class="row">
+		<div class="col-2">
+			<ul class="nav nav-pills" id="locationnav">
+			</ul>
+		</div>
+		<div class="col-9 mt-3">
+			<div id="title"></div>
+			<div id="cmapdiff"> </div>
+			<div id="main"></div>
+			<div id="userdefined">
+				<h4>User defined sample text</h4>
+				<div contenteditable="true" class="font-before cell-word">
+					You can type your own text here to see it previewed in the fonts.
+				</div>
+				<div style="clear: both"></div>
+			</div>
+			<div id="diffkerns"> </div>
+			<div id="difftable"> </div>
+		</div>
+	</div>
+	<script type="module">
+		function renderTableDiff(node, toplevel) {
+  var wrapper = $("<div> </div>");
+  if (!node) {
+    return wrapper;
+  }
+  if (Array.isArray(node) && node.length == 2) {
+    var before = $("<span/>");
+    before.addClass("attr-before");
+    before.html(" " + node[0] + " ");
+    var after = $("<span/>");
+    after.addClass("attr-after");
+    after.append(renderTableDiff(node[1], true).children());
+    wrapper.append(before);
+    wrapper.append(after);
+    return wrapper;
+  }
+  if (node.constructor != Object) {
+    var thing = $("<span/>");
+    thing.html(node);
+    wrapper.append(thing);
+    return wrapper;
+  }
+  for (const [key, value] of Object.entries(node)) {
+    var display = $("<div/>");
+    display.addClass("node");
+    if (!toplevel) {
+      display.hide();
+    }
+    display.append(key);
+    display.append(renderTableDiff(value, false).children());
+    if (display.children(".node").length > 0) {
+      display.addClass("closed");
+    }
+    wrapper.append(display);
+  }
+  return wrapper;
+}
+
+function addAGlyph(glyph, where) {
+  let title = "";
+  if (glyph.name) {
+    title = "name: " + glyph.name;
+  }
+  let cp =
+    "<br>U+" +
+    glyph.string.codePointAt(0).toString(16).padStart(4, "0").toUpperCase();
+  where.append(`
+        <div class="cell-glyph font-before">
+        <div data-toggle="tooltip" data-html="true" data-title="${glyph.differing_pixels} pixels"> ${glyph.string}
+        <div class="codepoint" data-toggle="tooltip" data-html="true" data-title="${title}">
+		${cp}
+        </div>
+        </div>
+    `);
+}
+
+function addAWord(diff, where) {
+  if (!diff.buffer_b) {
+    diff.buffer_b = diff.buffer_a;
+  }
+  where.append(`
+		<div class="cell-word font-before">
+		<span data-toggle="tooltip" data-html="true" data-title="Before: <pre>${diff.buffer_a}</pre>After: <pre>${diff.buffer_b}</pre><br>difference: ${diff.differing_pixels} pixels">
+		${diff.word}
+		</span>
+		</div>
+	`);
+}
+
+function diffTables(report) {
+  $("#difftable").empty();
+  $("#difftable").append(`<h4 class="mt-2 box-title">Table-level details</h4>`);
+  $("#difftable").append(
+    renderTableDiff({ tables: report["tables"] }, true).children()
+  );
+  $("#difftable .node").on("click", function (e) {
+    $(this).toggleClass("closed open");
+    $(this).children(".node").toggle();
+    e.stopPropagation();
+  });
+}
+function diffKerns(report) {
+  $("#diffkerns").empty();
+  $("#diffkerns").append(`<h4 class="mt-2">Modified Kerns</h4>`);
+  $("#diffkerns").append(
+    `<table class="table table-striped" id="diffkerns"><tr><th>Pair</th><th>Old</old><th>New</th></table>`
+  );
+  for (let [pair, value] of Object.entries(report["kerns"])) {
+    if (pair == "error") {
+      $("#diffkerns").append(`<p class="text-danger">Error: ${value}</p>`);
+      continue;
+    } else {
+      let row = $("<tr>");
+      row.append(`<td>${pair}</td>`);
+      row.append(`<td>${serializeKernBefore(value)}</td>`);
+      row.append(`<td>${serializeKernAfter(value)}</td>`);
+      $("#diffkerns table").append(row);
+    }
+  }
+}
+
+function serializeKernBefore(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[0], -1);
+  }
+  return serializeKern(kern, 0);
+}
+
+function serializeKernAfter(kern) {
+  if (Array.isArray(kern)) {
+    return serializeKern(kern[1], -1);
+  }
+  return serializeKern(kern, 1);
+}
+
+function serializeKern(kern, index) {
+  let string = "";
+  if (kern === null || kern === undefined) {
+    return "(null)";
+  }
+  if (kern.x) {
+    string += serializeKernValue(kern.x, index);
+  } else if (kern.y) {
+    string = "0";
+  }
+
+  if (kern.y) {
+    string += "," + serializeKernValue(kern.y, index);
+  }
+  if (!kern.x_placement && !kern.y_placement) {
+    return string;
+  }
+  string += "@";
+  if (kern.x_placement) {
+    string += serializeKernValue(kern.x_placement, index);
+  } else if (kern.y_placement) {
+    string += "0";
+  }
+  if (kern.y_placement) {
+    string += "," + serializeKernValue(kern.y_placement, index);
+  }
+  return string;
+}
+
+function serializeKernValue(kern, index) {
+  if (typeof kern == "number") {
+    return kern;
+  }
+  let string = "(";
+  let verybig = Object.entries(kern).length > 5;
+  for (let [key, value] of Object.entries(kern)) {
+    if (key == "default") {
+      string += value[index] + " ";
+    } else {
+      string += value[index] + "@" + key + " ";
+    }
+    if (verybig) {
+      string += "<br>";
+    }
+  }
+  return string.trim() + ")";
+}
+
+function cmapDiff(report) {
+  if (report.cmap_diff && (report.cmap_diff.new || report.cmap_diff.missing)) {
+    $("#cmapdiff").append(
+      `<h4 class="mt-2">Added and Removed Encoded Glyphs</h4>`
+    );
+    if (report["cmap_diff"]["new"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Added Glyphs</h4>`);
+      let added = $("<div>");
+      for (let glyph of report["cmap_diff"]["new"]) {
+        addAGlyph(glyph, added);
+      }
+      $("#cmapdiff").append(added);
+    }
+
+    if (report["cmap_diff"]["missing"]) {
+      $("#cmapdiff").append(`<h4 class="box-title">Removed Glyphs</h4>`);
+      let missing = $("<div>");
+      for (let glyph of report["cmap_diff"]["missing"]) {
+        addAGlyph(glyph, missing);
+      }
+      $("#cmapdiff").append(missing);
+    }
+  } else {
+    $("#cmapdiff").append(`<p>No changes to encoded glyphs</p>`);
+  }
+}
+
+function setupAnimation() {
+  $("#fonttoggle").click(function () {
+    if ($(this).text() == "Old") {
+      $(this).text("New");
+      $(".font-before").removeClass("font-before").addClass("font-after");
+    } else {
+      $(this).text("Old");
+      $(".font-after").removeClass("font-after").addClass("font-before");
+    }
+  });
+
+  let animationHandle;
+  function animate() {
+    $("#fonttoggle").click();
+    animationHandle = setTimeout(animate, 1000);
+  }
+  $("#fontanimate").click(function () {
+    if ($(this).text() == "Animate") {
+      $(this).text("Stop");
+      animate();
+    } else {
+      $(this).text("Animate");
+      clearTimeout(animationHandle);
+    }
+  });
+}
+
+export {
+  renderTableDiff,
+  addAGlyph,
+  addAWord,
+  cmapDiff,
+  diffTables,
+  diffKerns,
+  setupAnimation,
+};
+
+	var report = {"tables":{"GPOS":{"script_list":{"DFLT/dflt":{"lookups":{"1":[2,1]}},"armn/dflt":{"lookups":{"0":[1,0],"1":[2,1]}}},"lookup_list":{"0":{"0":{"bases":{"uni0555":{"anchor_0":{"x":[305,306]}},"uni0560":{"anchor_0":{"x":[380,379]}}}}},"2":{"0":{"uni0535":{"uni055C":{"x":[-185,-181]}},"uni0547":[{"uni0534":{"x":0},"uni0542":{"x":0},"uni0563":{"x":0},"uni0566":{"x":0},"uni056A":{"x":0},"uni056E":{"x":0},"uni0581":{"x":0},"uni0585":{"x":0}},null],"uni054D":{"uni055E":{"x":[-108,-113]}},"uni0566":[{"uni0579":{"x":56},"uni057B":{"x":-7}},null],"uni056C":{"uni0573":[{"x":0},null],"uni0576":[{"x":0},null]},"uni056F":[{"uni0579":{"x":56},"uni057B":{"x":-7}},null],"uni0572":{"uni057B":[{"x":-7},null]},"uni057E":[{"uni0579":{"x":56},"uni057B":{"x":-7}},null]},"1":{"classes":{"@CLASS_L_0":{"1":["uni0576","uniFB16"],"2":["uniFB13","uni0576"],"3":["uniFB16","uni057D"],"4":["uniFB17","uniFB13"],"5":["uni056D","uni0560"],"6":["uni0560","uniFB17"],"7":["uni057D","uni056D"]},"@CLASS_L_4":{"0":["uni05780582","uni05480552"],"1":["uni0582","uni0552"]},"@CLASS_L_5":{"0":["uni0565","uni0553"],"1":["uniFB14","uni0555"]},"@CLASS_L_6":{"0":["uni0553","uni0565"],"1":["uni0555","uniFB14"]},"@CLASS_L_7":{"0":["uni05480552","uni05780582"],"1":["uni0552","uni0582"]},"@CLASS_L_8":{"0":["uni0585","uni0544"]},"@CLASS_L_9":{"0":["uni057A","uni0567"]},"@CLASS_L_11":{"0":["uni0567","uni0585"]},"@CLASS_L_12":[["uni0544"],null],"@CLASS_R_3":{"0":["uni0563","uni0562"],"1":["uni0566","uni0568"],"2":["uni056A","uni0569"],"3":["uni056E","uni056C"],"4":["uni0581","uni0580"],"5":["uni0585","uni0584"]},"@CLASS_R_4":{"0":["uni0562","uni0563"],"1":["uni0568","uni0566"],"2":["uni0569","uni056A"],"3":["uni056C","uni056E"],"4":["uni0580","uni0581"],"5":["uni0584","uni0585"]},"@CLASS_R_5":{"0":["uni0567","uni0565"],"1":["uni056B","uni056F"],"2":["uni056D","uni0587"]},"@CLASS_R_6":{"0":["uni0565","uni0567"],"1":["uni056F","uni056B"],"2":["uni0587","uni056D"]},"@CLASS_R_7":{"0":["uni057B","uni055B"]},"@CLASS_R_8":{"0":["uni0579","uni055C"]},"@CLASS_R_9":{"0":["uni0577","uni055E"]},"@CLASS_R_11":{"0":["uni055E","uni0577"]},"@CLASS_R_12":{"0":["uni055C","uni0579"]},"@CLASS_R_13":{"0":["uni055B","uni057B"]}},"kerns":{"@CLASS_L_0":{"@CLASS_R_7":{"x":[0,-203]},"@CLASS_R_8":{"x":[0,-241]},"@CLASS_R_9":{"x":[0,-373]},"@CLASS_R_11":{"x":[-373,0]},"@CLASS_R_12":{"x":[-242,0]},"@CLASS_R_13":{"x":[-203,0]}},"@CLASS_L_1":{"@CLASS_R_7":{"x":[0,-203]},"@CLASS_R_8":{"x":[12,-241]},"@CLASS_R_9":{"x":[0,-337]},"@CLASS_R_11":{"x":[-338,0]},"@CLASS_R_12":{"x":[-242,13]},"@CLASS_R_13":{"x":[-203,0]}},"@CLASS_L_2":{"@CLASS_R_1":{"x":[-6,-5]},"@CLASS_R_7":{"x":[-7,0]},"@CLASS_R_8":{"x":[56,0]},"@CLASS_R_9":{"x":[27,0]},"@CLASS_R_11":{"x":[0,27]},"@CLASS_R_12":{"x":[0,55]},"@CLASS_R_13":{"x":[0,-7]}},"@CLASS_L_3":{"@CLASS_R_8":{"x":[52,0]},"@CLASS_R_12":{"x":[0,52]}},"@CLASS_L_4":{"@CLASS_R_7":{"x":[0,-177]},"@CLASS_R_8":{"x":[0,-195]},"@CLASS_R_9":{"x":[0,-266]},"@CLASS_R_11":{"x":[-310,0]},"@CLASS_R_12":{"x":[-242,0]},"@CLASS_R_13":{"x":[-203,0]}},"@CLASS_L_5":{"@CLASS_R_7":{"x":[0,-60]},"@CLASS_R_8":{"x":[0,-60]},"@CLASS_R_9":{"x":[0,-60]},"@CLASS_R_11":{"x":[-334,0]},"@CLASS_R_12":{"x":[-242,0]},"@CLASS_R_13":{"x":[-203,0]}},"@CLASS_L_6":{"@CLASS_R_7":{"x":[0,-203]},"@CLASS_R_8":{"x":[0,-241]},"@CLASS_R_9":{"x":[0,-334]},"@CLASS_R_11":{"x":[-60,0]},"@CLASS_R_12":{"x":[-60,0]},"@CLASS_R_13":{"x":[-60,0]}},"@CLASS_L_7":{"@CLASS_R_7":{"x":[0,-203]},"@CLASS_R_8":{"x":[0,-241]},"@CLASS_R_9":{"x":[0,-310]},"@CLASS_R_11":{"x":[-266,0]},"@CLASS_R_12":{"x":[-195,0]},"@CLASS_R_13":{"x":[-177,0]}},"@CLASS_L_8":{"@CLASS_R_1":{"x":[0,-42]},"@CLASS_R_2":{"x":[0,-56]},"@CLASS_R_3":{"x":[0,-50]},"@CLASS_R_4":{"x":[0,-77]},"@CLASS_R_10":{"x":[0,-49]},"@CLASS_R_11":{"x":[-373,-56]},"@CLASS_R_12":{"x":[-241,-61]},"@CLASS_R_13":{"x":[-203,-59]}},"@CLASS_L_9":{"@CLASS_R_4":{"x":[0,-27]},"@CLASS_R_10":{"x":[0,-13]},"@CLASS_R_12":{"x":[0,14]}},"@CLASS_L_10":{"@CLASS_R_3":{"x":[-26,0]},"@CLASS_R_4":{"x":[0,-25]},"@CLASS_R_5":{"x":[-22,-30]},"@CLASS_R_6":{"x":[-30,-22]}},"@CLASS_L_11":{"@CLASS_R_3":{"x":[-27,0]},"@CLASS_R_7":{"x":[0,-203]},"@CLASS_R_8":{"x":[14,-241]},"@CLASS_R_9":{"x":[0,-373]},"@CLASS_R_10":{"x":[-12,0]}},"@CLASS_L_12":[{"@All":{"x":0},"@CLASS_R_1":{"x":-42},"@CLASS_R_2":{"x":-56},"@CLASS_R_3":{"x":-76},"@CLASS_R_4":{"x":-50},"@CLASS_R_5":{"x":0},"@CLASS_R_6":{"x":0},"@CLASS_R_7":{"x":-59},"@CLASS_R_8":{"x":-61},"@CLASS_R_9":{"x":-56},"@CLASS_R_10":{"x":-49},"@CLASS_R_11":{"x":0},"@CLASS_R_12":{"x":0},"@CLASS_R_13":{"x":0}},null]}}},"3":{"2":{"rules":{"0":["uni0308 [uni0578 uni0585] uni055E' lookup lookup_4","uni0308 [uni0560 uni0561] uni055E' lookup lookup_4"]}},"3":[null,{"type":"chained_sequence_context","rules":["uni0308 [uni0578 uni0585] uni055E' lookup lookup_5"]}]},"4":{"0":{"uni055E":{"x":[300,100],"x_placement":[300,100]}}},"5":{"1":[null,{"type":"single","uni055E":{"x":300,"x_placement":300}}]}}},"OS/2":{"x_avg_char_width":[536,537]},"head":{"checksum_adjustment":[1822681302,3804337622],"modified":[3778484604,3813907985],"x_max":[1192,1206]},"hhea":{"advance_width_max":[1220,1234],"x_max_extent":[1192,1206],"caret_slope_rise":[1,1000]},"hmtx":{"hyphen":{"width":[250,251],"lsb":[21,20]},"uni2010":{"width":[257,255],"lsb":[21,20]},"uni0531":{"lsb":[31,30]},"uni0533":{"width":[622,623]},"uni0535":{"width":[567,568],"lsb":[31,30]},"uni0536":{"lsb":[36,35]},"uni0537":{"lsb":[31,30]},"uni053B":{"width":[535,543]},"uni053C":{"lsb":[31,30]},"uni053D":{"width":[701,709]},"uni053E":{"width":[573,575]},"uni053F":{"lsb":[27,26]},"uni0540":{"lsb":[40,41]},"uni0544":{"lsb":[31,30]},"uni0549":{"lsb":[26,25]},"uni054C":{"width":[710,719]},"uni054D":{"lsb":[31,30]},"uni054E":{"lsb":[27,26]},"uni054F":{"lsb":[34,33]},"uni0550":{"width":[565,566]},"uni0552":{"lsb":[31,30]},"uni0554":{"width":[495,494],"lsb":[10,11]},"uni0555":{"lsb":[45,44]},"uni0556":{"width":[572,573]},"uni0559":{"width":[196,195],"lsb":[35,36]},"uni055A":{"width":[196,195],"lsb":[35,36]},"uni055C":{"width":[242,241],"lsb":[71,72]},"uni0560":{"lsb":[29,28]},"uni0564":{"width":[537,538]},"uni0568":{"width":[508,507]},"uni056B":{"width":[508,507]},"uni056C":{"width":[275,283],"lsb":[27,33]},"uni0570":{"width":[464,465]},"uni0578":{"width":[508,507]},"uni05780582":{"width":[818,817]},"uni0579":{"width":[359,360]},"uni057C":{"width":[513,512]},"uni0580":{"width":[508,507]},"uni0581":{"width":[479,487]},"uni0584":{"lsb":[15,14]},"uni0586":{"width":[557,547]},"uni0588":{"width":[269,265],"lsb":[7,6]},"uni058A":{"lsb":[46,47]},"uniFB13":{"width":[974,986]},"uniFB14":{"width":[964,976]},"uniFB15":{"width":[958,970]},"uniFB16":{"width":[974,986]},"uniFB17":{"width":[1220,1234]},"uni2019":{"width":[196,195],"lsb":[35,36]}},"loca":{"offsets":{"21":[1340,1342],"22":[1480,1482],"23":[1584,1586],"24":[1670,1672],"27":[2062,2066],"28":[2164,2168],"29":[2296,2300],"30":[2388,2392],"31":[2516,2520],"32":[2596,2600],"33":[2620,2624],"34":[2718,2722],"37":[3062,3064],"38":[3144,3146],"39":[3240,3242],"40":[3374,3376],"41":[3446,3448],"42":[3600,3602],"43":[3698,3700],"44":[3836,3838],"45":[3926,3928],"46":[4008,4010],"47":[4144,4146],"49":[4244,4242],"50":[4290,4286],"51":[4352,4348],"52":[4398,4394],"53":[4464,4460],"54":[4526,4522],"55":[4674,4670],"56":[4826,4822],"57":[4930,4924],"58":[5052,5046],"59":[5164,5154],"60":[5266,5256],"61":[5376,5366],"62":[5476,5466],"63":[5568,5554],"64":[5722,5710],"65":[5820,5808],"66":[5932,5916],"67":[5982,5966],"68":[6144,6126],"69":[6288,6272],"70":[6396,6382],"71":[6502,6488],"72":[6668,6652],"73":[6764,6746],"74":[6914,6896],"75":[7072,7054],"76":[7146,7128],"77":[7282,7264],"78":[7396,7378],"79":[7498,7478],"80":[7522,7502],"81":[7620,7604],"82":[7778,7762],"83":[7930,7910],"84":[8022,8000],"85":[8124,8102],"86":[8226,8204],"87":[8378,8356],"88":[8482,8456],"89":[8616,8584],"90":[8666,8634],"91":[8834,8802],"92":[8974,8942],"93":[9046,9014],"94":[9190,9156],"95":[9284,9250],"96":[9368,9334],"97":[9444,9410],"98":[9494,9460],"99":[9942,9906],"100":[10390,10344],"101":[10488,10442],"102":[11006,10960],"103":[11260,11224],"104":[11476,11444],"105":[11704,11674],"106":[11928,11904],"107":[12210,12190],"108":[12226,12206]}}},"kerns":{"uni0535/uni055C":{"x":[-185,-181]},"uni054D/uni055E":{"x":[-108,-113]},"uni0566/uni0579":{"x":[56,55]},"uni056F/uni0579":{"x":[56,55]},"uni057E/uni0579":{"x":[56,55]},"uni0576/uni055C":{"x":[-242,-241]},"uniFB17/uni055C":{"x":[-242,-241]},"uni056D/uni055C":{"x":[-242,-241]},"uni057D/uni055C":{"x":[-242,-241]},"uniFB13/uni055C":{"x":[-242,-241]},"uni0560/uni055C":{"x":[-242,-241]},"uni0561/uni055C":{"x":[-242,-241]},"uniFB16/uni055C":{"x":[-242,-241]},"uni0568/uni0579":{"x":[12,13]},"uni056B/uni0579":{"x":[12,13]},"uni0578/uni0579":{"x":[12,13]},"uni057F/uni0579":{"x":[12,13]},"uni0580/uni0579":{"x":[12,13]},"uni0583/uni0579":{"x":[12,13]},"uniFB15/uni0579":{"x":[12,13]},"uni056B/uni055E":{"x":[-338,-337]},"uni0578/uni055E":{"x":[-338,-337]},"uni057F/uni055E":{"x":[-338,-337]},"uni0580/uni055E":{"x":[-338,-337]},"uni0583/uni055E":{"x":[-338,-337]},"uniFB15/uni055E":{"x":[-338,-337]},"uni0568/uni055C":{"x":[-242,-241]},"uni056B/uni055C":{"x":[-242,-241]},"uni0578/uni055C":{"x":[-242,-241]},"uni057F/uni055C":{"x":[-242,-241]},"uni0580/uni055C":{"x":[-242,-241]},"uni0583/uni055C":{"x":[-242,-241]},"uniFB15/uni055C":{"x":[-242,-241]},"uni0566/uni0560":{"x":[-6,-5]},"uni0566/uni0561":{"x":[-6,-5]},"uni0566/uni0574":{"x":[-6,-5]},"uni0566/uni057A":{"x":[-6,-5]},"uni0566/uni057D":{"x":[-6,-5]},"uni0566/uni057E":{"x":[-6,-5]},"uni0566/uni057F":{"x":[-6,-5]},"uni0566/uni0583":{"x":[-6,-5]},"uni0566/uniFB13":{"x":[-6,-5]},"uni0566/uniFB14":{"x":[-6,-5]},"uni0566/uniFB15":{"x":[-6,-5]},"uni0566/uniFB16":{"x":[-6,-5]},"uni0566/uniFB17":{"x":[-6,-5]},"uni056F/uni0560":{"x":[-6,-5]},"uni056F/uni0561":{"x":[-6,-5]},"uni056F/uni0574":{"x":[-6,-5]},"uni056F/uni057A":{"x":[-6,-5]},"uni056F/uni057D":{"x":[-6,-5]},"uni056F/uni057E":{"x":[-6,-5]},"uni056F/uni057F":{"x":[-6,-5]},"uni056F/uni0583":{"x":[-6,-5]},"uni056F/uniFB13":{"x":[-6,-5]},"uni056F/uniFB14":{"x":[-6,-5]},"uni056F/uniFB15":{"x":[-6,-5]},"uni056F/uniFB16":{"x":[-6,-5]},"uni056F/uniFB17":{"x":[-6,-5]},"uni0572/uni0560":{"x":[-6,-5]},"uni0572/uni0561":{"x":[-6,-5]},"uni0572/uni0574":{"x":[-6,-5]},"uni0572/uni057A":{"x":[-6,-5]},"uni0572/uni057D":{"x":[-6,-5]},"uni0572/uni057E":{"x":[-6,-5]},"uni0572/uni057F":{"x":[-6,-5]},"uni0572/uni0583":{"x":[-6,-5]},"uni0572/uniFB13":{"x":[-6,-5]},"uni0572/uniFB14":{"x":[-6,-5]},"uni0572/uniFB15":{"x":[-6,-5]},"uni0572/uniFB16":{"x":[-6,-5]},"uni0572/uniFB17":{"x":[-6,-5]},"uni057E/uni0560":{"x":[-6,-5]},"uni057E/uni0561":{"x":[-6,-5]},"uni057E/uni0574":{"x":[-6,-5]},"uni057E/uni057A":{"x":[-6,-5]},"uni057E/uni057D":{"x":[-6,-5]},"uni057E/uni057E":{"x":[-6,-5]},"uni057E/uni057F":{"x":[-6,-5]},"uni057E/uni0583":{"x":[-6,-5]},"uni057E/uniFB13":{"x":[-6,-5]},"uni057E/uniFB14":{"x":[-6,-5]},"uni057E/uniFB15":{"x":[-6,-5]},"uni057E/uniFB16":{"x":[-6,-5]},"uni057E/uniFB17":{"x":[-6,-5]},"uni05780582/uni055C":{"x":[-242,-241]},"uni0582/uni055C":{"x":[-242,-241]},"uni0565/uni055C":{"x":[-242,-241]},"uniFB14/uni055C":{"x":[-242,-241]},"uni0579/uni0563":{"x":[-26,-25]},"uni0579/uni0566":{"x":[-26,-25]},"uni0579/uni056A":{"x":[-26,-25]},"uni0579/uni056E":{"x":[-26,-25]},"uni0579/uni0581":{"x":[-26,-25]},"uni0579/uni0585":{"x":[-26,-25]},"uni0567/uni0571":{"x":[-12,-13]},"uni0544/uni0563":{"x":[-76,-77]},"uni0544/uni0566":{"x":[-76,-77]},"uni0544/uni056A":{"x":[-76,-77]},"uni0544/uni056E":{"x":[-76,-77]},"uni0544/uni0581":{"x":[-76,-77]},"uni0544/uni0585":{"x":[-76,-77]}},"cmap_diff":{},"locations":[{"location":"Default","glyphs":[{"string":"ﬗ","name":"ARMENIAN SMALL LIGATURE MEN XEH","unicode":"U+FB17","differing_pixels":213},{"string":"ﬕ","name":"ARMENIAN SMALL LIGATURE MEN INI","unicode":"U+FB15","differing_pixels":149},{"string":"ֆ","name":"ARMENIAN SMALL LETTER FEH","unicode":"U+0586","differing_pixels":145},{"string":"ﬓ","name":"ARMENIAN SMALL LIGATURE MEN NOW","unicode":"U+FB13","differing_pixels":140},{"string":"ﬖ","name":"ARMENIAN SMALL LIGATURE VEW NOW","unicode":"U+FB16","differing_pixels":132},{"string":"Հ","name":"ARMENIAN CAPITAL LETTER HO","unicode":"U+0540","differing_pixels":123},{"string":"ﬔ","name":"ARMENIAN SMALL LIGATURE MEN ECH","unicode":"U+FB14","differing_pixels":119},{"string":"Խ","name":"ARMENIAN CAPITAL LETTER XEH","unicode":"U+053D","differing_pixels":90},{"string":"Ծ","name":"ARMENIAN CAPITAL LETTER CA","unicode":"U+053E","differing_pixels":65},{"string":"լ","name":"ARMENIAN SMALL LETTER LIWN","unicode":"U+056C","differing_pixels":53},{"string":"ֈ","name":"ARMENIAN SMALL LETTER YI WITH STROKE","unicode":"U+0588","differing_pixels":52},{"string":"Ռ","name":"ARMENIAN CAPITAL LETTER RA","unicode":"U+054C","differing_pixels":52},{"string":"Ի","name":"ARMENIAN CAPITAL LETTER INI","unicode":"U+053B","differing_pixels":42},{"string":"ց","name":"ARMENIAN SMALL LETTER CO","unicode":"U+0581","differing_pixels":39},{"string":"չ","name":"ARMENIAN SMALL LETTER CHA","unicode":"U+0579","differing_pixels":35}],"words":{"Armenian":[{"word":"մխրճվեցին","buffer_a":"106|87|73|85|59|88|65|76|","differing_pixels":67},{"word":"ՀԱՆՁՆԱԺՈՂՈՎԻ","buffer_a":"23|8|29|24|29|8|17|31|25|31|38|18|","differing_pixels":63},{"word":"միցելների","buffer_a":"104|88|59|66|76|59|87|65|","differing_pixels":53},{"word":"միեւնո՛յն","buffer_a":"104|59|89|76|78|49|75|76|","differing_pixels":48},{"word":"Վսևոլոդովնան","buffer_a":"38|84|94|78|66|78|58|78|105|55|76|","differing_pixels":43},{"word":"միջամտեց՝","buffer_a":"104|82|55|74|86|59|88|51|","differing_pixels":43},{"word":"Քիմմելը","buffer_a":"44|65|74|103|66|62|","differing_pixels":40},{"word":"Սեղմե՜ք","buffer_a":"37|59|72|103|50|91|","differing_pixels":37},{"word":"հեռուստառադիոհաղորդումների","buffer_a":"70|59|83|79|84|86|55|83|55|58|65|78|70|55|72|78|87|58|79|102|59|87|65|","differing_pixels":31},{"word":"մեկ֊երկու","buffer_a":"103|69|97|59|87|69|79|","differing_pixels":26},{"word":"Քալիֆոռնիայի","buffer_a":"44|55|66|65|93|78|83|76|65|55|75|65|","differing_pixels":25},{"word":"Ֆյոլքերշթրաֆգեզեթցբուխի","buffer_a":"46|75|78|66|91|59|87|77|63|87|55|93|57|59|60|59|63|88|56|79|67|65|","differing_pixels":13}]}}]};
+		function buildLocation_statichtml(loc) {
+  // Set font styles to appropriate axis locations
+  let rule = document.styleSheets[0].cssRules[2].style;
+  let cssSetting = "";
+  let textLocation = "Default";
+  if (loc.coords) {
+    cssSetting = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `"${axis}" ${value}`;
+      })
+      .join(", ");
+    textLocation = Object.entries(loc.coords)
+      .map(function ([axis, value]) {
+        return `${axis}=${value}`;
+      })
+      .join(" ");
+    rule.setProperty("font-variation-settings", cssSetting);
+  }
+
+  $("#main").empty();
+
+  $("#title").html(`<h4 class="mt-2">${textLocation}</h2>`);
+
+  if (loc.glyphs) {
+    $("#main").append("<h4>Modified Glyphs</h4>");
+    let glyphs = $("<div>");
+    for (let glyph of loc.glyphs) {
+      addAGlyph(glyph, glyphs);
+    }
+    $("#main").append(glyphs);
+  }
+
+  if (loc.words) {
+    $("#main").append("<h4>Modified Words</h4>");
+    for (let [script, words] of Object.entries(loc.words)) {
+      let scriptTitle = $(`<h6>${script}</h6>`);
+      $("#main").append(scriptTitle);
+      let worddiv = $("<div>");
+      for (let word of words) {
+        addAWord(word, worddiv);
+      }
+      $("#main").append(worddiv);
+    }
+  }
+  $('[data-toggle="tooltip"]').tooltip();
+}
+
+$(function () {
+  if (report["tables"]) {
+    diffTables(report);
+  }
+  if (report["kerns"]) {
+    diffKerns(report);
+  }
+  cmapDiff(report);
+  $('[data-toggle="tooltip"]').tooltip();
+  if (!report["locations"]) {
+    $("#title").html("<h4 class='mt-2'>No differences found</h4>");
+    $("#ui-nav").hide();
+    return;
+  }
+
+  for (var [index, loc] of report["locations"].entries()) {
+    var loc_nav = $(`<li class="nav-item">
+		<a class="nav-link text-secondary" href="#" data-index="${index}">${loc.location.replaceAll(
+      ",",
+      ",\u200b"
+    )}</a>
+	</li>`);
+    $("#locationnav").append(loc_nav);
+  }
+  $("#locationnav li a").on("click", function (e) {
+    $("#locationnav li a").removeClass("active");
+    $(this).addClass("active");
+    buildLocation_statichtml(report.locations[$(this).data("index")]);
+  });
+  $("#locationnav li a").eq(0).click();
+
+  document.styleSheets[0].cssRules[0].style.setProperty(
+    "src",
+    "url(old-NotoSerifArmenian-ExtraCondensedSemiBold.ttf)"
+  );
+  document.styleSheets[0].cssRules[1].style.setProperty(
+    "src",
+    "url(new-NotoSerifArmenian-ExtraCondensedSemiBold.ttf)"
+  );
+  setupAnimation();
+});
+
+	</script>
+</body>
+
+</html>
