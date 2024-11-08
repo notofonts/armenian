@@ -6,7 +6,8 @@ includeSubsets:
   name: GF_Latin_Core
 - from: Noto Sans
   ranges:
-    - start: 0x2024 # ONE DOT LEADER "used as an Armenian semicolon"
-      end: 0x2024
+  - end: 8228
+    start: 8228
+recipeProvider: noto
 sources:
 - NotoSansArmenian.glyphs
