@@ -12,4 +12,4 @@ includeSubsets:
     start: 8228
 recipeProvider: noto
 sources:
-- NotoSerifArmenian.glyphs
+- NotoSerifArmenian.glyphspackage
