@@ -1,0 +1,2313 @@
+{
+.appVersion = "3326";
+.formatVersion = 3;
+axes = (
+{
+name = Weight;
+tag = wght;
+},
+{
+name = Width;
+tag = wdth;
+}
+);
+customParameters = (
+{
+name = "Axis Mappings";
+value = {
+wdth = {
+62.5 = 70;
+75 = 79;
+87.5 = 89;
+100 = 100;
+};
+wght = {
+100 = 28;
+200 = 42;
+300 = 64;
+400 = 94;
+500 = 110;
+600 = 130;
+700 = 152;
+800 = 175;
+900 = 194;
+};
+};
+},
+{
+name = glyphOrder;
+value = (
+.notdef,
+CR,
+NULL,
+dieresiscomb,
+hyphen,
+hyphentwo,
+space,
+uni00A0,
+uni0531,
+uni0532,
+uni0533,
+uni0534,
+uni0535,
+uni0536,
+uni0537,
+uni0538,
+uni0539,
+uni053A,
+uni053B,
+uni053C,
+uni053D,
+uni053E,
+uni053F,
+uni0540,
+uni0541,
+uni0542,
+uni0543,
+uni0544,
+uni0545,
+uni0546,
+uni0547,
+uni0548,
+uni0548_uni0552,
+uni0549,
+uni054A,
+uni054B,
+uni054C,
+uni054D,
+uni054E,
+uni054F,
+uni0550,
+uni0551,
+uni0552,
+uni0553,
+uni0554,
+uni0555,
+uni0556,
+uni0559,
+uni055A,
+uni055B,
+uni055C,
+uni055D,
+uni055E,
+uni055F,
+uni0560,
+uni0561,
+uni0562,
+uni0563,
+uni0564,
+uni0565,
+uni0566,
+uni0567,
+uni0568,
+uni0569,
+uni056A,
+uni056B,
+uni056C,
+uni056D,
+uni056E,
+uni056F,
+uni0570,
+uni0571,
+uni0572,
+uni0573,
+uni0574,
+uni0575,
+uni0576,
+uni0577,
+uni0578,
+uni0578_uni0582,
+uni0579,
+uni057A,
+uni057B,
+uni057C,
+uni057D,
+uni057E,
+uni057F,
+uni0580,
+uni0581,
+uni0582,
+uni0583,
+uni0584,
+uni0585,
+uni0586,
+uni0587,
+uni0588,
+uni0589,
+uni058A,
+uni058D,
+uni058E,
+uni058F,
+uni25CC,
+uniFB13,
+uniFB14,
+uniFB15,
+uniFB16,
+uniFB17
+);
+},
+{
+name = descriptions;
+value = "Designed by Monotype design team.";
+},
+{
+name = licenses;
+value = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL";
+},
+{
+name = licenseURL;
+value = "https://scripts.sil.org/OFL";
+},
+{
+name = versionString;
+value = "Version 2.008";
+},
+{
+name = fsType;
+value = (
+);
+},
+{
+name = unicodeRanges;
+value = (
+0,
+1,
+6,
+10,
+31,
+45,
+62
+);
+},
+{
+name = vendorID;
+value = GOOG;
+},
+{
+name = trademarks;
+value = "Noto is a trademark of Google Inc.";
+},
+{
+name = "Use Typo Metrics";
+value = 1;
+}
+);
+date = "2019-11-20 21:12:38 +0000";
+familyName = "Noto Serif Armenian";
+featurePrefixes = (
+{
+code = "languagesystem DFLT dflt;
+languagesystem armn dflt;
+";
+name = Languagesystems;
+},
+{
+automatic = 1;
+code = "";
+name = Prefix;
+}
+);
+features = (
+{
+code = "sub uni0548 uni0552 by uni0548_uni0552;
+sub uni0574 uni0565 by uniFB14;
+sub uni0574 uni056B by uniFB15;
+sub uni0574 uni056D by uniFB17;
+sub uni0574 uni0576 by uniFB13;
+sub uni0578 uni0582 by uni0578_uni0582;
+sub uni057E uni0576 by uniFB16;";
+tag = liga;
+},
+{
+code = "# Automatic Code Start
+";
+tag = mark;
+},
+{
+code = "# Automatic Code Start
+
+
+pos [uni0585] dieresiscomb uni055C' <200 0 200 0>;
+pos [uni0578 uni0585] dieresiscomb [uni055B uni055C uni055D]' <170 0 170 0>;
+pos [uni0560 uni0561] dieresiscomb [uni055E]' <100 0 100 0>;
+pos [uni0578 uni0585] dieresiscomb [uni055E]' <300 0 300 0>;
+";
+tag = kern;
+}
+);
+fontMaster = (
+{
+axesValues = (
+28,
+100
+);
+customParameters = (
+{
+name = typoAscender;
+value = 1068;
+},
+{
+name = typoDescender;
+value = -292;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 1068;
+},
+{
+name = hheaDescender;
+value = -292;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1068;
+},
+{
+name = winDescent;
+value = 292;
+},
+{
+name = underlineThickness;
+value = 50;
+},
+{
+name = underlinePosition;
+value = -100;
+}
+);
+iconName = Light;
+id = m001;
+metricValues = (
+{
+over = 15;
+pos = 1068;
+},
+{
+over = 15;
+pos = 714;
+},
+{
+over = 15;
+pos = 536;
+},
+{
+over = -15;
+},
+{
+over = -15;
+pos = -292;
+},
+{
+}
+);
+name = Light;
+stemValues = (
+28,
+80
+);
+},
+{
+axesValues = (
+94,
+100
+);
+customParameters = (
+{
+name = typoAscender;
+value = 1068;
+},
+{
+name = typoDescender;
+value = -292;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 1068;
+},
+{
+name = hheaDescender;
+value = -292;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1068;
+},
+{
+name = winDescent;
+value = 292;
+},
+{
+name = underlineThickness;
+value = 50;
+},
+{
+name = underlinePosition;
+value = -100;
+}
+);
+id = m003;
+metricValues = (
+{
+over = 15;
+pos = 1068;
+},
+{
+over = 15;
+pos = 714;
+},
+{
+over = 15;
+pos = 536;
+},
+{
+over = -15;
+},
+{
+over = -15;
+pos = -292;
+},
+{
+}
+);
+name = Regular;
+stemValues = (
+101,
+65
+);
+},
+{
+axesValues = (
+194,
+100
+);
+customParameters = (
+{
+name = typoAscender;
+value = 1068;
+},
+{
+name = typoDescender;
+value = -292;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 1068;
+},
+{
+name = hheaDescender;
+value = -292;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1068;
+},
+{
+name = winDescent;
+value = 292;
+},
+{
+name = underlineThickness;
+value = 50;
+},
+{
+name = underlinePosition;
+value = -100;
+}
+);
+iconName = Bold;
+id = m005;
+metricValues = (
+{
+over = 15;
+pos = 1068;
+},
+{
+over = 15;
+pos = 714;
+},
+{
+over = 15;
+pos = 536;
+},
+{
+over = -15;
+},
+{
+over = -15;
+pos = -292;
+},
+{
+}
+);
+name = Bold;
+stemValues = (
+194,
+46
+);
+},
+{
+axesValues = (
+28,
+70
+);
+customParameters = (
+{
+name = typoAscender;
+value = 1068;
+},
+{
+name = typoDescender;
+value = -292;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 1068;
+},
+{
+name = hheaDescender;
+value = -292;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1068;
+},
+{
+name = winDescent;
+value = 292;
+},
+{
+name = underlineThickness;
+value = 50;
+},
+{
+name = underlinePosition;
+value = -100;
+}
+);
+id = m006;
+metricValues = (
+{
+over = 15;
+pos = 1068;
+},
+{
+over = 15;
+pos = 714;
+},
+{
+over = 15;
+pos = 536;
+},
+{
+over = -15;
+},
+{
+over = -15;
+pos = -292;
+},
+{
+}
+);
+name = "Condensed Light";
+stemValues = (
+28,
+25
+);
+},
+{
+axesValues = (
+94,
+70
+);
+customParameters = (
+{
+name = typoAscender;
+value = 1068;
+},
+{
+name = typoDescender;
+value = -292;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 1068;
+},
+{
+name = hheaDescender;
+value = -292;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1068;
+},
+{
+name = winDescent;
+value = 292;
+},
+{
+name = underlineThickness;
+value = 50;
+},
+{
+name = underlinePosition;
+value = -100;
+}
+);
+iconName = Condensed;
+id = m007;
+metricValues = (
+{
+over = 15;
+pos = 1068;
+},
+{
+over = 15;
+pos = 714;
+},
+{
+over = 15;
+pos = 536;
+},
+{
+over = -15;
+},
+{
+over = -15;
+pos = -292;
+},
+{
+}
+);
+name = Condensed;
+stemValues = (
+64,
+34
+);
+},
+{
+axesValues = (
+194,
+70
+);
+customParameters = (
+{
+name = typoAscender;
+value = 1068;
+},
+{
+name = typoDescender;
+value = -292;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 1068;
+},
+{
+name = hheaDescender;
+value = -292;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1068;
+},
+{
+name = winDescent;
+value = 292;
+},
+{
+name = underlineThickness;
+value = 50;
+},
+{
+name = underlinePosition;
+value = -100;
+}
+);
+id = m009;
+metricValues = (
+{
+over = 15;
+pos = 1068;
+},
+{
+over = 15;
+pos = 714;
+},
+{
+over = 15;
+pos = 536;
+},
+{
+over = -15;
+},
+{
+over = -15;
+pos = -292;
+},
+{
+}
+);
+name = "Condensed Bold";
+stemValues = (
+168,
+64
+);
+}
+);
+instances = (
+{
+axesValues = (
+28,
+100
+);
+instanceInterpolations = {
+m001 = 1;
+};
+name = Thin;
+weightClass = 100;
+},
+{
+axesValues = (
+42,
+100
+);
+instanceInterpolations = {
+m001 = 0.78788;
+m003 = 0.21212;
+};
+name = ExtraLight;
+weightClass = 200;
+},
+{
+axesValues = (
+64,
+100
+);
+instanceInterpolations = {
+m001 = 0.45455;
+m003 = 0.54545;
+};
+name = Light;
+weightClass = 300;
+},
+{
+axesValues = (
+94,
+100
+);
+instanceInterpolations = {
+m003 = 1;
+};
+name = Regular;
+},
+{
+axesValues = (
+110,
+100
+);
+instanceInterpolations = {
+m003 = 0.84;
+m005 = 0.16;
+};
+name = Medium;
+weightClass = 500;
+},
+{
+axesValues = (
+130,
+100
+);
+instanceInterpolations = {
+m003 = 0.64;
+m005 = 0.36;
+};
+name = SemiBold;
+weightClass = 600;
+},
+{
+axesValues = (
+152,
+100
+);
+instanceInterpolations = {
+m003 = 0.42;
+m005 = 0.58;
+};
+isBold = 1;
+linkStyle = Regular;
+name = Bold;
+weightClass = 700;
+},
+{
+axesValues = (
+175,
+100
+);
+instanceInterpolations = {
+m003 = 0.19;
+m005 = 0.81;
+};
+name = ExtraBold;
+weightClass = 800;
+},
+{
+axesValues = (
+194,
+100
+);
+instanceInterpolations = {
+m005 = 1;
+};
+name = Black;
+weightClass = 900;
+},
+{
+axesValues = (
+28,
+79
+);
+instanceInterpolations = {
+m001 = 0.3;
+m006 = 0.7;
+};
+name = "Condensed Thin";
+weightClass = 100;
+widthClass = 3;
+},
+{
+axesValues = (
+42,
+79
+);
+instanceInterpolations = {
+m001 = 0.23636;
+m003 = 0.06364;
+m006 = 0.55152;
+m007 = 0.14848;
+};
+name = "Condensed ExtraLight";
+weightClass = 200;
+widthClass = 3;
+},
+{
+axesValues = (
+64,
+79
+);
+instanceInterpolations = {
+m001 = 0.13636;
+m003 = 0.16364;
+m006 = 0.31818;
+m007 = 0.38182;
+};
+name = "Condensed Light";
+weightClass = 300;
+widthClass = 3;
+},
+{
+axesValues = (
+94,
+79
+);
+instanceInterpolations = {
+m003 = 0.3;
+m007 = 0.7;
+};
+name = Condensed;
+widthClass = 3;
+},
+{
+axesValues = (
+110,
+79
+);
+instanceInterpolations = {
+m003 = 0.252;
+m005 = 0.048;
+m007 = 0.588;
+m009 = 0.112;
+};
+name = "Condensed Medium";
+weightClass = 500;
+widthClass = 3;
+},
+{
+axesValues = (
+130,
+79
+);
+instanceInterpolations = {
+m003 = 0.192;
+m005 = 0.108;
+m007 = 0.448;
+m009 = 0.252;
+};
+name = "Condensed SemiBold";
+weightClass = 600;
+widthClass = 3;
+},
+{
+axesValues = (
+152,
+79
+);
+instanceInterpolations = {
+m003 = 0.126;
+m005 = 0.174;
+m007 = 0.294;
+m009 = 0.406;
+};
+isBold = 1;
+linkStyle = Condensed;
+name = "Condensed Bold";
+weightClass = 700;
+widthClass = 3;
+},
+{
+axesValues = (
+175,
+79
+);
+instanceInterpolations = {
+m003 = 0.057;
+m005 = 0.243;
+m007 = 0.133;
+m009 = 0.567;
+};
+name = "Condensed ExtraBold";
+weightClass = 800;
+widthClass = 3;
+},
+{
+axesValues = (
+194,
+79
+);
+instanceInterpolations = {
+m005 = 0.3;
+m009 = 0.7;
+};
+name = "Condensed Black";
+weightClass = 900;
+widthClass = 3;
+},
+{
+axesValues = (
+28,
+89
+);
+instanceInterpolations = {
+m001 = 0.63333;
+m006 = 0.36667;
+};
+name = "SemiCondensed Thin";
+weightClass = 100;
+widthClass = 4;
+},
+{
+axesValues = (
+42,
+89
+);
+instanceInterpolations = {
+m001 = 0.49899;
+m003 = 0.13434;
+m006 = 0.28889;
+m007 = 0.07778;
+};
+name = "SemiCondensed ExtraLight";
+weightClass = 200;
+widthClass = 4;
+},
+{
+axesValues = (
+64,
+89
+);
+instanceInterpolations = {
+m001 = 0.28788;
+m003 = 0.34545;
+m006 = 0.16667;
+m007 = 0.2;
+};
+name = "SemiCondensed Light";
+weightClass = 300;
+widthClass = 4;
+},
+{
+axesValues = (
+94,
+89
+);
+instanceInterpolations = {
+m003 = 0.63333;
+m007 = 0.36667;
+};
+name = SemiCondensed;
+widthClass = 4;
+},
+{
+axesValues = (
+110,
+89
+);
+instanceInterpolations = {
+m003 = 0.532;
+m005 = 0.10133;
+m007 = 0.308;
+m009 = 0.05867;
+};
+name = "SemiCondensed Medium";
+weightClass = 500;
+widthClass = 4;
+},
+{
+axesValues = (
+130,
+89
+);
+instanceInterpolations = {
+m003 = 0.40533;
+m005 = 0.228;
+m007 = 0.23467;
+m009 = 0.132;
+};
+name = "SemiCondensed SemiBold";
+weightClass = 600;
+widthClass = 4;
+},
+{
+axesValues = (
+152,
+89
+);
+instanceInterpolations = {
+m003 = 0.266;
+m005 = 0.36733;
+m007 = 0.154;
+m009 = 0.21267;
+};
+isBold = 1;
+linkStyle = SemiCondensed;
+name = "SemiCondensed Bold";
+weightClass = 700;
+widthClass = 4;
+},
+{
+axesValues = (
+175,
+89
+);
+instanceInterpolations = {
+m003 = 0.12033;
+m005 = 0.513;
+m007 = 0.06967;
+m009 = 0.297;
+};
+name = "SemiCondensed ExtraBold";
+weightClass = 800;
+widthClass = 4;
+},
+{
+axesValues = (
+194,
+89
+);
+instanceInterpolations = {
+m005 = 0.63333;
+m009 = 0.36667;
+};
+name = "SemiCondensed Black";
+weightClass = 900;
+widthClass = 4;
+},
+{
+axesValues = (
+28,
+70
+);
+instanceInterpolations = {
+m006 = 1;
+};
+name = "ExtraCondensed Thin";
+weightClass = 100;
+widthClass = 2;
+},
+{
+axesValues = (
+42,
+70
+);
+instanceInterpolations = {
+m006 = 0.78788;
+m007 = 0.21212;
+};
+name = "ExtraCondensed ExtraLight";
+weightClass = 200;
+widthClass = 2;
+},
+{
+axesValues = (
+64,
+70
+);
+instanceInterpolations = {
+m006 = 0.45455;
+m007 = 0.54545;
+};
+name = "ExtraCondensed Light";
+weightClass = 300;
+widthClass = 2;
+},
+{
+axesValues = (
+94,
+70
+);
+instanceInterpolations = {
+m007 = 1;
+};
+name = ExtraCondensed;
+widthClass = 2;
+},
+{
+axesValues = (
+110,
+70
+);
+instanceInterpolations = {
+m007 = 0.84;
+m009 = 0.16;
+};
+name = "ExtraCondensed Medium";
+weightClass = 500;
+widthClass = 2;
+},
+{
+axesValues = (
+130,
+70
+);
+instanceInterpolations = {
+m007 = 0.64;
+m009 = 0.36;
+};
+name = "ExtraCondensed SemiBold";
+weightClass = 600;
+widthClass = 2;
+},
+{
+axesValues = (
+152,
+70
+);
+instanceInterpolations = {
+m007 = 0.42;
+m009 = 0.58;
+};
+isBold = 1;
+name = "ExtraCondensed Bold";
+weightClass = 700;
+widthClass = 2;
+},
+{
+axesValues = (
+175,
+70
+);
+instanceInterpolations = {
+m007 = 0.19;
+m009 = 0.81;
+};
+name = "ExtraCondensed ExtraBold";
+weightClass = 800;
+widthClass = 2;
+},
+{
+axesValues = (
+194,
+70
+);
+instanceInterpolations = {
+m009 = 1;
+};
+name = "ExtraCondensed Black";
+weightClass = 900;
+widthClass = 2;
+}
+);
+kerningLTR = {
+m001 = {
+"@MMK_L_0585" = {
+"@MMK_R_uni055B" = -189;
+"@MMK_R_uni055C" = -223;
+"@MMK_R_uni055E" = -310;
+};
+"@MMK_L_uni0537" = {
+"@MMK_R_uni0549" = 5;
+"@MMK_R_uni0554" = 0;
+"@MMK_R_uni0571" = 38;
+};
+"@MMK_L_uni053A" = {
+"@MMK_R_uni0546" = -8;
+"@MMK_R_uni0547" = -8;
+"@MMK_R_uni0563" = 33.1432;
+};
+"@MMK_L_uni0540" = {
+"@MMK_R_uni0531" = -10;
+"@MMK_R_uni053A" = -12;
+"@MMK_R_uni0545" = -20;
+"@MMK_R_uni0549" = -20;
+"@MMK_R_uni054E" = -29;
+"@MMK_R_uni0554" = -14;
+"@MMK_R_uni0555" = -9;
+"@MMK_R_uni0563" = 31;
+"@MMK_R_uni0571" = 22;
+"@MMK_R_uni0577" = 19;
+"@MMK_R_uni057B" = 38;
+};
+"@MMK_L_uni0543" = {
+"@MMK_R_uni0563" = 25.0136;
+};
+"@MMK_L_uni0544" = {
+"@MMK_R_uni053A" = -15;
+"@MMK_R_uni0540" = -33;
+"@MMK_R_uni0545" = -11;
+"@MMK_R_uni0563" = -40;
+"@MMK_R_uni0568" = -30;
+"@MMK_R_uni056B" = -25.0136;
+"@MMK_R_uni0571" = -20;
+"@MMK_R_uni0577" = -40;
+"@MMK_R_uni0578" = -30;
+"@MMK_R_uni0579" = -20;
+"@MMK_R_uni057B" = -40;
+"@MMK_R_uni057D" = -25;
+};
+"@MMK_L_uni0552" = {
+"@MMK_R_uni053A" = 17;
+"@MMK_R_uni053E" = 9;
+"@MMK_R_uni055B" = -189;
+"@MMK_R_uni055C" = -223;
+"@MMK_R_uni055E" = -310;
+};
+"@MMK_L_uni0555" = {
+"@MMK_R_uni055B" = -50;
+"@MMK_R_uni055C" = -50;
+"@MMK_R_uni055E" = -80;
+};
+"@MMK_L_uni0561" = {
+"@MMK_R_uni055B" = -189;
+"@MMK_R_uni055C" = -223;
+"@MMK_R_uni055E" = -310;
+uni0570 = 25;
+uni0573 = 25;
+};
+"@MMK_L_uni0564" = {
+"@MMK_R_uni0579" = 30;
+uni0533 = -89.0899;
+};
+"@MMK_L_uni0565" = {
+"@MMK_R_uni055B" = -189;
+"@MMK_R_uni055C" = -223;
+"@MMK_R_uni055E" = -310;
+};
+"@MMK_L_uni0566" = {
+"@MMK_R_uni0568" = 5.65387;
+"@MMK_R_uni0577" = 30;
+"@MMK_R_uni0578" = 30;
+"@MMK_R_uni0579" = 60;
+"@MMK_R_uni057B" = 20;
+};
+"@MMK_L_uni0567" = {
+"@MMK_R_uni0563" = -25;
+"@MMK_R_uni0579" = -15;
+uni0581 = -8.39499;
+};
+"@MMK_L_uni056B" = {
+"@MMK_R_uni055B" = -189;
+"@MMK_R_uni055C" = -223;
+"@MMK_R_uni055E" = -310;
+"@MMK_R_uni0579" = 25;
+};
+"@MMK_L_uni056F" = {
+"@MMK_R_uni0579" = 14;
+};
+"@MMK_L_uni0573" = {
+"@MMK_R_uni053F" = 100;
+};
+"@MMK_L_uni0574" = {
+"@MMK_R_uni053F" = 100;
+};
+"@MMK_L_uni0577" = {
+"@MMK_R_uni0579" = 18;
+};
+"@MMK_L_uni0579" = {
+"@MMK_R_uni0579" = 45;
+};
+"@MMK_L_uni0582" = {
+"@MMK_R_uni055B" = -189;
+"@MMK_R_uni055C" = -223;
+"@MMK_R_uni055E" = -200;
+uni0573 = 25;
+};
+uni0531 = {
+"@MMK_R_uni0531" = -14.6484;
+"@MMK_R_uni0534" = -54.7818;
+"@MMK_R_uni053E" = -13.2777;
+"@MMK_R_uni053F" = -51.6551;
+"@MMK_R_uni0546" = -26.6412;
+"@MMK_R_uni0547" = -25.3906;
+"@MMK_R_uni0549" = -26.8555;
+"@MMK_R_uni054E" = -25.776;
+"@MMK_R_uni0555" = -24.4141;
+"@MMK_R_uni055B" = -120;
+"@MMK_R_uni055C" = -120;
+"@MMK_R_uni055E" = -120;
+uni0533 = -37.7776;
+uni054A = -46.7721;
+uni058F = -54.7818;
+};
+uni0535 = {
+"@MMK_R_uni055B" = -189;
+"@MMK_R_uni055C" = -163;
+"@MMK_R_uni055E" = -310;
+};
+uni0538 = {
+"@MMK_R_uni055B" = -60;
+"@MMK_R_uni055C" = -60;
+"@MMK_R_uni055E" = -60;
+};
+uni053B = {
+"@MMK_R_uni055B" = -80;
+"@MMK_R_uni055C" = -80;
+"@MMK_R_uni055E" = -120;
+};
+uni053C = {
+"@MMK_R_uni0534" = -54.7818;
+"@MMK_R_uni053F" = -56.5379;
+"@MMK_R_uni054E" = -56.5379;
+"@MMK_R_uni0555" = -9.76562;
+uni0533 = -55;
+uni054A = -10.5367;
+uni0553 = 2.74118;
+uni058F = -54.7818;
+};
+uni0542 = {
+"@MMK_R_uni0534" = -54.7818;
+"@MMK_R_uni053F" = -44.9219;
+"@MMK_R_uni0541" = 20;
+"@MMK_R_uni0549" = -30;
+"@MMK_R_uni054E" = -21.9727;
+"@MMK_R_uni0577" = -35;
+"@MMK_R_uni057B" = -30;
+uni0533 = -51.6551;
+uni058F = -54.7818;
+};
+uni0546 = {
+"@MMK_R_uni0534" = -50;
+};
+uni0547 = {
+"@MMK_R_uni0534" = -40;
+"@MMK_R_uni0568" = -20;
+"@MMK_R_uni0578" = -20;
+};
+uni0548 = {
+"@MMK_R_uni055B" = -60;
+"@MMK_R_uni055C" = -60;
+"@MMK_R_uni055E" = -60;
+};
+uni054C = {
+"@MMK_R_uni053A" = -18.7602;
+};
+uni054D = {
+"@MMK_R_uni055E" = -130;
+};
+uni054E = {
+"@MMK_R_uni0534" = -51.6551;
+"@MMK_R_uni053F" = -40.0391;
+"@MMK_R_uni054E" = -21.9727;
+uni0533 = -51.6551;
+uni058F = -51.6551;
+};
+uni056C = {
+"@MMK_R_uni0563" = 41.4181;
+"@MMK_R_uni0568" = 14.0487;
+"@MMK_R_uni0577" = 14.0487;
+"@MMK_R_uni0579" = 80;
+"@MMK_R_uni057B" = 30;
+uni0577 = 30;
+};
+uni0572 = {
+"@MMK_R_uni057B" = 30;
+};
+uni0587 = {
+uni0533 = -29.2969;
+};
+};
+m003 = {
+"@MMK_L_0585" = {
+"@MMK_R_uni055B" = -290.52701;
+"@MMK_R_uni055C" = -291.01599;
+"@MMK_R_uni055E" = -425;
+};
+"@MMK_L_uni0537" = {
+"@MMK_R_uni0549" = -5;
+"@MMK_R_uni0554" = -10;
+};
+"@MMK_L_uni053A" = {
+"@MMK_R_uni0546" = -7;
+"@MMK_R_uni0547" = -7;
+};
+"@MMK_L_uni0540" = {
+"@MMK_R_uni0531" = -11;
+"@MMK_R_uni053A" = -22;
+"@MMK_R_uni0545" = -20;
+"@MMK_R_uni0549" = -20;
+"@MMK_R_uni054E" = -29;
+"@MMK_R_uni0554" = -15;
+"@MMK_R_uni0555" = -10;
+};
+"@MMK_L_uni0544" = {
+"@MMK_R_uni053A" = -61;
+"@MMK_R_uni0540" = -39;
+"@MMK_R_uni0545" = -20;
+"@MMK_R_uni0563" = -60;
+"@MMK_R_uni0568" = -40;
+"@MMK_R_uni0577" = -50;
+"@MMK_R_uni0578" = -45;
+"@MMK_R_uni057B" = -45;
+"@MMK_R_uni057D" = -50;
+uni0570 = -35;
+uni0573 = -25;
+};
+"@MMK_L_uni0552" = {
+"@MMK_R_uni053A" = 17;
+"@MMK_R_uni053E" = 10;
+"@MMK_R_uni055B" = -261;
+"@MMK_R_uni055C" = -289;
+"@MMK_R_uni055E" = -425;
+};
+"@MMK_L_uni0555" = {
+"@MMK_R_uni055B" = -50;
+"@MMK_R_uni055C" = -50;
+"@MMK_R_uni055E" = -80;
+};
+"@MMK_L_uni0561" = {
+"@MMK_R_uni055B" = -261;
+"@MMK_R_uni055C" = -291;
+"@MMK_R_uni055E" = -415;
+};
+"@MMK_L_uni0564" = {
+"@MMK_R_uni0579" = 50;
+uni0533 = -39.0625;
+};
+"@MMK_L_uni0565" = {
+"@MMK_R_uni055B" = -291;
+"@MMK_R_uni055C" = -291;
+"@MMK_R_uni055E" = -415;
+};
+"@MMK_L_uni0566" = {
+"@MMK_R_uni0568" = 24.4141;
+"@MMK_R_uni0577" = 15;
+"@MMK_R_uni0578" = 14.6484;
+"@MMK_R_uni0579" = 65;
+"@MMK_R_uni057B" = 15;
+"@MMK_R_uni057D" = -20;
+uni0579 = 90;
+uni057B = 0;
+};
+"@MMK_L_uni0567" = {
+"@MMK_R_uni0563" = -35;
+"@MMK_R_uni0571" = -25;
+};
+"@MMK_L_uni056B" = {
+"@MMK_R_uni055B" = -291;
+"@MMK_R_uni055C" = -291;
+"@MMK_R_uni055E" = -413;
+"@MMK_R_uni0577" = -20;
+"@MMK_R_uni0579" = 45;
+"@MMK_R_uni057B" = -20;
+};
+"@MMK_L_uni056F" = {
+"@MMK_R_uni0579" = 39;
+};
+"@MMK_L_uni0573" = {
+"@MMK_R_uni053F" = 44;
+};
+"@MMK_L_uni0574" = {
+"@MMK_R_uni053F" = 44;
+};
+"@MMK_L_uni0577" = {
+"@MMK_R_uni0579" = 24;
+};
+"@MMK_L_uni0579" = {
+"@MMK_R_uni0579" = 78;
+};
+"@MMK_L_uni0582" = {
+"@MMK_R_uni055B" = -282;
+"@MMK_R_uni055C" = -291;
+"@MMK_R_uni055E" = -278;
+};
+uni0531 = {
+"@MMK_R_uni0531" = -14.6484;
+"@MMK_R_uni0534" = -61.0352;
+"@MMK_R_uni053E" = -19.5312;
+"@MMK_R_uni053F" = -61.0352;
+"@MMK_R_uni0546" = -25.3906;
+"@MMK_R_uni0547" = -25.3906;
+"@MMK_R_uni0549" = -26.8555;
+"@MMK_R_uni054E" = -35.1562;
+"@MMK_R_uni0555" = -24.4141;
+"@MMK_R_uni055B" = -200;
+"@MMK_R_uni055C" = -200;
+"@MMK_R_uni055E" = -200;
+uni0533 = -65.918;
+uni054A = -56.1523;
+uni058F = -61.0352;
+};
+uni0535 = {
+"@MMK_R_uni055B" = -261;
+"@MMK_R_uni055C" = -259;
+"@MMK_R_uni055E" = -425;
+};
+uni0538 = {
+"@MMK_R_uni055B" = -70;
+"@MMK_R_uni055C" = -70;
+"@MMK_R_uni055E" = -90;
+};
+uni053B = {
+"@MMK_R_uni055B" = -80;
+"@MMK_R_uni055C" = -80;
+"@MMK_R_uni055E" = -120;
+};
+uni053C = {
+"@MMK_R_uni0534" = -61.0352;
+"@MMK_R_uni053F" = -65.918;
+"@MMK_R_uni054E" = -65.918;
+"@MMK_R_uni0555" = -9.76562;
+uni0533 = -70;
+uni0542 = -70;
+uni054A = -29.2969;
+uni058F = -61.0352;
+};
+uni0542 = {
+"@MMK_R_uni0534" = -61.0352;
+"@MMK_R_uni053F" = -44.9219;
+"@MMK_R_uni0549" = -35;
+"@MMK_R_uni054E" = -21.9727;
+"@MMK_R_uni0577" = -35;
+"@MMK_R_uni057B" = -45;
+uni0533 = -61.0352;
+uni058F = -61.0352;
+};
+uni0546 = {
+"@MMK_R_uni0534" = -45;
+};
+uni0547 = {
+"@MMK_R_uni0534" = -40;
+"@MMK_R_uni0563" = -30;
+"@MMK_R_uni0568" = -25;
+"@MMK_R_uni0577" = -25;
+"@MMK_R_uni0578" = -25;
+"@MMK_R_uni0579" = -25;
+"@MMK_R_uni057B" = -20;
+"@MMK_R_uni057D" = -20;
+};
+uni0548 = {
+"@MMK_R_uni055B" = -70;
+"@MMK_R_uni055C" = -70;
+"@MMK_R_uni055E" = -90;
+};
+uni054D = {
+"@MMK_R_uni055E" = -140;
+};
+uni054E = {
+"@MMK_R_uni0534" = -61.0352;
+"@MMK_R_uni053F" = -40.0391;
+"@MMK_R_uni054E" = -21.9727;
+uni0533 = -61.0352;
+uni058F = -61.0352;
+};
+uni056C = {
+"@MMK_R_uni0531" = -45;
+"@MMK_R_uni0563" = -40;
+"@MMK_R_uni0568" = 39.0625;
+"@MMK_R_uni0577" = 39.0625;
+"@MMK_R_uni0578" = -30;
+"@MMK_R_uni0579" = 112.305;
+"@MMK_R_uni057B" = 39.0625;
+"@MMK_R_uni057D" = -30;
+"@MMK_R_uni0587" = -30;
+uni0570 = -35;
+uni0573 = -35;
+uni0575 = 39.0625;
+uni0576 = -35;
+uni0581 = 19.5312;
+};
+uni0575 = {
+"@MMK_R_uni0579" = 30;
+};
+uni0587 = {
+uni0533 = -29.2969;
+};
+};
+m005 = {
+"@MMK_L_0585" = {
+"@MMK_R_uni055B" = -253;
+"@MMK_R_uni055C" = -321;
+"@MMK_R_uni055E" = -537;
+};
+"@MMK_L_uni0537" = {
+"@MMK_R_uni0549" = -1;
+"@MMK_R_uni0554" = 0;
+"@MMK_R_uni0563" = -14;
+"@MMK_R_uni0571" = -11;
+};
+"@MMK_L_uni053A" = {
+"@MMK_R_uni0546" = 2;
+"@MMK_R_uni0547" = 2;
+"@MMK_R_uni0563" = -9.17812;
+};
+"@MMK_L_uni0540" = {
+"@MMK_R_uni0531" = 3;
+"@MMK_R_uni053A" = 3;
+"@MMK_R_uni0545" = 6;
+"@MMK_R_uni0549" = 6;
+"@MMK_R_uni054E" = 8;
+"@MMK_R_uni0554" = 4;
+"@MMK_R_uni0555" = 2;
+"@MMK_R_uni0563" = -9;
+"@MMK_R_uni0571" = -6;
+"@MMK_R_uni0577" = -5;
+"@MMK_R_uni057B" = -11;
+};
+"@MMK_L_uni0543" = {
+"@MMK_R_uni0563" = -6.92684;
+};
+"@MMK_L_uni0544" = {
+"@MMK_R_uni053A" = 4;
+"@MMK_R_uni0540" = 9;
+"@MMK_R_uni0545" = 3;
+"@MMK_R_uni0563" = -60;
+"@MMK_R_uni0568" = -20;
+"@MMK_R_uni056B" = 25;
+"@MMK_R_uni0571" = -17;
+"@MMK_R_uni0577" = -35;
+"@MMK_R_uni0579" = -30;
+"@MMK_R_uni057B" = -35;
+"@MMK_R_uni0587" = 25;
+uni056B = 6.92684;
+uni0576 = 45;
+};
+"@MMK_L_uni0552" = {
+"@MMK_R_uni053A" = -5;
+"@MMK_R_uni053E" = -2;
+"@MMK_R_uni055B" = -253;
+"@MMK_R_uni055C" = -321;
+"@MMK_R_uni055E" = -400;
+};
+"@MMK_L_uni0555" = {
+"@MMK_R_uni055B" = -60;
+"@MMK_R_uni055C" = -60;
+"@MMK_R_uni055E" = -60;
+};
+"@MMK_L_uni0561" = {
+"@MMK_R_uni055B" = -253;
+"@MMK_R_uni055C" = -321;
+"@MMK_R_uni055E" = -537;
+};
+"@MMK_L_uni0564" = {
+"@MMK_R_uni0579" = 50;
+uni0533 = 24.671;
+};
+"@MMK_L_uni0565" = {
+"@MMK_R_uni055B" = -253;
+"@MMK_R_uni055C" = -321;
+"@MMK_R_uni055E" = -430;
+};
+"@MMK_L_uni0566" = {
+"@MMK_R_uni0568" = -1.56569;
+"@MMK_R_uni0577" = 25;
+"@MMK_R_uni0578" = 25;
+"@MMK_R_uni0579" = 90;
+"@MMK_R_uni057B" = -30;
+"@MMK_R_uni057D" = -15;
+};
+"@MMK_L_uni0567" = {
+"@MMK_R_uni0563" = -50;
+"@MMK_R_uni0571" = -45;
+"@MMK_R_uni0579" = 14;
+uni0581 = 2.32477;
+};
+"@MMK_L_uni056B" = {
+"@MMK_R_uni055B" = -253;
+"@MMK_R_uni055C" = -321;
+"@MMK_R_uni055E" = -537;
+"@MMK_R_uni0579" = 70;
+"@MMK_R_uni057B" = -20;
+uni055E = -400;
+};
+"@MMK_L_uni056F" = {
+"@MMK_R_uni0579" = 45;
+};
+"@MMK_L_uni0573" = {
+"@MMK_R_uni053F" = -28;
+};
+"@MMK_L_uni0574" = {
+"@MMK_R_uni053F" = -28;
+};
+"@MMK_L_uni0577" = {
+"@MMK_R_uni0579" = -5;
+};
+"@MMK_L_uni0579" = {
+"@MMK_R_uni0579" = 35;
+};
+"@MMK_L_uni0582" = {
+"@MMK_R_uni055B" = -253;
+"@MMK_R_uni055C" = -321;
+"@MMK_R_uni055E" = -444;
+};
+uni0531 = {
+"@MMK_R_uni0531" = 4.05648;
+"@MMK_R_uni0534" = 15.1703;
+"@MMK_R_uni053E" = 3.6769;
+"@MMK_R_uni053F" = 14.3045;
+"@MMK_R_uni0546" = 7.37756;
+"@MMK_R_uni0547" = 7.03124;
+"@MMK_R_uni0549" = 7.43691;
+"@MMK_R_uni054E" = 7.13797;
+"@MMK_R_uni0555" = 6.76083;
+"@MMK_R_uni055B" = -200;
+"@MMK_R_uni055C" = -200;
+"@MMK_R_uni055E" = -240;
+uni0533 = 10.4615;
+uni054A = 12.9523;
+uni058F = 15.1703;
+};
+uni0535 = {
+"@MMK_R_uni055B" = -253;
+"@MMK_R_uni055C" = -291;
+"@MMK_R_uni055E" = -480;
+};
+uni0538 = {
+"@MMK_R_uni055B" = -55;
+"@MMK_R_uni055C" = -55;
+"@MMK_R_uni055E" = -65;
+};
+uni053B = {
+"@MMK_R_uni055B" = -70;
+"@MMK_R_uni055C" = -70;
+"@MMK_R_uni055E" = -90;
+};
+uni053C = {
+"@MMK_R_uni0534" = 15.1703;
+"@MMK_R_uni053F" = 15.6566;
+"@MMK_R_uni054E" = 15.6566;
+"@MMK_R_uni0555" = 2.70433;
+uni0533 = -100;
+uni0542 = -90;
+uni054A = 2.91786;
+uni0553 = -0.7591;
+uni058F = 15.1703;
+};
+uni0542 = {
+"@MMK_R_uni0534" = 15.1703;
+"@MMK_R_uni053F" = 12.4399;
+"@MMK_R_uni0549" = -40;
+"@MMK_R_uni054E" = 6.08475;
+"@MMK_R_uni0577" = -30;
+"@MMK_R_uni057B" = -35;
+uni0533 = 14.3045;
+uni058F = 15.1703;
+};
+uni0546 = {
+"@MMK_R_uni0534" = -25;
+};
+uni0547 = {
+"@MMK_R_uni0534" = -35;
+};
+uni0548 = {
+"@MMK_R_uni055B" = -55;
+"@MMK_R_uni055C" = -55;
+"@MMK_R_uni055E" = -75;
+};
+uni054C = {
+"@MMK_R_uni053A" = 5.19513;
+uni0570 = 15;
+};
+uni054D = {
+"@MMK_R_uni055E" = -110;
+};
+uni054E = {
+"@MMK_R_uni0534" = 14.3045;
+"@MMK_R_uni053F" = 11.0878;
+"@MMK_R_uni054E" = 6.08475;
+uni0533 = 14.3045;
+uni058F = 14.3045;
+};
+uni056C = {
+"@MMK_R_uni0531" = -80;
+"@MMK_R_uni0563" = -75;
+"@MMK_R_uni0568" = -3.89041;
+"@MMK_R_uni056B" = -15;
+"@MMK_R_uni0571" = -50;
+"@MMK_R_uni0577" = 30;
+"@MMK_R_uni0578" = -50;
+"@MMK_R_uni0579" = 110;
+"@MMK_R_uni057D" = -60;
+"@MMK_R_uni0587" = -40;
+uni0570 = -45;
+uni0573 = -45;
+uni0575 = 50;
+uni0576 = -65;
+uni0581 = -11.4696;
+};
+uni0572 = {
+"@MMK_R_uni0579" = 110;
+};
+uni0575 = {
+"@MMK_R_uni0579" = 35;
+};
+uni0587 = {
+"@MMK_R_uni0579" = 25;
+uni0533 = 8.11299;
+};
+};
+m006 = {
+"@MMK_L_0585" = {
+"@MMK_R_uni055B" = -177;
+"@MMK_R_uni055C" = -195;
+"@MMK_R_uni055E" = -266;
+};
+"@MMK_L_uni0544" = {
+"@MMK_R_uni0563" = -40;
+"@MMK_R_uni0568" = -35;
+"@MMK_R_uni0571" = -30;
+"@MMK_R_uni0577" = -35;
+"@MMK_R_uni0578" = -30;
+"@MMK_R_uni0579" = -25;
+"@MMK_R_uni057B" = -40;
+"@MMK_R_uni057D" = -35;
+};
+"@MMK_L_uni0552" = {
+"@MMK_R_uni055B" = -177;
+"@MMK_R_uni055C" = -195;
+"@MMK_R_uni055E" = -266;
+};
+"@MMK_L_uni0555" = {
+"@MMK_R_uni055B" = -60;
+"@MMK_R_uni055C" = -60;
+"@MMK_R_uni055E" = -60;
+};
+"@MMK_L_uni0561" = {
+"@MMK_R_uni055B" = -177;
+"@MMK_R_uni055C" = -195;
+"@MMK_R_uni055E" = -266;
+};
+"@MMK_L_uni0564" = {
+"@MMK_R_uni0579" = 55;
+};
+"@MMK_L_uni0565" = {
+"@MMK_R_uni055B" = -177;
+"@MMK_R_uni055C" = -195;
+"@MMK_R_uni055E" = -266;
+};
+"@MMK_L_uni0566" = {
+"@MMK_R_uni0579" = 50;
+};
+"@MMK_L_uni0567" = {
+"@MMK_R_uni0563" = -30;
+};
+"@MMK_L_uni056B" = {
+"@MMK_R_uni055B" = -177;
+"@MMK_R_uni055C" = -195;
+"@MMK_R_uni055E" = -266;
+"@MMK_R_uni0579" = 25;
+};
+"@MMK_L_uni056F" = {
+"@MMK_R_uni0579" = 20;
+};
+"@MMK_L_uni0573" = {
+"@MMK_R_uni0579" = 30;
+};
+"@MMK_L_uni0577" = {
+"@MMK_R_uni0579" = 40;
+};
+"@MMK_L_uni0579" = {
+"@MMK_R_uni0563" = -20;
+"@MMK_R_uni057D" = -25;
+};
+"@MMK_L_uni0582" = {
+"@MMK_R_uni055B" = -177;
+"@MMK_R_uni055C" = -195;
+"@MMK_R_uni055E" = -208;
+};
+uni0531 = {
+"@MMK_R_uni055B" = -100;
+"@MMK_R_uni055C" = -100;
+"@MMK_R_uni055E" = -120;
+};
+uni0535 = {
+"@MMK_R_uni055B" = -177;
+"@MMK_R_uni055C" = -165;
+"@MMK_R_uni055E" = -266;
+};
+uni0538 = {
+"@MMK_R_uni055B" = -55;
+"@MMK_R_uni055C" = -55;
+"@MMK_R_uni055E" = -65;
+};
+uni053B = {
+"@MMK_R_uni055B" = -70;
+"@MMK_R_uni055C" = -70;
+"@MMK_R_uni055E" = -90;
+};
+uni053C = {
+"@MMK_R_uni0534" = -50;
+};
+uni0542 = {
+"@MMK_R_uni0541" = 30;
+"@MMK_R_uni0577" = -25;
+"@MMK_R_uni057B" = -30;
+};
+uni0546 = {
+"@MMK_R_uni0534" = -40;
+};
+uni0548 = {
+"@MMK_R_uni055B" = -55;
+"@MMK_R_uni055C" = -55;
+"@MMK_R_uni055E" = -75;
+};
+uni054D = {
+"@MMK_R_uni055E" = -125;
+};
+uni056C = {
+"@MMK_R_uni0577" = 25;
+"@MMK_R_uni0579" = 50;
+"@MMK_R_uni057B" = 20;
+};
+uni0572 = {
+"@MMK_R_uni0579" = 55;
+};
+uni0581 = {
+"@MMK_R_uni0579" = 35;
+};
+};
+m007 = {
+"@MMK_L_0585" = {
+"@MMK_R_uni055B" = -190;
+"@MMK_R_uni055C" = -218;
+"@MMK_R_uni055E" = -319;
+};
+"@MMK_L_uni0544" = {
+"@MMK_R_uni0563" = -75;
+"@MMK_R_uni0568" = -50;
+"@MMK_R_uni0571" = -45;
+"@MMK_R_uni0577" = -45;
+"@MMK_R_uni0578" = -60;
+"@MMK_R_uni0579" = -50;
+"@MMK_R_uni057B" = -50;
+"@MMK_R_uni057D" = -40;
+uni0570 = -30;
+uni0573 = -40;
+};
+"@MMK_L_uni0552" = {
+"@MMK_R_uni055B" = -177;
+"@MMK_R_uni055C" = -195;
+"@MMK_R_uni055E" = -266;
+};
+"@MMK_L_uni0555" = {
+"@MMK_R_uni055B" = -60;
+"@MMK_R_uni055C" = -60;
+"@MMK_R_uni055E" = -60;
+};
+"@MMK_L_uni0561" = {
+"@MMK_R_uni055B" = -190;
+"@MMK_R_uni055C" = -218;
+"@MMK_R_uni055E" = -319;
+};
+"@MMK_L_uni0564" = {
+"@MMK_R_uni0579" = 50;
+};
+"@MMK_L_uni0565" = {
+"@MMK_R_uni055B" = -190;
+"@MMK_R_uni055C" = -218;
+"@MMK_R_uni055E" = -319;
+};
+"@MMK_L_uni0566" = {
+"@MMK_R_uni0577" = 25;
+"@MMK_R_uni0579" = 50;
+};
+"@MMK_L_uni0567" = {
+"@MMK_R_uni0563" = -25;
+};
+"@MMK_L_uni056B" = {
+"@MMK_R_uni055B" = -190;
+"@MMK_R_uni055C" = -218;
+"@MMK_R_uni055E" = -319;
+};
+"@MMK_L_uni0579" = {
+"@MMK_R_uni0563" = -25;
+"@MMK_R_uni056B" = -20;
+"@MMK_R_uni057D" = -30;
+"@MMK_R_uni0587" = -30;
+uni0570 = -30;
+};
+"@MMK_L_uni0582" = {
+"@MMK_R_uni055B" = -190;
+"@MMK_R_uni055C" = -218;
+"@MMK_R_uni055E" = -258;
+};
+uni0531 = {
+"@MMK_R_uni055B" = -100;
+"@MMK_R_uni055C" = -100;
+"@MMK_R_uni055E" = -150;
+};
+uni0535 = {
+"@MMK_R_uni055B" = -190;
+"@MMK_R_uni055C" = -168;
+"@MMK_R_uni055E" = -319;
+};
+uni0538 = {
+"@MMK_R_uni055B" = -55;
+"@MMK_R_uni055C" = -55;
+"@MMK_R_uni055E" = -65;
+};
+uni053B = {
+"@MMK_R_uni055B" = -70;
+"@MMK_R_uni055C" = -70;
+"@MMK_R_uni055E" = -120;
+};
+uni053C = {
+"@MMK_R_uni0534" = -50;
+};
+uni0542 = {
+"@MMK_R_uni0541" = 25;
+"@MMK_R_uni0549" = -20;
+"@MMK_R_uni0577" = -20;
+"@MMK_R_uni057B" = -25;
+};
+uni0546 = {
+"@MMK_R_uni0534" = -35;
+};
+uni0548 = {
+"@MMK_R_uni055B" = -55;
+"@MMK_R_uni055C" = -55;
+"@MMK_R_uni055E" = -75;
+};
+uni054C = {
+"@MMK_R_uni0571" = 25;
+uni0570 = 20;
+uni0573 = 20;
+};
+uni054D = {
+"@MMK_R_uni055E" = -120;
+};
+uni056C = {
+"@MMK_R_uni0531" = -5;
+"@MMK_R_uni0577" = 45;
+"@MMK_R_uni0579" = 70;
+};
+uni0572 = {
+"@MMK_R_uni0577" = 30;
+"@MMK_R_uni0579" = 60;
+};
+};
+m009 = {
+"@MMK_L_0585" = {
+"@MMK_R_uni055B" = -226;
+"@MMK_R_uni055C" = -283;
+"@MMK_R_uni055E" = -469;
+};
+"@MMK_L_uni0544" = {
+"@MMK_R_uni0563" = -80;
+"@MMK_R_uni0568" = -50;
+"@MMK_R_uni0571" = -55;
+"@MMK_R_uni0577" = -75;
+"@MMK_R_uni0578" = -50;
+"@MMK_R_uni0579" = -80;
+"@MMK_R_uni057B" = -75;
+"@MMK_R_uni057D" = -45;
+uni0570 = -35;
+uni0573 = -25;
+};
+"@MMK_L_uni0552" = {
+"@MMK_R_uni055B" = -177;
+"@MMK_R_uni055C" = -195;
+"@MMK_R_uni055E" = -266;
+};
+"@MMK_L_uni0555" = {
+"@MMK_R_uni055B" = -60;
+"@MMK_R_uni055C" = -60;
+"@MMK_R_uni055E" = -60;
+};
+"@MMK_L_uni0561" = {
+"@MMK_R_uni055B" = -226;
+"@MMK_R_uni055C" = -283;
+"@MMK_R_uni055E" = -469;
+};
+"@MMK_L_uni0564" = {
+"@MMK_R_uni0579" = 55;
+};
+"@MMK_L_uni0565" = {
+"@MMK_R_uni055B" = -226;
+"@MMK_R_uni055C" = -283;
+"@MMK_R_uni055E" = -360;
+};
+"@MMK_L_uni0566" = {
+"@MMK_R_uni0577" = 30;
+"@MMK_R_uni0579" = 65;
+"@MMK_R_uni057B" = -20;
+"@MMK_R_uni057D" = -15;
+};
+"@MMK_L_uni0567" = {
+"@MMK_R_uni0563" = -30;
+"@MMK_R_uni0571" = -35;
+"@MMK_R_uni0579" = 40;
+};
+"@MMK_L_uni056B" = {
+"@MMK_R_uni055B" = -226;
+"@MMK_R_uni055C" = -283;
+"@MMK_R_uni055E" = -370;
+"@MMK_R_uni0579" = 35;
+};
+"@MMK_L_uni0579" = {
+"@MMK_R_uni0563" = -25;
+"@MMK_R_uni056B" = -25;
+"@MMK_R_uni0571" = -25;
+"@MMK_R_uni057D" = -30;
+"@MMK_R_uni0587" = -30;
+};
+"@MMK_L_uni0582" = {
+"@MMK_R_uni055B" = -226;
+"@MMK_R_uni055C" = -283;
+"@MMK_R_uni055E" = -402;
+};
+uni0531 = {
+"@MMK_R_uni055B" = -150;
+"@MMK_R_uni055C" = -150;
+"@MMK_R_uni055E" = -220;
+};
+uni0535 = {
+"@MMK_R_uni055B" = -226;
+"@MMK_R_uni055C" = -203;
+"@MMK_R_uni055E" = -370;
+};
+uni0538 = {
+"@MMK_R_uni055B" = -55;
+"@MMK_R_uni055C" = -55;
+"@MMK_R_uni055E" = -65;
+};
+uni053B = {
+"@MMK_R_uni055B" = -70;
+"@MMK_R_uni055C" = -70;
+"@MMK_R_uni055E" = -120;
+};
+uni053C = {
+"@MMK_R_uni0534" = -70;
+};
+uni0542 = {
+"@MMK_R_uni0541" = 25;
+"@MMK_R_uni0549" = -30;
+"@MMK_R_uni0577" = -20;
+"@MMK_R_uni057B" = -25;
+};
+uni0546 = {
+"@MMK_R_uni0534" = -25;
+};
+uni0548 = {
+"@MMK_R_uni055B" = -55;
+"@MMK_R_uni055C" = -55;
+"@MMK_R_uni055E" = -75;
+};
+uni054C = {
+"@MMK_R_uni0571" = 20;
+uni0570 = 25;
+uni0573 = 25;
+uni0576 = 25;
+};
+uni054D = {
+"@MMK_R_uni055E" = -100;
+};
+uni0568 = {
+"@MMK_R_uni055E" = -469;
+};
+uni056C = {
+"@MMK_R_uni0531" = -50;
+"@MMK_R_uni0563" = -40;
+"@MMK_R_uni0568" = 25;
+"@MMK_R_uni0571" = -35;
+"@MMK_R_uni0577" = 40;
+"@MMK_R_uni0578" = -25;
+"@MMK_R_uni0579" = 70;
+"@MMK_R_uni057B" = -30;
+"@MMK_R_uni057D" = -35;
+"@MMK_R_uni0587" = -25;
+uni0570 = -25;
+};
+uni0572 = {
+"@MMK_R_uni0577" = 35;
+"@MMK_R_uni0579" = 75;
+};
+};
+};
+metrics = (
+{
+type = ascender;
+},
+{
+type = "cap height";
+},
+{
+type = "x-height";
+},
+{
+type = baseline;
+},
+{
+type = descender;
+},
+{
+type = "italic angle";
+}
+);
+properties = (
+{
+key = copyrights;
+values = (
+{
+language = dflt;
+value = "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/armenian)";
+}
+);
+},
+{
+key = descriptions;
+values = (
+{
+language = dflt;
+value = "Designed by Monotype design team.";
+}
+);
+},
+{
+key = designers;
+values = (
+{
+language = dflt;
+value = "Monotype Design Team";
+}
+);
+},
+{
+key = designerURL;
+value = "http://www.monotype.com/studio";
+},
+{
+key = licenses;
+values = (
+{
+language = dflt;
+value = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL";
+}
+);
+},
+{
+key = licenseURL;
+value = "https://scripts.sil.org/OFL";
+},
+{
+key = manufacturers;
+values = (
+{
+language = dflt;
+value = "Monotype Imaging Inc.";
+}
+);
+},
+{
+key = manufacturerURL;
+value = "http://www.google.com/get/noto/";
+},
+{
+key = trademarks;
+values = (
+{
+language = dflt;
+value = "Noto is a trademark of Google Inc.";
+}
+);
+},
+{
+key = vendorID;
+value = GOOG;
+},
+{
+key = versionString;
+value = "Version 2.008";
+}
+);
+settings = {
+disablesNiceNames = 1;
+};
+stems = (
+{
+name = vStem0;
+},
+{
+horizontal = 1;
+name = hStem0;
+}
+);
+unitsPerEm = 1000;
+versionMajor = 2;
+versionMinor = 8;
+}

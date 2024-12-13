@@ -1,0 +1,152 @@
+{
+glyphname = uni0578_uni0582;
+kernLeft = uni0578;
+kernRight = uni0582;
+layers = (
+{
+anchors = (
+{
+name = top_1;
+pos = (263,492);
+}
+);
+layerId = m001;
+shapes = (
+{
+ref = uni0578;
+},
+{
+pos = (515,0);
+ref = uni0582;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Lowercase;
+};
+width = 754;
+},
+{
+anchors = (
+{
+name = top_1;
+pos = (288,492);
+}
+);
+layerId = m003;
+shapes = (
+{
+ref = uni0578;
+},
+{
+pos = (566,0);
+ref = uni0582;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Lowercase;
+};
+width = 899;
+},
+{
+anchors = (
+{
+name = top_1;
+pos = (313,492);
+}
+);
+layerId = m005;
+shapes = (
+{
+ref = uni0578;
+},
+{
+pos = (621,0);
+ref = uni0582;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Lowercase;
+};
+width = 1065;
+},
+{
+anchors = (
+{
+name = top_1;
+pos = (224,492);
+}
+);
+layerId = m006;
+shapes = (
+{
+ref = uni0578;
+},
+{
+pos = (441,0);
+ref = uni0582;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Lowercase;
+};
+width = 649;
+},
+{
+anchors = (
+{
+name = top_1;
+pos = (240,492);
+}
+);
+layerId = m007;
+shapes = (
+{
+ref = uni0578;
+},
+{
+pos = (474,0);
+ref = uni0582;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Lowercase;
+};
+width = 732;
+},
+{
+anchors = (
+{
+name = top_1;
+pos = (285,492);
+}
+);
+layerId = m009;
+shapes = (
+{
+ref = uni0578;
+},
+{
+pos = (567,0);
+ref = uni0582;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Lowercase;
+};
+width = 969;
+}
+);
+note = uni0578_uni0582;
+}
