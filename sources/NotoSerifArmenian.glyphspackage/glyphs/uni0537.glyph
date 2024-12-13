@@ -3,6 +3,12 @@ glyphname = uni0537;
 kernRight = uni0537;
 layers = (
 {
+anchors = (
+{
+name = top;
+pos = (225,714);
+}
+);
 layerId = m001;
 shapes = (
 {
@@ -52,6 +58,12 @@ nodes = (
 width = 461;
 },
 {
+anchors = (
+{
+name = top;
+pos = (282,714);
+}
+);
 layerId = m003;
 shapes = (
 {
@@ -101,6 +113,12 @@ nodes = (
 width = 556;
 },
 {
+anchors = (
+{
+name = top;
+pos = (340,714);
+}
+);
 layerId = m005;
 shapes = (
 {
@@ -150,6 +168,12 @@ nodes = (
 width = 649;
 },
 {
+anchors = (
+{
+name = top;
+pos = (192,714);
+}
+);
 layerId = m006;
 shapes = (
 {
@@ -199,6 +223,12 @@ nodes = (
 width = 392;
 },
 {
+anchors = (
+{
+name = top;
+pos = (223,714);
+}
+);
 layerId = m007;
 shapes = (
 {
@@ -248,6 +278,12 @@ nodes = (
 width = 434;
 },
 {
+anchors = (
+{
+name = top;
+pos = (310,714);
+}
+);
 layerId = m009;
 shapes = (
 {

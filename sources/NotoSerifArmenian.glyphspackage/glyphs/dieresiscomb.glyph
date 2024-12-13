@@ -6,6 +6,10 @@ anchors = (
 {
 name = _top;
 pos = (3,536);
+},
+{
+name = top;
+pos = (0,698);
 }
 );
 layerId = m001;
@@ -56,6 +60,10 @@ anchors = (
 {
 name = _top;
 pos = (0,536);
+},
+{
+name = top;
+pos = (0,688);
 }
 );
 layerId = m003;
@@ -106,6 +114,10 @@ anchors = (
 {
 name = _top;
 pos = (-2,536);
+},
+{
+name = top;
+pos = (0,688);
 }
 );
 layerId = m005;
@@ -156,6 +168,10 @@ anchors = (
 {
 name = _top;
 pos = (2,536);
+},
+{
+name = top;
+pos = (0,698);
 }
 );
 layerId = m006;
@@ -206,6 +222,10 @@ anchors = (
 {
 name = _top;
 pos = (1,536);
+},
+{
+name = top;
+pos = (0,692);
 }
 );
 layerId = m007;
@@ -256,6 +276,10 @@ anchors = (
 {
 name = _top;
 pos = (-2,536);
+},
+{
+name = top;
+pos = (0,689);
 }
 );
 layerId = m009;
