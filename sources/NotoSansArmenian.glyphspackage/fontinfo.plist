@@ -1,0 +1,4115 @@
+{
+.appVersion = "3326";
+.formatVersion = 3;
+axes = (
+{
+name = Weight;
+tag = wght;
+},
+{
+name = Width;
+tag = wdth;
+}
+);
+customParameters = (
+{
+name = "Axis Mappings";
+value = {
+wdth = {
+62.5 = 70;
+75 = 79;
+87.5 = 89;
+100 = 100;
+};
+wght = {
+100 = 26;
+200 = 39;
+300 = 58;
+400 = 90;
+500 = 108;
+600 = 128;
+700 = 144;
+800 = 169;
+900 = 190;
+};
+};
+},
+{
+name = glyphOrder;
+value = (
+.notdef,
+CR,
+NULL,
+dieresiscomb,
+hyphen,
+hyphentwo,
+space,
+uni00A0,
+uni0531,
+uni0532,
+uni0533,
+uni0534,
+uni0535,
+uni0536,
+uni0537,
+uni0538,
+uni0539,
+uni053A,
+uni053B,
+uni053C,
+uni053D,
+uni053E,
+uni053F,
+uni0540,
+uni0541,
+uni0542,
+uni0543,
+uni0544,
+uni0545,
+uni0546,
+uni0547,
+uni0548,
+uni0548_uni0552,
+uni0549,
+uni054A,
+uni054B,
+uni054C,
+uni054D,
+uni054E,
+uni054F,
+uni0550,
+uni0551,
+uni0552,
+uni0553,
+uni0554,
+uni0555,
+uni0556,
+uni0559,
+uni055A,
+uni055B,
+uni055C,
+uni055D,
+uni055E,
+uni055F,
+uni0560,
+uni0561,
+uni0562,
+uni0563,
+uni0564,
+uni0565,
+uni0566,
+uni0567,
+uni0568,
+uni0569,
+uni056A,
+uni056B,
+uni056C,
+uni056D,
+uni056E,
+uni056F,
+uni0570,
+uni0571,
+uni0572,
+uni0573,
+uni0574,
+uni0575,
+uni0576,
+uni0577,
+uni0578,
+uni0578_uni0582,
+uni0579,
+uni057A,
+uni057B,
+uni057C,
+uni057D,
+uni057E,
+uni057F,
+uni0580,
+uni0581,
+uni0582,
+uni0583,
+uni0584,
+uni0585,
+uni0586,
+uni0587,
+uni0588,
+uni0589,
+uni058A,
+uni058D,
+uni058E,
+uni058F,
+uni25CC,
+uniFB13,
+uniFB14,
+uniFB15,
+uniFB16,
+uniFB17
+);
+},
+{
+name = descriptions;
+value = "Designed by Monotype design team.";
+},
+{
+name = licenses;
+value = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL";
+},
+{
+name = licenseURL;
+value = "https://scripts.sil.org/OFL";
+},
+{
+name = versionString;
+value = "Version 2.008";
+},
+{
+name = fsType;
+value = (
+);
+},
+{
+name = unicodeRanges;
+value = (
+0,
+1,
+6,
+10,
+31,
+45,
+62
+);
+},
+{
+name = vendorID;
+value = GOOG;
+},
+{
+name = trademarks;
+value = "Noto is a trademark of Google Inc.";
+},
+{
+name = "Use Typo Metrics";
+value = 1;
+}
+);
+date = "2019-11-20 21:12:07 +0000";
+familyName = "Noto Sans Armenian";
+featurePrefixes = (
+{
+code = "languagesystem DFLT dflt;
+languagesystem armn dflt;
+";
+name = Languagesystems;
+},
+{
+automatic = 1;
+code = "";
+name = Prefix;
+}
+);
+features = (
+{
+code = "sub uni0548 uni0552 by uni0548_uni0552;
+sub uni0574 uni0565 by uniFB14;
+sub uni0574 uni056B by uniFB15;
+sub uni0574 uni056D by uniFB17;
+sub uni0574 uni0576 by uniFB13;
+sub uni0578 uni0582 by uni0578_uni0582;
+sub uni057E uni0576 by uniFB16;";
+tag = liga;
+},
+{
+code = "# Automatic Code Start
+";
+tag = mark;
+},
+{
+code = "# Automatic Code Start
+
+
+pos [uni0585] dieresiscomb uni055C' <200 0 200 0>;
+pos [uni0578 uni0585] dieresiscomb [uni055B uni055C uni055D]' <170 0 170 0>;
+pos [uni0578 uni0585] dieresiscomb [uni055E]' <300 0 300 0>;
+";
+tag = kern;
+}
+);
+fontMaster = (
+{
+axesValues = (
+26,
+100
+);
+customParameters = (
+{
+name = typoAscender;
+value = 1068;
+},
+{
+name = typoDescender;
+value = -292;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 1068;
+},
+{
+name = hheaDescender;
+value = -292;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1068;
+},
+{
+name = winDescent;
+value = 292;
+},
+{
+name = underlineThickness;
+value = 50;
+},
+{
+name = underlinePosition;
+value = -100;
+}
+);
+iconName = Light;
+id = m001;
+metricValues = (
+{
+over = 15;
+pos = 1068;
+},
+{
+over = 15;
+pos = 714;
+},
+{
+over = 15;
+pos = 536;
+},
+{
+over = -15;
+},
+{
+over = -15;
+pos = -292;
+},
+{
+}
+);
+name = Light;
+stemValues = (
+26,
+26,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+);
+userData = {
+com.schriftgestaltung.layerId = "C204809C-7ACF-462D-8C40-8C6A6B8BB1B0";
+com.schriftgestaltung.layerOrderInGlyph..notdef = 0;
+com.schriftgestaltung.layerOrderInGlyph.CR = 0;
+com.schriftgestaltung.layerOrderInGlyph.NULL = 0;
+com.schriftgestaltung.layerOrderInGlyph.dieresiscomb = 0;
+com.schriftgestaltung.layerOrderInGlyph.hyphen = 0;
+com.schriftgestaltung.layerOrderInGlyph.hyphentwo = 0;
+com.schriftgestaltung.layerOrderInGlyph.space = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni00A0 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0531 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0532 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0533 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0534 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0535 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0536 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0537 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0538 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0539 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni053A = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni053B = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni053C = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni053D = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni053E = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni053F = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0540 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0541 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0542 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0543 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0544 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0545 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0546 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0547 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0548 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0548_uni0552 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0549 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni054A = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni054B = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni054C = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni054D = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni054E = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni054F = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0550 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0551 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0552 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0553 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0554 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0555 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0556 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0559 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni055A = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni055B = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni055C = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni055D = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni055E = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni055F = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0560 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0561 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0562 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0563 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0564 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0565 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0566 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0567 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0568 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0569 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni056A = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni056B = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni056C = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni056D = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni056E = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni056F = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0570 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0571 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0572 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0573 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0574 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0575 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0576 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0577 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0578 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0578_uni0582 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0579 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni057A = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni057B = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni057C = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni057D = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni057E = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni057F = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0580 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0581 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0582 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0583 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0584 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0585 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0586 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0587 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0588 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni0589 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni058A = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni058D = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni058E = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni058F = 0;
+com.schriftgestaltung.layerOrderInGlyph.uni25CC = 0;
+com.schriftgestaltung.layerOrderInGlyph.uniFB13 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uniFB14 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uniFB15 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uniFB16 = 0;
+com.schriftgestaltung.layerOrderInGlyph.uniFB17 = 0;
+};
+},
+{
+axesValues = (
+90,
+100
+);
+customParameters = (
+{
+name = typoAscender;
+value = 1068;
+},
+{
+name = typoDescender;
+value = -292;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 1068;
+},
+{
+name = hheaDescender;
+value = -292;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1068;
+},
+{
+name = winDescent;
+value = 292;
+},
+{
+name = underlineThickness;
+value = 50;
+},
+{
+name = underlinePosition;
+value = -100;
+}
+);
+id = m002;
+metricValues = (
+{
+over = 15;
+pos = 1068;
+},
+{
+over = 15;
+pos = 714;
+},
+{
+over = 15;
+pos = 536;
+},
+{
+over = -15;
+},
+{
+over = -15;
+pos = -292;
+},
+{
+}
+);
+name = Regular;
+stemValues = (
+90,
+79,
+64,
+60,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0,
+0
+);
+userData = {
+com.schriftgestaltung.layerId = "54707600-253A-457E-B08C-8991D93CBBA9";
+com.schriftgestaltung.layerOrderInGlyph..notdef = 1;
+com.schriftgestaltung.layerOrderInGlyph.CR = 1;
+com.schriftgestaltung.layerOrderInGlyph.NULL = 1;
+com.schriftgestaltung.layerOrderInGlyph.dieresiscomb = 1;
+com.schriftgestaltung.layerOrderInGlyph.hyphen = 1;
+com.schriftgestaltung.layerOrderInGlyph.hyphentwo = 1;
+com.schriftgestaltung.layerOrderInGlyph.space = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni00A0 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0531 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0532 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0533 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0534 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0535 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0536 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0537 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0538 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0539 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni053A = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni053B = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni053C = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni053D = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni053E = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni053F = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0540 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0541 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0542 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0543 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0544 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0545 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0546 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0547 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0548 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0548_uni0552 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0549 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni054A = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni054B = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni054C = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni054D = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni054E = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni054F = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0550 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0551 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0552 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0553 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0554 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0555 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0556 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0559 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni055A = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni055B = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni055C = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni055D = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni055E = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni055F = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0560 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0561 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0562 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0563 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0564 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0565 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0566 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0567 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0568 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0569 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni056A = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni056B = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni056C = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni056D = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni056E = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni056F = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0570 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0571 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0572 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0573 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0574 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0575 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0576 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0577 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0578 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0578_uni0582 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0579 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni057A = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni057B = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni057C = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni057D = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni057E = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni057F = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0580 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0581 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0582 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0583 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0584 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0585 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0586 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0587 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0588 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni0589 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni058A = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni058D = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni058E = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni058F = 1;
+com.schriftgestaltung.layerOrderInGlyph.uni25CC = 1;
+com.schriftgestaltung.layerOrderInGlyph.uniFB13 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uniFB14 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uniFB15 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uniFB16 = 1;
+com.schriftgestaltung.layerOrderInGlyph.uniFB17 = 1;
+};
+},
+{
+axesValues = (
+190,
+100
+);
+customParameters = (
+{
+name = typoAscender;
+value = 1068;
+},
+{
+name = typoDescender;
+value = -292;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 1068;
+},
+{
+name = hheaDescender;
+value = -292;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1068;
+},
+{
+name = winDescent;
+value = 292;
+},
+{
+name = underlineThickness;
+value = 50;
+},
+{
+name = underlinePosition;
+value = -100;
+}
+);
+iconName = Bold;
+id = m004;
+metricValues = (
+{
+over = 15;
+pos = 1068;
+},
+{
+over = 15;
+pos = 714;
+},
+{
+over = 15;
+pos = 536;
+},
+{
+over = -15;
+},
+{
+over = -15;
+pos = -292;
+},
+{
+}
+);
+name = Bold;
+stemValues = (
+194,
+158,
+194,
+158,
+194,
+158,
+132,
+115,
+0,
+0,
+0,
+0,
+0,
+0
+);
+userData = {
+com.schriftgestaltung.layerId = "32D104C7-281D-43BC-9A82-54EB9BF9774D";
+com.schriftgestaltung.layerOrderInGlyph..notdef = 3;
+com.schriftgestaltung.layerOrderInGlyph.CR = 3;
+com.schriftgestaltung.layerOrderInGlyph.NULL = 3;
+com.schriftgestaltung.layerOrderInGlyph.dieresiscomb = 3;
+com.schriftgestaltung.layerOrderInGlyph.hyphen = 3;
+com.schriftgestaltung.layerOrderInGlyph.hyphentwo = 3;
+com.schriftgestaltung.layerOrderInGlyph.space = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni00A0 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0531 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0532 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0533 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0534 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0535 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0536 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0537 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0538 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0539 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni053A = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni053B = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni053C = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni053D = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni053E = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni053F = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0540 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0541 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0542 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0543 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0544 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0545 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0546 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0547 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0548 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0548_uni0552 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0549 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni054A = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni054B = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni054C = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni054D = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni054E = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni054F = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0550 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0551 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0552 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0553 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0554 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0555 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0556 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0559 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni055A = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni055B = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni055C = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni055D = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni055E = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni055F = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0560 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0561 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0562 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0563 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0564 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0565 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0566 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0567 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0568 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0569 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni056A = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni056B = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni056C = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni056D = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni056E = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni056F = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0570 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0571 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0572 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0573 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0574 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0575 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0576 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0577 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0578 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0578_uni0582 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0579 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni057A = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni057B = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni057C = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni057D = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni057E = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni057F = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0580 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0581 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0582 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0583 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0584 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0585 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0586 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0587 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0588 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni0589 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni058A = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni058D = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni058E = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni058F = 3;
+com.schriftgestaltung.layerOrderInGlyph.uni25CC = 3;
+com.schriftgestaltung.layerOrderInGlyph.uniFB13 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uniFB14 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uniFB15 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uniFB16 = 3;
+com.schriftgestaltung.layerOrderInGlyph.uniFB17 = 3;
+};
+},
+{
+axesValues = (
+26,
+70
+);
+customParameters = (
+{
+name = typoAscender;
+value = 1068;
+},
+{
+name = typoDescender;
+value = -292;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 1068;
+},
+{
+name = hheaDescender;
+value = -292;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1068;
+},
+{
+name = winDescent;
+value = 292;
+},
+{
+name = underlineThickness;
+value = 50;
+},
+{
+name = underlinePosition;
+value = -100;
+}
+);
+id = m005;
+metricValues = (
+{
+over = 15;
+pos = 1068;
+},
+{
+over = 15;
+pos = 714;
+},
+{
+over = 15;
+pos = 536;
+},
+{
+over = -15;
+},
+{
+over = -15;
+pos = -292;
+},
+{
+}
+);
+name = "Condensed Light";
+stemValues = (
+26,
+26,
+26,
+26,
+26,
+26,
+26,
+26,
+0,
+0,
+0,
+0,
+0,
+0
+);
+userData = {
+com.schriftgestaltung.layerId = "2E028B8B-D882-4749-B35F-7A9F5AFB3375";
+com.schriftgestaltung.layerOrderInGlyph..notdef = 4;
+com.schriftgestaltung.layerOrderInGlyph.CR = 4;
+com.schriftgestaltung.layerOrderInGlyph.NULL = 4;
+com.schriftgestaltung.layerOrderInGlyph.dieresiscomb = 4;
+com.schriftgestaltung.layerOrderInGlyph.hyphen = 4;
+com.schriftgestaltung.layerOrderInGlyph.hyphentwo = 4;
+com.schriftgestaltung.layerOrderInGlyph.space = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni00A0 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0531 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0532 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0533 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0534 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0535 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0536 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0537 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0538 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0539 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni053A = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni053B = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni053C = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni053D = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni053E = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni053F = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0540 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0541 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0542 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0543 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0544 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0545 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0546 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0547 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0548 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0548_uni0552 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0549 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni054A = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni054B = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni054C = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni054D = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni054E = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni054F = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0550 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0551 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0552 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0553 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0554 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0555 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0556 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0559 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni055A = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni055B = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni055C = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni055D = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni055E = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni055F = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0560 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0561 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0562 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0563 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0564 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0565 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0566 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0567 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0568 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0569 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni056A = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni056B = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni056C = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni056D = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni056E = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni056F = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0570 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0571 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0572 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0573 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0574 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0575 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0576 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0577 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0578 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0578_uni0582 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0579 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni057A = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni057B = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni057C = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni057D = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni057E = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni057F = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0580 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0581 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0582 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0583 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0584 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0585 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0586 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0587 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0588 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni0589 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni058A = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni058D = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni058E = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni058F = 4;
+com.schriftgestaltung.layerOrderInGlyph.uni25CC = 4;
+com.schriftgestaltung.layerOrderInGlyph.uniFB13 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uniFB14 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uniFB15 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uniFB16 = 4;
+com.schriftgestaltung.layerOrderInGlyph.uniFB17 = 4;
+};
+},
+{
+axesValues = (
+90,
+70
+);
+customParameters = (
+{
+name = typoAscender;
+value = 1068;
+},
+{
+name = typoDescender;
+value = -292;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 1068;
+},
+{
+name = hheaDescender;
+value = -292;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1068;
+},
+{
+name = winDescent;
+value = 292;
+},
+{
+name = underlineThickness;
+value = 50;
+},
+{
+name = underlinePosition;
+value = -100;
+}
+);
+iconName = Condensed;
+id = m006;
+metricValues = (
+{
+over = 15;
+pos = 1068;
+},
+{
+over = 15;
+pos = 714;
+},
+{
+over = 15;
+pos = 536;
+},
+{
+over = -15;
+},
+{
+over = -15;
+pos = -292;
+},
+{
+}
+);
+name = Condensed;
+stemValues = (
+75,
+68,
+75,
+68,
+75,
+68,
+75,
+68,
+84,
+79,
+0,
+0,
+0,
+0
+);
+userData = {
+com.schriftgestaltung.layerId = "5140D4AB-7D69-493E-99B8-E351717C8E93";
+com.schriftgestaltung.layerOrderInGlyph..notdef = 5;
+com.schriftgestaltung.layerOrderInGlyph.CR = 5;
+com.schriftgestaltung.layerOrderInGlyph.NULL = 5;
+com.schriftgestaltung.layerOrderInGlyph.dieresiscomb = 5;
+com.schriftgestaltung.layerOrderInGlyph.hyphen = 5;
+com.schriftgestaltung.layerOrderInGlyph.hyphentwo = 5;
+com.schriftgestaltung.layerOrderInGlyph.space = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni00A0 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0531 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0532 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0533 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0534 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0535 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0536 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0537 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0538 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0539 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni053A = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni053B = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni053C = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni053D = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni053E = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni053F = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0540 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0541 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0542 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0543 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0544 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0545 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0546 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0547 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0548 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0548_uni0552 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0549 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni054A = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni054B = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni054C = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni054D = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni054E = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni054F = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0550 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0551 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0552 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0553 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0554 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0555 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0556 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0559 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni055A = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni055B = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni055C = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni055D = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni055E = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni055F = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0560 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0561 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0562 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0563 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0564 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0565 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0566 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0567 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0568 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0569 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni056A = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni056B = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni056C = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni056D = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni056E = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni056F = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0570 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0571 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0572 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0573 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0574 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0575 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0576 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0577 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0578 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0578_uni0582 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0579 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni057A = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni057B = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni057C = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni057D = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni057E = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni057F = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0580 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0581 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0582 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0583 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0584 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0585 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0586 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0587 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0588 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni0589 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni058A = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni058D = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni058E = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni058F = 5;
+com.schriftgestaltung.layerOrderInGlyph.uni25CC = 5;
+com.schriftgestaltung.layerOrderInGlyph.uniFB13 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uniFB14 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uniFB15 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uniFB16 = 5;
+com.schriftgestaltung.layerOrderInGlyph.uniFB17 = 5;
+};
+},
+{
+axesValues = (
+190,
+70
+);
+customParameters = (
+{
+name = typoAscender;
+value = 1068;
+},
+{
+name = typoDescender;
+value = -292;
+},
+{
+name = typoLineGap;
+value = 0;
+},
+{
+name = hheaAscender;
+value = 1068;
+},
+{
+name = hheaDescender;
+value = -292;
+},
+{
+name = hheaLineGap;
+value = 0;
+},
+{
+name = winAscent;
+value = 1068;
+},
+{
+name = winDescent;
+value = 292;
+},
+{
+name = underlineThickness;
+value = 50;
+},
+{
+name = underlinePosition;
+value = -100;
+}
+);
+id = m008;
+metricValues = (
+{
+over = 15;
+pos = 1068;
+},
+{
+over = 15;
+pos = 714;
+},
+{
+over = 15;
+pos = 536;
+},
+{
+over = -15;
+},
+{
+over = -15;
+pos = -292;
+},
+{
+}
+);
+name = "Condensed Bold";
+stemValues = (
+150,
+133,
+150,
+133,
+150,
+133,
+150,
+133,
+150,
+133,
+150,
+133,
+170,
+146
+);
+userData = {
+com.schriftgestaltung.layerId = "760ABDC6-2202-4D83-88F1-A825DA8AD105";
+com.schriftgestaltung.layerOrderInGlyph..notdef = 7;
+com.schriftgestaltung.layerOrderInGlyph.CR = 7;
+com.schriftgestaltung.layerOrderInGlyph.NULL = 7;
+com.schriftgestaltung.layerOrderInGlyph.dieresiscomb = 7;
+com.schriftgestaltung.layerOrderInGlyph.hyphen = 7;
+com.schriftgestaltung.layerOrderInGlyph.hyphentwo = 7;
+com.schriftgestaltung.layerOrderInGlyph.space = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni00A0 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0531 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0532 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0533 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0534 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0535 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0536 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0537 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0538 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0539 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni053A = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni053B = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni053C = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni053D = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni053E = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni053F = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0540 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0541 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0542 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0543 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0544 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0545 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0546 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0547 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0548 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0548_uni0552 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0549 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni054A = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni054B = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni054C = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni054D = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni054E = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni054F = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0550 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0551 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0552 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0553 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0554 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0555 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0556 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0559 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni055A = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni055B = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni055C = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni055D = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni055E = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni055F = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0560 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0561 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0562 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0563 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0564 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0565 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0566 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0567 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0568 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0569 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni056A = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni056B = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni056C = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni056D = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni056E = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni056F = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0570 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0571 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0572 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0573 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0574 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0575 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0576 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0577 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0578 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0578_uni0582 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0579 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni057A = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni057B = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni057C = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni057D = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni057E = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni057F = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0580 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0581 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0582 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0583 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0584 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0585 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0586 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0587 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0588 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni0589 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni058A = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni058D = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni058E = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni058F = 7;
+com.schriftgestaltung.layerOrderInGlyph.uni25CC = 7;
+com.schriftgestaltung.layerOrderInGlyph.uniFB13 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uniFB14 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uniFB15 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uniFB16 = 7;
+com.schriftgestaltung.layerOrderInGlyph.uniFB17 = 7;
+};
+}
+);
+instances = (
+{
+axesValues = (
+26,
+100
+);
+instanceInterpolations = {
+m001 = 1;
+};
+name = Thin;
+weightClass = 100;
+},
+{
+axesValues = (
+39,
+100
+);
+instanceInterpolations = {
+m001 = 0.79688;
+m002 = 0.20313;
+};
+name = ExtraLight;
+weightClass = 200;
+},
+{
+axesValues = (
+58,
+100
+);
+instanceInterpolations = {
+m001 = 0.5;
+m002 = 0.5;
+};
+name = Light;
+weightClass = 300;
+},
+{
+axesValues = (
+90,
+100
+);
+instanceInterpolations = {
+m002 = 1;
+};
+name = Regular;
+},
+{
+axesValues = (
+108,
+100
+);
+instanceInterpolations = {
+m002 = 0.82;
+m004 = 0.18;
+};
+name = Medium;
+weightClass = 500;
+},
+{
+axesValues = (
+144,
+100
+);
+instanceInterpolations = {
+m002 = 0.46;
+m004 = 0.54;
+};
+name = SemiBold;
+weightClass = 600;
+},
+{
+axesValues = (
+144,
+100
+);
+instanceInterpolations = {
+m002 = 0.46;
+m004 = 0.54;
+};
+isBold = 1;
+linkStyle = Regular;
+name = Bold;
+weightClass = 700;
+},
+{
+axesValues = (
+169,
+100
+);
+instanceInterpolations = {
+m002 = 0.21;
+m004 = 0.79;
+};
+name = ExtraBold;
+weightClass = 800;
+},
+{
+axesValues = (
+190,
+100
+);
+instanceInterpolations = {
+m004 = 1;
+};
+name = Black;
+weightClass = 900;
+},
+{
+axesValues = (
+26,
+79
+);
+instanceInterpolations = {
+m001 = 0.3;
+m005 = 0.7;
+};
+name = "Condensed Thin";
+weightClass = 100;
+widthClass = 3;
+},
+{
+axesValues = (
+39,
+79
+);
+instanceInterpolations = {
+m001 = 0.23906;
+m002 = 0.06094;
+m005 = 0.55781;
+m006 = 0.14219;
+};
+name = "Condensed ExtraLight";
+weightClass = 200;
+widthClass = 3;
+},
+{
+axesValues = (
+58,
+79
+);
+instanceInterpolations = {
+m001 = 0.15;
+m002 = 0.15;
+m005 = 0.35;
+m006 = 0.35;
+};
+name = "Condensed Light";
+weightClass = 300;
+widthClass = 3;
+},
+{
+axesValues = (
+90,
+79
+);
+instanceInterpolations = {
+m002 = 0.3;
+m006 = 0.7;
+};
+name = Condensed;
+widthClass = 3;
+},
+{
+axesValues = (
+108,
+79
+);
+instanceInterpolations = {
+m002 = 0.246;
+m004 = 0.054;
+m006 = 0.574;
+m008 = 0.126;
+};
+name = "Condensed Medium";
+weightClass = 500;
+widthClass = 3;
+},
+{
+axesValues = (
+128,
+79
+);
+instanceInterpolations = {
+m002 = 0.186;
+m004 = 0.114;
+m006 = 0.434;
+m008 = 0.266;
+};
+name = "Condensed SemiBold";
+weightClass = 600;
+widthClass = 3;
+},
+{
+axesValues = (
+144,
+79
+);
+instanceInterpolations = {
+m002 = 0.138;
+m004 = 0.162;
+m006 = 0.322;
+m008 = 0.378;
+};
+isBold = 1;
+linkStyle = Condensed;
+name = "Condensed Bold";
+weightClass = 700;
+widthClass = 3;
+},
+{
+axesValues = (
+169,
+79
+);
+instanceInterpolations = {
+m002 = 0.063;
+m004 = 0.237;
+m006 = 0.147;
+m008 = 0.553;
+};
+name = "Condensed ExtraBold";
+weightClass = 800;
+widthClass = 3;
+},
+{
+axesValues = (
+190,
+79
+);
+instanceInterpolations = {
+m004 = 0.3;
+m008 = 0.7;
+};
+name = "Condensed Black";
+weightClass = 900;
+widthClass = 3;
+},
+{
+axesValues = (
+26,
+89
+);
+instanceInterpolations = {
+m001 = 0.63333;
+m005 = 0.36667;
+};
+name = "SemiCondensed Thin";
+weightClass = 100;
+widthClass = 4;
+},
+{
+axesValues = (
+39,
+89
+);
+instanceInterpolations = {
+m001 = 0.50469;
+m002 = 0.12865;
+m005 = 0.29219;
+m006 = 0.07448;
+};
+name = "SemiCondensed ExtraLight";
+weightClass = 200;
+widthClass = 4;
+},
+{
+axesValues = (
+58,
+89
+);
+instanceInterpolations = {
+m001 = 0.31667;
+m002 = 0.31667;
+m005 = 0.18333;
+m006 = 0.18333;
+};
+name = "SemiCondensed Light";
+weightClass = 300;
+widthClass = 4;
+},
+{
+axesValues = (
+90,
+89
+);
+instanceInterpolations = {
+m002 = 0.63333;
+m006 = 0.36667;
+};
+name = SemiCondensed;
+widthClass = 4;
+},
+{
+axesValues = (
+108,
+89
+);
+instanceInterpolations = {
+m002 = 0.51933;
+m004 = 0.114;
+m006 = 0.30067;
+m008 = 0.066;
+};
+name = "SemiCondensed Medium";
+weightClass = 500;
+widthClass = 4;
+},
+{
+axesValues = (
+128,
+89
+);
+instanceInterpolations = {
+m002 = 0.39267;
+m004 = 0.24067;
+m006 = 0.22733;
+m008 = 0.13933;
+};
+name = "SemiCondensed SemiBold";
+weightClass = 600;
+widthClass = 4;
+},
+{
+axesValues = (
+144,
+89
+);
+instanceInterpolations = {
+m002 = 0.29133;
+m004 = 0.342;
+m006 = 0.16867;
+m008 = 0.198;
+};
+isBold = 1;
+linkStyle = SemiCondensed;
+name = "SemiCondensed Bold";
+weightClass = 700;
+widthClass = 4;
+},
+{
+axesValues = (
+169,
+89
+);
+instanceInterpolations = {
+m002 = 0.133;
+m004 = 0.50033;
+m006 = 0.077;
+m008 = 0.28967;
+};
+name = "SemiCondensed ExtraBold";
+weightClass = 800;
+widthClass = 4;
+},
+{
+axesValues = (
+190,
+89
+);
+instanceInterpolations = {
+m004 = 0.63333;
+m008 = 0.36667;
+};
+name = "SemiCondensed Black";
+weightClass = 900;
+widthClass = 4;
+},
+{
+axesValues = (
+26,
+70
+);
+instanceInterpolations = {
+m005 = 1;
+};
+name = "ExtraCondensed Thin";
+weightClass = 100;
+widthClass = 2;
+},
+{
+axesValues = (
+39,
+70
+);
+instanceInterpolations = {
+m005 = 0.79688;
+m006 = 0.20313;
+};
+name = "ExtraCondensed ExtraLight";
+weightClass = 200;
+widthClass = 2;
+},
+{
+axesValues = (
+58,
+70
+);
+instanceInterpolations = {
+m005 = 0.5;
+m006 = 0.5;
+};
+name = "ExtraCondensed Light";
+weightClass = 300;
+widthClass = 2;
+},
+{
+axesValues = (
+90,
+70
+);
+instanceInterpolations = {
+m006 = 1;
+};
+name = ExtraCondensed;
+widthClass = 2;
+},
+{
+axesValues = (
+108,
+70
+);
+instanceInterpolations = {
+m006 = 0.82;
+m008 = 0.18;
+};
+name = "ExtraCondensed Medium";
+weightClass = 500;
+widthClass = 2;
+},
+{
+axesValues = (
+128,
+70
+);
+instanceInterpolations = {
+m006 = 0.62;
+m008 = 0.38;
+};
+name = "ExtraCondensed SemiBold";
+weightClass = 600;
+widthClass = 2;
+},
+{
+axesValues = (
+144,
+70
+);
+instanceInterpolations = {
+m006 = 0.46;
+m008 = 0.54;
+};
+isBold = 1;
+linkStyle = ExtraCondensed;
+name = "ExtraCondensed Bold";
+weightClass = 700;
+widthClass = 2;
+},
+{
+axesValues = (
+169,
+70
+);
+instanceInterpolations = {
+m006 = 0.21;
+m008 = 0.79;
+};
+name = "ExtraCondensed ExtraBold";
+weightClass = 800;
+widthClass = 2;
+},
+{
+axesValues = (
+190,
+70
+);
+instanceInterpolations = {
+m008 = 1;
+};
+name = "ExtraCondensed Black";
+weightClass = 900;
+widthClass = 2;
+}
+);
+kerningLTR = {
+m001 = {
+"@MMK_L_uni0532" = {
+"@MMK_R_uni0534" = -20;
+"@MMK_R_uni053A" = -29;
+"@MMK_R_uni0545" = -10;
+"@MMK_R_uni0547" = -20;
+"@MMK_R_uni0551" = -10;
+"@MMK_R_uni0571" = -5;
+};
+"@MMK_L_uni0533" = {
+"@MMK_R_uni0534" = -53;
+};
+"@MMK_L_uni0535" = {
+"@MMK_R_uni055B" = -75;
+"@MMK_R_uni055C" = -85;
+"@MMK_R_uni055E" = -130;
+"@MMK_R_uni0579" = 25;
+uni055A = -38;
+uni055F = -65;
+};
+"@MMK_L_uni0536" = {
+"@MMK_R_uni0533" = -19;
+"@MMK_R_uni0534" = -20;
+"@MMK_R_uni053F" = -22;
+"@MMK_R_uni0546" = -6;
+"@MMK_R_uni054E" = -10;
+"@MMK_R_uni0551" = -17;
+};
+"@MMK_L_uni0537" = {
+"@MMK_R_uni0533" = -10;
+"@MMK_R_uni0534" = -15;
+"@MMK_R_uni0536" = -15;
+"@MMK_R_uni053A" = -17;
+"@MMK_R_uni0549" = -5;
+"@MMK_R_uni0563" = -22;
+"@MMK_R_uni0571" = -12;
+};
+"@MMK_L_uni0539" = {
+"@MMK_R_uni0571" = -25;
+"@MMK_R_uni057B" = -10;
+};
+"@MMK_L_uni053A" = {
+"@MMK_R_uni0546" = -7;
+"@MMK_R_uni0571" = -26;
+"@MMK_R_uni057B" = -10;
+};
+"@MMK_L_uni053B" = {
+"@MMK_R_uni0533" = -39;
+"@MMK_R_uni0534" = -56;
+"@MMK_R_uni053F" = -24;
+"@MMK_R_uni0541" = -12;
+"@MMK_R_uni0543" = -10;
+"@MMK_R_uni0546" = -15;
+"@MMK_R_uni054B" = -15;
+"@MMK_R_uni054F" = -20;
+"@MMK_R_uni0556" = -20;
+};
+"@MMK_L_uni053D" = {
+"@MMK_R_uni0536" = -12;
+"@MMK_R_uni053A" = -10;
+"@MMK_R_uni0541" = -15;
+"@MMK_R_uni054B" = 0;
+"@MMK_R_uni0571" = -20;
+};
+"@MMK_L_uni053E" = {
+"@MMK_R_uni0534" = -15;
+"@MMK_R_uni053F" = -22;
+"@MMK_R_uni0546" = -10;
+};
+"@MMK_L_uni0540" = {
+"@MMK_R_uni0531" = -11;
+"@MMK_R_uni0533" = -34;
+"@MMK_R_uni0534" = -20;
+"@MMK_R_uni053A" = -20;
+"@MMK_R_uni053E" = -15;
+"@MMK_R_uni053F" = -10;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0549" = -19;
+"@MMK_R_uni054E" = -39;
+"@MMK_R_uni0553" = -40;
+"@MMK_R_uni0554" = -15;
+"@MMK_R_uni0555" = -35;
+"@MMK_R_uni0561" = -40;
+"@MMK_R_uni0562" = -40;
+"@MMK_R_uni0563" = -40;
+"@MMK_R_uni0564" = -40;
+"@MMK_R_uni0567" = -30;
+"@MMK_R_uni056B" = -35;
+"@MMK_R_uni0570" = -45;
+"@MMK_R_uni0571" = -26;
+"@MMK_R_uni0575" = -35;
+"@MMK_R_uni0576" = -12;
+"@MMK_R_uni0577" = -25;
+"@MMK_R_uni057B" = -29;
+};
+"@MMK_L_uni0541" = {
+"@MMK_R_uni053F" = -15;
+};
+"@MMK_L_uni0543" = {
+"@MMK_R_uni0533" = -20;
+"@MMK_R_uni0534" = -20;
+};
+"@MMK_L_uni0544" = {
+"@MMK_R_uni0531" = -20;
+"@MMK_R_uni0533" = -15;
+"@MMK_R_uni0534" = -15;
+"@MMK_R_uni0536" = -17;
+"@MMK_R_uni0538" = -50;
+"@MMK_R_uni053A" = -58;
+"@MMK_R_uni053B" = -25;
+"@MMK_R_uni053F" = -20;
+"@MMK_R_uni0541" = -22;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0545" = -22;
+"@MMK_R_uni0549" = -15;
+"@MMK_R_uni054B" = -24;
+"@MMK_R_uni054E" = -40;
+"@MMK_R_uni0550" = -50;
+"@MMK_R_uni0551" = -15;
+"@MMK_R_uni0553" = -40;
+"@MMK_R_uni0554" = -29;
+"@MMK_R_uni0559" = 22;
+"@MMK_R_uni0561" = -40;
+"@MMK_R_uni0562" = -78;
+"@MMK_R_uni0563" = -78;
+"@MMK_R_uni0573" = -10;
+"@MMK_R_uni0575" = -78;
+"@MMK_R_uni0576" = -20;
+"@MMK_R_uni0577" = -39;
+"@MMK_R_uni0579" = -78;
+"@MMK_R_uni057B" = -78;
+"@MMK_R_uni0584" = -78;
+};
+"@MMK_L_uni0545" = {
+"@MMK_R_uni053F" = -10;
+"@MMK_R_uni054E" = -15;
+"@MMK_R_uni0579" = -20;
+};
+"@MMK_L_uni0546" = {
+"@MMK_R_uni0534" = -50;
+};
+"@MMK_L_uni0547" = {
+"@MMK_R_uni0534" = -35;
+"@MMK_R_uni0579" = -22;
+};
+"@MMK_L_uni0549" = {
+"@MMK_R_uni057B" = -12;
+};
+"@MMK_L_uni054F" = {
+"@MMK_R_uni0533" = -34;
+"@MMK_R_uni0534" = -24;
+};
+"@MMK_L_uni0551" = {
+"@MMK_R_uni0534" = -20;
+};
+"@MMK_L_uni0552" = {
+"@MMK_R_uni0533" = -50;
+"@MMK_R_uni0534" = -54;
+"@MMK_R_uni0536" = -10;
+"@MMK_R_uni053F" = -29;
+"@MMK_R_uni0541" = -15;
+"@MMK_R_uni054F" = -20;
+"@MMK_R_uni055B" = -100;
+"@MMK_R_uni055C" = -100;
+"@MMK_R_uni055E" = -100;
+};
+"@MMK_L_uni0556" = {
+"@MMK_R_uni0533" = -24;
+"@MMK_R_uni0534" = -41;
+"@MMK_R_uni053F" = -20;
+};
+"@MMK_L_uni0563" = {
+"@MMK_R_uni053F" = -31;
+};
+"@MMK_L_uni0565" = {
+"@MMK_R_uni055B" = -165;
+"@MMK_R_uni055C" = -239;
+"@MMK_R_uni055E" = -415;
+};
+"@MMK_L_uni0566" = {
+"@MMK_R_uni0562" = -25;
+"@MMK_R_uni0563" = -20;
+"@MMK_R_uni0564" = -25;
+"@MMK_R_uni0575" = 45;
+"@MMK_R_uni0577" = 45;
+"@MMK_R_uni0579" = 75;
+"@MMK_R_uni057B" = 20;
+"@MMK_R_uni0584" = 20;
+};
+"@MMK_L_uni0567" = {
+"@MMK_R_uni055B" = -165;
+"@MMK_R_uni055C" = -239;
+"@MMK_R_uni055E" = -340;
+"@MMK_R_uni0563" = -15;
+"@MMK_R_uni0571" = -15;
+};
+"@MMK_L_uni0569" = {
+"@MMK_R_uni053F" = -29;
+"@MMK_R_uni0577" = -29;
+"@MMK_R_uni0579" = -24;
+"@MMK_R_uni0586" = -20;
+};
+"@MMK_L_uni056B" = {
+"@MMK_R_uni055B" = -112;
+"@MMK_R_uni055C" = -239;
+"@MMK_R_uni055E" = -457;
+};
+"@MMK_L_uni0579" = {
+"@MMK_R_uni0579" = 34;
+};
+"@MMK_L_uni057C" = {
+"@MMK_R_uni053F" = -22;
+};
+"@MMK_L_uni0582" = {
+"@MMK_R_uni053F" = -39;
+"@MMK_R_uni055B" = -102;
+"@MMK_R_uni055C" = -140;
+"@MMK_R_uni055E" = -300;
+"@MMK_R_uni0577" = -20;
+};
+"@MMK_L_uni0586" = {
+"@MMK_R_uni053F" = -22;
+"@MMK_R_uni0559" = -36;
+};
+uni0531 = {
+uni0531 = -14.6484;
+uni0533 = -65.918;
+uni0534 = -85.4492;
+uni0535 = -14.6484;
+uni053E = -34.1797;
+uni053F = -70.8008;
+uni0542 = -85.4492;
+uni0544 = -14.6484;
+uni0546 = -25.3906;
+uni0547 = -31.25;
+uni0549 = -26.8555;
+uni054A = -71.7773;
+uni054D = -14.6484;
+uni054E = -40.0391;
+uni0553 = -29.2969;
+uni0555 = -29.2969;
+uni0577 = -6.96389;
+uni058F = -85.4492;
+};
+uni0532 = {
+uni0542 = -19.5312;
+};
+uni0535 = {
+uni0534 = -17.0898;
+uni0542 = -17.0898;
+uni0579 = -19.5312;
+uni058F = -17.0898;
+};
+uni0537 = {
+uni054A = -14.6484;
+};
+uni0538 = {
+uni053E = -11.2305;
+uni0546 = -15;
+uni054A = -9.76562;
+uni0576 = -19.5312;
+uni057B = -9.76562;
+};
+uni0539 = {
+uni056E = -19.5312;
+uni0581 = -19.5312;
+uni0585 = -19.5312;
+};
+uni053A = {
+uni056E = -19.5312;
+uni0581 = -19.5312;
+uni0585 = -19.5312;
+};
+uni053B = {
+uni054A = -14.6484;
+};
+uni053C = {
+uni0533 = -53.7109;
+uni053E = -12.207;
+uni053F = -65.918;
+uni0546 = -4.88281;
+uni0549 = -12.207;
+uni054A = -35;
+uni054E = -68.4795;
+uni0553 = -25;
+uni0555 = -20;
+};
+uni053D = {
+uni0540 = -19.051;
+};
+uni0540 = {
+uni054A = -6.96389;
+};
+uni0542 = {
+uni0533 = -61.0352;
+uni053F = -63.4766;
+uni054E = -63.4766;
+uni0577 = -2.08124;
+uni057B = -11.8467;
+};
+uni0544 = {
+uni0540 = -19.051;
+uni0562 = -78.125;
+uni0564 = -78.125;
+uni0565 = -20.4918;
+uni0567 = -20.4918;
+uni0568 = -78.125;
+uni056B = -20.4918;
+uni056C = -78.125;
+uni056D = -20.4918;
+uni0572 = -78.125;
+uni0587 = -20.4918;
+};
+uni054C = {
+uni053F = -7.32422;
+uni0571 = -19.5312;
+uni0576 = -19.5312;
+};
+uni054E = {
+uni0533 = -58.5938;
+uni053F = -63.4766;
+uni054E = -63.4766;
+};
+uni0550 = {
+"@MMK_R_uni0561" = -55;
+"@MMK_R_uni0562" = -55;
+"@MMK_R_uni0563" = -50;
+"@MMK_R_uni0564" = -55;
+"@MMK_R_uni0567" = -30;
+"@MMK_R_uni056B" = -40;
+"@MMK_R_uni0570" = -45;
+"@MMK_R_uni0575" = -50;
+"@MMK_R_uni0576" = -40;
+"@MMK_R_uni0577" = -30;
+"@MMK_R_uni057B" = -50;
+"@MMK_R_uni0584" = -50;
+uni053A = -63.4766;
+uni053F = -19.5312;
+uni0546 = -9.76562;
+uni0547 = -12.207;
+uni0551 = -14.6484;
+uni0563 = -50;
+uni056A = -50;
+uni056E = -50;
+uni0571 = -68.3594;
+};
+uni0554 = {
+uni0533 = -21.9727;
+uni0534 = -14.6484;
+uni053F = -14.6484;
+uni0542 = -14.6484;
+uni0546 = -12.207;
+uni0571 = -14.6484;
+uni058F = -14.6484;
+};
+uni0568 = {
+uni055B = -165;
+uni055C = -239;
+uni055E = -418;
+};
+uni056B = {
+uni055B = -165;
+uni055C = -239;
+uni055E = -418;
+};
+uni0572 = {
+uni0577 = 65;
+uni0579 = 100;
+uni057B = 15;
+};
+uni057B = {
+uni0586 = -19.5312;
+};
+uni0585 = {
+uni055B = -165;
+uni055C = -239;
+uni055E = -418;
+};
+};
+m002 = {
+"@MMK_L_uni0532" = {
+"@MMK_R_uni0534" = -45;
+"@MMK_R_uni053A" = -35;
+"@MMK_R_uni0545" = -10;
+"@MMK_R_uni0547" = -20;
+"@MMK_R_uni0551" = -10;
+"@MMK_R_uni0571" = -25;
+};
+"@MMK_L_uni0533" = {
+"@MMK_R_uni0534" = -53;
+};
+"@MMK_L_uni0535" = {
+"@MMK_R_uni055B" = -80;
+"@MMK_R_uni055C" = -60;
+"@MMK_R_uni055E" = -100;
+"@MMK_R_uni0579" = 25;
+};
+"@MMK_L_uni0536" = {
+"@MMK_R_uni0533" = -19;
+"@MMK_R_uni0534" = -20;
+"@MMK_R_uni053F" = -22;
+"@MMK_R_uni0546" = -6;
+"@MMK_R_uni054E" = -10;
+"@MMK_R_uni0551" = -17;
+"@MMK_R_uni0553" = -25;
+};
+"@MMK_L_uni0537" = {
+"@MMK_R_uni0533" = -10;
+"@MMK_R_uni0534" = -15;
+"@MMK_R_uni0536" = -15;
+"@MMK_R_uni053A" = -17;
+"@MMK_R_uni0563" = -29;
+"@MMK_R_uni0571" = -20;
+};
+"@MMK_L_uni0539" = {
+"@MMK_R_uni0571" = -25;
+"@MMK_R_uni057B" = -10;
+};
+"@MMK_L_uni053A" = {
+"@MMK_R_uni0571" = -26;
+"@MMK_R_uni057B" = -10;
+};
+"@MMK_L_uni053B" = {
+"@MMK_R_uni0533" = -39;
+"@MMK_R_uni0534" = -56;
+"@MMK_R_uni053F" = -40;
+"@MMK_R_uni0541" = -12;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0546" = -15;
+"@MMK_R_uni054B" = -15;
+"@MMK_R_uni054F" = -20;
+"@MMK_R_uni0556" = -20;
+};
+"@MMK_L_uni053D" = {
+"@MMK_R_uni0536" = -12;
+"@MMK_R_uni053A" = -10;
+"@MMK_R_uni0541" = -15;
+"@MMK_R_uni0571" = -20;
+};
+"@MMK_L_uni053E" = {
+"@MMK_R_uni0534" = -15;
+"@MMK_R_uni053F" = -22;
+"@MMK_R_uni0546" = -10;
+};
+"@MMK_L_uni0540" = {
+"@MMK_R_uni0531" = -11;
+"@MMK_R_uni0533" = -34;
+"@MMK_R_uni0534" = -35;
+"@MMK_R_uni0536" = -20;
+"@MMK_R_uni053A" = -45;
+"@MMK_R_uni053E" = -15;
+"@MMK_R_uni053F" = -10;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0549" = -19;
+"@MMK_R_uni054E" = -39;
+"@MMK_R_uni0553" = -50;
+"@MMK_R_uni0554" = -15;
+"@MMK_R_uni0555" = -25;
+"@MMK_R_uni0561" = -55;
+"@MMK_R_uni0562" = -40;
+"@MMK_R_uni0563" = -50;
+"@MMK_R_uni0564" = -45;
+"@MMK_R_uni0567" = -45;
+"@MMK_R_uni056B" = -30;
+"@MMK_R_uni0570" = -55;
+"@MMK_R_uni0571" = -34;
+"@MMK_R_uni0573" = -35;
+"@MMK_R_uni0575" = -40;
+"@MMK_R_uni0576" = -40;
+"@MMK_R_uni0577" = -20;
+"@MMK_R_uni057B" = -37;
+uni0540 = -45;
+};
+"@MMK_L_uni0541" = {
+"@MMK_R_uni053F" = -15;
+};
+"@MMK_L_uni0543" = {
+"@MMK_R_uni0533" = -20;
+"@MMK_R_uni0534" = -20;
+};
+"@MMK_L_uni0544" = {
+"@MMK_R_uni0531" = -20;
+"@MMK_R_uni0533" = -30;
+"@MMK_R_uni0534" = -15;
+"@MMK_R_uni0536" = -17;
+"@MMK_R_uni0538" = -40;
+"@MMK_R_uni053A" = -61;
+"@MMK_R_uni0541" = -22;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0545" = -22;
+"@MMK_R_uni0549" = -15;
+"@MMK_R_uni054B" = -24;
+"@MMK_R_uni054E" = -15;
+"@MMK_R_uni0550" = -50;
+"@MMK_R_uni0551" = -15;
+"@MMK_R_uni0553" = -29;
+"@MMK_R_uni0554" = -29;
+"@MMK_R_uni0559" = 29;
+"@MMK_R_uni0561" = -30;
+"@MMK_R_uni0562" = -30;
+"@MMK_R_uni0563" = -78;
+"@MMK_R_uni0573" = -10;
+"@MMK_R_uni0575" = -78;
+"@MMK_R_uni0576" = -20;
+"@MMK_R_uni0577" = -39;
+"@MMK_R_uni0579" = -78;
+"@MMK_R_uni057B" = -78;
+"@MMK_R_uni0584" = -78;
+uni053B = -20;
+uni053D = -20;
+uni0552 = -30;
+};
+"@MMK_L_uni0545" = {
+"@MMK_R_uni053F" = -10;
+"@MMK_R_uni054E" = -15;
+"@MMK_R_uni0579" = -20;
+};
+"@MMK_L_uni0546" = {
+"@MMK_R_uni0534" = -20;
+};
+"@MMK_L_uni0547" = {
+"@MMK_R_uni0534" = -35;
+"@MMK_R_uni0579" = -22;
+};
+"@MMK_L_uni0549" = {
+"@MMK_R_uni057B" = -20;
+};
+"@MMK_L_uni054B" = {
+"@MMK_R_uni053F" = -10;
+};
+"@MMK_L_uni054F" = {
+"@MMK_R_uni0533" = -34;
+"@MMK_R_uni0534" = -24;
+};
+"@MMK_L_uni0551" = {
+"@MMK_R_uni0534" = -20;
+};
+"@MMK_L_uni0552" = {
+"@MMK_R_uni0533" = -29;
+"@MMK_R_uni0534" = -54;
+"@MMK_R_uni0536" = -10;
+"@MMK_R_uni053F" = -29;
+"@MMK_R_uni0541" = -15;
+"@MMK_R_uni054F" = -20;
+"@MMK_R_uni055B" = -100;
+"@MMK_R_uni055C" = -100;
+"@MMK_R_uni055E" = -100;
+};
+"@MMK_L_uni0556" = {
+"@MMK_R_uni0533" = -24;
+"@MMK_R_uni0534" = -49;
+"@MMK_R_uni053F" = -20;
+};
+"@MMK_L_uni0563" = {
+"@MMK_R_uni053F" = -39;
+};
+"@MMK_L_uni0565" = {
+"@MMK_R_uni055B" = -211;
+"@MMK_R_uni055C" = -291;
+"@MMK_R_uni055E" = -439;
+};
+"@MMK_L_uni0566" = {
+"@MMK_R_uni0562" = -25;
+"@MMK_R_uni0563" = -15;
+"@MMK_R_uni0564" = -25;
+"@MMK_R_uni056B" = 25;
+"@MMK_R_uni0575" = 29;
+"@MMK_R_uni0577" = 35;
+"@MMK_R_uni0579" = 75;
+"@MMK_R_uni0584" = 24;
+};
+"@MMK_L_uni0567" = {
+"@MMK_R_uni055B" = -211;
+"@MMK_R_uni055C" = -291;
+"@MMK_R_uni055E" = -293;
+"@MMK_R_uni0563" = -15;
+"@MMK_R_uni0571" = -15;
+};
+"@MMK_L_uni0569" = {
+"@MMK_R_uni053F" = -29;
+"@MMK_R_uni0577" = -29;
+"@MMK_R_uni0579" = -24;
+"@MMK_R_uni0586" = -20;
+};
+"@MMK_L_uni056B" = {
+"@MMK_R_uni055B" = -211;
+"@MMK_R_uni055C" = -291;
+"@MMK_R_uni055E" = -442;
+};
+"@MMK_L_uni0579" = {
+"@MMK_R_uni0579" = 25;
+};
+"@MMK_L_uni057C" = {
+"@MMK_R_uni053F" = -29;
+};
+"@MMK_L_uni0582" = {
+"@MMK_R_uni053F" = -39;
+"@MMK_R_uni055B" = -211;
+"@MMK_R_uni055C" = -291;
+"@MMK_R_uni055E" = -293;
+"@MMK_R_uni0577" = -20;
+};
+"@MMK_L_uni0586" = {
+"@MMK_R_uni053F" = -29;
+"@MMK_R_uni0559" = -44;
+};
+uni0531 = {
+uni0531 = -14.6484;
+uni0533 = -65.918;
+uni0534 = -85.4492;
+uni0535 = -14.6484;
+uni053E = -34.1797;
+uni053F = -70.8008;
+uni0542 = -85.4492;
+uni0544 = -14.6484;
+uni0546 = -25.3906;
+uni0547 = -31.25;
+uni0549 = -26.8555;
+uni054A = -71.7773;
+uni054D = -14.6484;
+uni054E = -40.0391;
+uni0553 = -29.2969;
+uni0555 = -29.2969;
+uni0577 = -14.6484;
+uni058F = -85.4492;
+};
+uni0535 = {
+uni0534 = -17.0898;
+uni0542 = -17.0898;
+uni0579 = -19.5312;
+uni058F = -17.0898;
+};
+uni0536 = {
+uni054A = -30;
+};
+uni0537 = {
+uni054A = -14.6484;
+};
+uni0538 = {
+uni053E = -11.2305;
+uni0546 = -7.32422;
+uni054A = -30;
+uni0576 = -19.5312;
+uni057B = -9.76562;
+};
+uni0539 = {
+uni056E = -19.5312;
+uni0581 = -19.5312;
+uni0585 = -19.5312;
+};
+uni053A = {
+uni056E = -19.5312;
+uni0581 = -19.5312;
+uni0585 = -19.5312;
+};
+uni053B = {
+uni054A = -30;
+};
+uni053C = {
+uni0533 = -53.7109;
+uni053E = -12.207;
+uni053F = -65.918;
+uni0549 = -25;
+uni054A = -50;
+uni054E = -65.918;
+uni0553 = -40;
+uni0555 = -30;
+};
+uni053D = {
+uni0540 = -29.2969;
+};
+uni0540 = {
+uni054A = -30;
+};
+uni0542 = {
+uni0533 = -61.0352;
+uni053F = -63.4766;
+uni054E = -63.4766;
+uni057B = -19.5312;
+};
+uni0544 = {
+uni0540 = -29.2969;
+uni0562 = -78.125;
+uni0564 = -78.125;
+uni0568 = -78.125;
+uni056C = -78.125;
+uni0572 = -78.125;
+};
+uni054C = {
+uni053F = -20;
+uni0571 = -19.5312;
+uni0576 = -19.5312;
+};
+uni054E = {
+uni0533 = -58.5938;
+uni053F = -63.4766;
+uni054E = -63.4766;
+};
+uni0550 = {
+"@MMK_R_uni0561" = -50;
+"@MMK_R_uni0562" = -50;
+"@MMK_R_uni0563" = -70;
+"@MMK_R_uni0564" = -50;
+"@MMK_R_uni0567" = -40;
+"@MMK_R_uni056B" = -30;
+"@MMK_R_uni0570" = -40;
+"@MMK_R_uni0575" = -50;
+"@MMK_R_uni0576" = -70;
+"@MMK_R_uni0577" = -30;
+"@MMK_R_uni0579" = -60;
+"@MMK_R_uni057B" = -70;
+"@MMK_R_uni0584" = -50;
+uni053A = -63.4766;
+uni053F = -19.5312;
+uni0547 = -35;
+uni0551 = -14.6484;
+uni0563 = -70;
+uni056A = -70;
+uni056E = -70;
+uni0571 = -70;
+uni0581 = -70;
+uni0585 = -70;
+};
+uni0554 = {
+uni0533 = -21.9727;
+uni0534 = -14.6484;
+uni053F = -14.6484;
+uni0542 = -14.6484;
+uni0546 = -12.207;
+uni0571 = -14.6484;
+uni058F = -14.6484;
+};
+uni0568 = {
+uni055B = -211;
+uni055C = -291;
+uni055E = -442;
+};
+uni056B = {
+uni055B = -211;
+uni055C = -291;
+uni055E = -442;
+};
+uni0572 = {
+uni0575 = 23.4375;
+uni0577 = 60;
+uni0579 = 96.6797;
+uni057B = 30;
+uni0584 = 18.5547;
+};
+uni057B = {
+uni0586 = -19.5312;
+};
+uni0585 = {
+uni055B = -211;
+uni055C = -291;
+uni055E = -442;
+};
+};
+m004 = {
+"@MMK_L_uni0532" = {
+"@MMK_R_uni0534" = -20;
+"@MMK_R_uni053A" = -29;
+"@MMK_R_uni0545" = -10;
+"@MMK_R_uni0547" = -20;
+"@MMK_R_uni0551" = -10;
+"@MMK_R_uni0571" = -12;
+};
+"@MMK_L_uni0533" = {
+"@MMK_R_uni0534" = -53;
+};
+"@MMK_L_uni0535" = {
+"@MMK_R_uni055B" = -120;
+"@MMK_R_uni055C" = -10;
+"@MMK_R_uni055E" = -40;
+"@MMK_R_uni0579" = 35;
+};
+"@MMK_L_uni0536" = {
+"@MMK_R_uni0533" = -65;
+"@MMK_R_uni0534" = -65;
+"@MMK_R_uni053F" = -40;
+"@MMK_R_uni054E" = -35;
+"@MMK_R_uni0551" = -17;
+"@MMK_R_uni0553" = -40;
+};
+"@MMK_L_uni0537" = {
+"@MMK_R_uni0533" = -10;
+"@MMK_R_uni0534" = -15;
+"@MMK_R_uni0536" = -15;
+"@MMK_R_uni053A" = -17;
+"@MMK_R_uni0549" = -20;
+"@MMK_R_uni0563" = -29;
+"@MMK_R_uni0571" = -20;
+};
+"@MMK_L_uni0539" = {
+"@MMK_R_uni0571" = -60;
+"@MMK_R_uni057B" = -35;
+};
+"@MMK_L_uni053A" = {
+"@MMK_R_uni0546" = -7;
+"@MMK_R_uni0571" = -26;
+"@MMK_R_uni057B" = -10;
+};
+"@MMK_L_uni053B" = {
+"@MMK_R_uni0533" = -39;
+"@MMK_R_uni0534" = -56;
+"@MMK_R_uni053F" = -24;
+"@MMK_R_uni0541" = -25;
+"@MMK_R_uni0543" = -10;
+"@MMK_R_uni0546" = -15;
+"@MMK_R_uni054B" = -15;
+"@MMK_R_uni054F" = -20;
+"@MMK_R_uni0556" = -20;
+};
+"@MMK_L_uni053D" = {
+"@MMK_R_uni0536" = -15;
+"@MMK_R_uni053A" = -25;
+"@MMK_R_uni0541" = -15;
+"@MMK_R_uni054B" = -7;
+"@MMK_R_uni0571" = -20;
+};
+"@MMK_L_uni053E" = {
+"@MMK_R_uni0534" = -35;
+"@MMK_R_uni053F" = -22;
+"@MMK_R_uni0546" = -10;
+};
+"@MMK_L_uni0540" = {
+"@MMK_R_uni0531" = -11;
+"@MMK_R_uni0533" = -35;
+"@MMK_R_uni0534" = -20;
+"@MMK_R_uni0536" = -35;
+"@MMK_R_uni053A" = -45;
+"@MMK_R_uni053E" = -15;
+"@MMK_R_uni053F" = -10;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0549" = -19;
+"@MMK_R_uni054E" = -65;
+"@MMK_R_uni0553" = -60;
+"@MMK_R_uni0554" = -15;
+"@MMK_R_uni0555" = -35;
+"@MMK_R_uni0561" = -80;
+"@MMK_R_uni0562" = -50;
+"@MMK_R_uni0563" = -100;
+"@MMK_R_uni0564" = -80;
+"@MMK_R_uni0567" = -60;
+"@MMK_R_uni056B" = -40;
+"@MMK_R_uni0570" = -45;
+"@MMK_R_uni0571" = -34;
+"@MMK_R_uni0573" = -30;
+"@MMK_R_uni0575" = -30;
+"@MMK_R_uni0576" = -45;
+"@MMK_R_uni0577" = -20;
+"@MMK_R_uni057B" = -60;
+"@MMK_R_uni0584" = -45;
+uni0540 = -65;
+};
+"@MMK_L_uni0541" = {
+"@MMK_R_uni053F" = -15;
+"@MMK_R_uni054F" = 25;
+};
+"@MMK_L_uni0543" = {
+"@MMK_R_uni0533" = -20;
+"@MMK_R_uni0534" = -20;
+};
+"@MMK_L_uni0544" = {
+"@MMK_R_uni0531" = -15;
+"@MMK_R_uni0533" = -15;
+"@MMK_R_uni0534" = -15;
+"@MMK_R_uni0536" = -17;
+"@MMK_R_uni0538" = -35;
+"@MMK_R_uni053A" = -90;
+"@MMK_R_uni053B" = -20;
+"@MMK_R_uni0541" = -22;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0545" = -22;
+"@MMK_R_uni0549" = -15;
+"@MMK_R_uni054B" = -24;
+"@MMK_R_uni054E" = -45;
+"@MMK_R_uni0550" = -35;
+"@MMK_R_uni0551" = -15;
+"@MMK_R_uni0553" = -29;
+"@MMK_R_uni0554" = -29;
+"@MMK_R_uni0559" = 29;
+"@MMK_R_uni0561" = -15;
+"@MMK_R_uni0562" = -15;
+"@MMK_R_uni0563" = -78;
+"@MMK_R_uni0573" = -10;
+"@MMK_R_uni0575" = -78;
+"@MMK_R_uni0577" = -39;
+"@MMK_R_uni0579" = -78;
+"@MMK_R_uni057B" = -78;
+"@MMK_R_uni0584" = -78;
+};
+"@MMK_L_uni0545" = {
+"@MMK_R_uni053F" = -10;
+"@MMK_R_uni054E" = -15;
+"@MMK_R_uni0579" = -20;
+};
+"@MMK_L_uni0546" = {
+"@MMK_R_uni0534" = -20;
+};
+"@MMK_L_uni0547" = {
+"@MMK_R_uni0534" = -35;
+"@MMK_R_uni0579" = -22;
+};
+"@MMK_L_uni0549" = {
+"@MMK_R_uni057B" = -20;
+};
+"@MMK_L_uni054B" = {
+"@MMK_R_uni053F" = -10;
+};
+"@MMK_L_uni054F" = {
+"@MMK_R_uni0533" = -34;
+"@MMK_R_uni0534" = -24;
+};
+"@MMK_L_uni0551" = {
+"@MMK_R_uni0534" = -40;
+};
+"@MMK_L_uni0552" = {
+"@MMK_R_uni0533" = -29;
+"@MMK_R_uni0534" = -54;
+"@MMK_R_uni0536" = -10;
+"@MMK_R_uni053F" = -29;
+"@MMK_R_uni0541" = -15;
+"@MMK_R_uni054F" = -20;
+"@MMK_R_uni055B" = -100;
+"@MMK_R_uni055C" = -100;
+"@MMK_R_uni055E" = -100;
+};
+"@MMK_L_uni0556" = {
+"@MMK_R_uni0533" = -24;
+"@MMK_R_uni0534" = -49;
+"@MMK_R_uni053F" = -60;
+};
+"@MMK_L_uni0563" = {
+"@MMK_R_uni053F" = -39;
+};
+"@MMK_L_uni0565" = {
+"@MMK_R_uni055B" = -272;
+"@MMK_R_uni055C" = -305;
+"@MMK_R_uni055E" = -400;
+};
+"@MMK_L_uni0566" = {
+"@MMK_R_uni0562" = 0;
+"@MMK_R_uni0563" = -20;
+"@MMK_R_uni056B" = 60;
+"@MMK_R_uni0575" = 80;
+"@MMK_R_uni0577" = 90;
+"@MMK_R_uni0579" = 110;
+"@MMK_R_uni057B" = 50;
+"@MMK_R_uni0584" = 110;
+};
+"@MMK_L_uni0567" = {
+"@MMK_R_uni055B" = -272;
+"@MMK_R_uni055C" = -255;
+"@MMK_R_uni055E" = -293;
+"@MMK_R_uni0563" = -30;
+"@MMK_R_uni0571" = -15;
+};
+"@MMK_L_uni0569" = {
+"@MMK_R_uni053F" = -29;
+"@MMK_R_uni0577" = -29;
+"@MMK_R_uni0579" = -24;
+"@MMK_R_uni0586" = -20;
+};
+"@MMK_L_uni056B" = {
+"@MMK_R_uni055B" = -272;
+"@MMK_R_uni055C" = -305;
+"@MMK_R_uni055E" = -440;
+};
+"@MMK_L_uni0579" = {
+"@MMK_R_uni053F" = -20;
+"@MMK_R_uni0577" = 20;
+"@MMK_R_uni0579" = 12;
+};
+"@MMK_L_uni057C" = {
+"@MMK_R_uni053F" = -29;
+};
+"@MMK_L_uni0582" = {
+"@MMK_R_uni053F" = -39;
+"@MMK_R_uni055B" = -272;
+"@MMK_R_uni055C" = -293;
+"@MMK_R_uni055E" = -293;
+"@MMK_R_uni0577" = -20;
+};
+"@MMK_L_uni0586" = {
+"@MMK_R_uni053F" = -29;
+"@MMK_R_uni0559" = -44;
+};
+uni0531 = {
+"@MMK_R_uni0534" = -95;
+uni0531 = -14.6484;
+uni0533 = -65.918;
+uni0534 = -95;
+uni0535 = -14.6484;
+uni053E = -34.1797;
+uni053F = -110;
+uni0542 = -100;
+uni0544 = -14.6484;
+uni0546 = -25.3906;
+uni0547 = -31.25;
+uni0549 = -26.8555;
+uni054A = -71.7773;
+uni054D = -14.6484;
+uni054E = -40.0391;
+uni0553 = -29.2969;
+uni0555 = -29.2969;
+uni0577 = -14.6484;
+};
+uni0535 = {
+uni0534 = -17.0898;
+uni0542 = -17.0898;
+uni0579 = -19.5312;
+uni058F = -17.0898;
+};
+uni0536 = {
+uni054A = -30;
+};
+uni0537 = {
+uni054A = -14.6484;
+};
+uni0538 = {
+uni053E = -25;
+uni0546 = -15;
+uni054A = -35;
+uni0576 = -20;
+uni057B = -20;
+};
+uni0539 = {
+uni056E = -30;
+uni0581 = -30;
+uni0585 = -30;
+};
+uni053A = {
+uni056E = -19.5312;
+uni0581 = -19.5312;
+uni0585 = -19.5312;
+};
+uni053B = {
+uni054A = -25;
+};
+uni053C = {
+uni0533 = -70;
+uni053E = -12.207;
+uni053F = -65.918;
+uni0546 = -4.88281;
+uni0549 = -30;
+uni054A = -35;
+uni054E = -65.918;
+uni0553 = -25;
+uni0555 = -25;
+};
+uni053D = {
+uni0540 = -29.2969;
+};
+uni0540 = {
+uni054A = -35;
+};
+uni0542 = {
+uni0533 = -90;
+uni053F = -70;
+uni054E = -63.4766;
+uni057B = -19.5312;
+};
+uni0544 = {
+uni0540 = -65;
+uni054A = -19.5312;
+uni0562 = -78.125;
+uni0564 = -78.125;
+uni0568 = -78.125;
+uni056C = -78.125;
+uni0572 = -78.125;
+};
+uni054C = {
+uni053F = -20;
+};
+uni054E = {
+uni0533 = -58.5938;
+uni053F = -63.4766;
+uni054E = -63.4766;
+};
+uni0550 = {
+"@MMK_R_uni0561" = -50;
+"@MMK_R_uni0562" = -50;
+"@MMK_R_uni0564" = -50;
+"@MMK_R_uni0567" = -40;
+"@MMK_R_uni056B" = -30;
+"@MMK_R_uni0570" = -30;
+"@MMK_R_uni0575" = -50;
+"@MMK_R_uni0576" = -30;
+"@MMK_R_uni0579" = -40;
+"@MMK_R_uni057B" = -50;
+uni053A = -55;
+uni053F = -19.5312;
+uni0546 = -9.76562;
+uni0547 = -12.207;
+uni0551 = -14.6484;
+uni0563 = -50;
+uni0566 = -50;
+uni056A = -50;
+uni056E = -50;
+uni0571 = -68.3594;
+uni0581 = -50;
+uni0585 = -50;
+};
+uni0554 = {
+uni0533 = -21.9727;
+uni0534 = -14.6484;
+uni053F = -14.6484;
+uni0542 = -14.6484;
+uni0546 = -12.207;
+uni0571 = -14.6484;
+uni058F = -14.6484;
+};
+uni0568 = {
+uni055B = -271.97299;
+uni055C = -305.17599;
+uni055E = -440;
+};
+uni056B = {
+uni055B = -271.97299;
+uni055C = -305.17599;
+uni055E = -410;
+};
+uni0572 = {
+uni0575 = 110;
+uni0577 = 130;
+uni0579 = 160;
+uni057B = 90;
+uni0584 = 120;
+};
+uni057B = {
+uni0586 = -19.5312;
+};
+uni0585 = {
+uni055B = -271.97299;
+uni055C = -305.17599;
+uni055E = -440;
+};
+};
+m005 = {
+"@MMK_L_uni0532" = {
+"@MMK_R_uni0534" = -20;
+"@MMK_R_uni053A" = -29;
+"@MMK_R_uni0545" = -10;
+"@MMK_R_uni0547" = -20;
+"@MMK_R_uni0551" = -10;
+"@MMK_R_uni0571" = -12;
+};
+"@MMK_L_uni0533" = {
+"@MMK_R_uni0534" = -53;
+};
+"@MMK_L_uni0535" = {
+"@MMK_R_uni055B" = -50;
+"@MMK_R_uni055C" = -60;
+"@MMK_R_uni055E" = -100;
+"@MMK_R_uni0577" = 15;
+"@MMK_R_uni0579" = 20;
+"@MMK_R_uni057B" = 15;
+};
+"@MMK_L_uni0536" = {
+"@MMK_R_uni0534" = -20;
+};
+"@MMK_L_uni0537" = {
+"@MMK_R_uni0533" = -30;
+"@MMK_R_uni0534" = -15;
+"@MMK_R_uni0536" = -15;
+"@MMK_R_uni053A" = -35;
+"@MMK_R_uni0563" = -29;
+"@MMK_R_uni0571" = -20;
+};
+"@MMK_L_uni0539" = {
+"@MMK_R_uni0571" = -25;
+"@MMK_R_uni057B" = -10;
+};
+"@MMK_L_uni053A" = {
+"@MMK_R_uni0571" = -26;
+"@MMK_R_uni057B" = -10;
+};
+"@MMK_L_uni053B" = {
+"@MMK_R_uni0534" = -25;
+"@MMK_R_uni0543" = -10;
+"@MMK_R_uni0546" = -15;
+"@MMK_R_uni054F" = -20;
+"@MMK_R_uni0556" = -20;
+};
+"@MMK_L_uni053D" = {
+"@MMK_R_uni0571" = -20;
+};
+"@MMK_L_uni053E" = {
+"@MMK_R_uni0534" = -15;
+"@MMK_R_uni0546" = -10;
+};
+"@MMK_L_uni0540" = {
+"@MMK_R_uni0533" = -34;
+"@MMK_R_uni0534" = -35;
+"@MMK_R_uni053A" = -22;
+"@MMK_R_uni053E" = -15;
+"@MMK_R_uni053F" = -20;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0549" = -30;
+"@MMK_R_uni054E" = -39;
+"@MMK_R_uni0553" = -60;
+"@MMK_R_uni0554" = -15;
+"@MMK_R_uni0555" = -30;
+"@MMK_R_uni0561" = -45;
+"@MMK_R_uni0562" = -30;
+"@MMK_R_uni0563" = -30;
+"@MMK_R_uni0564" = -30;
+"@MMK_R_uni0567" = -25;
+"@MMK_R_uni0570" = -32;
+"@MMK_R_uni0571" = -34;
+"@MMK_R_uni0575" = -30;
+"@MMK_R_uni0576" = -20;
+"@MMK_R_uni0577" = -20;
+"@MMK_R_uni057B" = -37;
+};
+"@MMK_L_uni0543" = {
+"@MMK_R_uni0533" = -20;
+"@MMK_R_uni0534" = -20;
+};
+"@MMK_L_uni0544" = {
+"@MMK_R_uni0531" = -15;
+"@MMK_R_uni0533" = -25;
+"@MMK_R_uni0534" = -35;
+"@MMK_R_uni0536" = -25;
+"@MMK_R_uni0538" = -25;
+"@MMK_R_uni053A" = -61;
+"@MMK_R_uni053B" = -20;
+"@MMK_R_uni0541" = -22;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0545" = -22;
+"@MMK_R_uni0549" = -30;
+"@MMK_R_uni054B" = -24;
+"@MMK_R_uni054E" = -45;
+"@MMK_R_uni0550" = -40;
+"@MMK_R_uni0551" = -15;
+"@MMK_R_uni0553" = -50;
+"@MMK_R_uni0554" = -40;
+"@MMK_R_uni0559" = 29;
+"@MMK_R_uni0561" = -30;
+"@MMK_R_uni0562" = -30;
+"@MMK_R_uni0563" = -50;
+"@MMK_R_uni0573" = -25;
+"@MMK_R_uni0575" = -50;
+"@MMK_R_uni0577" = -39;
+"@MMK_R_uni0579" = -60;
+"@MMK_R_uni057B" = -60;
+"@MMK_R_uni0584" = -50;
+};
+"@MMK_L_uni0545" = {
+"@MMK_R_uni053F" = -10;
+"@MMK_R_uni054E" = -10;
+"@MMK_R_uni0579" = -20;
+};
+"@MMK_L_uni0546" = {
+"@MMK_R_uni0534" = -46;
+};
+"@MMK_L_uni0547" = {
+"@MMK_R_uni0534" = -30;
+"@MMK_R_uni0579" = -22;
+};
+"@MMK_L_uni054F" = {
+"@MMK_R_uni0533" = -34;
+"@MMK_R_uni0534" = -24;
+};
+"@MMK_L_uni0551" = {
+"@MMK_R_uni0534" = -15;
+};
+"@MMK_L_uni0552" = {
+"@MMK_R_uni0533" = -29;
+"@MMK_R_uni0534" = -54;
+"@MMK_R_uni0536" = -10;
+"@MMK_R_uni053F" = -15;
+"@MMK_R_uni054F" = -20;
+"@MMK_R_uni055B" = -70;
+"@MMK_R_uni055C" = -70;
+"@MMK_R_uni055E" = -70;
+};
+"@MMK_L_uni0556" = {
+"@MMK_R_uni0533" = -40;
+"@MMK_R_uni0534" = -49;
+"@MMK_R_uni053F" = -15;
+};
+"@MMK_L_uni0565" = {
+"@MMK_R_uni055B" = -115;
+"@MMK_R_uni055C" = -138;
+"@MMK_R_uni055E" = -267;
+};
+"@MMK_L_uni0566" = {
+"@MMK_R_uni0575" = 10;
+"@MMK_R_uni0577" = 25;
+"@MMK_R_uni0579" = 45;
+"@MMK_R_uni057B" = 0;
+"@MMK_R_uni0584" = 25;
+};
+"@MMK_L_uni0567" = {
+"@MMK_R_uni055B" = -115;
+"@MMK_R_uni055C" = -138;
+"@MMK_R_uni055E" = -190;
+"@MMK_R_uni0563" = -15;
+"@MMK_R_uni0571" = -15;
+};
+"@MMK_L_uni0569" = {
+"@MMK_R_uni0563" = 20;
+};
+"@MMK_L_uni056B" = {
+"@MMK_R_uni055B" = -115;
+"@MMK_R_uni055C" = -138;
+"@MMK_R_uni055E" = -190;
+};
+"@MMK_L_uni0579" = {
+"@MMK_R_uni0577" = 30;
+"@MMK_R_uni0579" = 25;
+};
+"@MMK_L_uni0582" = {
+"@MMK_R_uni055B" = -115;
+"@MMK_R_uni055C" = -120;
+"@MMK_R_uni055E" = -190;
+};
+"@MMK_L_uni0586" = {
+"@MMK_R_uni0559" = -44;
+};
+uni0531 = {
+uni0533 = -30;
+uni0534 = -40;
+uni0542 = -30;
+uni0549 = -14;
+uni054A = -25;
+uni054E = -20;
+uni0553 = -15;
+uni0555 = -15;
+uni058F = -45;
+};
+uni0535 = {
+uni0534 = -30;
+uni0542 = -30;
+uni0579 = -20;
+uni058F = -30;
+};
+uni0537 = {
+uni054A = -35;
+};
+uni0538 = {
+uni054A = -25;
+uni057B = -20;
+};
+uni0539 = {
+uni056E = -25;
+uni0581 = -25;
+uni0585 = -25;
+};
+uni053A = {
+uni056E = -25;
+uni0581 = -25;
+uni0585 = -25;
+};
+uni053B = {
+uni054A = -20;
+};
+uni053C = {
+uni0533 = -45;
+uni053E = -20;
+uni053F = -25;
+uni0549 = -30;
+uni054E = -50;
+uni0553 = -45;
+uni0555 = -30;
+};
+uni0540 = {
+uni054A = -40;
+};
+uni0542 = {
+uni0533 = -40;
+uni053F = -45;
+uni054E = -40;
+};
+uni0544 = {
+uni0540 = -50;
+uni054A = -35;
+uni0562 = -50;
+uni0564 = -50;
+uni0568 = -50;
+uni056C = -50;
+uni0572 = -50;
+};
+uni054C = {
+uni0571 = -25;
+};
+uni054E = {
+uni0533 = -50;
+uni053F = -35;
+uni054E = -35;
+};
+uni0550 = {
+"@MMK_R_uni0561" = -55;
+"@MMK_R_uni0562" = -55;
+"@MMK_R_uni0564" = -55;
+"@MMK_R_uni0567" = -35;
+"@MMK_R_uni056B" = -35;
+"@MMK_R_uni0570" = -40;
+"@MMK_R_uni0575" = -55;
+"@MMK_R_uni0576" = -25;
+"@MMK_R_uni0577" = -35;
+"@MMK_R_uni0579" = -60;
+"@MMK_R_uni057B" = -35;
+"@MMK_R_uni0584" = -50;
+uni053A = -90;
+uni0547 = -25;
+uni0563 = -75;
+uni0566 = -75;
+uni056A = -75;
+uni056E = -75;
+uni0571 = -75;
+uni0581 = -75;
+uni0585 = -75;
+};
+uni0554 = {
+uni0571 = -15;
+};
+uni0568 = {
+uni055B = -115;
+uni055C = -138;
+uni055E = -267;
+};
+uni056B = {
+uni055B = -115;
+uni055C = -138;
+uni055E = -240;
+};
+uni0572 = {
+uni0575 = 20;
+uni0577 = 45;
+uni0579 = 55;
+uni057B = 20;
+};
+uni0585 = {
+uni055B = -115;
+uni055C = -138;
+uni055E = -267;
+};
+};
+m006 = {
+"@MMK_L_uni0532" = {
+"@MMK_R_uni0534" = -20;
+"@MMK_R_uni053A" = -29;
+"@MMK_R_uni0545" = -10;
+"@MMK_R_uni0547" = -20;
+"@MMK_R_uni0551" = -10;
+"@MMK_R_uni0571" = -12;
+};
+"@MMK_L_uni0533" = {
+"@MMK_R_uni0534" = -53;
+};
+"@MMK_L_uni0535" = {
+"@MMK_R_uni055B" = -60;
+"@MMK_R_uni055C" = -30;
+"@MMK_R_uni055E" = -70;
+"@MMK_R_uni0577" = 10;
+"@MMK_R_uni0579" = 20;
+};
+"@MMK_L_uni0536" = {
+"@MMK_R_uni0534" = -20;
+};
+"@MMK_L_uni0537" = {
+"@MMK_R_uni0533" = -30;
+"@MMK_R_uni0534" = -35;
+"@MMK_R_uni0536" = -15;
+"@MMK_R_uni053A" = -35;
+"@MMK_R_uni0563" = -30;
+"@MMK_R_uni0571" = -20;
+};
+"@MMK_L_uni0539" = {
+"@MMK_R_uni0571" = -60;
+"@MMK_R_uni057B" = -10;
+};
+"@MMK_L_uni053A" = {
+"@MMK_R_uni0571" = -26;
+};
+"@MMK_L_uni053B" = {
+"@MMK_R_uni0534" = -25;
+"@MMK_R_uni0543" = -10;
+"@MMK_R_uni0546" = -15;
+"@MMK_R_uni054F" = -20;
+"@MMK_R_uni0556" = -20;
+};
+"@MMK_L_uni053D" = {
+"@MMK_R_uni0571" = -20;
+};
+"@MMK_L_uni053E" = {
+"@MMK_R_uni0534" = -30;
+};
+"@MMK_L_uni0540" = {
+"@MMK_R_uni0533" = -34;
+"@MMK_R_uni0534" = -35;
+"@MMK_R_uni053A" = -45;
+"@MMK_R_uni053E" = -15;
+"@MMK_R_uni053F" = -20;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0549" = -45;
+"@MMK_R_uni054E" = -65;
+"@MMK_R_uni0553" = -60;
+"@MMK_R_uni0554" = -15;
+"@MMK_R_uni0555" = -30;
+"@MMK_R_uni0561" = -40;
+"@MMK_R_uni0562" = -30;
+"@MMK_R_uni0563" = -30;
+"@MMK_R_uni0564" = -30;
+"@MMK_R_uni0567" = -25;
+"@MMK_R_uni0570" = -45;
+"@MMK_R_uni0571" = -34;
+"@MMK_R_uni0575" = -35;
+"@MMK_R_uni0576" = -20;
+"@MMK_R_uni0577" = -20;
+"@MMK_R_uni057B" = -37;
+uni0540 = -35;
+};
+"@MMK_L_uni0543" = {
+"@MMK_R_uni0533" = -20;
+"@MMK_R_uni0534" = -45;
+};
+"@MMK_L_uni0544" = {
+"@MMK_R_uni0533" = -25;
+"@MMK_R_uni0534" = -35;
+"@MMK_R_uni0536" = -25;
+"@MMK_R_uni0538" = -25;
+"@MMK_R_uni053A" = -70;
+"@MMK_R_uni053F" = 25;
+"@MMK_R_uni0541" = -22;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0545" = -22;
+"@MMK_R_uni0549" = -30;
+"@MMK_R_uni054B" = -24;
+"@MMK_R_uni054E" = -45;
+"@MMK_R_uni0550" = -35;
+"@MMK_R_uni0551" = -15;
+"@MMK_R_uni0553" = -50;
+"@MMK_R_uni0554" = -60;
+"@MMK_R_uni0559" = 29;
+"@MMK_R_uni0561" = -20;
+"@MMK_R_uni0562" = -20;
+"@MMK_R_uni0563" = -50;
+"@MMK_R_uni0573" = -25;
+"@MMK_R_uni0575" = -50;
+"@MMK_R_uni0577" = -39;
+"@MMK_R_uni0579" = -60;
+"@MMK_R_uni057B" = -60;
+"@MMK_R_uni0584" = -50;
+};
+"@MMK_L_uni0545" = {
+"@MMK_R_uni054E" = -10;
+"@MMK_R_uni0579" = -20;
+};
+"@MMK_L_uni0546" = {
+"@MMK_R_uni0534" = -60;
+};
+"@MMK_L_uni0547" = {
+"@MMK_R_uni0534" = -30;
+"@MMK_R_uni0579" = -22;
+};
+"@MMK_L_uni054F" = {
+"@MMK_R_uni0533" = -34;
+"@MMK_R_uni0534" = -40;
+};
+"@MMK_L_uni0551" = {
+"@MMK_R_uni0534" = -15;
+};
+"@MMK_L_uni0552" = {
+"@MMK_R_uni0533" = -45;
+"@MMK_R_uni0534" = -70;
+"@MMK_R_uni0536" = -10;
+"@MMK_R_uni053F" = -15;
+"@MMK_R_uni054F" = -20;
+"@MMK_R_uni055B" = -80;
+"@MMK_R_uni055C" = -80;
+"@MMK_R_uni055E" = -80;
+};
+"@MMK_L_uni0556" = {
+"@MMK_R_uni0533" = -40;
+"@MMK_R_uni0534" = -70;
+"@MMK_R_uni053F" = -15;
+};
+"@MMK_L_uni0565" = {
+"@MMK_R_uni055B" = -190;
+"@MMK_R_uni055C" = -193;
+"@MMK_R_uni055E" = -290;
+};
+"@MMK_L_uni0566" = {
+"@MMK_R_uni0562" = 0;
+"@MMK_R_uni0575" = 45;
+"@MMK_R_uni0577" = 55;
+"@MMK_R_uni0579" = 75;
+"@MMK_R_uni057B" = 30;
+"@MMK_R_uni0584" = 25;
+};
+"@MMK_L_uni0567" = {
+"@MMK_R_uni055B" = -160;
+"@MMK_R_uni055C" = -140;
+"@MMK_R_uni055E" = -190;
+"@MMK_R_uni0563" = -15;
+"@MMK_R_uni0571" = -15;
+};
+"@MMK_L_uni0569" = {
+"@MMK_R_uni0563" = 20;
+};
+"@MMK_L_uni056B" = {
+"@MMK_R_uni055B" = -190;
+"@MMK_R_uni055C" = -190;
+"@MMK_R_uni055E" = -190;
+};
+"@MMK_L_uni0579" = {
+"@MMK_R_uni0577" = 25;
+"@MMK_R_uni0579" = 25;
+};
+"@MMK_L_uni0582" = {
+"@MMK_R_uni055B" = -120;
+"@MMK_R_uni055C" = -120;
+"@MMK_R_uni055E" = -190;
+};
+"@MMK_L_uni0586" = {
+"@MMK_R_uni0559" = -44;
+};
+uni0531 = {
+uni0533 = -55;
+uni0534 = -60;
+uni0542 = -50;
+uni0549 = -14;
+uni054A = -50;
+uni054E = -20;
+uni0553 = -15;
+uni0555 = -15;
+uni058F = -60;
+};
+uni0535 = {
+uni0534 = -30;
+uni0542 = -30;
+uni0579 = -20;
+uni058F = -30;
+};
+uni0537 = {
+uni054A = -35;
+};
+uni0538 = {
+uni054A = -25;
+uni057B = -20;
+};
+uni0539 = {
+uni056E = -40;
+uni0581 = -40;
+uni0585 = -40;
+};
+uni053A = {
+uni056E = -25;
+uni0581 = -25;
+uni0585 = -25;
+};
+uni053B = {
+uni054A = -20;
+};
+uni053C = {
+uni0533 = -60;
+uni053E = -20;
+uni053F = -25;
+uni0549 = -30;
+uni054E = -50;
+uni0553 = -45;
+uni0555 = -30;
+};
+uni0540 = {
+uni054A = -40;
+};
+uni0542 = {
+uni0533 = -60;
+uni053F = -45;
+uni054E = -40;
+};
+uni0544 = {
+uni0540 = -50;
+uni054A = -35;
+uni0562 = -50;
+uni0564 = -50;
+uni0568 = -50;
+uni056C = -50;
+uni0572 = -50;
+};
+uni054C = {
+uni0571 = -45;
+};
+uni054E = {
+uni0533 = -50;
+uni053F = -35;
+uni054E = -35;
+};
+uni0550 = {
+"@MMK_R_uni0561" = -40;
+"@MMK_R_uni0562" = -40;
+"@MMK_R_uni0564" = -40;
+"@MMK_R_uni0567" = -40;
+"@MMK_R_uni056B" = -25;
+"@MMK_R_uni0570" = -40;
+"@MMK_R_uni0575" = -40;
+"@MMK_R_uni0576" = -35;
+"@MMK_R_uni0577" = -20;
+"@MMK_R_uni0579" = -45;
+"@MMK_R_uni057B" = -40;
+"@MMK_R_uni0584" = -45;
+uni053A = -90;
+uni0547 = -45;
+uni0563 = -75;
+uni0566 = -75;
+uni056A = -75;
+uni056E = -75;
+uni0571 = -90;
+uni0581 = -75;
+uni0585 = -75;
+};
+uni0554 = {
+uni0571 = -30;
+};
+uni0568 = {
+uni055B = -196;
+uni055C = -193;
+uni055E = -312;
+};
+uni056B = {
+uni055B = -196;
+uni055C = -193;
+uni055E = -290;
+};
+uni0572 = {
+uni0575 = 40;
+uni0577 = 45;
+uni0579 = 70;
+uni057B = 20;
+};
+uni0585 = {
+uni055B = -196;
+uni055C = -193;
+uni055E = -280;
+};
+};
+m008 = {
+"@MMK_L_uni0532" = {
+"@MMK_R_uni0534" = -20;
+"@MMK_R_uni053A" = -29;
+"@MMK_R_uni0545" = -10;
+"@MMK_R_uni0547" = -20;
+"@MMK_R_uni0551" = -10;
+"@MMK_R_uni0571" = -25;
+};
+"@MMK_L_uni0533" = {
+"@MMK_R_uni0534" = -53;
+};
+"@MMK_L_uni0535" = {
+"@MMK_R_uni055B" = -75;
+"@MMK_R_uni055C" = -20;
+"@MMK_R_uni055E" = -30;
+"@MMK_R_uni0575" = 25;
+"@MMK_R_uni0577" = 15;
+"@MMK_R_uni0579" = 30;
+"@MMK_R_uni057B" = -15;
+};
+"@MMK_L_uni0536" = {
+"@MMK_R_uni0534" = -55;
+};
+"@MMK_L_uni0537" = {
+"@MMK_R_uni0533" = -30;
+"@MMK_R_uni0534" = -15;
+"@MMK_R_uni0536" = -15;
+"@MMK_R_uni053A" = -35;
+"@MMK_R_uni0563" = -29;
+"@MMK_R_uni0571" = -20;
+};
+"@MMK_L_uni0539" = {
+"@MMK_R_uni0571" = -50;
+"@MMK_R_uni057B" = -10;
+};
+"@MMK_L_uni053A" = {
+"@MMK_R_uni0571" = -35;
+};
+"@MMK_L_uni053B" = {
+"@MMK_R_uni0534" = -25;
+"@MMK_R_uni0543" = -10;
+"@MMK_R_uni0546" = -15;
+"@MMK_R_uni054F" = -20;
+"@MMK_R_uni0556" = -20;
+};
+"@MMK_L_uni053D" = {
+"@MMK_R_uni0571" = -40;
+};
+"@MMK_L_uni053E" = {
+"@MMK_R_uni0534" = -30;
+};
+"@MMK_L_uni0540" = {
+"@MMK_R_uni0533" = -34;
+"@MMK_R_uni0534" = -50;
+"@MMK_R_uni0536" = -25;
+"@MMK_R_uni053A" = -65;
+"@MMK_R_uni053E" = -15;
+"@MMK_R_uni053F" = -20;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0549" = -30;
+"@MMK_R_uni054E" = -90;
+"@MMK_R_uni0553" = -60;
+"@MMK_R_uni0554" = -35;
+"@MMK_R_uni0555" = -45;
+"@MMK_R_uni0561" = -50;
+"@MMK_R_uni0562" = -20;
+"@MMK_R_uni0563" = -50;
+"@MMK_R_uni0564" = -30;
+"@MMK_R_uni0567" = -20;
+"@MMK_R_uni0570" = -40;
+"@MMK_R_uni0571" = -34;
+"@MMK_R_uni0575" = -20;
+"@MMK_R_uni0576" = -20;
+"@MMK_R_uni0577" = -20;
+"@MMK_R_uni057B" = -40;
+uni0540 = -45;
+};
+"@MMK_L_uni0543" = {
+"@MMK_R_uni0533" = -20;
+"@MMK_R_uni0534" = -20;
+};
+"@MMK_L_uni0544" = {
+"@MMK_R_uni0533" = -25;
+"@MMK_R_uni0534" = -35;
+"@MMK_R_uni0536" = -25;
+"@MMK_R_uni0538" = -20;
+"@MMK_R_uni053A" = -61;
+"@MMK_R_uni053F" = 20;
+"@MMK_R_uni0541" = -22;
+"@MMK_R_uni0543" = -20;
+"@MMK_R_uni0545" = -22;
+"@MMK_R_uni0549" = -30;
+"@MMK_R_uni054B" = -24;
+"@MMK_R_uni054E" = -70;
+"@MMK_R_uni0550" = -20;
+"@MMK_R_uni0551" = -15;
+"@MMK_R_uni0553" = -50;
+"@MMK_R_uni0554" = -40;
+"@MMK_R_uni0559" = 29;
+"@MMK_R_uni0561" = -5;
+"@MMK_R_uni0562" = -5;
+"@MMK_R_uni0563" = -50;
+"@MMK_R_uni0573" = -25;
+"@MMK_R_uni0575" = -50;
+"@MMK_R_uni0577" = -50;
+"@MMK_R_uni0579" = -60;
+"@MMK_R_uni057B" = -60;
+"@MMK_R_uni0584" = -50;
+};
+"@MMK_L_uni0545" = {
+"@MMK_R_uni053F" = -10;
+"@MMK_R_uni054E" = -25;
+"@MMK_R_uni0579" = -20;
+};
+"@MMK_L_uni0546" = {
+"@MMK_R_uni0534" = -46;
+};
+"@MMK_L_uni0547" = {
+"@MMK_R_uni0534" = -30;
+"@MMK_R_uni0579" = -22;
+};
+"@MMK_L_uni054F" = {
+"@MMK_R_uni0533" = -20;
+"@MMK_R_uni0534" = -40;
+};
+"@MMK_L_uni0551" = {
+"@MMK_R_uni0534" = -45;
+};
+"@MMK_L_uni0552" = {
+"@MMK_R_uni0533" = -29;
+"@MMK_R_uni0534" = -54;
+"@MMK_R_uni0536" = -10;
+"@MMK_R_uni053F" = -15;
+"@MMK_R_uni054F" = -20;
+"@MMK_R_uni055B" = -80;
+"@MMK_R_uni055C" = -80;
+"@MMK_R_uni055E" = -80;
+};
+"@MMK_L_uni0556" = {
+"@MMK_R_uni0533" = -40;
+"@MMK_R_uni0534" = -80;
+"@MMK_R_uni053F" = -15;
+};
+"@MMK_L_uni0565" = {
+"@MMK_R_uni055B" = -240;
+"@MMK_R_uni055C" = -250;
+"@MMK_R_uni055E" = -290;
+};
+"@MMK_L_uni0566" = {
+"@MMK_R_uni0562" = 0;
+"@MMK_R_uni056B" = 55;
+"@MMK_R_uni0575" = 100;
+"@MMK_R_uni0577" = 100;
+"@MMK_R_uni0579" = 120;
+"@MMK_R_uni057B" = 60;
+"@MMK_R_uni0584" = 110;
+};
+"@MMK_L_uni0567" = {
+"@MMK_R_uni055B" = -220;
+"@MMK_R_uni055C" = -140;
+"@MMK_R_uni055E" = -190;
+"@MMK_R_uni0571" = -15;
+};
+"@MMK_L_uni0569" = {
+"@MMK_R_uni0563" = 25;
+};
+"@MMK_L_uni056B" = {
+"@MMK_R_uni055B" = -190;
+"@MMK_R_uni055C" = -190;
+"@MMK_R_uni055E" = -190;
+};
+"@MMK_L_uni0579" = {
+"@MMK_R_uni0577" = 15;
+"@MMK_R_uni0579" = 25;
+};
+"@MMK_L_uni0582" = {
+"@MMK_R_uni055B" = -190;
+"@MMK_R_uni055C" = -190;
+"@MMK_R_uni055E" = -240;
+"@MMK_R_uni0579" = 30;
+};
+"@MMK_L_uni0586" = {
+"@MMK_R_uni0559" = -80;
+};
+uni0531 = {
+uni0533 = -50;
+uni0534 = -75;
+uni0542 = -75;
+uni0549 = -30;
+uni054A = -75;
+uni054E = -20;
+uni0553 = -15;
+uni0555 = -15;
+uni058F = -85;
+};
+uni0535 = {
+uni0534 = -30;
+uni0542 = -30;
+uni058F = -30;
+};
+uni0537 = {
+uni054A = -20;
+};
+uni0538 = {
+uni054A = -25;
+uni057B = -20;
+};
+uni0539 = {
+uni056E = -25;
+uni0581 = -25;
+uni0585 = -25;
+};
+uni053A = {
+uni056E = -25;
+uni0581 = -25;
+uni0585 = -25;
+};
+uni053B = {
+uni054A = -20;
+};
+uni053C = {
+uni0533 = -45;
+uni053E = -20;
+uni053F = -45;
+uni0549 = -30;
+uni054E = -50;
+uni0553 = -45;
+uni0555 = -30;
+};
+uni0540 = {
+uni054A = -40;
+};
+uni0542 = {
+uni0533 = -70;
+uni053F = -45;
+uni054E = -40;
+};
+uni0544 = {
+uni0540 = -80;
+uni0562 = -65;
+uni0564 = -65;
+uni0568 = -65;
+uni056C = -65;
+uni0572 = -65;
+};
+uni054C = {
+uni0571 = -25;
+};
+uni054E = {
+uni0533 = -80;
+uni053F = -35;
+uni054E = -35;
+};
+uni0550 = {
+"@MMK_R_uni0561" = -30;
+"@MMK_R_uni0562" = -30;
+"@MMK_R_uni0564" = -30;
+"@MMK_R_uni0567" = -25;
+"@MMK_R_uni056B" = -25;
+"@MMK_R_uni0570" = -20;
+"@MMK_R_uni0575" = -30;
+"@MMK_R_uni0576" = -25;
+"@MMK_R_uni0579" = -40;
+"@MMK_R_uni057B" = -30;
+"@MMK_R_uni0584" = -30;
+uni053A = -90;
+uni0547 = -25;
+uni0563 = -60;
+uni0566 = -60;
+uni056A = -60;
+uni056E = -60;
+uni0571 = -60;
+uni0581 = -60;
+uni0585 = -60;
+};
+uni0554 = {
+uni0571 = -40;
+};
+uni0568 = {
+uni055B = -275;
+uni055C = -275;
+uni055E = -290;
+};
+uni056B = {
+uni055B = -240;
+uni055C = -240;
+uni055E = -240;
+};
+uni0572 = {
+uni0575 = 90;
+uni0577 = 90;
+uni0579 = 115;
+uni057B = 55;
+};
+uni0585 = {
+uni055B = -280;
+uni055C = -275;
+uni055E = -330;
+};
+};
+};
+metrics = (
+{
+type = ascender;
+},
+{
+type = "cap height";
+},
+{
+type = "x-height";
+},
+{
+type = baseline;
+},
+{
+type = descender;
+},
+{
+type = "italic angle";
+}
+);
+properties = (
+{
+key = copyrights;
+values = (
+{
+language = dflt;
+value = "Copyright 2022 The Noto Project Authors (https://github.com/notofonts/armenian)";
+}
+);
+},
+{
+key = descriptions;
+values = (
+{
+language = dflt;
+value = "Designed by Monotype design team.";
+}
+);
+},
+{
+key = designers;
+values = (
+{
+language = dflt;
+value = "Monotype Design Team";
+}
+);
+},
+{
+key = designerURL;
+value = "http://www.monotype.com/studio";
+},
+{
+key = licenses;
+values = (
+{
+language = dflt;
+value = "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://scripts.sil.org/OFL";
+}
+);
+},
+{
+key = licenseURL;
+value = "https://scripts.sil.org/OFL";
+},
+{
+key = manufacturers;
+values = (
+{
+language = dflt;
+value = "Monotype Imaging Inc.";
+}
+);
+},
+{
+key = manufacturerURL;
+value = "http://www.google.com/get/noto/";
+},
+{
+key = trademarks;
+values = (
+{
+language = dflt;
+value = "Noto is a trademark of Google Inc.";
+}
+);
+},
+{
+key = vendorID;
+value = GOOG;
+},
+{
+key = versionString;
+value = "Version 2.008";
+}
+);
+settings = {
+disablesNiceNames = 1;
+};
+stems = (
+{
+name = vStem0;
+},
+{
+horizontal = 1;
+name = hStem0;
+},
+{
+name = vStem0;
+},
+{
+horizontal = 1;
+name = hStem0;
+},
+{
+name = vStem0;
+},
+{
+horizontal = 1;
+name = hStem0;
+},
+{
+name = vStem0;
+},
+{
+horizontal = 1;
+name = hStem0;
+},
+{
+name = vStem0;
+},
+{
+horizontal = 1;
+name = hStem0;
+},
+{
+name = vStem0;
+},
+{
+horizontal = 1;
+name = hStem0;
+},
+{
+name = vStem0;
+},
+{
+horizontal = 1;
+name = hStem0;
+}
+);
+unitsPerEm = 1000;
+versionMajor = 2;
+versionMinor = 8;
+}

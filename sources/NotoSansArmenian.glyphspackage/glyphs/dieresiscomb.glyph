@@ -1,0 +1,431 @@
+{
+color = 10;
+glyphname = dieresiscomb;
+layers = (
+{
+anchors = (
+{
+name = _top;
+pos = (-1,528);
+},
+{
+name = top;
+pos = (0,679);
+}
+);
+layerId = m001;
+shapes = (
+{
+closed = 1;
+nodes = (
+(-117,661,o),
+(-112,647,o),
+(-94,647,cs),
+(-72,647,o),
+(-69,661,o),
+(-69,678,cs),
+(-69,694,o),
+(-72,709,o),
+(-94,709,cs),
+(-112,709,o),
+(-117,694,o),
+(-117,678,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(68,661,o),
+(73,647,o),
+(91,647,cs),
+(113,647,o),
+(116,661,o),
+(116,678,cs),
+(116,694,o),
+(113,709,o),
+(91,709,cs),
+(73,709,o),
+(68,694,o),
+(68,678,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Mark;
+com.schriftgestaltung.Glyphs.subCategory = Nonspacing;
+};
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (-1,536);
+},
+{
+name = top;
+pos = (0,681);
+}
+);
+layerId = m002;
+shapes = (
+{
+closed = 1;
+nodes = (
+(-141,647,o),
+(-120,631,o),
+(-94,631,cs),
+(-69,631,o),
+(-47,647,o),
+(-47,681,cs),
+(-47,716,o),
+(-69,730,o),
+(-94,730,cs),
+(-120,730,o),
+(-141,716,o),
+(-141,681,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(47,647,o),
+(68,631,o),
+(93,631,cs),
+(118,631,o),
+(140,647,o),
+(140,681,cs),
+(140,716,o),
+(118,730,o),
+(93,730,cs),
+(68,730,o),
+(47,716,o),
+(47,681,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Mark;
+com.schriftgestaltung.Glyphs.subCategory = Nonspacing;
+};
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (1,546);
+},
+{
+name = top;
+pos = (0,686);
+}
+);
+associatedMasterId = m002;
+attr = {
+coordinates = (
+144,
+100
+);
+};
+background = {
+shapes = (
+{
+closed = 1;
+nodes = (
+(-178.21,641.51,o),
+(-148.06,620.63,o),
+(-109.25,620.63,cs),
+(-72.05,620.63,o),
+(-39.68,641.51,o),
+(-39.68,686.49,cs),
+(-39.68,732.47,o),
+(-72.05,752.57,o),
+(-109.25,752.57,cs),
+(-148.06,752.57,o),
+(-178.21,732.47,o),
+(-178.21,686.49,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(37.85,641.51,o),
+(68,620.63,o),
+(107.03,620.63,cs),
+(144.23,620.63,o),
+(176.6,641.51,o),
+(176.6,686.49,cs),
+(176.6,732.47,o),
+(144.23,752.57,o),
+(107.03,752.57,cs),
+(68,752.57,o),
+(37.85,732.47,o),
+(37.85,686.49,cs)
+);
+}
+);
+};
+layerId = "52c8d60a-9c90-4db2-b46b-ad4aadee7f1f";
+name = "SemiBold (intermediate)";
+shapes = (
+{
+closed = 1;
+nodes = (
+(-167,642,o),
+(-137,621,o),
+(-99,621,cs),
+(-62,621,o),
+(-30,642,o),
+(-30,686,cs),
+(-30,732,o),
+(-62,752,o),
+(-99,752,cs),
+(-137,752,o),
+(-167,732,o),
+(-167,686,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(30,642,o),
+(60,621,o),
+(99,621,cs),
+(136,621,o),
+(168,642,o),
+(168,686,cs),
+(168,732,o),
+(136,752,o),
+(99,752,cs),
+(60,752,o),
+(30,732,o),
+(30,686,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Mark;
+com.schriftgestaltung.Glyphs.subCategory = Nonspacing;
+};
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (-1,553);
+},
+{
+name = top;
+pos = (0,690);
+}
+);
+layerId = m004;
+shapes = (
+{
+closed = 1;
+nodes = (
+(-202,638,o),
+(-166,614,o),
+(-119,614,cs),
+(-74,614,o),
+(-35,638,o),
+(-35,690,cs),
+(-35,743,o),
+(-74,767,o),
+(-119,767,cs),
+(-166,767,o),
+(-202,743,o),
+(-202,690,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(32,638,o),
+(68,614,o),
+(116,614,cs),
+(161,614,o),
+(200,638,o),
+(200,690,cs),
+(200,743,o),
+(161,767,o),
+(116,767,cs),
+(68,767,o),
+(32,743,o),
+(32,690,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Mark;
+com.schriftgestaltung.Glyphs.subCategory = Nonspacing;
+};
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (-1,527);
+},
+{
+name = top;
+pos = (0,664);
+}
+);
+layerId = m005;
+shapes = (
+{
+closed = 1;
+nodes = (
+(-96,646,o),
+(-87,631,o),
+(-71,631,cs),
+(-57,631,o),
+(-47,644,o),
+(-47,663,cs),
+(-47,682,o),
+(-57,696,o),
+(-71,696,cs),
+(-87,696,o),
+(-96,680,o),
+(-96,663,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(45,646,o),
+(55,631,o),
+(70,631,cs),
+(85,631,o),
+(95,645,o),
+(95,664,cs),
+(95,683,o),
+(84,696,o),
+(70,696,cs),
+(55,696,o),
+(45,681,o),
+(45,664,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Mark;
+com.schriftgestaltung.Glyphs.subCategory = Nonspacing;
+};
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (1,537);
+},
+{
+name = top;
+pos = (0,668);
+}
+);
+layerId = m006;
+shapes = (
+{
+closed = 1;
+nodes = (
+(-124,633,o),
+(-105,616,o),
+(-81,616,cs),
+(-57,616,o),
+(-39,633,o),
+(-39,668,cs),
+(-39,701,o),
+(-57,718,o),
+(-81,718,cs),
+(-105,718,o),
+(-124,702,o),
+(-124,668,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(39,633,o),
+(57,616,o),
+(82,616,cs),
+(106,616,o),
+(125,633,o),
+(125,668,cs),
+(125,701,o),
+(106,718,o),
+(82,718,cs),
+(58,718,o),
+(39,702,o),
+(39,668,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Mark;
+com.schriftgestaltung.Glyphs.subCategory = Nonspacing;
+};
+width = 0;
+},
+{
+anchors = (
+{
+name = _top;
+pos = (0,553);
+},
+{
+name = top;
+pos = (0,688);
+}
+);
+layerId = m008;
+shapes = (
+{
+closed = 1;
+nodes = (
+(-169,642,o),
+(-141,614,o),
+(-98,614,cs),
+(-53,614,o),
+(-25,644,o),
+(-25,690,cs),
+(-25,737,o),
+(-53,767,o),
+(-98,767,cs),
+(-141,767,o),
+(-169,739,o),
+(-169,690,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(24,643,o),
+(51,614,o),
+(96,614,cs),
+(142,614,o),
+(169,644,o),
+(169,690,cs),
+(169,737,o),
+(142,767,o),
+(96,767,cs),
+(52,767,o),
+(24,739,o),
+(24,690,cs)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Mark;
+com.schriftgestaltung.Glyphs.subCategory = Nonspacing;
+};
+width = 0;
+}
+);
+unicode = 776;
+}

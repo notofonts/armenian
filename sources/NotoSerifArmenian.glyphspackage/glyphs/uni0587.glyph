@@ -1,0 +1,332 @@
+{
+glyphname = uni0587;
+kernLeft = uni0587;
+layers = (
+{
+layerId = m001;
+shapes = (
+{
+closed = 1;
+nodes = (
+(319,-10,o),
+(353,33,o),
+(382,91,c),
+(386,91,l),
+(389,0,l),
+(413,0,l),
+(413,492,l),
+(320,492,l),
+(320,472,l),
+(383,472,o),
+(385,468,o),
+(385,398,cs),
+(385,202,ls),
+(385,104,o),
+(336,15,o),
+(237,15,cs),
+(143,15,o),
+(116,86,o),
+(116,181,cs),
+(116,760,l),
+(25,760,l),
+(25,740,l),
+(84,740,o),
+(88,736,o),
+(88,666,cs),
+(88,184,ls),
+(88,52,o),
+(136,-10,o),
+(236,-10,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(519,0,l),
+(519,28,l),
+(399,28,l),
+(399,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Lowercase;
+};
+width = 524;
+},
+{
+layerId = m003;
+shapes = (
+{
+closed = 1;
+nodes = (
+(305,-12,o),
+(344,12,o),
+(379,80,c),
+(384,80,l),
+(392,0,l),
+(478,0,l),
+(478,492,l),
+(327,492,l),
+(327,453,l),
+(377,453,o),
+(381,447,o),
+(381,394,cs),
+(381,216,ls),
+(381,127,o),
+(351,47,o),
+(271,47,cs),
+(199,47,o),
+(178,106,o),
+(178,196,cs),
+(178,760,l),
+(27,760,l),
+(27,721,l),
+(76,721,o),
+(80,715,o),
+(80,660,cs),
+(80,182,ls),
+(80,48,o),
+(134,-12,o),
+(233,-12,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(606,0,l),
+(606,46,l),
+(466,46,l),
+(466,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Lowercase;
+};
+width = 600;
+},
+{
+layerId = m005;
+shapes = (
+{
+closed = 1;
+nodes = (
+(279,-14,o),
+(324,-4,o),
+(368,65,c),
+(373,65,l),
+(389,0,l),
+(554,0,l),
+(554,492,l),
+(328,492,l),
+(328,430,l),
+(362,430,o),
+(368,419,o),
+(368,388,cs),
+(368,234,ls),
+(368,156,o),
+(364,88,o),
+(307,88,cs),
+(263,88,o),
+(248,131,o),
+(248,214,cs),
+(248,760,l),
+(22,760,l),
+(22,698,l),
+(58,698,o),
+(62,687,o),
+(62,653,cs),
+(62,179,ls),
+(62,43,o),
+(123,-14,o),
+(222,-14,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(711,0,l),
+(711,70,l),
+(546,70,l),
+(546,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Lowercase;
+};
+width = 698;
+},
+{
+layerId = m006;
+shapes = (
+{
+closed = 1;
+nodes = (
+(267,-10,o),
+(304,26,o),
+(328,77,c),
+(332,77,l),
+(334,0,l),
+(358,0,l),
+(358,492,l),
+(278,492,l),
+(278,472,l),
+(319,472,o),
+(330,468,o),
+(330,382,cs),
+(330,203,ls),
+(330,104,o),
+(292,15,o),
+(208,15,cs),
+(138,15,o),
+(106,70,o),
+(106,183,cs),
+(106,760,l),
+(26,760,l),
+(26,740,l),
+(70,740,o),
+(78,735,o),
+(78,667,cs),
+(78,184,ls),
+(78,44,o),
+(126,-10,o),
+(206,-10,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(450,0,l),
+(450,25,l),
+(348,25,l),
+(348,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Lowercase;
+};
+width = 456;
+},
+{
+layerId = m007;
+shapes = (
+{
+closed = 1;
+nodes = (
+(268,-10,o),
+(305,24,o),
+(329,75,c),
+(333,75,l),
+(341,0,l),
+(394,0,l),
+(394,492,l),
+(280,492,l),
+(280,457,l),
+(319,457,o),
+(331,451,o),
+(331,374,cs),
+(331,210,ls),
+(331,113,o),
+(299,40,o),
+(226,40,cs),
+(165,40,o),
+(139,95,o),
+(139,201,cs),
+(139,760,l),
+(25,760,l),
+(25,725,l),
+(69,725,o),
+(76,719,o),
+(76,652,cs),
+(76,185,ls),
+(76,47,o),
+(122,-10,o),
+(208,-10,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(489,0,l),
+(489,43,l),
+(375,43,l),
+(375,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Lowercase;
+};
+width = 494;
+},
+{
+layerId = m009;
+shapes = (
+{
+closed = 1;
+nodes = (
+(271,-10,o),
+(308,17,o),
+(332,69,c),
+(336,69,l),
+(360,0,l),
+(495,0,l),
+(495,492,l),
+(284,492,l),
+(284,436,l),
+(320,436,o),
+(332,427,o),
+(332,374,cs),
+(332,230,ls),
+(332,138,o),
+(317,80,o),
+(278,80,cs),
+(243,80,o),
+(233,137,o),
+(233,222,cs),
+(233,760,l),
+(22,760,l),
+(22,704,l),
+(65,704,o),
+(70,696,o),
+(70,633,cs),
+(70,188,ls),
+(70,54,o),
+(110,-10,o),
+(212,-10,cs)
+);
+},
+{
+closed = 1;
+nodes = (
+(600,0,l),
+(600,63,l),
+(452,63,l),
+(452,0,l)
+);
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Lowercase;
+};
+width = 604;
+}
+);
+note = uni0587;
+unicode = 1415;
+}

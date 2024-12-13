@@ -1,0 +1,194 @@
+{
+color = 10;
+glyphname = uni0548_uni0552;
+kernRight = uni0552;
+layers = (
+{
+anchors = (
+{
+name = top_1;
+pos = (355,714);
+}
+);
+layerId = m001;
+shapes = (
+{
+alignment = -1;
+pos = (4,0);
+ref = uni0548;
+},
+{
+alignment = -1;
+pos = (722,0);
+ref = uni0552;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Uppercase;
+};
+width = 1269;
+},
+{
+anchors = (
+{
+name = top_1;
+pos = (362,714);
+}
+);
+layerId = m002;
+shapes = (
+{
+alignment = -1;
+ref = uni0548;
+},
+{
+alignment = -1;
+pos = (711,0);
+ref = uni0552;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Uppercase;
+};
+width = 1316;
+},
+{
+anchors = (
+{
+name = top_1;
+pos = (367,714);
+}
+);
+associatedMasterId = m002;
+attr = {
+coordinates = (
+144,
+100
+);
+};
+layerId = "5614fa3d-271b-48cb-bbfb-c27b318858ae";
+name = "SemiBold (intermediate)";
+shapes = (
+{
+alignment = -1;
+ref = uni0548;
+},
+{
+alignment = -1;
+pos = (705,0);
+ref = uni0552;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Uppercase;
+};
+width = 1349;
+},
+{
+anchors = (
+{
+name = top_1;
+pos = (355,714);
+}
+);
+layerId = m004;
+shapes = (
+{
+alignment = -1;
+pos = (-7,0);
+ref = uni0548;
+},
+{
+alignment = -1;
+pos = (693,0);
+ref = uni0552;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Uppercase;
+};
+width = 1353;
+},
+{
+anchors = (
+{
+name = top_1;
+pos = (243,714);
+}
+);
+layerId = m005;
+shapes = (
+{
+ref = uni0548;
+},
+{
+pos = (486,0);
+ref = uni0552;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Uppercase;
+};
+width = 865;
+},
+{
+anchors = (
+{
+name = top_1;
+pos = (263,714);
+}
+);
+layerId = m006;
+shapes = (
+{
+ref = uni0548;
+},
+{
+pos = (527,0);
+ref = uni0552;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Uppercase;
+};
+width = 971;
+},
+{
+anchors = (
+{
+name = top_1;
+pos = (294,714);
+}
+);
+layerId = m008;
+shapes = (
+{
+ref = uni0548;
+},
+{
+pos = (589,0);
+ref = uni0552;
+}
+);
+userData = {
+com.schriftgestaltung.Glyphs.category = Letter;
+com.schriftgestaltung.Glyphs.script = armenian;
+com.schriftgestaltung.Glyphs.subCategory = Uppercase;
+};
+width = 1130;
+}
+);
+note = uni0548_uni0552;
+}

@@ -1,0 +1,60 @@
+{
+glyphname = uni2019;
+layers = (
+{
+layerId = m001;
+shapes = (
+{
+ref = uni055A;
+}
+);
+width = 166;
+},
+{
+layerId = m003;
+shapes = (
+{
+ref = uni055A;
+}
+);
+width = 233;
+},
+{
+layerId = m005;
+shapes = (
+{
+ref = uni055A;
+}
+);
+width = 269;
+},
+{
+layerId = m006;
+shapes = (
+{
+ref = uni055A;
+}
+);
+width = 149;
+},
+{
+layerId = m007;
+shapes = (
+{
+ref = uni055A;
+}
+);
+width = 172;
+},
+{
+layerId = m009;
+shapes = (
+{
+ref = uni055A;
+}
+);
+width = 237;
+}
+);
+unicode = 8217;
+}
